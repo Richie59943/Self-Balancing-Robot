@@ -1,0 +1,2 @@
+source /home/richie/esp/Balancing_Robot/hello_world/build/gdbinit/symbols
+source /home/richie/esp/Balancing_Robot/hello_world/build/gdbinit/connect

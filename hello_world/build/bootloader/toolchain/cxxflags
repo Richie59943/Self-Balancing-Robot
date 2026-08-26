@@ -1,0 +1,4 @@
+"-specs=/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/specs/picolibc.specs"
+-march=rv32imc_zicsr_zifencei
+-mtune=esp-base
+-fno-rtti
