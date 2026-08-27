@@ -1,3 +1,4 @@
-idf_component_register(SRCS "hello_world_main.c"
+idf_component_register(SRCS "self_balancing_robot.c" "icm42670.c"
                        PRIV_REQUIRES spi_flash
-                       INCLUDE_DIRS "")
+                       INCLUDE_DIRS ""
+                       REQUIRES esp_driver_i2c)
