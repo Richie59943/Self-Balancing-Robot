@@ -10,18 +10,18 @@ if(NOT EXISTS "/home/richie/esp/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "/home/richie/esp/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader"
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix"
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/tmp"
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp"
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src"
-  "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/tmp"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src"
+  "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

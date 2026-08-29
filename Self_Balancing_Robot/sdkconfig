@@ -956,6 +956,17 @@ CONFIG_GDMA_OBJ_DRAM_SAFE=y
 # end of ESP-Driver:GPIO Configurations
 
 #
+# ESP-Driver:I2C Configurations
+#
+# default:
+# CONFIG_I2C_ISR_IRAM_SAFE is not set
+# default:
+# CONFIG_I2C_ENABLE_DEBUG_LOG is not set
+# default:
+CONFIG_I2C_MASTER_ISR_HANDLER_IN_IRAM=y
+# end of ESP-Driver:I2C Configurations
+
+#
 # Hardware Settings
 #
 # default:
@@ -1166,6 +1177,15 @@ CONFIG_PM_POWER_DOWN_CPU_IN_LIGHT_SLEEP=y
 # default:
 CONFIG_PM_ESP_SLEEP_POWER_DOWN_CPU=y
 # end of Power Management
+
+#
+# ESP Ringbuf
+#
+# default:
+# CONFIG_RINGBUF_IN_IRAM is not set
+# default:
+# CONFIG_RINGBUF_PLACE_ISR_FUNCTIONS_INTO_FLASH is not set
+# end of ESP Ringbuf
 
 #
 # ESP-ROM

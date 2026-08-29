@@ -38,6 +38,26 @@ void app_main(void)
 
   ESP_ERROR_CHECK(icm42670_get_device_id(&device_id)); //we give the memory addres of device_id so it can be altered 
 
+  //checking error on configure function 
+  ESP_ERROR_CHECK(icm42670_configure());
+ESP_LOGI(TAG,"ICM-42670-P configured");
+
+
+  //going to check if we actually stored our pwr mannagment
+  uint8_t power_manage = 0;
+
+  ESP_ERROR_CHECK(icm42670_get_power(&power_manage));
+
+  if(power_manage == 0x0F)
+  {
+    ESP_LOGI(TAG,"Congrats ACELL and GYRO CONFIGD ");
+  }
+  else
+{
+    ESP_LOGI(TAG,"ENEXPECTED value");
+  }
+  
+
   if (device_id == ICM42670_DEVICE_ID) {
     ESP_LOGI(TAG, "ICM-42670-P detected successfully!");
 } else {

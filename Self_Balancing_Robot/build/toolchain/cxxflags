@@ -1,4 +1,4 @@
+"-specs=/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/specs/picolibc.specs"
 -march=rv32imc_zicsr_zifencei
 -mtune=esp-base
-"-specs=/home/richie/esp/Balancing_Robot/hello_world/build/specs/picolibc.specs"
 -fno-rtti

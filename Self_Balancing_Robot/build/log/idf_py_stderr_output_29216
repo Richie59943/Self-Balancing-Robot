@@ -1,4 +1,0 @@
-Command: cmake -G Ninja -B /home/richie/esp/Balancing_Robot/hello_world/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32c3 -DCCACHE_ENABLE=False /home/richie/esp/Balancing_Robot/hello_world
-NOTE: Kconfig parser version: 1
-NOTE: Kconfig defaults policy: use sdkconfig
-NOTE: Status: Finished successfully

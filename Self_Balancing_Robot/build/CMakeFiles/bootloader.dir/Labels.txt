@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-/home/richie/esp/Balancing_Robot/hello_world/build/CMakeFiles/bootloader
-/home/richie/esp/Balancing_Robot/hello_world/build/CMakeFiles/bootloader.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/CMakeFiles/bootloader-complete.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-/home/richie/esp/Balancing_Robot/hello_world/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/CMakeFiles/bootloader
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/CMakeFiles/bootloader.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/CMakeFiles/bootloader-complete.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

@@ -38,16 +38,16 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/richie/esp/Balancing_Robot/hello_world/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/richie/esp/Balancing_Robot/hello_world/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/libtfpsacrypto.a")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/richie/esp/Balancing_Robot/hello_world/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/install_local_manifest.txt"
+  file(WRITE "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/mbedtls/mbedtls/tf-psa-crypto/core/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

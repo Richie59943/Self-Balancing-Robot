@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 
 if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   file(REMOVE_RECURSE
+  "Self_Balancing_Robot.bin"
+  "Self_Balancing_Robot.map"
   "bootloader/bootloader.bin"
   "bootloader/bootloader.elf"
   "bootloader/bootloader.map"
@@ -14,8 +16,6 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "flash_project_args"
   "flasher_args.json"
   "flasher_args.json.in"
-  "hello_world.bin"
-  "hello_world.map"
   "ldgen_libraries"
   "ldgen_libraries.in"
   "project_elf_src_esp32c3.c"

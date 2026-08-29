@@ -39,197 +39,197 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/hal/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/hal/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/riscv/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/riscv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_libc/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_libc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/soc/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/soc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_gpio/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_gpio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_usb/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_usb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_pmu/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_pmu/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_regi2c/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_regi2c/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_dma/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_dma/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_gpspi/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_gpspi/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_clock/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_clock/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_mspi/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_mspi/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_blockdev/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_blockdev/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/spi_flash/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/spi_flash/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_bootloader_format/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_bootloader_format/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_app_format/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_app_format/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/partition_table/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/partition_table/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esptool_py/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esptool_py/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/micro-ecc/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/micro-ecc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_timg/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_timg/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_wdt/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_uart/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_uart/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_ana_conv/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_ana_conv/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_rtc_timer/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_rtc_timer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_security/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_security/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_security/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_security/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/bootloader_support/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/bootloader_support/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/efuse/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/efuse/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hal_systimer/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hal_systimer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_system/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_system/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_hw_support/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_hw_support/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_common/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_rom/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_rom/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/log/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/log/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/bootloader/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/bootloader/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/esp_stdio/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/esp_stdio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/freertos/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/freertos/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/main/cmake_install.cmake")
+  include("/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/main/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/richie/esp/Balancing_Robot/hello_world/build/bootloader/esp-idf/install_local_manifest.txt"
+  file(WRITE "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/esp-idf/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

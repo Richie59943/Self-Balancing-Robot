@@ -1,4 +1,4 @@
-/* * Data converted from /home/richie/esp/Balancing_Robot/hello_world/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)
