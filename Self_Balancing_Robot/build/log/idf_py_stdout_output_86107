@@ -1,0 +1,747 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.elf /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 sizeESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038349e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug 26 2026 16:10:48[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07790h ( 30608) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=000177b8 vaddr=3fc89600 size=017f8h (  6136) load[0m
+[0;32mI (93) esp_image: segment 2: paddr=00018fb8 vaddr=40380000 size=07060h ( 28768) load[0m
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=12ba4h ( 76708) map[0m
+[0;32mI (119) esp_image: segment 4: paddr=00032bcc vaddr=40387060 size=02464h (  9316) load[0m
+[0;32mI (121) esp_image: segment 5: paddr=00035038 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (126) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (144) cpu_start: Unicore app[0m
+[0;32mI (152) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (153) cpu_start: Pro cpu start user code[0m
+[0;32mI (153) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (154) app_init: Application information:[0m
+[0;32mI (158) app_init: Project name:     Self_Balancing_Robot[0m
+[0;32mI (163) app_init: App version:      69d344b-dirty[0m
+[0;32mI (168) app_init: Compile time:     Aug 31 2026 19:51:35[0m
+[0;32mI (173) app_init: ELF file SHA256:  17c21894c...[0m
+[0;32mI (177) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (183) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (186) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (190) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (194) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (201) heap_init: At 3FC8BD40 len 000342C0 (208 KiB): RAM[0m
+[0;32mI (206) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (212) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (218) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (224) spi_flash: detected chip: generic[0m
+[0;32mI (227) spi_flash: flash io: dio[0m
+[0;33mW (230) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (242) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (248) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (255) main_task: Started on CPU0[0m
+[0;32mI (255) main_task: Calling app_main()[0m
+[0;32mI (255) ICM42670: ICM-42670-P added to I2C bus[0m
+[0;32mI (265) BALANCER: ICM-42670-P configured[0m
+[0;32mI (265) BALANCER: GYRO Configured[0m
+[0;32mI (265) BALANCER: ICM-42670-P detected successfully![0m
+[0;32mI (275) BALANCER: GYRO = 0x48[0m
+[0;32mI (275) BALANCER: GYRo config verified[0m
+[0;32mI (275) BALANCER: accel aconfigured[0m
+[0;32mI (285) BALANCER: ACCEL = 0x48[0m
+[0;32mI (285) BALANCER:  accel config verified[0m
+[0;32mI (285) BALANCER: ACCEL_X val: 60 [0m
+ ACEEL_Y val: -79 
+ ACCEL_Z val: 8248 
+ 
+[0;32mI (1295) BALANCER: gyro_x: -53 [0m
+ gyro_y: 2 
+ gyro_z: -30
+ACCEL_X = 0.007324 
+ ACCEL_Y = -0.009644 
+ ACCEL_Z = 1.006836
+GYRO_X = -0.809160 
+ GYRO_Y = 0.030534 
+ GYRO_Z = -0.458015
+[0;32mI (1295) BALANCER: ACCEL_X val: 54 [0m
+ ACEEL_Y val: -72 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (2305) BALANCER: gyro_x: -48 [0m
+ gyro_y: -299 
+ gyro_z: -5
+ACCEL_X = 0.006592 
+ ACCEL_Y = -0.008789 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.732824 
+ GYRO_Y = -4.564886 
+ GYRO_Z = -0.076336
+[0;32mI (2305) BALANCER: ACCEL_X val: 1631 [0m
+ ACEEL_Y val: -21 
+ ACCEL_Z val: 8032 
+ 
+[0;32mI (3315) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -31
+ACCEL_X = 0.199097 
+ ACCEL_Y = -0.002563 
+ ACCEL_Z = 0.980469
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (3315) BALANCER: ACCEL_X val: 1720 [0m
+ ACEEL_Y val: -38 
+ ACCEL_Z val: 8012 
+ 
+[0;32mI (4325) BALANCER: gyro_x: -266 [0m
+ gyro_y: 1202 
+ gyro_z: 104
+ACCEL_X = 0.209961 
+ ACCEL_Y = -0.004639 
+ ACCEL_Z = 0.978027
+GYRO_X = -4.061069 
+ GYRO_Y = 18.351145 
+ GYRO_Z = 1.587786
+[0;32mI (4325) BALANCER: ACCEL_X val: 12 [0m
+ ACEEL_Y val: -93 
+ ACCEL_Z val: 8261 
+ 
+[0;32mI (5335) BALANCER: gyro_x: -55 [0m
+ gyro_y: 10 
+ gyro_z: -25
+ACCEL_X = 0.001465 
+ ACCEL_Y = -0.011353 
+ ACCEL_Z = 1.008423
+GYRO_X = -0.839695 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -0.381679
+[0;32mI (5335) BALANCER: ACCEL_X val: -2180 [0m
+ ACEEL_Y val: -43 
+ ACCEL_Z val: 7952 
+ 
+[0;32mI (6345) BALANCER: gyro_x: -54 [0m
+ gyro_y: 161 
+ gyro_z: -32
+ACCEL_X = -0.266113 
+ ACCEL_Y = -0.005249 
+ ACCEL_Z = 0.970703
+GYRO_X = -0.824427 
+ GYRO_Y = 2.458015 
+ GYRO_Z = -0.488550
+[0;32mI (6345) BALANCER: ACCEL_X val: -2371 [0m
+ ACEEL_Y val: -51 
+ ACCEL_Z val: 7909 
+ 
+[0;32mI (7355) BALANCER: gyro_x: -57 [0m
+ gyro_y: 133 
+ gyro_z: -31
+ACCEL_X = -0.289429 
+ ACCEL_Y = -0.006226 
+ ACCEL_Z = 0.965454
+GYRO_X = -0.870229 
+ GYRO_Y = 2.030534 
+ GYRO_Z = -0.473282
+[0;32mI (7355) BALANCER: ACCEL_X val: -2642 [0m
+ ACEEL_Y val: -43 
+ ACCEL_Z val: 7815 
+ 
+[0;32mI (8365) BALANCER: gyro_x: -5 [0m
+ gyro_y: -1522 
+ gyro_z: -6
+ACCEL_X = -0.322510 
+ ACCEL_Y = -0.005249 
+ ACCEL_Z = 0.953979
+GYRO_X = -0.076336 
+ GYRO_Y = -23.236641 
+ GYRO_Z = -0.091603
+[0;32mI (8365) BALANCER: ACCEL_X val: 343 [0m
+ ACEEL_Y val: -62 
+ ACCEL_Z val: 8201 
+ 
+[0;32mI (9375) BALANCER: gyro_x: -57 [0m
+ gyro_y: 46 
+ gyro_z: -26
+ACCEL_X = 0.041870 
+ ACCEL_Y = -0.007568 
+ ACCEL_Z = 1.001099
+GYRO_X = -0.870229 
+ GYRO_Y = 0.702290 
+ GYRO_Z = -0.396947
+[0;32mI (9375) BALANCER: ACCEL_X val: 2498 [0m
+ ACEEL_Y val: -20 
+ ACCEL_Z val: 7806 
+ 
+[0;32mI (10385) BALANCER: gyro_x: -46 [0m
+ gyro_y: -69 
+ gyro_z: -9
+ACCEL_X = 0.304932 
+ ACCEL_Y = -0.002441 
+ ACCEL_Z = 0.952881
+GYRO_X = -0.702290 
+ GYRO_Y = -1.053435 
+ GYRO_Z = -0.137405
+[0;32mI (10385) BALANCER: ACCEL_X val: 2581 [0m
+ ACEEL_Y val: -23 
+ ACCEL_Z val: 7826 
+ 
+[0;32mI (11395) BALANCER: gyro_x: -61 [0m
+ gyro_y: -6 
+ gyro_z: -25
+ACCEL_X = 0.315063 
+ ACCEL_Y = -0.002808 
+ ACCEL_Z = 0.955322
+GYRO_X = -0.931298 
+ GYRO_Y = -0.091603 
+ GYRO_Z = -0.381679
+[0;32mI (11395) BALANCER: ACCEL_X val: 2418 [0m
+ ACEEL_Y val: -26 
+ ACCEL_Z val: 7848 
+ 
+[0;32mI (12405) BALANCER: gyro_x: -60 [0m
+ gyro_y: 104 
+ gyro_z: -30
+ACCEL_X = 0.295166 
+ ACCEL_Y = -0.003174 
+ ACCEL_Z = 0.958008
+GYRO_X = -0.916031 
+ GYRO_Y = 1.587786 
+ GYRO_Z = -0.458015
+[0;32mI (12405) BALANCER: ACCEL_X val: 2510 [0m
+ ACEEL_Y val: -35 
+ ACCEL_Z val: 7807 
+ 
+[0;32mI (13415) BALANCER: gyro_x: -66 [0m
+ gyro_y: 376 
+ gyro_z: -32
+ACCEL_X = 0.306396 
+ ACCEL_Y = -0.004272 
+ ACCEL_Z = 0.953003
+GYRO_X = -1.007634 
+ GYRO_Y = 5.740458 
+ GYRO_Z = -0.488550
+[0;32mI (13415) BALANCER: ACCEL_X val: 2351 [0m
+ ACEEL_Y val: -25 
+ ACCEL_Z val: 7838 
+ 
+[0;32mI (14425) BALANCER: gyro_x: -60 [0m
+ gyro_y: 31 
+ gyro_z: -31
+ACCEL_X = 0.286987 
+ ACCEL_Y = -0.003052 
+ ACCEL_Z = 0.956787
+GYRO_X = -0.916031 
+ GYRO_Y = 0.473282 
+ GYRO_Z = -0.473282
+[0;32mI (14425) BALANCER: ACCEL_X val: 106 [0m
+ ACEEL_Y val: -62 
+ ACCEL_Z val: 8261 
+ 
+[0;32mI (15435) BALANCER: gyro_x: -61 [0m
+ gyro_y: 37 
+ gyro_z: -21
+ACCEL_X = 0.012939 
+ ACCEL_Y = -0.007568 
+ ACCEL_Z = 1.008423
+GYRO_X = -0.931298 
+ GYRO_Y = 0.564885 
+ GYRO_Z = -0.320611
+[0;32mI (15435) BALANCER: ACCEL_X val: 47 [0m
+ ACEEL_Y val: -76 
+ ACCEL_Z val: 8232 
+ 
+[0;32mI (16445) BALANCER: gyro_x: -55 [0m
+ gyro_y: 49 
+ gyro_z: -33
+ACCEL_X = 0.005737 
+ ACCEL_Y = -0.009277 
+ ACCEL_Z = 1.004883
+GYRO_X = -0.839695 
+ GYRO_Y = 0.748092 
+ GYRO_Z = -0.503817
+[0;32mI (16445) BALANCER: ACCEL_X val: 36 [0m
+ ACEEL_Y val: -85 
+ ACCEL_Z val: 8224 
+ 
+[0;32mI (17455) BALANCER: gyro_x: -68 [0m
+ gyro_y: 413 
+ gyro_z: -35
+ACCEL_X = 0.004395 
+ ACCEL_Y = -0.010376 
+ ACCEL_Z = 1.003906
+GYRO_X = -1.038168 
+ GYRO_Y = 6.305344 
+ GYRO_Z = -0.534351
+[0;32mI (17455) BALANCER: ACCEL_X val: -2434 [0m
+ ACEEL_Y val: -115 
+ ACCEL_Z val: 7895 
+ 
+[0;32mI (18465) BALANCER: gyro_x: -52 [0m
+ gyro_y: -6 
+ gyro_z: -32
+ACCEL_X = -0.297119 
+ ACCEL_Y = -0.014038 
+ ACCEL_Z = 0.963745
+GYRO_X = -0.793893 
+ GYRO_Y = -0.091603 
+ GYRO_Z = -0.488550
+[0;32mI (18465) BALANCER: ACCEL_X val: -2686 [0m
+ ACEEL_Y val: -117 
+ ACCEL_Z val: 7803 
+ 
+[0;32mI (19475) BALANCER: gyro_x: -46 [0m
+ gyro_y: 7 
+ gyro_z: -26
+ACCEL_X = -0.327881 
+ ACCEL_Y = -0.014282 
+ ACCEL_Z = 0.952515
+GYRO_X = -0.702290 
+ GYRO_Y = 0.106870 
+ GYRO_Z = -0.396947
+[0;32mI (19475) BALANCER: ACCEL_X val: -2757 [0m
+ ACEEL_Y val: -132 
+ ACCEL_Z val: 7748 
+ 
+[0;32mI (20485) BALANCER: gyro_x: -60 [0m
+ gyro_y: 30 
+ gyro_z: -28
+ACCEL_X = -0.336548 
+ ACCEL_Y = -0.016113 
+ ACCEL_Z = 0.945801
+GYRO_X = -0.916031 
+ GYRO_Y = 0.458015 
+ GYRO_Z = -0.427481
+[0;32mI (20485) BALANCER: ACCEL_X val: -2811 [0m
+ ACEEL_Y val: -120 
+ ACCEL_Z val: 7733 
+ 
+[0;32mI (21495) BALANCER: gyro_x: -58 [0m
+ gyro_y: 95 
+ gyro_z: -23
+ACCEL_X = -0.343140 
+ ACCEL_Y = -0.014648 
+ ACCEL_Z = 0.943970
+GYRO_X = -0.885496 
+ GYRO_Y = 1.450382 
+ GYRO_Z = -0.351145
+[0;32mI (21495) BALANCER: ACCEL_X val: -2630 [0m
+ ACEEL_Y val: -116 
+ ACCEL_Z val: 7804 
+ 
+[0;32mI (22505) BALANCER: gyro_x: -56 [0m
+ gyro_y: 24 
+ gyro_z: -31
+ACCEL_X = -0.321045 
+ ACCEL_Y = -0.014160 
+ ACCEL_Z = 0.952637
+GYRO_X = -0.854962 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.473282
+[0;32mI (22505) BALANCER: ACCEL_X val: -2694 [0m
+ ACEEL_Y val: -128 
+ ACCEL_Z val: 7773 
+ 
+[0;32mI (23515) BALANCER: gyro_x: -41 [0m
+ gyro_y: -1216 
+ gyro_z: -6
+ACCEL_X = -0.328857 
+ ACCEL_Y = -0.015625 
+ ACCEL_Z = 0.948853
+GYRO_X = -0.625954 
+ GYRO_Y = -18.564886 
+ GYRO_Z = -0.091603
+[0;32mI (23515) BALANCER: ACCEL_X val: -2714 [0m
+ ACEEL_Y val: -121 
+ ACCEL_Z val: 7519 
+ 
+[0;32mI (24525) BALANCER: gyro_x: -47 [0m
+ gyro_y: -5 
+ gyro_z: -27
+ACCEL_X = -0.331299 
+ ACCEL_Y = -0.014771 
+ ACCEL_Z = 0.917847
+GYRO_X = -0.717557 
+ GYRO_Y = -0.076336 
+ GYRO_Z = -0.412214
+[0;32mI (24525) BALANCER: ACCEL_X val: 61 [0m
+ ACEEL_Y val: -80 
+ ACCEL_Z val: 8248 
+ 
+[0;32mI (25535) BALANCER: gyro_x: -54 [0m
+ gyro_y: 11 
+ gyro_z: -25
+ACCEL_X = 0.007446 
+ ACCEL_Y = -0.009766 
+ ACCEL_Z = 1.006836
+GYRO_X = -0.824427 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.381679
+[0;32mI (25535) BALANCER: ACCEL_X val: 289 [0m
+ ACEEL_Y val: -55 
+ ACCEL_Z val: 8217 
+ 
+[0;32mI (26545) BALANCER: gyro_x: -61 [0m
+ gyro_y: 30 
+ gyro_z: -25
+ACCEL_X = 0.035278 
+ ACCEL_Y = -0.006714 
+ ACCEL_Z = 1.003052
+GYRO_X = -0.931298 
+ GYRO_Y = 0.458015 
+ GYRO_Z = -0.381679
+[0;32mI (26545) BALANCER: ACCEL_X val: 112 [0m
+ ACEEL_Y val: -60 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (27555) BALANCER: gyro_x: -48 [0m
+ gyro_y: 3 
+ gyro_z: -27
+ACCEL_X = 0.013672 
+ ACCEL_Y = -0.007324 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.732824 
+ GYRO_Y = 0.045802 
+ GYRO_Z = -0.412214
+[0;32mI (27555) BALANCER: ACCEL_X val: 123 [0m
+ ACEEL_Y val: -67 
+ ACCEL_Z val: 8223 
+ 
+[0;32mI (28565) BALANCER: gyro_x: -56 [0m
+ gyro_y: 17 
+ gyro_z: -26
+ACCEL_X = 0.015015 
+ ACCEL_Y = -0.008179 
+ ACCEL_Z = 1.003784
+GYRO_X = -0.854962 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+[0;32mI (28565) BALANCER: ACCEL_X val: 108 [0m
+ ACEEL_Y val: -85 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (29575) BALANCER: gyro_x: -53 [0m
+ gyro_y: 3 
+ gyro_z: -21
+ACCEL_X = 0.013184 
+ ACCEL_Y = -0.010376 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.809160 
+ GYRO_Y = 0.045802 
+ GYRO_Z = -0.320611
+[0;32mI (29575) BALANCER: ACCEL_X val: 124 [0m
+ ACEEL_Y val: -76 
+ ACCEL_Z val: 8245 
+ 
+[0;32mI (30585) BALANCER: gyro_x: -52 [0m
+ gyro_y: -118 
+ gyro_z: -32
+ACCEL_X = 0.015137 
+ ACCEL_Y = -0.009277 
+ ACCEL_Z = 1.006470
+GYRO_X = -0.793893 
+ GYRO_Y = -1.801527 
+ GYRO_Z = -0.488550
+[0;32mI (30585) BALANCER: ACCEL_X val: 1430 [0m
+ ACEEL_Y val: -49 
+ ACCEL_Z val: 8113 
+ 
+[0;32mI (31595) BALANCER: gyro_x: -54 [0m
+ gyro_y: -20 
+ gyro_z: -22
+ACCEL_X = 0.174561 
+ ACCEL_Y = -0.005981 
+ ACCEL_Z = 0.990356
+GYRO_X = -0.824427 
+ GYRO_Y = -0.305344 
+ GYRO_Z = -0.335878
+[0;32mI (31595) BALANCER: ACCEL_X val: 1492 [0m
+ ACEEL_Y val: -52 
+ ACCEL_Z val: 8096 
+ 
+[0;32mI (32605) BALANCER: gyro_x: -62 [0m
+ gyro_y: 27 
+ gyro_z: -26
+ACCEL_X = 0.182129 
+ ACCEL_Y = -0.006348 
+ ACCEL_Z = 0.988281
+GYRO_X = -0.946565 
+ GYRO_Y = 0.412214 
+ GYRO_Z = -0.396947
+[0;32mI (32605) BALANCER: ACCEL_X val: 1594 [0m
+ ACEEL_Y val: -25 
+ ACCEL_Z val: 8085 
+ 
+[0;32mI (33615) BALANCER: gyro_x: -51 [0m
+ gyro_y: -38 
+ gyro_z: -29
+ACCEL_X = 0.194580 
+ ACCEL_Y = -0.003052 
+ ACCEL_Z = 0.986938
+GYRO_X = -0.778626 
+ GYRO_Y = -0.580153 
+ GYRO_Z = -0.442748
+[0;32mI (33615) BALANCER: ACCEL_X val: 1698 [0m
+ ACEEL_Y val: -49 
+ ACCEL_Z val: 8018 
+ 
+[0;32mI (34625) BALANCER: gyro_x: -56 [0m
+ gyro_y: 49 
+ gyro_z: -31
+ACCEL_X = 0.207275 
+ ACCEL_Y = -0.005981 
+ ACCEL_Z = 0.978760
+GYRO_X = -0.854962 
+ GYRO_Y = 0.748092 
+ GYRO_Z = -0.473282
+[0;32mI (34625) BALANCER: ACCEL_X val: 1746 [0m
+ ACEEL_Y val: -41 
+ ACCEL_Z val: 8018 
+ 
+[0;32mI (35635) BALANCER: gyro_x: -1010 [0m
+ gyro_y: 72 
+ gyro_z: 261
+ACCEL_X = 0.213135 
+ ACCEL_Y = -0.005005 
+ ACCEL_Z = 0.978760
+GYRO_X = -15.419847 
+ GYRO_Y = 1.099237 
+ GYRO_Z = 3.984733
+[0;32mI (35635) BALANCER: ACCEL_X val: 16 [0m
+ ACEEL_Y val: -814 
+ ACCEL_Z val: 8517 
+ 
+[0;32mI (36645) BALANCER: gyro_x: -233 [0m
+ gyro_y: -106 
+ gyro_z: 314
+ACCEL_X = 0.001953 
+ ACCEL_Y = -0.099365 
+ ACCEL_Z = 1.039673
+GYRO_X = -3.557252 
+ GYRO_Y = -1.618321 
+ GYRO_Z = 4.793893
+[0;32mI (36645) BALANCER: ACCEL_X val: 155 [0m
+ ACEEL_Y val: -2510 
+ ACCEL_Z val: 7446 
+ 
+[0;32mI (37655) BALANCER: gyro_x: -101 [0m
+ gyro_y: 31 
+ gyro_z: -41
+ACCEL_X = 0.018921 
+ ACCEL_Y = -0.306396 
+ ACCEL_Z = 0.908936
+GYRO_X = -1.541985 
+ GYRO_Y = 0.473282 
+ GYRO_Z = -0.625954
+[0;32mI (37655) BALANCER: ACCEL_X val: -199 [0m
+ ACEEL_Y val: -2559 
+ ACCEL_Z val: 7717 
+ 
+[0;32mI (38665) BALANCER: gyro_x: -186 [0m
+ gyro_y: 112 
+ gyro_z: -30
+ACCEL_X = -0.024292 
+ ACCEL_Y = -0.312378 
+ ACCEL_Z = 0.942017
+GYRO_X = -2.839695 
+ GYRO_Y = 1.709924 
+ GYRO_Z = -0.458015
+[0;32mI (38665) BALANCER: ACCEL_X val: -370 [0m
+ ACEEL_Y val: -2708 
+ ACCEL_Z val: 7768 
+ 
+[0;32mI (39675) BALANCER: gyro_x: -52 [0m
+ gyro_y: 29 
+ gyro_z: -14
+ACCEL_X = -0.045166 
+ ACCEL_Y = -0.330566 
+ ACCEL_Z = 0.948242
+GYRO_X = -0.793893 
+ GYRO_Y = 0.442748 
+ GYRO_Z = -0.213740
+[0;32mI (39675) BALANCER: ACCEL_X val: -342 [0m
+ ACEEL_Y val: -2823 
+ ACCEL_Z val: 7764 
+ 
+[0;32mI (40685) BALANCER: gyro_x: 227 [0m
+ gyro_y: -1138 
+ gyro_z: 1062
+ACCEL_X = -0.041748 
+ ACCEL_Y = -0.344604 
+ ACCEL_Z = 0.947754
+GYRO_X = 3.465649 
+ GYRO_Y = -17.374046 
+ GYRO_Z = 16.213741
+[0;32mI (40685) BALANCER: ACCEL_X val: -863 [0m
+ ACEEL_Y val: -2891 
+ ACCEL_Z val: 7445 
+ 
+[0;32mI (41695) BALANCER: gyro_x: -140 [0m
+ gyro_y: 703 
+ gyro_z: -386
+ACCEL_X = -0.105347 
+ ACCEL_Y = -0.352905 
+ ACCEL_Z = 0.908813
+GYRO_X = -2.137405 
+ GYRO_Y = 10.732824 
+ GYRO_Z = -5.893130
+[0;32mI (41695) BALANCER: ACCEL_X val: 123 [0m
+ ACEEL_Y val: 5940 
+ ACCEL_Z val: 6495 
+ 
+[0;32mI (42705) BALANCER: gyro_x: 21 [0m
+ gyro_y: -314 
+ gyro_z: -10
+ACCEL_X = 0.015015 
+ ACCEL_Y = 0.725098 
+ ACCEL_Z = 0.792847
+GYRO_X = 0.320611 
+ GYRO_Y = -4.793893 
+ GYRO_Z = -0.152672
+[0;32mI (42705) BALANCER: ACCEL_X val: 359 [0m
+ ACEEL_Y val: 5832 
+ ACCEL_Z val: 5813 
+ 
+[0;32mI (43715) BALANCER: gyro_x: -13 [0m
+ gyro_y: -14 
+ gyro_z: -69
+ACCEL_X = 0.043823 
+ ACCEL_Y = 0.711914 
+ ACCEL_Z = 0.709595
+GYRO_X = -0.198473 
+ GYRO_Y = -0.213740 
+ GYRO_Z = -1.053435
+[0;32mI (43715) BALANCER: ACCEL_X val: 519 [0m
+ ACEEL_Y val: 5988 
+ ACCEL_Z val: 5553 
+ 
+[0;32mI (44725) BALANCER: gyro_x: 44 [0m
+ gyro_y: -8 
+ gyro_z: -38
+ACCEL_X = 0.063354 
+ ACCEL_Y = 0.730957 
+ ACCEL_Z = 0.677856
+GYRO_X = 0.671756 
+ GYRO_Y = -0.122137 
+ GYRO_Z = -0.580153
+[0;32mI (44725) BALANCER: ACCEL_X val: 557 [0m
+ ACEEL_Y val: 6080 
+ ACCEL_Z val: 5463 
+ 
+[0;32mI (45735) BALANCER: gyro_x: 167 [0m
+ gyro_y: -50 
+ gyro_z: -229
+ACCEL_X = 0.067993 
+ ACCEL_Y = 0.742188 
+ ACCEL_Z = 0.666870
+GYRO_X = 2.549618 
+ GYRO_Y = -0.763359 
+ GYRO_Z = -3.496183
+[0;32mI (45735) BALANCER: ACCEL_X val: 1227 [0m
+ ACEEL_Y val: 6796 
+ ACCEL_Z val: 4521 
+ 
+[0;32mI (46745) BALANCER: gyro_x: -284 [0m
+ gyro_y: 236 
+ gyro_z: -56
+ACCEL_X = 0.149780 
+ ACCEL_Y = 0.829590 
+ ACCEL_Z = 0.551880
+GYRO_X = -4.335878 
+ GYRO_Y = 3.603053 
+ GYRO_Z = -0.854962
+[0;32mI (46745) BALANCER: ACCEL_X val: 1039 [0m
+ ACEEL_Y val: 6749 
+ ACCEL_Z val: 4512 
+ 
+[0;32mI (47755) BALANCER: gyro_x: -3069 [0m
+ gyro_y: 3479 
+ gyro_z: -1798
+ACCEL_X = 0.126831 
+ ACCEL_Y = 0.823853 
+ ACCEL_Z = 0.550781
+GYRO_X = -46.854961 
+ GYRO_Y = 53.114502 
+ GYRO_Z = -27.450382
+[0;32mI (47755) BALANCER: ACCEL_X val: -1110 [0m
+ ACEEL_Y val: 420 
+ ACCEL_Z val: 8175 
+ 
+[0;32mI (48765) BALANCER: gyro_x: -534 [0m
+ gyro_y: 544 
+ gyro_z: 128
+ACCEL_X = -0.135498 
+ ACCEL_Y = 0.051270 
+ ACCEL_Z = 0.997925
+GYRO_X = -8.152672 
+ GYRO_Y = 8.305344 
+ GYRO_Z = 1.954198
+[0;32mI (48765) BALANCER: ACCEL_X val: -410 [0m
+ ACEEL_Y val: -2633 
+ ACCEL_Z val: 8118 
+ 
+[0;32mI (49775) BALANCER: gyro_x: -307 [0m
+ gyro_y: 31 
+ gyro_z: 3
+ACCEL_X = -0.050049 
+ ACCEL_Y = -0.321411 
+ ACCEL_Z = 0.990967
+GYRO_X = -4.687023 
+ GYRO_Y = 0.473282 
+ GYRO_Z = 0.045802
+[0;32mI (49775) BALANCER: ACCEL_X val: -106 [0m
+ ACEEL_Y val: -2478 
+ ACCEL_Z val: 7746 
+ 
+[0;32mI (50785) BALANCER: gyro_x: -974 [0m
+ gyro_y: 89 
+ gyro_z: -928
+ACCEL_X = -0.012939 
+ ACCEL_Y = -0.302490 
+ ACCEL_Z = 0.945557
+GYRO_X = -14.870229 
+ GYRO_Y = 1.358779 
+ GYRO_Z = -14.167939
+[0;32mI (50785) BALANCER: ACCEL_X val: 271 [0m
+ ACEEL_Y val: -1023 
+ ACCEL_Z val: 7513 
+ 
+[0;32mI (51795) BALANCER: gyro_x: -1001 [0m
+ gyro_y: -14457 
+ gyro_z: 398
+ACCEL_X = 0.033081 
+ ACCEL_Y = -0.124878 
+ ACCEL_Z = 0.917114
+GYRO_X = -15.282443 
+ GYRO_Y = -220.717560 
+ GYRO_Z = 6.076336
+[0;32mI (51795) BALANCER: ACCEL_X val: -1031 [0m
+ ACEEL_Y val: 698 
+ ACCEL_Z val: 6616 
+ 
+[0;32mI (52805) BALANCER: gyro_x: -57 [0m
+ gyro_y: 14 
+ gyro_z: -20
+ACCEL_X = -0.125854 
+ ACCEL_Y = 0.085205 
+ ACCEL_Z = 0.807617
+GYRO_X = -0.870229 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.305344
+[0;32mI (52805) BALANCER: ACCEL_X val: 91 [0m
+ ACEEL_Y val: -76 
+ ACCEL_Z val: 8237 
+ 

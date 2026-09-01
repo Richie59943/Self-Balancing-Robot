@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "Self_Balancing_Robot",
-    "project_version":    "14925dc-dirty",
+    "project_version":    "69d344b-dirty",
     "project_path":       "/home/richie/esp/Own_Projects/Self_Balancing_Robot",
     "idf_path":           "/home/richie/esp/esp-idf",
     "build_dir":          "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build",

@@ -2,7 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
-
+#include <math.h>
 #include "driver/i2c_master.h"
 
 #include "icm42670.h"
@@ -12,7 +12,11 @@
 
 static const char *TAG = "BALANCER";
 
-
+//IMU CONFIG 
+//ACCEL: +-4 g @ 200 
+//GYRO: +-500 /s @200 
+//ACCEL sensativity: 8192 LSB/g 
+//GYRO sensativity: 65.5 LSB 
 
 
 void app_main(void)
@@ -101,13 +105,41 @@ ESP_ERROR_CHECK(icm42670_get_accel_config(&accel_addr));
   
 
 
-
   //function that is going to read our gyro data 
   int16_t gyro_x = 0, gyro_y =0, gyro_z =0;
   ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
   ESP_LOGI(TAG,"gyro_x: %d \n gyro_y: %d \n gyro_z: %d",gyro_x,gyro_y,gyro_z);
-  
-  while(1) {
+ 
+
+
+  //going to create the conversion from RAW ACCEL and GYRO data into physical units example g for accelorometer and /s for gyroscope 
+
+  float accel_conv_x = (float)accel_x / 8192;
+  float accel_conv_y = (float)accel_y / 8192;
+  float accel_conv_z = (float)accel_z / 8192;
+
+  float gyro_conv_x = (float)gyro_x / 65.5;
+  float gyro_conv_y = (float)gyro_y / 65.5;
+  float gyro_conv_z = (float)gyro_z / 65.5;
+
+
+
+  printf("ACCEL_X = %f \n ACCEL_Y = %f \n ACCEL_Z = %f\n", accel_conv_x, accel_conv_y, accel_conv_z); 
+  printf("GYRO_X = %f \n GYRO_Y = %f \n GYRO_Z = %f\n", gyro_conv_x,gyro_conv_y,gyro_conv_z);
+
+
+  //going to calculate the angle 
+  float pitch_deg =0 ;
+  float pitch_rad = 0;
+  pitch_rad = atan2f(-accel_x,accel_z);
+  pitch_deg = (pitch_rad * 180) / M_PI;
+
+
+  printf("this is the pitch: %f\n",pitch_deg);
+
+
+
+    while(1) {
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 
