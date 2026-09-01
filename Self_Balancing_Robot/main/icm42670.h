@@ -9,9 +9,19 @@
 #define ICM42670_DEVICE_ID 0x67 //this is the expected responce 
 
 #define ICM42670_PWR_MGMT0 0x1F //this is the address of our power for imu 
+
+//this is our gyro confgi address where we want to send our config too 
+#define ICM42670_GYRO_ADDR 0x20
+
+//this is the config we want to send to the GYRO ADDR 
+#define ICM42670_GYRO_CONFIG 0x48
+
+#define ICM42670_ACCEL_ADDR 0x21 //address of our accel
+#define ICM42670_ACCEL_CONFIG 0x48 //hex we want to send to our accel addr 
+
+
 //this is saying that we are going to have a function named "icm42670_init()" and it will take the i2c bus handle and return error codes 
 esp_err_t icm42670_init(i2c_master_bus_handle_t bus);
-
 
 
 //this is saying we are going to have a function that will get our device ID 
@@ -21,7 +31,30 @@ esp_err_t icm42670_get_device_id(uint8_t *device_id);
 //this function is going to write to our register
 esp_err_t icm42670_configure(void);
 
+
 //function to get pwr managment back to see if it worked
 esp_err_t icm42670_get_power(uint8_t *value);
 
+
+//function for our gyro config 
+esp_err_t icm42670_config_gyro(void);
+
+
+//funciton to read our gyro address to check 
+esp_err_t icm42670_get_gyro_config(uint8_t *value);
+
+
+//function to configure our accel
+esp_err_t icm42670_config_accel(void);
+
+//function to check if we have correct address 
+esp_err_t icm42670_get_accel_config(uint8_t *value);
+
+
+//function that is going to read data from imu accl 
+esp_err_t icm42670_read_accel(int16_t *accel_x, int16_t *accel_y, int16_t *accel_z);
+
+
+//function that is going to read our Gyro data from IMU
+esp_err_t icm42670_read_gyro(int16_t *gyro_x, int16_t *gyro_y, int16_t *gyro_z);
 #endif

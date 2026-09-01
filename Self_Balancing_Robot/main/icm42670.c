@@ -86,3 +86,112 @@ esp_err_t icm42670_get_device_id(uint8_t *device_id)
   return icm42670_read_reg(ICM42670_WHO_AM_I, device_id);
 }
 
+
+//function to config our GyRO 
+esp_err_t icm42670_config_gyro(void)
+{
+  esp_err_t err = icm42670_wrtie_register(ICM42670_GYRO_ADDR,ICM42670_GYRO_CONFIG);
+
+  if(err != ESP_OK)
+  {
+    ESP_LOGE(TAG,"Failed to configure our GYRO");
+      return err;
+  }
+
+  return ESP_OK;
+}
+
+
+//function to pull our address witin gyro add to check we sent the right one 
+esp_err_t icm42670_get_gyro_config(uint8_t *value)
+{
+  return icm42670_read_reg(ICM42670_GYRO_ADDR,value);
+
+}
+
+
+//function is going to configure our accel 
+esp_err_t icm42670_config_accel(void)
+{
+  esp_err_t err = icm42670_wrtie_register(ICM42670_ACCEL_ADDR,ICM42670_ACCEL_CONFIG);
+
+  if (err != ESP_OK)
+  {
+    ESP_LOGE(TAG, "Failed to config accel");
+    return err;
+  }
+  return ESP_OK;
+}
+
+//function to check our address
+esp_err_t icm42670_get_accel_config(uint8_t *value)
+{
+  return icm42670_read_reg(ICM42670_ACCEL_ADDR, value);
+}
+
+
+
+//function that is going to read our accel
+esp_err_t icm42670_read_accel(int16_t *accel_x, int16_t *accel_y, int16_t *accel_z)
+{
+  uint8_t data[6]; //going to create a array since we are receiving 6 x1 x0,y0,y1,z0z1
+  uint8_t reg =0x0B;
+
+  esp_err_t err = i2c_master_transmit_receive(icm42670_handle,&reg,1,data,6,1000); //handle,transmit data, transmit size, recieve data, receive size,timeout 
+
+  if(err != ESP_OK)
+  {
+    ESP_LOGE(TAG,"Error transmiting accel");
+    return err;
+  }
+  
+  //making it clean so we know name 
+  uint8_t x1 = data[0];
+  uint8_t x0 = data[1];
+  uint8_t y1 = data[2];
+  uint8_t y0 = data[3];
+  uint8_t z1 = data[4];
+  uint8_t z0 = data[5];
+
+  //now creating our bit mask 
+  *accel_x = (x1 << 8) | x0;
+
+  *accel_y = (y1 << 8) | y0;
+
+  *accel_z = (z1 << 8) | z0;
+
+  return ESP_OK;
+}
+
+
+//function that is going to read our gyro data from IMU
+esp_err_t icm42670_read_gyro(int16_t *gyro_x, int16_t *gyro_y,int16_t *gyro_z)
+{
+  uint8_t data[6]; // amount of data that we want to receive or read 
+  uint8_t start_reg = 0x11;
+
+
+  esp_err_t err = i2c_master_transmit_receive(icm42670_handle,&start_reg,1,data,6,1000); // dev handle, data we want to send, size of that data, data we want to receive , size of that data, and the timeout  
+
+  if (err != ESP_OK)
+  {
+    ESP_LOGE(TAG,"There was a error transmiting and receiving from gyro");
+    return err;
+  }
+//going to make easier to name so we know which we need to shift 
+  uint8_t x1 = data[0];
+  uint8_t x0 = data[1];
+  uint8_t y1 = data[2];
+  uint8_t y0 = data[3];
+  uint8_t z1 = data[4];
+  uint8_t z0 = data[5];
+
+  //creating these as pointer becuase if not we are just manipulting the copy and not the one actually stored in that pointer or at the addr 
+
+  *gyro_x = (x1 << 8) | x0;
+  *gyro_y = (y1 << 8) | y0;
+  *gyro_z = (z1 << 8) | z0;
+
+  return ESP_OK;
+
+}

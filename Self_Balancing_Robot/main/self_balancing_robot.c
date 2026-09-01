@@ -43,20 +43,9 @@ void app_main(void)
 ESP_LOGI(TAG,"ICM-42670-P configured");
 
 
-  //going to check if we actually stored our pwr mannagment
-  uint8_t power_manage = 0;
-
-  ESP_ERROR_CHECK(icm42670_get_power(&power_manage));
-
-  if(power_manage == 0x0F)
-  {
-    ESP_LOGI(TAG,"Congrats ACELL and GYRO CONFIGD ");
-  }
-  else
-{
-    ESP_LOGI(TAG,"ENEXPECTED value");
-  }
-  
+//calling our gyro config in main 
+  ESP_ERROR_CHECK(icm42670_config_gyro());
+  ESP_LOGI(TAG,"GYRO Configured");
 
   if (device_id == ICM42670_DEVICE_ID) {
     ESP_LOGI(TAG, "ICM-42670-P detected successfully!");
@@ -68,6 +57,56 @@ ESP_LOGI(TAG,"ICM-42670-P configured");
     );
 }
 
+
+  uint8_t address_check =0;
+//going to read the value within our gyro addrrr 
+ESP_ERROR_CHECK(icm42670_get_gyro_config(&address_check));
+  ESP_LOGI(TAG,"GYRO = 0x%02X",address_check);
+
+  if (address_check == 0x48)
+  {
+    ESP_LOGI(TAG,"GYRo config verified");
+
+  }
+
+  else{
+    ESP_LOGE(TAG, "error");
+  }
+  
+
+
+ESP_ERROR_CHECK(icm42670_config_accel());
+  ESP_LOGI(TAG,"accel aconfigured");
+
+uint8_t accel_addr =0;
+//going to read the value within our accel addr and see if we have the correct one 
+ESP_ERROR_CHECK(icm42670_get_accel_config(&accel_addr));
+  ESP_LOGI(TAG, "ACCEL = 0x%02X", accel_addr);
+
+  if (accel_addr == 0x48)
+  {
+    ESP_LOGI(TAG, " accel config verified");
+
+  }
+  else{
+    ESP_LOGE(TAG,"Failed");
+  }
+
+
+//this fucntion is going to try and read data from our accel 
+  int16_t accel_x=0 , accel_y=0,accel_z=0;
+  ESP_ERROR_CHECK(icm42670_read_accel(&accel_x,&accel_y,&accel_z)); //these are going in ass addreses since we defined that in our icm.c file they are pointers so they should be pointing to the addr of where we want to store them 
+
+  ESP_LOGI(TAG, "ACCEL_X val: %d \n ACEEL_Y val: %d \n ACCEL_Z val: %d \n ",accel_x,accel_y,accel_z);
+  
+
+
+
+  //function that is going to read our gyro data 
+  int16_t gyro_x = 0, gyro_y =0, gyro_z =0;
+  ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
+  ESP_LOGI(TAG,"gyro_x: %d \n gyro_y: %d \n gyro_z: %d",gyro_x,gyro_y,gyro_z);
+  
   while(1) {
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
