@@ -4,7 +4,7 @@
 #include "esp_log.h"
 #include <math.h>
 #include "driver/i2c_master.h"
-
+#include "esp_timer.h"
 #include "icm42670.h"
 
 #define ESP_SDA_GPIO 7 
@@ -99,48 +99,164 @@ ESP_ERROR_CHECK(icm42670_get_accel_config(&accel_addr));
 
 //this fucntion is going to try and read data from our accel 
   int16_t accel_x=0 , accel_y=0,accel_z=0;
-  ESP_ERROR_CHECK(icm42670_read_accel(&accel_x,&accel_y,&accel_z)); //these are going in ass addreses since we defined that in our icm.c file they are pointers so they should be pointing to the addr of where we want to store them 
-
-  ESP_LOGI(TAG, "ACCEL_X val: %d \n ACEEL_Y val: %d \n ACCEL_Z val: %d \n ",accel_x,accel_y,accel_z);
-  
 
 
   //function that is going to read our gyro data 
   int16_t gyro_x = 0, gyro_y =0, gyro_z =0;
+
+
+  // going to hold our values of the converted to actuall meaningfull data like g or degrees 
+  float gyro_conv_x = 0;
+  float gyro_conv_y= 0;
+  float gyro_conv_z = 0;
+
+
+  //going to hold values for our accel conversion
+  float accel_conv_x = 0;
+  float accel_conv_y = 0;
+  float accel_conv_z = 0;
+
+  //these are going to hold the corrected conversions with bias so that we dont have gyro drift build up as much 
+  float gyro_conv_x_corrected = 0 ;
+  float gyro_conv_y_corrected= 0;
+  float gyro_conv_z_corrected = 0;
+
+  //defining our prev_time
+  int64_t prev_time = 0;
+  
+  //gyro prediction for current loop 
+  float gyro_angle_predicted =0 ;
+
+
+// complementary filter 
+  float filtered_angle = 0;
+
+//gyro old reading 
+  float gyro_old =0;
+
+  float gyro_count =0;
+
+  float gyro_sum = 0;
+
+  float bias =0;
+
+
+
+// calibration loop that will dtermine our gyro bias  
+while(gyro_count < 1000)
+  {
+//this is going to be our start time for our 5ms gyro 200hz read
+  int64_t start_gyro_read_timer = esp_timer_get_time();
+
+
   ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
+
+
+
   ESP_LOGI(TAG,"gyro_x: %d \n gyro_y: %d \n gyro_z: %d",gyro_x,gyro_y,gyro_z);
  
 
 
-  //going to create the conversion from RAW ACCEL and GYRO data into physical units example g for accelorometer and /s for gyroscope 
-
-  float accel_conv_x = (float)accel_x / 8192;
-  float accel_conv_y = (float)accel_y / 8192;
-  float accel_conv_z = (float)accel_z / 8192;
-
-  float gyro_conv_x = (float)gyro_x / 65.5;
-  float gyro_conv_y = (float)gyro_y / 65.5;
-  float gyro_conv_z = (float)gyro_z / 65.5;
+  //going to create the conversion from GYRO data into physical units example g for accelorometer and /s for gyroscope 
+  gyro_conv_x = (float)gyro_x / 65.5;
+  gyro_conv_y = (float)gyro_y / 65.5;
+  gyro_conv_z = (float)gyro_z / 65.5;
 
 
+ printf("GYRO_X = %f \n GYRO_Y = %f \n GYRO_Z = %f\n", gyro_conv_x,gyro_conv_y,gyro_conv_z);
 
-  printf("ACCEL_X = %f \n ACCEL_Y = %f \n ACCEL_Z = %f\n", accel_conv_x, accel_conv_y, accel_conv_z); 
-  printf("GYRO_X = %f \n GYRO_Y = %f \n GYRO_Z = %f\n", gyro_conv_x,gyro_conv_y,gyro_conv_z);
+
+     gyro_sum += gyro_conv_x;
+
+int64_t total_time = 0;
+    int64_t end_gyro_read_timer =0 ;
+    while(total_time <= 5000)
+    { 
+      end_gyro_read_timer = esp_timer_get_time();
+      total_time = end_gyro_read_timer - start_gyro_read_timer;
+    }
+
+gyro_count++;
+  }
+
+bias = gyro_sum / 1000;
+
+
+  printf("this is the bias: %f\n", bias);
+
+
+prev_time = esp_timer_get_time();
+  //normal loop 
+  while(1)
+  {
+
+  //keeps track of 200hz 5ms timing 
+  int64_t working_loop_timer_start = esp_timer_get_time();
+  ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
+  ESP_ERROR_CHECK(icm42670_read_accel(&accel_x,&accel_y,&accel_z)); //these are going in ass addreses since we defined that in our icm.c file they are pointers so they should be pointing to the addr of where we want to store them 
+
+
+//converting our raw data form accel into real data 
+
+  accel_conv_x = (float)accel_x / 8192;
+  accel_conv_y = (float)accel_y / 8192;
+  accel_conv_z = (float)accel_z / 8192;
+
+
+  //going to create the conversion from GYRO data into physical units example g for accelorometer and /s for gyroscope 
+  gyro_conv_x_corrected = ((float)gyro_x / 65.5) - (bias); // only need x axis since this is our pitch angle for robot 
+
+
+  //creating the dt so the time difference between prv time and new time 
+  int64_t now = esp_timer_get_time();
+  float elapsed_time = now - prev_time;
+    prev_time = now;
+  elapsed_time = elapsed_time / 1000000;
+  float dt = 0;
+  dt = elapsed_time;
+  printf("dt: %f\n", dt);
+
+
+
+//to get our change in angle duirng dt from gyro
+  float angle_change = 0;
+    angle_change = gyro_conv_x_corrected * dt ;
+
+    float gyro_new = filtered_angle + angle_change; 
+
+    gyro_angle_predicted = gyro_new;
 
 
   //going to calculate the angle 
   float pitch_deg =0 ;
   float pitch_rad = 0;
-  pitch_rad = atan2f(-accel_x,accel_z);
+  pitch_rad = atan2f(-accel_conv_x,accel_conv_z);
   pitch_deg = (pitch_rad * 180) / M_PI;
 
 
-  printf("this is the pitch: %f\n",pitch_deg);
 
 
+    //complementary filter 
+    filtered_angle = ((0.98)*(gyro_angle_predicted)) + ((1-0.98)*(pitch_deg));
 
-    while(1) {
-    vTaskDelay(pdMS_TO_TICKS(1000));
+   /* printf("Filtered Angle: %f\n", filtered_angle);
+
+  printf("Accel pitch: %f\n",pitch_deg);
+
+
+    
+    printf("raw/converted gyro: %d\n", gyro_x);
+    printf("gyro_conv_x_corrected: %f\n", gyro_conv_x_corrected);
+
+    printf("angle we are moving at: %f\n", gyro_new);
+  
+*/
+    int64_t working_loop_timer_end=0;
+    int64_t check_total_time=0;
+    while(check_total_time < 5000)
+    {
+      working_loop_timer_end = esp_timer_get_time();
+      check_total_time = working_loop_timer_end -working_loop_timer_start;
+    }
   }
-
 }

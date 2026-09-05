@@ -1,0 +1,2479 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.elf /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 sizeI (310ESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004dc18
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug 26 2026 16:10:48[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=078a8h ( 30888) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=000178d0 vaddr=3fc89600 size=017f8h (  6136) load[0m
+[0;32mI (93) esp_image: segment 2: paddr=000190d0 vaddr=40380000 size=06f48h ( 28488) load[0m
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=132dch ( 78556) map[0m
+[0;32mI (119) esp_image: segment 4: paddr=00033304 vaddr=40386f48 size=0257ch (  9596) load[0m
+[0;32mI (121) esp_image: segment 5: paddr=00035888 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (126) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (144) cpu_start: Unicore app[0m
+[0;32mI (152) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (153) cpu_start: Pro cpu start user code[0m
+[0;32mI (153) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (155) app_init: Application information:[0m
+[0;32mI (159) app_init: Project name:     Self_Balancing_Robot[0m
+[0;32mI (164) app_init: App version:      e7fc33e-dirty[0m
+[0;32mI (168) app_init: Compile time:     Sep  1 2026 12:06:13[0m
+[0;32mI (173) app_init: ELF file SHA256:  7e32fd14d...[0m
+[0;32mI (177) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (183) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (187) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (191) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (195) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (201) heap_init: At 3FC8BD40 len 000342C0 (208 KiB): RAM[0m
+[0;32mI (206) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (212) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (218) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (224) spi_flash: detected chip: generic[0m
+[0;32mI (227) spi_flash: flash io: dio[0m
+[0;33mW (230) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (242) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (248) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (255) main_task: Started on CPU0[0m
+[0;32mI (255) main_task: Calling app_main()[0m
+[0;32mI (255) ICM42670: ICM-42670-P added to I2C bus[0m
+[0;32mI (265) BALANCER: ICM-42670-P configured[0m
+[0;32mI (265) BALANCER: GYRO Configured[0m
+[0;32mI (265) BALANCER: ICM-42670-P detected successfully![0m
+[0;32mI (275) BALANCER: GYRO = 0x48[0m
+[0;32mI (275) BALANCER: GYRo config verified[0m
+[0;32mI (275) BALANCER: accel aconfigured[0m
+[0;32mI (285) BALANCER: ACCEL = 0x48[0m
+[0;32mI (285) BALANCER:  accel config verified[0m
+[0;32mI (285) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -35
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.534351
+[0;32mI (295) BALANCER: gyro_x: -60 [0m
+ gyro_y: 22 
+ gyro_z: -24
+GYRO_X = -0.916031 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.366412
+[0;32mI (305) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+[0;32mI (315) BALANCER: gyro_x: -59 [0m
+ gyro_y: 13 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.442748
+[0;32mI (335) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -37
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.564885
+[0;32mI (345) BALANCER: gyro_x: -56 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (355) BALANCER: gyro_x: -55 [0m
+ gyro_y: 21 
+ gyro_z: -26
+GYRO_X = -0.839695 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.396947
+[0;32mI (365) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (375) BALANCER: gyro_x: -56 [0m
+ gyro_y: 16 
+ gyro_z: -25
+GYRO_X = -0.854962 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.381679
+[0;32mI (385) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (395) BALANCER: gyro_x: -61 [0m
+ gyro_y: 15 
+ gyro_z: -35
+GYRO_X = -0.931298 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.534351
+[0;32mI (405) BALANCER: gyro_x: -65 [0m
+ gyro_y: 19 
+ gyro_z: -29
+GYRO_X = -0.992366 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.442748
+[0;32mI (415) BALANCER: gyro_x: -55 [0m
+ gyro_y: 17 
+ gyro_z: -20
+GYRO_X = -0.839695 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.305344
+[0;32mI (425) BALANCER: gyro_x: -61 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.931298 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (435) BALANCER: gyro_x: -61 [0m
+ gyro_y: 19 
+ gyro_z: -25
+GYRO_X = -0.931298 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.381679
+[0;32mI (445) BALANCER: gyro_x: -59 [0m
+ gyro_y: 20 
+ gyro_z: -36
+GYRO_X = -0.900763 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.549618
+[0;32mI (455) BALANCER: gyro_x: -58 [0m
+ gyro_y: 12 
+ gyro_z: -36
+GYRO_X = -0.885496 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.549618
+[0;32mI (465) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (475) BALANCER: gyro_x: -62 [0m
+ gyro_y: 19 
+ gyro_z: -26
+GYRO_X = -0.946565 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.396947
+[0;32mI (495) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (505) BALANCER: gyro_x: -61 [0m
+ gyro_y: 18 
+ gyro_z: -27
+GYRO_X = -0.931298 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.412214
+[0;32mI (515) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -24
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.366412
+[0;32mI (525) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+[0;32mI (535) BALANCER: gyro_x: -57 [0m
+ gyro_y: 14 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+[0;32mI (545) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -34
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.519084
+[0;32mI (555) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -33
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.503817
+[0;32mI (565) BALANCER: gyro_x: -61 [0m
+ gyro_y: 14 
+ gyro_z: -22
+GYRO_X = -0.931298 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.335878
+[0;32mI (575) BALANCER: gyro_x: -59 [0m
+ gyro_y: 13 
+ gyro_z: -24
+GYRO_X = -0.900763 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.366412
+[0;32mI (585) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (595) BALANCER: gyro_x: -55 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (605) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (615) BALANCER: gyro_x: -56 [0m
+ gyro_y: 20 
+ gyro_z: -32
+GYRO_X = -0.854962 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.488550
+[0;32mI (625) BALANCER: gyro_x: -61 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.931298 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (635) BALANCER: gyro_x: -60 [0m
+ gyro_y: 19 
+ gyro_z: -25
+GYRO_X = -0.916031 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.381679
+[0;32mI (655) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (665) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (675) BALANCER: gyro_x: -61 [0m
+ gyro_y: 22 
+ gyro_z: -27
+GYRO_X = -0.931298 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.412214
+[0;32mI (685) BALANCER: gyro_x: -60 [0m
+ gyro_y: 15 
+ gyro_z: -31
+GYRO_X = -0.916031 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.473282
+[0;32mI (695) BALANCER: gyro_x: -58 [0m
+ gyro_y: 14 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.412214
+[0;32mI (705) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (715) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -27
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.412214
+[0;32mI (725) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -32
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.488550
+[0;32mI (735) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.503817
+[0;32mI (745) BALANCER: gyro_x: -62 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.946565 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (755) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (765) BALANCER: gyro_x: -62 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.946565 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (775) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (785) BALANCER: gyro_x: -63 [0m
+ gyro_y: 17 
+ gyro_z: -36
+GYRO_X = -0.961832 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.549618
+[0;32mI (805) BALANCER: gyro_x: -53 [0m
+ gyro_y: 15 
+ gyro_z: -27
+GYRO_X = -0.809160 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.412214
+[0;32mI (815) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.427481
+[0;32mI (825) BALANCER: gyro_x: -59 [0m
+ gyro_y: 13 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.427481
+[0;32mI (835) BALANCER: gyro_x: -58 [0m
+ gyro_y: 14 
+ gyro_z: -32
+GYRO_X = -0.885496 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.488550
+[0;32mI (845) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -22
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.335878
+[0;32mI (855) BALANCER: gyro_x: -58 [0m
+ gyro_y: 14 
+ gyro_z: -29
+GYRO_X = -0.885496 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+[0;32mI (865) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -34
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.519084
+[0;32mI (875) BALANCER: gyro_x: -55 [0m
+ gyro_y: 13 
+ gyro_z: -29
+GYRO_X = -0.839695 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.442748
+[0;32mI (885) BALANCER: gyro_x: -62 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.946565 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (895) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -32
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.488550
+[0;32mI (905) BALANCER: gyro_x: -61 [0m
+ gyro_y: 14 
+ gyro_z: -24
+GYRO_X = -0.931298 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.366412
+[0;32mI (915) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (925) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -24
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.366412
+[0;32mI (935) BALANCER: gyro_x: -53 [0m
+ gyro_y: 12 
+ gyro_z: -31
+GYRO_X = -0.809160 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.473282
+[0;32mI (945) BALANCER: gyro_x: -50 [0m
+ gyro_y: 16 
+ gyro_z: -26
+GYRO_X = -0.763359 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+[0;32mI (965) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.427481
+[0;32mI (975) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (985) BALANCER: gyro_x: -57 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.870229 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (995) BALANCER: gyro_x: -62 [0m
+ gyro_y: 18 
+ gyro_z: -29
+GYRO_X = -0.946565 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+[0;32mI (1005) BALANCER: gyro_x: -54 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.824427 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (1015) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -29
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+[0;32mI (1025) BALANCER: gyro_x: -53 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.809160 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (1035) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+[0;32mI (1045) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.473282
+[0;32mI (1055) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (1065) BALANCER: gyro_x: -54 [0m
+ gyro_y: 15 
+ gyro_z: -35
+GYRO_X = -0.824427 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.534351
+[0;32mI (1075) BALANCER: gyro_x: -55 [0m
+ gyro_y: 14 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.458015
+[0;32mI (1085) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (1095) BALANCER: gyro_x: -54 [0m
+ gyro_y: 17 
+ gyro_z: -35
+GYRO_X = -0.824427 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.534351
+[0;32mI (1115) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.442748
+[0;32mI (1125) BALANCER: gyro_x: -56 [0m
+ gyro_y: 16 
+ gyro_z: -25
+GYRO_X = -0.854962 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.381679
+[0;32mI (1135) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.412214
+[0;32mI (1145) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -29
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+[0;32mI (1155) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.473282
+[0;32mI (1165) BALANCER: gyro_x: -59 [0m
+ gyro_y: 14 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.396947
+[0;32mI (1175) BALANCER: gyro_x: -60 [0m
+ gyro_y: 19 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.427481
+[0;32mI (1185) BALANCER: gyro_x: -63 [0m
+ gyro_y: 21 
+ gyro_z: -37
+GYRO_X = -0.961832 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.564885
+[0;32mI (1195) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -27
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.412214
+[0;32mI (1205) BALANCER: gyro_x: -57 [0m
+ gyro_y: 23 
+ gyro_z: -34
+GYRO_X = -0.870229 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.519084
+[0;32mI (1215) BALANCER: gyro_x: -62 [0m
+ gyro_y: 24 
+ gyro_z: -32
+GYRO_X = -0.946565 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.488550
+[0;32mI (1225) BALANCER: gyro_x: -55 [0m
+ gyro_y: 18 
+ gyro_z: -34
+GYRO_X = -0.839695 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.519084
+[0;32mI (1235) BALANCER: gyro_x: -63 [0m
+ gyro_y: 23 
+ gyro_z: -33
+GYRO_X = -0.961832 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.503817
+[0;32mI (1255) BALANCER: gyro_x: -60 [0m
+ gyro_y: 14 
+ gyro_z: -27
+GYRO_X = -0.916031 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.412214
+[0;32mI (1265) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (1275) BALANCER: gyro_x: -61 [0m
+ gyro_y: 13 
+ gyro_z: -28
+GYRO_X = -0.931298 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.427481
+[0;32mI (1285) BALANCER: gyro_x: -56 [0m
+ gyro_y: 21 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.458015
+[0;32mI (1295) BALANCER: gyro_x: -55 [0m
+ gyro_y: 11 
+ gyro_z: -27
+GYRO_X = -0.839695 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.412214
+[0;32mI (1305) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.458015
+[0;32mI (1315) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -29
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.442748
+[0;32mI (1325) BALANCER: gyro_x: -56 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (1335) BALANCER: gyro_x: -55 [0m
+ gyro_y: 15 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.458015
+[0;32mI (1345) BALANCER: gyro_x: -59 [0m
+ gyro_y: 12 
+ gyro_z: -34
+GYRO_X = -0.900763 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.519084
+[0;32mI (1355) BALANCER: gyro_x: -61 [0m
+ gyro_y: 24 
+ gyro_z: -31
+GYRO_X = -0.931298 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.473282
+[0;32mI (1365) BALANCER: gyro_x: -59 [0m
+ gyro_y: 15 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.458015
+[0;32mI (1375) BALANCER: gyro_x: -57 [0m
+ gyro_y: 14 
+ gyro_z: -23
+GYRO_X = -0.870229 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.351145
+[0;32mI (1395) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.473282
+[0;32mI (1405) BALANCER: gyro_x: -61 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.931298 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (1415) BALANCER: gyro_x: -60 [0m
+ gyro_y: 23 
+ gyro_z: -36
+GYRO_X = -0.916031 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.549618
+[0;32mI (1425) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (1435) BALANCER: gyro_x: -57 [0m
+ gyro_y: 12 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.473282
+[0;32mI (1445) BALANCER: gyro_x: -60 [0m
+ gyro_y: 19 
+ gyro_z: -26
+GYRO_X = -0.916031 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.396947
+[0;32mI (1455) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (1465) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.442748
+[0;32mI (1475) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -33
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.503817
+[0;32mI (1485) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -32
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.488550
+[0;32mI (1495) BALANCER: gyro_x: -57 [0m
+ gyro_y: 18 
+ gyro_z: -24
+GYRO_X = -0.870229 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.366412
+[0;32mI (1505) BALANCER: gyro_x: -51 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.778626 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (1515) BALANCER: gyro_x: -53 [0m
+ gyro_y: 23 
+ gyro_z: -37
+GYRO_X = -0.809160 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.564885
+[0;32mI (1535) BALANCER: gyro_x: -60 [0m
+ gyro_y: 11 
+ gyro_z: -31
+GYRO_X = -0.916031 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.473282
+[0;32mI (1545) BALANCER: gyro_x: -53 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.809160 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (1555) BALANCER: gyro_x: -54 [0m
+ gyro_y: 13 
+ gyro_z: -36
+GYRO_X = -0.824427 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.549618
+[0;32mI (1565) BALANCER: gyro_x: -52 [0m
+ gyro_y: 14 
+ gyro_z: -25
+GYRO_X = -0.793893 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.381679
+[0;32mI (1575) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -37
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.564885
+[0;32mI (1585) BALANCER: gyro_x: -61 [0m
+ gyro_y: 20 
+ gyro_z: -26
+GYRO_X = -0.931298 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.396947
+[0;32mI (1595) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (1605) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -25
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.381679
+[0;32mI (1615) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (1625) BALANCER: gyro_x: -56 [0m
+ gyro_y: 16 
+ gyro_z: -27
+GYRO_X = -0.854962 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.412214
+[0;32mI (1635) BALANCER: gyro_x: -51 [0m
+ gyro_y: 16 
+ gyro_z: -25
+GYRO_X = -0.778626 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.381679
+[0;32mI (1645) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -29
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.442748
+[0;32mI (1655) BALANCER: gyro_x: -55 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.839695 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (1675) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -29
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.442748
+[0;32mI (1685) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.473282
+[0;32mI (1695) BALANCER: gyro_x: -52 [0m
+ gyro_y: 19 
+ gyro_z: -24
+GYRO_X = -0.793893 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.366412
+[0;32mI (1705) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (1715) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -35
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.534351
+[0;32mI (1725) BALANCER: gyro_x: -61 [0m
+ gyro_y: 17 
+ gyro_z: -28
+GYRO_X = -0.931298 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.427481
+[0;32mI (1735) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (1745) BALANCER: gyro_x: -56 [0m
+ gyro_y: 20 
+ gyro_z: -28
+GYRO_X = -0.854962 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.427481
+[0;32mI (1755) BALANCER: gyro_x: -55 [0m
+ gyro_y: 15 
+ gyro_z: -26
+GYRO_X = -0.839695 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.396947
+[0;32mI (1765) BALANCER: gyro_x: -64 [0m
+ gyro_y: 20 
+ gyro_z: -29
+GYRO_X = -0.977099 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.442748
+[0;32mI (1775) BALANCER: gyro_x: -63 [0m
+ gyro_y: 23 
+ gyro_z: -25
+GYRO_X = -0.961832 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.381679
+[0;32mI (1785) BALANCER: gyro_x: -62 [0m
+ gyro_y: 16 
+ gyro_z: -27
+GYRO_X = -0.946565 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.412214
+[0;32mI (1795) BALANCER: gyro_x: -59 [0m
+ gyro_y: 14 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+[0;32mI (1815) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.442748
+[0;32mI (1825) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -24
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.366412
+[0;32mI (1835) BALANCER: gyro_x: -59 [0m
+ gyro_y: 14 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.458015
+[0;32mI (1845) BALANCER: gyro_x: -60 [0m
+ gyro_y: 21 
+ gyro_z: -29
+GYRO_X = -0.916031 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.442748
+[0;32mI (1855) BALANCER: gyro_x: -61 [0m
+ gyro_y: 26 
+ gyro_z: -30
+GYRO_X = -0.931298 
+ GYRO_Y = 0.396947 
+ GYRO_Z = -0.458015
+[0;32mI (1865) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -24
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.366412
+[0;32mI (1875) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.473282
+[0;32mI (1885) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (1895) BALANCER: gyro_x: -61 [0m
+ gyro_y: 10 
+ gyro_z: -36
+GYRO_X = -0.931298 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -0.549618
+[0;32mI (1905) BALANCER: gyro_x: -54 [0m
+ gyro_y: 17 
+ gyro_z: -26
+GYRO_X = -0.824427 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+[0;32mI (1915) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (1925) BALANCER: gyro_x: -57 [0m
+ gyro_y: 18 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+[0;32mI (1935) BALANCER: gyro_x: -62 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.946565 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (1955) BALANCER: gyro_x: -54 [0m
+ gyro_y: 16 
+ gyro_z: -33
+GYRO_X = -0.824427 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.503817
+[0;32mI (1965) BALANCER: gyro_x: -54 [0m
+ gyro_y: 11 
+ gyro_z: -24
+GYRO_X = -0.824427 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.366412
+[0;32mI (1975) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.473282
+[0;32mI (1985) BALANCER: gyro_x: -59 [0m
+ gyro_y: 22 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.442748
+[0;32mI (1995) BALANCER: gyro_x: -59 [0m
+ gyro_y: 23 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.412214
+[0;32mI (2005) BALANCER: gyro_x: -57 [0m
+ gyro_y: 23 
+ gyro_z: -32
+GYRO_X = -0.870229 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.488550
+[0;32mI (2015) BALANCER: gyro_x: -61 [0m
+ gyro_y: 15 
+ gyro_z: -29
+GYRO_X = -0.931298 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.442748
+[0;32mI (2025) BALANCER: gyro_x: -56 [0m
+ gyro_y: 22 
+ gyro_z: -28
+GYRO_X = -0.854962 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.427481
+[0;32mI (2035) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (2045) BALANCER: gyro_x: -60 [0m
+ gyro_y: 22 
+ gyro_z: -27
+GYRO_X = -0.916031 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.412214
+[0;32mI (2055) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -32
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.488550
+[0;32mI (2065) BALANCER: gyro_x: -59 [0m
+ gyro_y: 14 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.427481
+[0;32mI (2075) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -26
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+[0;32mI (2085) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (2105) BALANCER: gyro_x: -57 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.870229 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (2115) BALANCER: gyro_x: -55 [0m
+ gyro_y: 15 
+ gyro_z: -32
+GYRO_X = -0.839695 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.488550
+[0;32mI (2125) BALANCER: gyro_x: -60 [0m
+ gyro_y: 22 
+ gyro_z: -24
+GYRO_X = -0.916031 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.366412
+[0;32mI (2135) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -32
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.488550
+[0;32mI (2145) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -32
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.488550
+[0;32mI (2155) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -26
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.396947
+[0;32mI (2165) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -29
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+[0;32mI (2175) BALANCER: gyro_x: -62 [0m
+ gyro_y: 14 
+ gyro_z: -27
+GYRO_X = -0.946565 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.412214
+[0;32mI (2185) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+[0;32mI (2195) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -32
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.488550
+[0;32mI (2205) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -32
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.488550
+[0;32mI (2215) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+[0;32mI (2225) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -32
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.488550
+[0;32mI (2245) BALANCER: gyro_x: -62 [0m
+ gyro_y: 22 
+ gyro_z: -22
+GYRO_X = -0.946565 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.335878
+[0;32mI (2255) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -37
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.564885
+[0;32mI (2265) BALANCER: gyro_x: -55 [0m
+ gyro_y: 21 
+ gyro_z: -29
+GYRO_X = -0.839695 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.442748
+[0;32mI (2275) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (2285) BALANCER: gyro_x: -60 [0m
+ gyro_y: 12 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.458015
+[0;32mI (2295) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (2305) BALANCER: gyro_x: -59 [0m
+ gyro_y: 20 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.427481
+[0;32mI (2315) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.473282
+[0;32mI (2325) BALANCER: gyro_x: -60 [0m
+ gyro_y: 21 
+ gyro_z: -26
+GYRO_X = -0.916031 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.396947
+[0;32mI (2335) BALANCER: gyro_x: -56 [0m
+ gyro_y: 12 
+ gyro_z: -23
+GYRO_X = -0.854962 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.351145
+[0;32mI (2345) BALANCER: gyro_x: -61 [0m
+ gyro_y: 15 
+ gyro_z: -33
+GYRO_X = -0.931298 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.503817
+[0;32mI (2355) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (2365) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (2385) BALANCER: gyro_x: -58 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.885496 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (2395) BALANCER: gyro_x: -62 [0m
+ gyro_y: 12 
+ gyro_z: -32
+GYRO_X = -0.946565 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.488550
+[0;32mI (2405) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (2415) BALANCER: gyro_x: -60 [0m
+ gyro_y: 12 
+ gyro_z: -35
+GYRO_X = -0.916031 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.534351
+[0;32mI (2425) BALANCER: gyro_x: -61 [0m
+ gyro_y: 11 
+ gyro_z: -29
+GYRO_X = -0.931298 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.442748
+[0;32mI (2435) BALANCER: gyro_x: -60 [0m
+ gyro_y: 15 
+ gyro_z: -32
+GYRO_X = -0.916031 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.488550
+[0;32mI (2445) BALANCER: gyro_x: -59 [0m
+ gyro_y: 10 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -0.412214
+[0;32mI (2455) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.427481
+[0;32mI (2465) BALANCER: gyro_x: -58 [0m
+ gyro_y: 22 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.473282
+[0;32mI (2475) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (2485) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.396947
+[0;32mI (2495) BALANCER: gyro_x: -59 [0m
+ gyro_y: 15 
+ gyro_z: -21
+GYRO_X = -0.900763 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.320611
+[0;32mI (2505) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -34
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.519084
+[0;32mI (2525) BALANCER: gyro_x: -56 [0m
+ gyro_y: 12 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.503817
+[0;32mI (2535) BALANCER: gyro_x: -63 [0m
+ gyro_y: 16 
+ gyro_z: -20
+GYRO_X = -0.961832 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.305344
+[0;32mI (2545) BALANCER: gyro_x: -60 [0m
+ gyro_y: 19 
+ gyro_z: -25
+GYRO_X = -0.916031 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.381679
+[0;32mI (2555) BALANCER: gyro_x: -62 [0m
+ gyro_y: 20 
+ gyro_z: -24
+GYRO_X = -0.946565 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.366412
+[0;32mI (2565) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (2575) BALANCER: gyro_x: -62 [0m
+ gyro_y: 15 
+ gyro_z: -34
+GYRO_X = -0.946565 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.519084
+[0;32mI (2585) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (2595) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -28
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.427481
+[0;32mI (2605) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -28
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.427481
+[0;32mI (2615) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (2625) BALANCER: gyro_x: -59 [0m
+ gyro_y: 15 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.427481
+[0;32mI (2635) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.473282
+[0;32mI (2645) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (2665) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (2675) BALANCER: gyro_x: -56 [0m
+ gyro_y: 19 
+ gyro_z: -26
+GYRO_X = -0.854962 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.396947
+[0;32mI (2685) BALANCER: gyro_x: -64 [0m
+ gyro_y: 21 
+ gyro_z: -30
+GYRO_X = -0.977099 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.458015
+[0;32mI (2695) BALANCER: gyro_x: -63 [0m
+ gyro_y: 20 
+ gyro_z: -25
+GYRO_X = -0.961832 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.381679
+[0;32mI (2705) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.412214
+[0;32mI (2715) BALANCER: gyro_x: -60 [0m
+ gyro_y: 15 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.427481
+[0;32mI (2725) BALANCER: gyro_x: -63 [0m
+ gyro_y: 19 
+ gyro_z: -32
+GYRO_X = -0.961832 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.488550
+[0;32mI (2735) BALANCER: gyro_x: -56 [0m
+ gyro_y: 24 
+ gyro_z: -27
+GYRO_X = -0.854962 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.412214
+[0;32mI (2745) BALANCER: gyro_x: -60 [0m
+ gyro_y: 14 
+ gyro_z: -23
+GYRO_X = -0.916031 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.351145
+[0;32mI (2755) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (2765) BALANCER: gyro_x: -61 [0m
+ gyro_y: 13 
+ gyro_z: -29
+GYRO_X = -0.931298 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.442748
+[0;32mI (2775) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+[0;32mI (2785) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.473282
+[0;32mI (2805) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (2815) BALANCER: gyro_x: -56 [0m
+ gyro_y: 24 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.473282
+[0;32mI (2825) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (2835) BALANCER: gyro_x: -61 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.931298 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (2845) BALANCER: gyro_x: -54 [0m
+ gyro_y: 19 
+ gyro_z: -34
+GYRO_X = -0.824427 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.519084
+[0;32mI (2855) BALANCER: gyro_x: -62 [0m
+ gyro_y: 20 
+ gyro_z: -30
+GYRO_X = -0.946565 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.458015
+[0;32mI (2865) BALANCER: gyro_x: -59 [0m
+ gyro_y: 24 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.412214
+[0;32mI (2875) BALANCER: gyro_x: -51 [0m
+ gyro_y: 18 
+ gyro_z: -29
+GYRO_X = -0.778626 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+[0;32mI (2885) BALANCER: gyro_x: -53 [0m
+ gyro_y: 13 
+ gyro_z: -27
+GYRO_X = -0.809160 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.412214
+[0;32mI (2895) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (2905) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (2915) BALANCER: gyro_x: -53 [0m
+ gyro_y: 14 
+ gyro_z: -27
+GYRO_X = -0.809160 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.412214
+[0;32mI (2925) BALANCER: gyro_x: -57 [0m
+ gyro_y: 11 
+ gyro_z: -25
+GYRO_X = -0.870229 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.381679
+[0;32mI (2945) BALANCER: gyro_x: -60 [0m
+ gyro_y: 21 
+ gyro_z: -33
+GYRO_X = -0.916031 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.503817
+[0;32mI (2955) BALANCER: gyro_x: -54 [0m
+ gyro_y: 20 
+ gyro_z: -30
+GYRO_X = -0.824427 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.458015
+[0;32mI (2965) BALANCER: gyro_x: -56 [0m
+ gyro_y: 12 
+ gyro_z: -37
+GYRO_X = -0.854962 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.564885
+[0;32mI (2975) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (2985) BALANCER: gyro_x: -58 [0m
+ gyro_y: 24 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.412214
+[0;32mI (2995) BALANCER: gyro_x: -63 [0m
+ gyro_y: 20 
+ gyro_z: -28
+GYRO_X = -0.961832 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.427481
+[0;32mI (3005) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -26
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+[0;32mI (3015) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (3025) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -34
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.519084
+[0;32mI (3035) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (3045) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -34
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.519084
+[0;32mI (3055) BALANCER: gyro_x: -59 [0m
+ gyro_y: 22 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.427481
+[0;32mI (3065) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (3085) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -28
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.427481
+[0;32mI (3095) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -30
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+[0;32mI (3105) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -34
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.519084
+[0;32mI (3115) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+[0;32mI (3125) BALANCER: gyro_x: -61 [0m
+ gyro_y: 21 
+ gyro_z: -27
+GYRO_X = -0.931298 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.412214
+[0;32mI (3135) BALANCER: gyro_x: -55 [0m
+ gyro_y: 15 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.458015
+[0;32mI (3145) BALANCER: gyro_x: -62 [0m
+ gyro_y: 16 
+ gyro_z: -28
+GYRO_X = -0.946565 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+[0;32mI (3155) BALANCER: gyro_x: -54 [0m
+ gyro_y: 15 
+ gyro_z: -31
+GYRO_X = -0.824427 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.473282
+[0;32mI (3165) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -33
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.503817
+[0;32mI (3175) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -35
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.534351
+[0;32mI (3185) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -23
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.351145
+[0;32mI (3195) BALANCER: gyro_x: -59 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (3205) BALANCER: gyro_x: -56 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (3225) BALANCER: gyro_x: -57 [0m
+ gyro_y: 13 
+ gyro_z: -28
+GYRO_X = -0.870229 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.427481
+[0;32mI (3235) BALANCER: gyro_x: -61 [0m
+ gyro_y: 16 
+ gyro_z: -34
+GYRO_X = -0.931298 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.519084
+[0;32mI (3245) BALANCER: gyro_x: -54 [0m
+ gyro_y: 11 
+ gyro_z: -31
+GYRO_X = -0.824427 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.473282
+[0;32mI (3255) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -34
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.519084
+[0;32mI (3265) BALANCER: gyro_x: -58 [0m
+ gyro_y: 22 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.427481
+[0;32mI (3275) BALANCER: gyro_x: -61 [0m
+ gyro_y: 18 
+ gyro_z: -27
+GYRO_X = -0.931298 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.412214
+[0;32mI (3285) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+[0;32mI (3295) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+[0;32mI (3305) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.458015
+[0;32mI (3315) BALANCER: gyro_x: -58 [0m
+ gyro_y: 25 
+ gyro_z: -29
+GYRO_X = -0.885496 
+ GYRO_Y = 0.381679 
+ GYRO_Z = -0.442748
+[0;32mI (3325) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (3335) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (3345) BALANCER: gyro_x: -63 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.961832 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (3355) BALANCER: gyro_x: -57 [0m
+ gyro_y: 13 
+ gyro_z: -25
+GYRO_X = -0.870229 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.381679
+[0;32mI (3375) BALANCER: gyro_x: -55 [0m
+ gyro_y: 14 
+ gyro_z: -33
+GYRO_X = -0.839695 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.503817
+[0;32mI (3385) BALANCER: gyro_x: -50 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.763359 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (3395) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -32
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.488550
+[0;32mI (3405) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -25
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.381679
+[0;32mI (3415) BALANCER: gyro_x: -61 [0m
+ gyro_y: 25 
+ gyro_z: -32
+GYRO_X = -0.931298 
+ GYRO_Y = 0.381679 
+ GYRO_Z = -0.488550
+[0;32mI (3425) BALANCER: gyro_x: -61 [0m
+ gyro_y: 16 
+ gyro_z: -25
+GYRO_X = -0.931298 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.381679
+[0;32mI (3435) BALANCER: gyro_x: -65 [0m
+ gyro_y: 18 
+ gyro_z: -39
+GYRO_X = -0.992366 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.595420
+[0;32mI (3445) BALANCER: gyro_x: -62 [0m
+ gyro_y: 12 
+ gyro_z: -32
+GYRO_X = -0.946565 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.488550
+[0;32mI (3455) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.427481
+[0;32mI (3465) BALANCER: gyro_x: -59 [0m
+ gyro_y: 15 
+ gyro_z: -25
+GYRO_X = -0.900763 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.381679
+[0;32mI (3475) BALANCER: gyro_x: -56 [0m
+ gyro_y: 21 
+ gyro_z: -32
+GYRO_X = -0.854962 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.488550
+[0;32mI (3485) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -29
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.442748
+[0;32mI (3495) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -26
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+[0;32mI (3515) BALANCER: gyro_x: -53 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.809160 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (3525) BALANCER: gyro_x: -61 [0m
+ gyro_y: 15 
+ gyro_z: -33
+GYRO_X = -0.931298 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.503817
+[0;32mI (3535) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -32
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.488550
+[0;32mI (3545) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -33
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.503817
+[0;32mI (3555) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -31
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.473282
+[0;32mI (3565) BALANCER: gyro_x: -56 [0m
+ gyro_y: 26 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.396947 
+ GYRO_Z = -0.473282
+[0;32mI (3575) BALANCER: gyro_x: -60 [0m
+ gyro_y: 14 
+ gyro_z: -29
+GYRO_X = -0.916031 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+[0;32mI (3585) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -32
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.488550
+[0;32mI (3595) BALANCER: gyro_x: -64 [0m
+ gyro_y: 15 
+ gyro_z: -25
+GYRO_X = -0.977099 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.381679
+[0;32mI (3605) BALANCER: gyro_x: -59 [0m
+ gyro_y: 13 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.396947
+[0;32mI (3615) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (3625) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (3635) BALANCER: gyro_x: -54 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.824427 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (3655) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (3665) BALANCER: gyro_x: -60 [0m
+ gyro_y: 11 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.427481
+[0;32mI (3675) BALANCER: gyro_x: -57 [0m
+ gyro_y: 23 
+ gyro_z: -22
+GYRO_X = -0.870229 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.335878
+[0;32mI (3685) BALANCER: gyro_x: -62 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.946565 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (3695) BALANCER: gyro_x: -58 [0m
+ gyro_y: 22 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.458015
+[0;32mI (3705) BALANCER: gyro_x: -60 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.916031 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (3715) BALANCER: gyro_x: -57 [0m
+ gyro_y: 12 
+ gyro_z: -26
+GYRO_X = -0.870229 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.396947
+[0;32mI (3725) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (3735) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -32
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.488550
+[0;32mI (3745) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+[0;32mI (3755) BALANCER: gyro_x: -57 [0m
+ gyro_y: 13 
+ gyro_z: -33
+GYRO_X = -0.870229 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.503817
+[0;32mI (3765) BALANCER: gyro_x: -60 [0m
+ gyro_y: 12 
+ gyro_z: -37
+GYRO_X = -0.916031 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.564885
+[0;32mI (3775) BALANCER: gyro_x: -54 [0m
+ gyro_y: 16 
+ gyro_z: -28
+GYRO_X = -0.824427 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+[0;32mI (3795) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -34
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.519084
+[0;32mI (3805) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.458015
+[0;32mI (3815) BALANCER: gyro_x: -57 [0m
+ gyro_y: 9 
+ gyro_z: -27
+GYRO_X = -0.870229 
+ GYRO_Y = 0.137405 
+ GYRO_Z = -0.412214
+[0;32mI (3825) BALANCER: gyro_x: -59 [0m
+ gyro_y: 10 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -0.427481
+[0;32mI (3835) BALANCER: gyro_x: -63 [0m
+ gyro_y: 15 
+ gyro_z: -29
+GYRO_X = -0.961832 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.442748
+[0;32mI (3845) BALANCER: gyro_x: -55 [0m
+ gyro_y: 13 
+ gyro_z: -25
+GYRO_X = -0.839695 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.381679
+[0;32mI (3855) BALANCER: gyro_x: -54 [0m
+ gyro_y: 13 
+ gyro_z: -29
+GYRO_X = -0.824427 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.442748
+[0;32mI (3865) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (3875) BALANCER: gyro_x: -53 [0m
+ gyro_y: 16 
+ gyro_z: -22
+GYRO_X = -0.809160 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.335878
+[0;32mI (3885) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -27
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.412214
+[0;32mI (3895) BALANCER: gyro_x: -58 [0m
+ gyro_y: 11 
+ gyro_z: -32
+GYRO_X = -0.885496 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.488550
+[0;32mI (3905) BALANCER: gyro_x: -60 [0m
+ gyro_y: 12 
+ gyro_z: -28
+GYRO_X = -0.916031 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.427481
+[0;32mI (3915) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -30
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+[0;32mI (3935) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.473282
+[0;32mI (3945) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -27
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.412214
+[0;32mI (3955) BALANCER: gyro_x: -57 [0m
+ gyro_y: 12 
+ gyro_z: -33
+GYRO_X = -0.870229 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.503817
+[0;32mI (3965) BALANCER: gyro_x: -56 [0m
+ gyro_y: 12 
+ gyro_z: -32
+GYRO_X = -0.854962 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.488550
+[0;32mI (3975) BALANCER: gyro_x: -61 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.931298 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (3985) BALANCER: gyro_x: -51 [0m
+ gyro_y: 15 
+ gyro_z: -24
+GYRO_X = -0.778626 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.366412
+[0;32mI (3995) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -26
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.396947
+[0;32mI (4005) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+[0;32mI (4015) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -29
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.442748
+[0;32mI (4025) BALANCER: gyro_x: -55 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.839695 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (4035) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (4045) BALANCER: gyro_x: -54 [0m
+ gyro_y: 15 
+ gyro_z: -31
+GYRO_X = -0.824427 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.473282
+[0;32mI (4055) BALANCER: gyro_x: -50 [0m
+ gyro_y: 24 
+ gyro_z: -35
+GYRO_X = -0.763359 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.534351
+[0;32mI (4075) BALANCER: gyro_x: -65 [0m
+ gyro_y: 17 
+ gyro_z: -33
+GYRO_X = -0.992366 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.503817
+[0;32mI (4085) BALANCER: gyro_x: -64 [0m
+ gyro_y: 22 
+ gyro_z: -30
+GYRO_X = -0.977099 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.458015
+[0;32mI (4095) BALANCER: gyro_x: -53 [0m
+ gyro_y: 18 
+ gyro_z: -33
+GYRO_X = -0.809160 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.503817
+[0;32mI (4105) BALANCER: gyro_x: -62 [0m
+ gyro_y: 18 
+ gyro_z: -28
+GYRO_X = -0.946565 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.427481
+[0;32mI (4115) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+[0;32mI (4125) BALANCER: gyro_x: -59 [0m
+ gyro_y: 21 
+ gyro_z: -23
+GYRO_X = -0.900763 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.351145
+[0;32mI (4135) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -25
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.381679
+[0;32mI (4145) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -27
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+[0;32mI (4155) BALANCER: gyro_x: -62 [0m
+ gyro_y: 21 
+ gyro_z: -24
+GYRO_X = -0.946565 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.366412
+[0;32mI (4165) BALANCER: gyro_x: -58 [0m
+ gyro_y: 21 
+ gyro_z: -22
+GYRO_X = -0.885496 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.335878
+[0;32mI (4175) BALANCER: gyro_x: -56 [0m
+ gyro_y: 20 
+ gyro_z: -26
+GYRO_X = -0.854962 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.396947
+[0;32mI (4185) BALANCER: gyro_x: -63 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.961832 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (4195) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -31
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+[0;32mI (4215) BALANCER: gyro_x: -59 [0m
+ gyro_y: 23 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.427481
+[0;32mI (4225) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -22
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.335878
+[0;32mI (4235) BALANCER: gyro_x: -52 [0m
+ gyro_y: 21 
+ gyro_z: -31
+GYRO_X = -0.793893 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.473282
+[0;32mI (4245) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (4255) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -28
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.427481
+[0;32mI (4265) BALANCER: gyro_x: -55 [0m
+ gyro_y: 20 
+ gyro_z: -34
+GYRO_X = -0.839695 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.519084
+[0;32mI (4275) BALANCER: gyro_x: -57 [0m
+ gyro_y: 18 
+ gyro_z: -30
+GYRO_X = -0.870229 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+[0;32mI (4285) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -31
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.473282
+[0;32mI (4295) BALANCER: gyro_x: -57 [0m
+ gyro_y: 22 
+ gyro_z: -27
+GYRO_X = -0.870229 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.412214
+[0;32mI (4305) BALANCER: gyro_x: -58 [0m
+ gyro_y: 21 
+ gyro_z: -34
+GYRO_X = -0.885496 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.519084
+[0;32mI (4315) BALANCER: gyro_x: -59 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.900763 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (4325) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -22
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.335878
+[0;32mI (4335) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -24
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.366412
+[0;32mI (4355) BALANCER: gyro_x: -63 [0m
+ gyro_y: 19 
+ gyro_z: -31
+GYRO_X = -0.961832 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+[0;32mI (4365) BALANCER: gyro_x: -59 [0m
+ gyro_y: 19 
+ gyro_z: -26
+GYRO_X = -0.900763 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.396947
+[0;32mI (4375) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (4385) BALANCER: gyro_x: -56 [0m
+ gyro_y: 20 
+ gyro_z: -31
+GYRO_X = -0.854962 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.473282
+[0;32mI (4395) BALANCER: gyro_x: -59 [0m
+ gyro_y: 14 
+ gyro_z: -34
+GYRO_X = -0.900763 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.519084
+[0;32mI (4405) BALANCER: gyro_x: -59 [0m
+ gyro_y: 21 
+ gyro_z: -28
+GYRO_X = -0.900763 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.427481
+[0;32mI (4415) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -33
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.503817
+[0;32mI (4425) BALANCER: gyro_x: -54 [0m
+ gyro_y: 16 
+ gyro_z: -36
+GYRO_X = -0.824427 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.549618
+[0;32mI (4435) BALANCER: gyro_x: -58 [0m
+ gyro_y: 23 
+ gyro_z: -32
+GYRO_X = -0.885496 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.488550
+[0;32mI (4445) BALANCER: gyro_x: -54 [0m
+ gyro_y: 12 
+ gyro_z: -36
+GYRO_X = -0.824427 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.549618
+[0;32mI (4455) BALANCER: gyro_x: -63 [0m
+ gyro_y: 11 
+ gyro_z: -36
+GYRO_X = -0.961832 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.549618
+[0;32mI (4465) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (4475) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -34
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.519084
+[0;32mI (4485) BALANCER: gyro_x: -58 [0m
+ gyro_y: 20 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+[0;32mI (4505) BALANCER: gyro_x: -66 [0m
+ gyro_y: 24 
+ gyro_z: -30
+GYRO_X = -1.007634 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.458015
+[0;32mI (4515) BALANCER: gyro_x: -61 [0m
+ gyro_y: 23 
+ gyro_z: -31
+GYRO_X = -0.931298 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.473282
+[0;32mI (4525) BALANCER: gyro_x: -53 [0m
+ gyro_y: 11 
+ gyro_z: -27
+GYRO_X = -0.809160 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.412214
+[0;32mI (4535) BALANCER: gyro_x: -57 [0m
+ gyro_y: 15 
+ gyro_z: -29
+GYRO_X = -0.870229 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.442748
+[0;32mI (4545) BALANCER: gyro_x: -56 [0m
+ gyro_y: 14 
+ gyro_z: -22
+GYRO_X = -0.854962 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.335878
+[0;32mI (4555) BALANCER: gyro_x: -50 [0m
+ gyro_y: 16 
+ gyro_z: -28
+GYRO_X = -0.763359 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+[0;32mI (4565) BALANCER: gyro_x: -54 [0m
+ gyro_y: 22 
+ gyro_z: -30
+GYRO_X = -0.824427 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.458015
+[0;32mI (4575) BALANCER: gyro_x: -53 [0m
+ gyro_y: 17 
+ gyro_z: -27
+GYRO_X = -0.809160 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+[0;32mI (4585) BALANCER: gyro_x: -58 [0m
+ gyro_y: 24 
+ gyro_z: -27
+GYRO_X = -0.885496 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.412214
+[0;32mI (4595) BALANCER: gyro_x: -63 [0m
+ gyro_y: 34 
+ gyro_z: -36
+GYRO_X = -0.961832 
+ GYRO_Y = 0.519084 
+ GYRO_Z = -0.549618

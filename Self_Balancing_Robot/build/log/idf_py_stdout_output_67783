@@ -1,0 +1,29 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader && /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5280 bytes. 0x2d80 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c: In function 'app_main':
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:122:9: warning: unused variable 'gyro_conv_z_corrected' [-Wunused-variable]
+  122 |   float gyro_conv_z_corrected = 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:121:9: warning: unused variable 'gyro_conv_y_corrected' [-Wunused-variable]
+  121 |   float gyro_conv_y_corrected= 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:116:9: warning: variable 'accel_conv_y' set but not used [-Wunused-but-set-variable]
+  116 |   float accel_conv_y = 0;
+      |         ^~~~~~~~~~~~
+[4/9] Linking C static library esp-idf/main/libmain.a
+[5/9] Completed 'bootloader'
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+Skipping linker fragment parsing, fragment files unchanged
+[7/9] Linking CXX executable Self_Balancing_Robot.elf
+[8/9] Generating binary image from built executable
+esptool v5.3.1
+Creating ESP32-C3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-C3 image.
+Generated /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.bin
+[9/9] cd /home/richie/esp/Own_Projects/Self_Balancing_Robot/build && /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/partition_table/partition-table.bin /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.bin
+Self_Balancing_Robot.bin binary size 0x24ea0 bytes. Smallest app partition is 0x100000 bytes. 0xdb160 bytes (86%) free.

@@ -1,0 +1,14 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.elf /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.9.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4004dc18: [0;33mSPILock[0m[0m in [0;32mROM[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32m/home/richie/esp/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m40[0m
+[0m--- 0x403ce710: [0;33mis_xmc_chip_strict[0m[0m at [0;32m/home/richie/esp/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c[0m[0m:[1;31m925[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/richie/esp/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m[0m
+[1;31m--- Error: device reports readiness to read but returned no data (device disconnected or multiple access on port?)[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m[0m
+[0m

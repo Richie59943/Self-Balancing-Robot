@@ -1,0 +1,2078 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.elf /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 sizeI (320) BALANESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004dc18
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug 26 2026 16:10:48[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07880h ( 30848) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=000178a8 vaddr=3fc89600 size=017f8h (  6136) load[0m
+[0;32mI (93) esp_image: segment 2: paddr=000190a8 vaddr=40380000 size=06f70h ( 28528) load[0m
+[0;32mI (105) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=13188h ( 78216) map[0m
+[0;32mI (119) esp_image: segment 4: paddr=000331b0 vaddr=40386f70 size=02554h (  9556) load[0m
+[0;32mI (121) esp_image: segment 5: paddr=0003570c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (126) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (144) cpu_start: Unicore app[0m
+[0;32mI (152) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (153) cpu_start: Pro cpu start user code[0m
+[0;32mI (153) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (155) app_init: Application information:[0m
+[0;32mI (158) app_init: Project name:     Self_Balancing_Robot[0m
+[0;32mI (164) app_init: App version:      e7fc33e-dirty[0m
+[0;32mI (168) app_init: Compile time:     Sep  1 2026 12:06:13[0m
+[0;32mI (173) app_init: ELF file SHA256:  9a30eed9e...[0m
+[0;32mI (177) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (183) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (187) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (191) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (194) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (201) heap_init: At 3FC8BD40 len 000342C0 (208 KiB): RAM[0m
+[0;32mI (206) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (212) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (218) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (224) spi_flash: detected chip: generic[0m
+[0;32mI (227) spi_flash: flash io: dio[0m
+[0;33mW (230) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (242) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (248) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (255) main_task: Started on CPU0[0m
+[0;32mI (255) main_task: Calling app_main()[0m
+[0;32mI (255) ICM42670: ICM-42670-P added to I2C bus[0m
+[0;32mI (265) BALANCER: ICM-42670-P configured[0m
+[0;32mI (265) BALANCER: GYRO Configured[0m
+[0;32mI (265) BALANCER: ICM-42670-P detected successfully![0m
+[0;32mI (275) BALANCER: GYRO = 0x48[0m
+[0;32mI (275) BALANCER: GYRo config verified[0m
+[0;32mI (275) BALANCER: accel aconfigured[0m
+[0;32mI (285) BALANCER: ACCEL = 0x48[0m
+[0;32mI (285) BALANCER:  accel config verified[0m
+[0;32mI (285) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8249 
+ 
+[0;32mI (295) BALANCER: gyro_x: -61 [0m
+ gyro_y: 43 
+ gyro_z: -31
+ACCEL_X = 0.014771 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.006958
+GYRO_X = -0.931298 
+ GYRO_Y = 0.656489 
+ GYRO_Z = -0.473282
+this is the pitch: -0.840380
+dt: 0.095274
+angle we are moving at: -0.088728
+[0;32mI (315) BALANCER: ACCEL_X val: 124 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8226 
+ 
+[0;32mI (325) BALANCER: gyro_x: -56 [0m
+ gyro_y: 46 
+ gyro_z: -28
+ACCEL_X = 0.015137 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.004150
+GYRO_X = -0.854962 
+ GYRO_Y = 0.702290 
+ GYRO_Z = -0.427481
+this is the pitch: -0.863620
+dt: 0.030116
+angle we are moving at: -0.114476
+[0;32mI (345) BALANCER: ACCEL_X val: 116 [0m
+ ACEEL_Y val: 2 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (355) BALANCER: gyro_x: -57 [0m
+ gyro_y: 49 
+ gyro_z: -23
+ACCEL_X = 0.014160 
+ ACCEL_Y = 0.000244 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.870229 
+ GYRO_Y = 0.748092 
+ GYRO_Z = -0.351145
+this is the pitch: -0.806440
+dt: 0.029945
+angle we are moving at: -0.140535
+[0;32mI (375) BALANCER: ACCEL_X val: 130 [0m
+ ACEEL_Y val: -10 
+ ACCEL_Z val: 8229 
+ 
+[0;32mI (385) BALANCER: gyro_x: -60 [0m
+ gyro_y: 27 
+ gyro_z: -31
+ACCEL_X = 0.015869 
+ ACCEL_Y = -0.001221 
+ ACCEL_Z = 1.004517
+GYRO_X = -0.916031 
+ GYRO_Y = 0.412214 
+ GYRO_Z = -0.473282
+this is the pitch: -0.905071
+dt: 0.030206
+angle we are moving at: -0.168205
+[0;32mI (405) BALANCER: ACCEL_X val: 126 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8234 
+ 
+[0;32mI (415) BALANCER: gyro_x: -55 [0m
+ gyro_y: 13 
+ gyro_z: -35
+ACCEL_X = 0.015381 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005127
+GYRO_X = -0.839695 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.534351
+this is the pitch: -0.876695
+dt: 0.030118
+angle we are moving at: -0.193495
+[0;32mI (435) BALANCER: ACCEL_X val: 127 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (445) BALANCER: gyro_x: -57 [0m
+ gyro_y: 19 
+ gyro_z: -31
+ACCEL_X = 0.015503 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.005371
+GYRO_X = -0.870229 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+this is the pitch: -0.883437
+dt: 0.029945
+angle we are moving at: -0.219554
+[0;32mI (465) BALANCER: ACCEL_X val: 132 [0m
+ ACEEL_Y val: 4 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (475) BALANCER: gyro_x: -63 [0m
+ gyro_y: 130 
+ gyro_z: -22
+ACCEL_X = 0.016113 
+ ACCEL_Y = 0.000488 
+ ACCEL_Z = 1.005737
+GYRO_X = -0.961832 
+ GYRO_Y = 1.984733 
+ GYRO_Z = -0.335878
+this is the pitch: -0.917878
+dt: 0.030032
+angle we are moving at: -0.248440
+[0;32mI (495) BALANCER: ACCEL_X val: 92 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (505) BALANCER: gyro_x: -57 [0m
+ gyro_y: 6 
+ gyro_z: -26
+ACCEL_X = 0.011230 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.870229 
+ GYRO_Y = 0.091603 
+ GYRO_Z = -0.396947
+this is the pitch: -0.639606
+dt: 0.029945
+angle we are moving at: -0.274499
+[0;32mI (525) BALANCER: ACCEL_X val: 130 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (535) BALANCER: gyro_x: -55 [0m
+ gyro_y: 19 
+ gyro_z: -30
+ACCEL_X = 0.015869 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.839695 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+this is the pitch: -0.903863
+dt: 0.030118
+angle we are moving at: -0.299789
+[0;32mI (555) BALANCER: ACCEL_X val: 126 [0m
+ ACEEL_Y val: -14 
+ ACCEL_Z val: 8262 
+ 
+[0;32mI (565) BALANCER: gyro_x: -63 [0m
+ gyro_y: 36 
+ gyro_z: -28
+ACCEL_X = 0.015381 
+ ACCEL_Y = -0.001709 
+ ACCEL_Z = 1.008545
+GYRO_X = -0.961832 
+ GYRO_Y = 0.549618 
+ GYRO_Z = -0.427481
+this is the pitch: -0.873724
+dt: 0.030205
+angle we are moving at: -0.328841
+[0;32mI (585) BALANCER: ACCEL_X val: 125 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (595) BALANCER: gyro_x: -61 [0m
+ gyro_y: 19 
+ gyro_z: -27
+ACCEL_X = 0.015259 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.006226
+GYRO_X = -0.931298 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.412214
+this is the pitch: -0.868788
+dt: 0.030119
+angle we are moving at: -0.356891
+[0;32mI (615) BALANCER: ACCEL_X val: 119 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (625) BALANCER: gyro_x: -57 [0m
+ gyro_y: 25 
+ gyro_z: -34
+ACCEL_X = 0.014526 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.870229 
+ GYRO_Y = 0.381679 
+ GYRO_Z = -0.519084
+this is the pitch: -0.827394
+dt: 0.030118
+angle we are moving at: -0.383100
+[0;32mI (645) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: -8 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (655) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -26
+ACCEL_X = 0.014648 
+ ACCEL_Y = -0.000977 
+ ACCEL_Z = 1.005371
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+this is the pitch: -0.834751
+dt: 0.030119
+angle we are moving at: -0.408391
+[0;32mI (675) BALANCER: ACCEL_X val: 116 [0m
+ ACEEL_Y val: 2 
+ ACCEL_Z val: 8258 
+ 
+[0;32mI (685) BALANCER: gyro_x: -56 [0m
+ gyro_y: 18 
+ gyro_z: -21
+ACCEL_X = 0.014160 
+ ACCEL_Y = 0.000244 
+ ACCEL_Z = 1.008057
+GYRO_X = -0.854962 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.320611
+this is the pitch: -0.804780
+dt: 0.029945
+angle we are moving at: -0.433993
+[0;32mI (705) BALANCER: ACCEL_X val: 131 [0m
+ ACEEL_Y val: 4 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (715) BALANCER: gyro_x: -62 [0m
+ gyro_y: 11 
+ gyro_z: -27
+ACCEL_X = 0.015991 
+ ACCEL_Y = 0.000488 
+ ACCEL_Z = 1.005737
+GYRO_X = -0.946565 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.412214
+this is the pitch: -0.910926
+dt: 0.029945
+angle we are moving at: -0.462338
+[0;32mI (735) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (745) BALANCER: gyro_x: -56 [0m
+ gyro_y: 15 
+ gyro_z: -27
+ACCEL_X = 0.014771 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.006226
+GYRO_X = -0.854962 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.412214
+this is the pitch: -0.840991
+dt: 0.030118
+angle we are moving at: -0.488087
+[0;32mI (765) BALANCER: ACCEL_X val: 111 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8227 
+ 
+[0;32mI (775) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -26
+ACCEL_X = 0.013550 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.004272
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+this is the pitch: -0.772997
+dt: 0.029945
+angle we are moving at: -0.514146
+[0;32mI (795) BALANCER: ACCEL_X val: 114 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (805) BALANCER: gyro_x: -63 [0m
+ gyro_y: 18 
+ gyro_z: -26
+ACCEL_X = 0.013916 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.961832 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.396947
+this is the pitch: -0.793308
+dt: 0.029945
+angle we are moving at: -0.542948
+[0;32mI (825) BALANCER: ACCEL_X val: 119 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8234 
+ 
+[0;32mI (835) BALANCER: gyro_x: -57 [0m
+ gyro_y: 13 
+ gyro_z: -34
+ACCEL_X = 0.014526 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.005127
+GYRO_X = -0.870229 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.519084
+this is the pitch: -0.827996
+dt: 0.030119
+angle we are moving at: -0.569159
+[0;32mI (855) BALANCER: ACCEL_X val: 122 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (865) BALANCER: gyro_x: -55 [0m
+ gyro_y: 11 
+ gyro_z: -32
+ACCEL_X = 0.014893 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.839695 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.488550
+this is the pitch: -0.848455
+dt: 0.030118
+angle we are moving at: -0.594449
+[0;32mI (885) BALANCER: ACCEL_X val: 132 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (895) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -34
+ACCEL_X = 0.016113 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.519084
+this is the pitch: -0.917766
+dt: 0.030119
+angle we are moving at: -0.621579
+[0;32mI (915) BALANCER: ACCEL_X val: 128 [0m
+ ACEEL_Y val: 4 
+ ACCEL_Z val: 8221 
+ 
+[0;32mI (925) BALANCER: gyro_x: -59 [0m
+ gyro_y: 0 
+ gyro_z: -24
+ACCEL_X = 0.015625 
+ ACCEL_Y = 0.000488 
+ ACCEL_Z = 1.003540
+GYRO_X = -0.900763 
+ GYRO_Y = 0.000000 
+ GYRO_Z = -0.366412
+this is the pitch: -0.892016
+dt: 0.029858
+angle we are moving at: -0.648474
+[0;32mI (945) BALANCER: ACCEL_X val: 102 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8194 
+ 
+[0;32mI (955) BALANCER: gyro_x: -57 [0m
+ gyro_y: -33 
+ gyro_z: -22
+ACCEL_X = 0.012451 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.000244
+GYRO_X = -0.870229 
+ GYRO_Y = -0.503817 
+ GYRO_Z = -0.335878
+this is the pitch: -0.713189
+dt: 0.030118
+angle we are moving at: -0.674683
+[0;32mI (975) BALANCER: ACCEL_X val: 128 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8228 
+ 
+[0;32mI (985) BALANCER: gyro_x: -60 [0m
+ gyro_y: -9 
+ gyro_z: -23
+ACCEL_X = 0.015625 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.004395
+GYRO_X = -0.916031 
+ GYRO_Y = -0.137405 
+ GYRO_Z = -0.351145
+this is the pitch: -0.891258
+dt: 0.030032
+angle we are moving at: -0.702194
+[0;32mI (1005) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8246 
+ 
+[0;32mI (1015) BALANCER: gyro_x: -53 [0m
+ gyro_y: -26 
+ gyro_z: -33
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.006592
+GYRO_X = -0.809160 
+ GYRO_Y = -0.396947 
+ GYRO_Z = -0.503817
+this is the pitch: -0.812898
+dt: 0.030466
+angle we are moving at: -0.726846
+[0;32mI (1035) BALANCER: ACCEL_X val: 122 [0m
+ ACEEL_Y val: -9 
+ ACCEL_Z val: 8209 
+ 
+[0;32mI (1045) BALANCER: gyro_x: -62 [0m
+ gyro_y: -37 
+ gyro_z: -26
+ACCEL_X = 0.014893 
+ ACCEL_Y = -0.001099 
+ ACCEL_Z = 1.002075
+GYRO_X = -0.946565 
+ GYRO_Y = -0.564885 
+ GYRO_Z = -0.396947
+this is the pitch: -0.851452
+dt: 0.030466
+angle we are moving at: -0.755684
+[0;32mI (1065) BALANCER: ACCEL_X val: 141 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8244 
+ 
+[0;32mI (1075) BALANCER: gyro_x: -56 [0m
+ gyro_y: -24 
+ gyro_z: -28
+ACCEL_X = 0.017212 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.006348
+GYRO_X = -0.854962 
+ GYRO_Y = -0.366412 
+ GYRO_Z = -0.427481
+this is the pitch: -0.979854
+dt: 0.030292
+angle we are moving at: -0.781582
+[0;32mI (1105) BALANCER: ACCEL_X val: 132 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8232 
+ 
+[0;32mI (1105) BALANCER: gyro_x: -54 [0m
+ gyro_y: -17 
+ gyro_z: -26
+ACCEL_X = 0.016113 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.004883
+GYRO_X = -0.824427 
+ GYRO_Y = -0.259542 
+ GYRO_Z = -0.396947
+this is the pitch: -0.918658
+dt: 0.030465
+angle we are moving at: -0.806698
+[0;32mI (1135) BALANCER: ACCEL_X val: 38 [0m
+ ACEEL_Y val: -89 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (1135) BALANCER: gyro_x: -66 [0m
+ gyro_y: 23 
+ gyro_z: 38
+ACCEL_X = 0.004639 
+ ACCEL_Y = -0.010864 
+ ACCEL_Z = 1.006226
+GYRO_X = -1.007634 
+ GYRO_Y = 0.351145 
+ GYRO_Z = 0.580153
+this is the pitch: -0.264130
+dt: 0.030119
+angle we are moving at: -0.837047
+[0;32mI (1165) BALANCER: ACCEL_X val: 374 [0m
+ ACEEL_Y val: -17 
+ ACCEL_Z val: 8263 
+ 
+[0;32mI (1165) BALANCER: gyro_x: -65 [0m
+ gyro_y: 20 
+ gyro_z: -143
+ACCEL_X = 0.045654 
+ ACCEL_Y = -0.002075 
+ ACCEL_Z = 1.008667
+GYRO_X = -0.992366 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -2.183206
+this is the pitch: -2.591553
+dt: 0.030466
+angle we are moving at: -0.867281
+[0;32mI (1195) BALANCER: ACCEL_X val: 134 [0m
+ ACEEL_Y val: 23 
+ ACCEL_Z val: 8237 
+ 
+[0;32mI (1195) BALANCER: gyro_x: -63 [0m
+ gyro_y: 21 
+ gyro_z: -126
+ACCEL_X = 0.016357 
+ ACCEL_Y = 0.002808 
+ ACCEL_Z = 1.005493
+GYRO_X = -0.961832 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -1.923664
+this is the pitch: -0.932009
+dt: 0.030292
+angle we are moving at: -0.896416
+[0;32mI (1225) BALANCER: ACCEL_X val: 178 [0m
+ ACEEL_Y val: 18 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (1225) BALANCER: gyro_x: -57 [0m
+ gyro_y: 17 
+ gyro_z: -107
+ACCEL_X = 0.021729 
+ ACCEL_Y = 0.002197 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.870229 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -1.633588
+this is the pitch: -1.237808
+dt: 0.030292
+angle we are moving at: -0.922777
+[0;32mI (1255) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -33 
+ ACCEL_Z val: 8229 
+ 
+[0;32mI (1255) BALANCER: gyro_x: -61 [0m
+ gyro_y: 34 
+ gyro_z: -71
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.004028 
+ ACCEL_Z = 1.004517
+GYRO_X = -0.931298 
+ GYRO_Y = 0.519084 
+ GYRO_Z = -1.083969
+this is the pitch: -0.814577
+dt: 0.030379
+angle we are moving at: -0.951069
+[0;32mI (1285) BALANCER: ACCEL_X val: 114 [0m
+ ACEEL_Y val: -23 
+ ACCEL_Z val: 8220 
+ 
+[0;32mI (1285) BALANCER: gyro_x: -65 [0m
+ gyro_y: 38 
+ gyro_z: -94
+ACCEL_X = 0.013916 
+ ACCEL_Y = -0.002808 
+ ACCEL_Z = 1.003418
+GYRO_X = -0.992366 
+ GYRO_Y = 0.580153 
+ GYRO_Z = -1.435115
+this is the pitch: -0.794562
+dt: 0.030379
+angle we are moving at: -0.981216
+[0;32mI (1315) BALANCER: ACCEL_X val: 158 [0m
+ ACEEL_Y val: 14 
+ ACCEL_Z val: 8223 
+ 
+[0;32mI (1315) BALANCER: gyro_x: -67 [0m
+ gyro_y: 41 
+ gyro_z: -57
+ACCEL_X = 0.019287 
+ ACCEL_Y = 0.001709 
+ ACCEL_Z = 1.003784
+GYRO_X = -1.022901 
+ GYRO_Y = 0.625954 
+ GYRO_Z = -0.870229
+this is the pitch: -1.100769
+dt: 0.030205
+angle we are moving at: -1.012113
+[0;32mI (1345) BALANCER: ACCEL_X val: 46 [0m
+ ACEEL_Y val: -40 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (1345) BALANCER: gyro_x: -66 [0m
+ gyro_y: 41 
+ gyro_z: -105
+ACCEL_X = 0.005615 
+ ACCEL_Y = -0.004883 
+ ACCEL_Z = 1.005737
+GYRO_X = -1.007634 
+ GYRO_Y = 0.625954 
+ GYRO_Z = -1.603053
+this is the pitch: -0.319891
+dt: 0.030379
+angle we are moving at: -1.042724
+[0;32mI (1375) BALANCER: ACCEL_X val: 79 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8220 
+ 
+[0;32mI (1385) BALANCER: gyro_x: -63 [0m
+ gyro_y: 29 
+ gyro_z: -186
+ACCEL_X = 0.009644 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.003418
+GYRO_X = -0.961832 
+ GYRO_Y = 0.442748 
+ GYRO_Z = -2.839695
+this is the pitch: -0.550636
+dt: 0.030118
+angle we are moving at: -1.071692
+[0;32mI (1405) BALANCER: ACCEL_X val: 329 [0m
+ ACEEL_Y val: 124 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (1415) BALANCER: gyro_x: -65 [0m
+ gyro_y: 44 
+ gyro_z: -118
+ACCEL_X = 0.040161 
+ ACCEL_Y = 0.015137 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.992366 
+ GYRO_Y = 0.671756 
+ GYRO_Z = -1.801527
+this is the pitch: -2.286999
+dt: 0.030379
+angle we are moving at: -1.101840
+[0;32mI (1435) BALANCER: ACCEL_X val: 69 [0m
+ ACEEL_Y val: -39 
+ ACCEL_Z val: 8232 
+ 
+[0;32mI (1445) BALANCER: gyro_x: -66 [0m
+ gyro_y: 26 
+ gyro_z: -65
+ACCEL_X = 0.008423 
+ ACCEL_Y = -0.004761 
+ ACCEL_Z = 1.004883
+GYRO_X = -1.007634 
+ GYRO_Y = 0.396947 
+ GYRO_Z = -0.992366
+this is the pitch: -0.480238
+dt: 0.030292
+angle we are moving at: -1.132363
+[0;32mI (1465) BALANCER: ACCEL_X val: -143 [0m
+ ACEEL_Y val: -128 
+ ACCEL_Z val: 8228 
+ 
+[0;32mI (1475) BALANCER: gyro_x: -60 [0m
+ gyro_y: 23 
+ gyro_z: -248
+ACCEL_X = -0.017456 
+ ACCEL_Y = -0.015625 
+ ACCEL_Z = 1.004395
+GYRO_X = -0.916031 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -3.786260
+this is the pitch: 0.995682
+dt: 0.030640
+angle we are moving at: -1.160430
+[0;32mI (1495) BALANCER: ACCEL_X val: 309 [0m
+ ACEEL_Y val: 102 
+ ACCEL_Z val: 8223 
+ 
+[0;32mI (1505) BALANCER: gyro_x: -65 [0m
+ gyro_y: 32 
+ gyro_z: -197
+ACCEL_X = 0.037720 
+ ACCEL_Y = 0.012451 
+ ACCEL_Z = 1.003784
+GYRO_X = -0.992366 
+ GYRO_Y = 0.488550 
+ GYRO_Z = -3.007634
+this is the pitch: -2.152021
+dt: 0.030379
+angle we are moving at: -1.190577
+[0;32mI (1525) BALANCER: ACCEL_X val: 328 [0m
+ ACEEL_Y val: 165 
+ ACCEL_Z val: 8232 
+ 
+[0;32mI (1535) BALANCER: gyro_x: -58 [0m
+ gyro_y: 28 
+ gyro_z: -86
+ACCEL_X = 0.040039 
+ ACCEL_Y = 0.020142 
+ ACCEL_Z = 1.004883
+GYRO_X = -0.885496 
+ GYRO_Y = 0.427481 
+ GYRO_Z = -1.312977
+this is the pitch: -2.281715
+dt: 0.030292
+angle we are moving at: -1.217400
+[0;32mI (1555) BALANCER: ACCEL_X val: 134 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (1565) BALANCER: gyro_x: -54 [0m
+ gyro_y: 11 
+ gyro_z: -26
+ACCEL_X = 0.016357 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.824427 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.396947
+this is the pitch: -0.931670
+dt: 0.030292
+angle we are moving at: -1.242374
+[0;32mI (1585) BALANCER: ACCEL_X val: 119 [0m
+ ACEEL_Y val: -15 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (1595) BALANCER: gyro_x: -58 [0m
+ gyro_y: 14 
+ gyro_z: -33
+ACCEL_X = 0.014526 
+ ACCEL_Y = -0.001831 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.885496 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.503817
+this is the pitch: -0.827293
+dt: 0.030379
+angle we are moving at: -1.269274
+[0;32mI (1615) BALANCER: ACCEL_X val: 96 [0m
+ ACEEL_Y val: -43 
+ ACCEL_Z val: 8225 
+ 
+[0;32mI (1625) BALANCER: gyro_x: -54 [0m
+ gyro_y: 5 
+ gyro_z: -40
+ACCEL_X = 0.011719 
+ ACCEL_Y = -0.005249 
+ ACCEL_Z = 1.004028
+GYRO_X = -0.824427 
+ GYRO_Y = 0.076336 
+ GYRO_Z = -0.610687
+this is the pitch: -0.668711
+dt: 0.030205
+angle we are moving at: -1.294176
+[0;32mI (1645) BALANCER: ACCEL_X val: 153 [0m
+ ACEEL_Y val: 59 
+ ACCEL_Z val: 8229 
+ 
+[0;32mI (1655) BALANCER: gyro_x: -55 [0m
+ gyro_y: 14 
+ gyro_z: -26
+ACCEL_X = 0.018677 
+ ACCEL_Y = 0.007202 
+ ACCEL_Z = 1.004517
+GYRO_X = -0.839695 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.396947
+this is the pitch: -1.065165
+dt: 0.030205
+angle we are moving at: -1.319539
+[0;32mI (1675) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: -14 
+ ACCEL_Z val: 8225 
+ 
+[0;32mI (1685) BALANCER: gyro_x: -53 [0m
+ gyro_y: 7 
+ gyro_z: -33
+ACCEL_X = 0.014771 
+ ACCEL_Y = -0.001709 
+ ACCEL_Z = 1.004028
+GYRO_X = -0.809160 
+ GYRO_Y = 0.106870 
+ GYRO_Z = -0.503817
+this is the pitch: -0.842832
+dt: 0.030292
+angle we are moving at: -1.344050
+[0;32mI (1705) BALANCER: ACCEL_X val: 143 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8245 
+ 
+[0;32mI (1715) BALANCER: gyro_x: -54 [0m
+ gyro_y: -5 
+ gyro_z: -8
+ACCEL_X = 0.017456 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.006470
+GYRO_X = -0.824427 
+ GYRO_Y = -0.076336 
+ GYRO_Z = -0.122137
+this is the pitch: -0.993630
+dt: 0.030293
+angle we are moving at: -1.369025
+[0;32mI (1735) BALANCER: ACCEL_X val: 195 [0m
+ ACEEL_Y val: 7 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (1745) BALANCER: gyro_x: -47 [0m
+ gyro_y: -5 
+ gyro_z: 49
+ACCEL_X = 0.023804 
+ ACCEL_Y = 0.000854 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.717557 
+ GYRO_Y = -0.076336 
+ GYRO_Z = 0.748092
+this is the pitch: -1.355490
+dt: 0.030031
+angle we are moving at: -1.390574
+[0;32mI (1765) BALANCER: ACCEL_X val: 125 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (1775) BALANCER: gyro_x: -47 [0m
+ gyro_y: 5 
+ gyro_z: 40
+ACCEL_X = 0.015259 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.717557 
+ GYRO_Y = 0.076336 
+ GYRO_Z = 0.610687
+this is the pitch: -0.868999
+dt: 0.030032
+angle we are moving at: -1.412123
+[0;32mI (1795) BALANCER: ACCEL_X val: 74 [0m
+ ACEEL_Y val: -26 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (1805) BALANCER: gyro_x: -26 [0m
+ gyro_y: -92 
+ gyro_z: -19
+ACCEL_X = 0.009033 
+ ACCEL_Y = -0.003174 
+ ACCEL_Z = 1.005737
+GYRO_X = -0.396947 
+ GYRO_Y = -1.404580 
+ GYRO_Z = -0.290076
+this is the pitch: -0.514598
+dt: 0.030466
+angle we are moving at: -1.424217
+[0;32mI (1825) BALANCER: ACCEL_X val: 141 [0m
+ ACEEL_Y val: -13 
+ ACCEL_Z val: 8259 
+ 
+[0;32mI (1835) BALANCER: gyro_x: -65 [0m
+ gyro_y: 48 
+ gyro_z: -27
+ACCEL_X = 0.017212 
+ ACCEL_Y = -0.001587 
+ ACCEL_Z = 1.008179
+GYRO_X = -0.992366 
+ GYRO_Y = 0.732824 
+ GYRO_Z = -0.412214
+this is the pitch: -0.978075
+dt: 0.030379
+angle we are moving at: -1.454364
+[0;32mI (1855) BALANCER: ACCEL_X val: 136 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (1865) BALANCER: gyro_x: -66 [0m
+ gyro_y: 125 
+ gyro_z: -31
+ACCEL_X = 0.016602 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.005371
+GYRO_X = -1.007634 
+ GYRO_Y = 1.908397 
+ GYRO_Z = -0.473282
+this is the pitch: -0.946032
+dt: 0.030379
+angle we are moving at: -1.484975
+[0;32mI (1885) BALANCER: ACCEL_X val: 129 [0m
+ ACEEL_Y val: -10 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (1895) BALANCER: gyro_x: -68 [0m
+ gyro_y: 147 
+ gyro_z: -23
+ACCEL_X = 0.015747 
+ ACCEL_Y = -0.001221 
+ ACCEL_Z = 1.005859
+GYRO_X = -1.038168 
+ GYRO_Y = 2.244275 
+ GYRO_Z = -0.351145
+this is the pitch: -0.896912
+dt: 0.030465
+angle we are moving at: -1.516603
+[0;32mI (1915) BALANCER: ACCEL_X val: 130 [0m
+ ACEEL_Y val: 16 
+ ACCEL_Z val: 8266 
+ 
+[0;32mI (1925) BALANCER: gyro_x: -61 [0m
+ gyro_y: 28 
+ gyro_z: -27
+ACCEL_X = 0.015869 
+ ACCEL_Y = 0.001953 
+ ACCEL_Z = 1.009033
+GYRO_X = -0.931298 
+ GYRO_Y = 0.427481 
+ GYRO_Z = -0.412214
+this is the pitch: -0.901021
+dt: 0.030205
+angle we are moving at: -1.544732
+[0;32mI (1945) BALANCER: ACCEL_X val: 110 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8216 
+ 
+[0;32mI (1955) BALANCER: gyro_x: -62 [0m
+ gyro_y: 19 
+ gyro_z: -22
+ACCEL_X = 0.013428 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.002930
+GYRO_X = -0.946565 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.335878
+this is the pitch: -0.767059
+dt: 0.030293
+angle we are moving at: -1.573407
+[0;32mI (1975) BALANCER: ACCEL_X val: 135 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8248 
+ 
+[0;32mI (1985) BALANCER: gyro_x: -61 [0m
+ gyro_y: 24 
+ gyro_z: -24
+ACCEL_X = 0.016479 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.006836
+GYRO_X = -0.931298 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.366412
+this is the pitch: -0.937711
+dt: 0.030118
+angle we are moving at: -1.601456
+[0;32mI (2005) BALANCER: ACCEL_X val: 105 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8246 
+ 
+[0;32mI (2015) BALANCER: gyro_x: -60 [0m
+ gyro_y: 18 
+ gyro_z: -30
+ACCEL_X = 0.012817 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.006592
+GYRO_X = -0.916031 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+this is the pitch: -0.729533
+dt: 0.030292
+angle we are moving at: -1.629204
+[0;32mI (2035) BALANCER: ACCEL_X val: 112 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (2045) BALANCER: gyro_x: -53 [0m
+ gyro_y: 11 
+ gyro_z: -24
+ACCEL_X = 0.013672 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.005371
+GYRO_X = -0.809160 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.366412
+this is the pitch: -0.779108
+dt: 0.030292
+angle we are moving at: -1.653715
+[0;32mI (2065) BALANCER: ACCEL_X val: 118 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8257 
+ 
+[0;32mI (2075) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -33
+ACCEL_X = 0.014404 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.007935
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.503817
+this is the pitch: -0.818753
+dt: 0.030292
+angle we are moving at: -1.681463
+[0;32mI (2105) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2105) BALANCER: gyro_x: -55 [0m
+ gyro_y: 18 
+ gyro_z: -26
+ACCEL_X = 0.014771 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.839695 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.396947
+this is the pitch: -0.842013
+dt: 0.030119
+angle we are moving at: -1.706754
+[0;32mI (2135) BALANCER: ACCEL_X val: 104 [0m
+ ACEEL_Y val: -13 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (2135) BALANCER: gyro_x: -53 [0m
+ gyro_y: 21 
+ gyro_z: -24
+ACCEL_X = 0.012695 
+ ACCEL_Y = -0.001587 
+ ACCEL_Z = 1.005371
+GYRO_X = -0.809160 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.366412
+this is the pitch: -0.723463
+dt: 0.030379
+angle we are moving at: -1.731336
+[0;32mI (2165) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: 7 
+ ACCEL_Z val: 8226 
+ 
+[0;32mI (2165) BALANCER: gyro_x: -57 [0m
+ gyro_y: 11 
+ gyro_z: -26
+ACCEL_X = 0.014282 
+ ACCEL_Y = 0.000854 
+ ACCEL_Z = 1.004150
+GYRO_X = -0.870229 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.396947
+this is the pitch: -0.814874
+dt: 0.030118
+angle we are moving at: -1.757545
+[0;32mI (2195) BALANCER: ACCEL_X val: 129 [0m
+ ACEEL_Y val: -9 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2195) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -34
+ACCEL_X = 0.015747 
+ ACCEL_Y = -0.001099 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.519084
+this is the pitch: -0.897674
+dt: 0.030292
+angle we are moving at: -1.785293
+[0;32mI (2225) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8246 
+ 
+[0;32mI (2225) BALANCER: gyro_x: -53 [0m
+ gyro_y: 19 
+ gyro_z: -31
+ACCEL_X = 0.014648 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.006592
+GYRO_X = -0.809160 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+this is the pitch: -0.833739
+dt: 0.030293
+angle we are moving at: -1.809805
+[0;32mI (2255) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: 9 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (2255) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -29
+ACCEL_X = 0.014771 
+ ACCEL_Y = 0.001099 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.442748
+this is the pitch: -0.841297
+dt: 0.030118
+angle we are moving at: -1.836935
+[0;32mI (2285) BALANCER: ACCEL_X val: 111 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8244 
+ 
+[0;32mI (2285) BALANCER: gyro_x: -58 [0m
+ gyro_y: 17 
+ gyro_z: -26
+ACCEL_X = 0.013550 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.006348
+GYRO_X = -0.885496 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+this is the pitch: -0.771403
+dt: 0.030292
+angle we are moving at: -1.863758
+[0;32mI (2315) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (2315) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -25
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.381679
+this is the pitch: -0.813391
+dt: 0.030292
+angle we are moving at: -1.890581
+[0;32mI (2345) BALANCER: ACCEL_X val: 108 [0m
+ ACEEL_Y val: 2 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (2345) BALANCER: gyro_x: -53 [0m
+ gyro_y: 14 
+ gyro_z: -33
+ACCEL_X = 0.013184 
+ ACCEL_Y = 0.000244 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.809160 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.503817
+this is the pitch: -0.751103
+dt: 0.030119
+angle we are moving at: -1.914953
+[0;32mI (2375) BALANCER: ACCEL_X val: 122 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8248 
+ 
+[0;32mI (2375) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -30
+ACCEL_X = 0.014893 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.006836
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.458015
+this is the pitch: -0.847427
+dt: 0.030292
+angle we are moving at: -1.941314
+[0;32mI (2405) BALANCER: ACCEL_X val: 119 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8235 
+ 
+[0;32mI (2405) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -31
+ACCEL_X = 0.014526 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.005249
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.473282
+this is the pitch: -0.827896
+dt: 0.030292
+angle we are moving at: -1.968599
+[0;32mI (2435) BALANCER: ACCEL_X val: 125 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8227 
+ 
+[0;32mI (2435) BALANCER: gyro_x: -61 [0m
+ gyro_y: 14 
+ gyro_z: -32
+ACCEL_X = 0.015259 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.004272
+GYRO_X = -0.931298 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.488550
+this is the pitch: -0.870478
+dt: 0.030292
+angle we are moving at: -1.996810
+[0;32mI (2465) BALANCER: ACCEL_X val: 129 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8234 
+ 
+[0;32mI (2475) BALANCER: gyro_x: -63 [0m
+ gyro_y: 15 
+ gyro_z: -29
+ACCEL_X = 0.015747 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005127
+GYRO_X = -0.961832 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.442748
+this is the pitch: -0.897565
+dt: 0.030292
+angle we are moving at: -2.025946
+[0;32mI (2495) BALANCER: ACCEL_X val: 111 [0m
+ ACEEL_Y val: 8 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2505) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -30
+ACCEL_X = 0.013550 
+ ACCEL_Y = 0.000977 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.458015
+this is the pitch: -0.772434
+dt: 0.030119
+angle we are moving at: -2.052156
+[0;32mI (2525) BALANCER: ACCEL_X val: 136 [0m
+ ACEEL_Y val: 8 
+ ACCEL_Z val: 8246 
+ 
+[0;32mI (2535) BALANCER: gyro_x: -59 [0m
+ gyro_y: 22 
+ gyro_z: -27
+ACCEL_X = 0.016602 
+ ACCEL_Y = 0.000977 
+ ACCEL_Z = 1.006592
+GYRO_X = -0.900763 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.412214
+this is the pitch: -0.944885
+dt: 0.030118
+angle we are moving at: -2.079286
+[0;32mI (2555) BALANCER: ACCEL_X val: 105 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2565) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -30
+ACCEL_X = 0.012817 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+this is the pitch: -0.730685
+dt: 0.030119
+angle we are moving at: -2.105956
+[0;32mI (2585) BALANCER: ACCEL_X val: 122 [0m
+ ACEEL_Y val: -16 
+ ACCEL_Z val: 8257 
+ 
+[0;32mI (2595) BALANCER: gyro_x: -58 [0m
+ gyro_y: 24 
+ gyro_z: -26
+ACCEL_X = 0.014893 
+ ACCEL_Y = -0.001953 
+ ACCEL_Z = 1.007935
+GYRO_X = -0.885496 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.396947
+this is the pitch: -0.846503
+dt: 0.030379
+angle we are moving at: -2.132856
+[0;32mI (2615) BALANCER: ACCEL_X val: 110 [0m
+ ACEEL_Y val: -1 
+ ACCEL_Z val: 8204 
+ 
+[0;32mI (2625) BALANCER: gyro_x: -55 [0m
+ gyro_y: 11 
+ gyro_z: -27
+ACCEL_X = 0.013428 
+ ACCEL_Y = -0.000122 
+ ACCEL_Z = 1.001465
+GYRO_X = -0.839695 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.412214
+this is the pitch: -0.768181
+dt: 0.030292
+angle we are moving at: -2.158292
+[0;32mI (2645) BALANCER: ACCEL_X val: 131 [0m
+ ACEEL_Y val: -14 
+ ACCEL_Z val: 8245 
+ 
+[0;32mI (2655) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -25
+ACCEL_X = 0.015991 
+ ACCEL_Y = -0.001709 
+ ACCEL_Z = 1.006470
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.381679
+this is the pitch: -0.910263
+dt: 0.030379
+angle we are moving at: -2.185193
+[0;32mI (2675) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: 2 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (2685) BALANCER: gyro_x: -47 [0m
+ gyro_y: 26 
+ gyro_z: -25
+ACCEL_X = 0.014648 
+ ACCEL_Y = 0.000244 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.717557 
+ GYRO_Y = 0.396947 
+ GYRO_Z = -0.381679
+this is the pitch: -0.834143
+dt: 0.030118
+angle we are moving at: -2.206804
+[0;32mI (2705) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (2715) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -33
+ACCEL_X = 0.014648 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.503817
+this is the pitch: -0.834143
+dt: 0.030292
+angle we are moving at: -2.233165
+[0;32mI (2735) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2745) BALANCER: gyro_x: -64 [0m
+ gyro_y: 17 
+ gyro_z: -28
+ACCEL_X = 0.014648 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.977099 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.427481
+this is the pitch: -0.835055
+dt: 0.030119
+angle we are moving at: -2.262594
+[0;32mI (2765) BALANCER: ACCEL_X val: 116 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (2775) BALANCER: gyro_x: -60 [0m
+ gyro_y: 17 
+ gyro_z: -26
+ACCEL_X = 0.014160 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.916031 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+this is the pitch: -0.806440
+dt: 0.030292
+angle we are moving at: -2.290343
+[0;32mI (2795) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (2805) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -31
+ACCEL_X = 0.014648 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.473282
+this is the pitch: -0.835055
+dt: 0.030292
+angle we are moving at: -2.317166
+[0;32mI (2825) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -17 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (2835) BALANCER: gyro_x: -58 [0m
+ gyro_y: 15 
+ gyro_z: -28
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.002075 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.885496 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.427481
+this is the pitch: -0.813292
+dt: 0.030379
+angle we are moving at: -2.344067
+[0;32mI (2855) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: 2 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (2865) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -31
+ACCEL_X = 0.014771 
+ ACCEL_Y = 0.000244 
+ ACCEL_Z = 1.006226
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.473282
+this is the pitch: -0.840991
+dt: 0.030119
+angle we are moving at: -2.370277
+[0;32mI (2885) BALANCER: ACCEL_X val: 115 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (2895) BALANCER: gyro_x: -60 [0m
+ gyro_y: 15 
+ gyro_z: -30
+ACCEL_X = 0.014038 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.916031 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.458015
+this is the pitch: -0.799780
+dt: 0.030118
+angle we are moving at: -2.397866
+[0;32mI (2915) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8234 
+ 
+[0;32mI (2925) BALANCER: gyro_x: -65 [0m
+ gyro_y: 17 
+ gyro_z: -33
+ACCEL_X = 0.014648 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.005127
+GYRO_X = -0.992366 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.503817
+this is the pitch: -0.834953
+dt: 0.030292
+angle we are moving at: -2.427927
+[0;32mI (2945) BALANCER: ACCEL_X val: 124 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8249 
+ 
+[0;32mI (2955) BALANCER: gyro_x: -63 [0m
+ gyro_y: 11 
+ gyro_z: -30
+ACCEL_X = 0.015137 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.006958
+GYRO_X = -0.961832 
+ GYRO_Y = 0.167939 
+ GYRO_Z = -0.458015
+this is the pitch: -0.861212
+dt: 0.030119
+angle we are moving at: -2.456897
+[0;32mI (2975) BALANCER: ACCEL_X val: 123 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8230 
+ 
+[0;32mI (2985) BALANCER: gyro_x: -63 [0m
+ gyro_y: 22 
+ gyro_z: -33
+ACCEL_X = 0.015015 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.004639
+GYRO_X = -0.961832 
+ GYRO_Y = 0.335878 
+ GYRO_Z = -0.503817
+this is the pitch: -0.856240
+dt: 0.030292
+angle we are moving at: -2.486032
+[0;32mI (3005) BALANCER: ACCEL_X val: 123 [0m
+ ACEEL_Y val: -8 
+ ACCEL_Z val: 8227 
+ 
+[0;32mI (3015) BALANCER: gyro_x: -54 [0m
+ gyro_y: 16 
+ gyro_z: -26
+ACCEL_X = 0.015015 
+ ACCEL_Y = -0.000977 
+ ACCEL_Z = 1.004272
+GYRO_X = -0.824427 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.396947
+this is the pitch: -0.856552
+dt: 0.030292
+angle we are moving at: -2.511006
+[0;32mI (3035) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: -10 
+ ACCEL_Z val: 8232 
+ 
+[0;32mI (3045) BALANCER: gyro_x: -57 [0m
+ gyro_y: 16 
+ gyro_z: -32
+ACCEL_X = 0.014771 
+ ACCEL_Y = -0.001221 
+ ACCEL_Z = 1.004883
+GYRO_X = -0.870229 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.488550
+this is the pitch: -0.842115
+dt: 0.030379
+angle we are moving at: -2.537443
+[0;32mI (3065) BALANCER: ACCEL_X val: 129 [0m
+ ACEEL_Y val: -11 
+ ACCEL_Z val: 8247 
+ 
+[0;32mI (3075) BALANCER: gyro_x: -59 [0m
+ gyro_y: 17 
+ gyro_z: -27
+ACCEL_X = 0.015747 
+ ACCEL_Y = -0.001343 
+ ACCEL_Z = 1.006714
+GYRO_X = -0.900763 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.412214
+this is the pitch: -0.896150
+dt: 0.030379
+angle we are moving at: -2.564807
+[0;32mI (3095) BALANCER: ACCEL_X val: 118 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8228 
+ 
+[0;32mI (3105) BALANCER: gyro_x: -57 [0m
+ gyro_y: 20 
+ gyro_z: -32
+ACCEL_X = 0.014404 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.004395
+GYRO_X = -0.870229 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.488550
+this is the pitch: -0.821638
+dt: 0.030292
+angle we are moving at: -2.591168
+[0;32mI (3125) BALANCER: ACCEL_X val: 105 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (3135) BALANCER: gyro_x: -56 [0m
+ gyro_y: 17 
+ gyro_z: -35
+ACCEL_X = 0.012817 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.005737
+GYRO_X = -0.854962 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.534351
+this is the pitch: -0.730153
+dt: 0.030118
+angle we are moving at: -2.616918
+[0;32mI (3155) BALANCER: ACCEL_X val: 122 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8254 
+ 
+[0;32mI (3165) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -30
+ACCEL_X = 0.014893 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.007568
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.458015
+this is the pitch: -0.846811
+dt: 0.030292
+angle we are moving at: -2.642816
+[0;32mI (3185) BALANCER: ACCEL_X val: 128 [0m
+ ACEEL_Y val: -10 
+ ACCEL_Z val: 8240 
+ 
+[0;32mI (3195) BALANCER: gyro_x: -57 [0m
+ gyro_y: 23 
+ gyro_z: -27
+ACCEL_X = 0.015625 
+ ACCEL_Y = -0.001221 
+ ACCEL_Z = 1.005859
+GYRO_X = -0.870229 
+ GYRO_Y = 0.351145 
+ GYRO_Z = -0.412214
+this is the pitch: -0.889960
+dt: 0.030379
+angle we are moving at: -2.669253
+[0;32mI (3215) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8238 
+ 
+[0;32mI (3225) BALANCER: gyro_x: -62 [0m
+ gyro_y: 21 
+ gyro_z: -31
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.005615
+GYRO_X = -0.946565 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.473282
+this is the pitch: -0.813687
+dt: 0.030292
+angle we are moving at: -2.697926
+[0;32mI (3245) BALANCER: ACCEL_X val: 132 [0m
+ ACEEL_Y val: -7 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (3255) BALANCER: gyro_x: -62 [0m
+ gyro_y: 20 
+ gyro_z: -29
+ACCEL_X = 0.016113 
+ ACCEL_Y = -0.000854 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.946565 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.442748
+this is the pitch: -0.918547
+dt: 0.030293
+angle we are moving at: -2.726601
+[0;32mI (3275) BALANCER: ACCEL_X val: 253 [0m
+ ACEEL_Y val: 18 
+ ACCEL_Z val: 8371 
+ 
+[0;32mI (3285) BALANCER: gyro_x: -85 [0m
+ gyro_y: 129 
+ gyro_z: -30
+ACCEL_X = 0.030884 
+ ACCEL_Y = 0.002197 
+ ACCEL_Z = 1.021851
+GYRO_X = -1.297710 
+ GYRO_Y = 1.969466 
+ GYRO_Z = -0.458015
+this is the pitch: -1.731146
+dt: 0.030292
+angle we are moving at: -2.765911
+[0;32mI (3315) BALANCER: ACCEL_X val: 246 [0m
+ ACEEL_Y val: 22 
+ ACCEL_Z val: 8334 
+ 
+[0;32mI (3315) BALANCER: gyro_x: -115 [0m
+ gyro_y: 398 
+ gyro_z: -37
+ACCEL_X = 0.030029 
+ ACCEL_Y = 0.002686 
+ ACCEL_Z = 1.017334
+GYRO_X = -1.755725 
+ GYRO_Y = 6.076336 
+ GYRO_Z = -0.564885
+this is the pitch: -1.690745
+dt: 0.030379
+angle we are moving at: -2.819248
+[0;32mI (3345) BALANCER: ACCEL_X val: 196 [0m
+ ACEEL_Y val: 13 
+ ACCEL_Z val: 8335 
+ 
+[0;32mI (3345) BALANCER: gyro_x: -72 [0m
+ gyro_y: 84 
+ gyro_z: -30
+ACCEL_X = 0.023926 
+ ACCEL_Y = 0.001587 
+ ACCEL_Z = 1.017456
+GYRO_X = -1.099237 
+ GYRO_Y = 1.282443 
+ GYRO_Z = -0.458015
+this is the pitch: -1.347079
+dt: 0.030205
+angle we are moving at: -2.852450
+[0;32mI (3375) BALANCER: ACCEL_X val: 116 [0m
+ ACEEL_Y val: -11 
+ ACCEL_Z val: 8226 
+ 
+[0;32mI (3375) BALANCER: gyro_x: -57 [0m
+ gyro_y: 9 
+ gyro_z: -22
+ACCEL_X = 0.014160 
+ ACCEL_Y = -0.001343 
+ ACCEL_Z = 1.004150
+GYRO_X = -0.870229 
+ GYRO_Y = 0.137405 
+ GYRO_Z = -0.335878
+this is the pitch: -0.807910
+dt: 0.030292
+angle we are moving at: -2.878811
+[0;32mI (3405) BALANCER: ACCEL_X val: 110 [0m
+ ACEEL_Y val: -12 
+ ACCEL_Z val: 8234 
+ 
+[0;32mI (3405) BALANCER: gyro_x: -60 [0m
+ gyro_y: 14 
+ gyro_z: -29
+ACCEL_X = 0.013428 
+ ACCEL_Y = -0.001465 
+ ACCEL_Z = 1.005127
+GYRO_X = -0.916031 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.442748
+this is the pitch: -0.765383
+dt: 0.030379
+angle we are moving at: -2.906639
+[0;32mI (3435) BALANCER: ACCEL_X val: 128 [0m
+ ACEEL_Y val: -2 
+ ACCEL_Z val: 8237 
+ 
+[0;32mI (3435) BALANCER: gyro_x: -58 [0m
+ gyro_y: 19 
+ gyro_z: -31
+ACCEL_X = 0.015625 
+ ACCEL_Y = -0.000244 
+ ACCEL_Z = 1.005493
+GYRO_X = -0.885496 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.473282
+this is the pitch: -0.890284
+dt: 0.030292
+angle we are moving at: -2.933463
+[0;32mI (3465) BALANCER: ACCEL_X val: 112 [0m
+ ACEEL_Y val: -4 
+ ACCEL_Z val: 8249 
+ 
+[0;32mI (3465) BALANCER: gyro_x: -59 [0m
+ gyro_y: 21 
+ gyro_z: -38
+ACCEL_X = 0.013672 
+ ACCEL_Y = -0.000488 
+ ACCEL_Z = 1.006958
+GYRO_X = -0.900763 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.580153
+this is the pitch: -0.777880
+dt: 0.030292
+angle we are moving at: -2.960749
+[0;32mI (3495) BALANCER: ACCEL_X val: 115 [0m
+ ACEEL_Y val: -11 
+ ACCEL_Z val: 8229 
+ 
+[0;32mI (3495) BALANCER: gyro_x: -58 [0m
+ gyro_y: 13 
+ gyro_z: -27
+ACCEL_X = 0.014038 
+ ACCEL_Y = -0.001343 
+ ACCEL_Z = 1.004517
+GYRO_X = -0.885496 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.412214
+this is the pitch: -0.800654
+dt: 0.030379
+angle we are moving at: -2.987649
+[0;32mI (3525) BALANCER: ACCEL_X val: 118 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8233 
+ 
+[0;32mI (3525) BALANCER: gyro_x: -58 [0m
+ gyro_y: 14 
+ gyro_z: -27
+ACCEL_X = 0.014404 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.005005
+GYRO_X = -0.885496 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.412214
+this is the pitch: -0.821139
+dt: 0.030292
+angle we are moving at: -3.014473
+[0;32mI (3555) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8231 
+ 
+[0;32mI (3555) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -31
+ACCEL_X = 0.014648 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.004761
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.473282
+this is the pitch: -0.835258
+dt: 0.030119
+angle we are moving at: -3.040683
+[0;32mI (3585) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: 8 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (3585) BALANCER: gyro_x: -57 [0m
+ gyro_y: 21 
+ gyro_z: -28
+ACCEL_X = 0.014648 
+ ACCEL_Y = 0.000977 
+ ACCEL_Z = 1.006226
+GYRO_X = -0.870229 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.427481
+this is the pitch: -0.834042
+dt: 0.030118
+angle we are moving at: -3.066893
+[0;32mI (3615) BALANCER: ACCEL_X val: 117 [0m
+ ACEEL_Y val: -1 
+ ACCEL_Z val: 8241 
+ 
+[0;32mI (3625) BALANCER: gyro_x: -53 [0m
+ gyro_y: 12 
+ gyro_z: -22
+ACCEL_X = 0.014282 
+ ACCEL_Y = -0.000122 
+ ACCEL_Z = 1.005981
+GYRO_X = -0.809160 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.335878
+this is the pitch: -0.813391
+dt: 0.030292
+angle we are moving at: -3.091404
+[0;32mI (3645) BALANCER: ACCEL_X val: 107 [0m
+ ACEEL_Y val: -3 
+ ACCEL_Z val: 8247 
+ 
+[0;32mI (3655) BALANCER: gyro_x: -61 [0m
+ gyro_y: 16 
+ gyro_z: -28
+ACCEL_X = 0.013062 
+ ACCEL_Y = -0.000366 
+ ACCEL_Z = 1.006714
+GYRO_X = -0.931298 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+this is the pitch: -0.743337
+dt: 0.030292
+angle we are moving at: -3.119615
+[0;32mI (3675) BALANCER: ACCEL_X val: 127 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8235 
+ 
+[0;32mI (3685) BALANCER: gyro_x: -60 [0m
+ gyro_y: 24 
+ gyro_z: -30
+ACCEL_X = 0.015503 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.005249
+GYRO_X = -0.916031 
+ GYRO_Y = 0.366412 
+ GYRO_Z = -0.458015
+this is the pitch: -0.883544
+dt: 0.030293
+angle we are moving at: -3.147364
+[0;32mI (3705) BALANCER: ACCEL_X val: 119 [0m
+ ACEEL_Y val: -11 
+ ACCEL_Z val: 8235 
+ 
+[0;32mI (3715) BALANCER: gyro_x: -60 [0m
+ gyro_y: 13 
+ gyro_z: -34
+ACCEL_X = 0.014526 
+ ACCEL_Y = -0.001343 
+ ACCEL_Z = 1.005249
+GYRO_X = -0.916031 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.519084
+this is the pitch: -0.827896
+dt: 0.030378
+angle we are moving at: -3.175191
+[0;32mI (3735) BALANCER: ACCEL_X val: 112 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8247 
+ 
+[0;32mI (3745) BALANCER: gyro_x: -60 [0m
+ gyro_y: 15 
+ gyro_z: -29
+ACCEL_X = 0.013672 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.006714
+GYRO_X = -0.916031 
+ GYRO_Y = 0.229008 
+ GYRO_Z = -0.442748
+this is the pitch: -0.778069
+dt: 0.030292
+angle we are moving at: -3.202940
+[0;32mI (3765) BALANCER: ACCEL_X val: 113 [0m
+ ACEEL_Y val: 5 
+ ACCEL_Z val: 8243 
+ 
+[0;32mI (3775) BALANCER: gyro_x: -59 [0m
+ gyro_y: 20 
+ gyro_z: -27
+ACCEL_X = 0.013794 
+ ACCEL_Y = 0.000610 
+ ACCEL_Z = 1.006226
+GYRO_X = -0.900763 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.412214
+this is the pitch: -0.785396
+dt: 0.030119
+angle we are moving at: -3.230070
+[0;32mI (3795) BALANCER: ACCEL_X val: 121 [0m
+ ACEEL_Y val: -8 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (3805) BALANCER: gyro_x: -59 [0m
+ gyro_y: 18 
+ gyro_z: -30
+ACCEL_X = 0.014771 
+ ACCEL_Y = -0.000977 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.900763 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.458015
+this is the pitch: -0.841093
+dt: 0.030292
+angle we are moving at: -3.257356
+[0;32mI (3825) BALANCER: ACCEL_X val: 110 [0m
+ ACEEL_Y val: 1 
+ ACCEL_Z val: 8252 
+ 
+[0;32mI (3835) BALANCER: gyro_x: -63 [0m
+ gyro_y: 20 
+ gyro_z: -35
+ACCEL_X = 0.013428 
+ ACCEL_Y = 0.000122 
+ ACCEL_Z = 1.007324
+GYRO_X = -0.961832 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.534351
+this is the pitch: -0.763713
+dt: 0.030119
+angle we are moving at: -3.286325
+[0;32mI (3855) BALANCER: ACCEL_X val: 123 [0m
+ ACEEL_Y val: 9 
+ ACCEL_Z val: 8237 
+ 
+[0;32mI (3865) BALANCER: gyro_x: -60 [0m
+ gyro_y: 20 
+ gyro_z: -29
+ACCEL_X = 0.015015 
+ ACCEL_Y = 0.001099 
+ ACCEL_Z = 1.005493
+GYRO_X = -0.916031 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -0.442748
+this is the pitch: -0.855513
+dt: 0.030118
+angle we are moving at: -3.313914
+[0;32mI (3885) BALANCER: ACCEL_X val: 112 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8231 
+ 
+[0;32mI (3895) BALANCER: gyro_x: -55 [0m
+ gyro_y: 17 
+ gyro_z: -26
+ACCEL_X = 0.013672 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.004761
+GYRO_X = -0.839695 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.396947
+this is the pitch: -0.779581
+dt: 0.030119
+angle we are moving at: -3.339205
+[0;32mI (3915) BALANCER: ACCEL_X val: 120 [0m
+ ACEEL_Y val: 0 
+ ACCEL_Z val: 8239 
+ 
+[0;32mI (3925) BALANCER: gyro_x: -58 [0m
+ gyro_y: 18 
+ gyro_z: -26
+ACCEL_X = 0.014648 
+ ACCEL_Y = 0.000000 
+ ACCEL_Z = 1.005737
+GYRO_X = -0.885496 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.396947
+this is the pitch: -0.834447
+dt: 0.030118
+angle we are moving at: -3.365874
+[0;32mI (3945) BALANCER: ACCEL_X val: 132 [0m
+ ACEEL_Y val: 6 
+ ACCEL_Z val: 8247 
+ 
+[0;32mI (3955) BALANCER: gyro_x: -55 [0m
+ gyro_y: 16 
+ gyro_z: -28
+ACCEL_X = 0.016113 
+ ACCEL_Y = 0.000732 
+ ACCEL_Z = 1.006714
+GYRO_X = -0.839695 
+ GYRO_Y = 0.244275 
+ GYRO_Z = -0.427481
+this is the pitch: -0.916988
+dt: 0.030119
+angle we are moving at: -3.391165
+[0;32mI (3975) BALANCER: ACCEL_X val: 108 [0m
+ ACEEL_Y val: -5 
+ ACCEL_Z val: 8236 
+ 
+[0;32mI (3985) BALANCER: gyro_x: -56 [0m
+ gyro_y: 12 
+ gyro_z: -30
+ACCEL_X = 0.013184 
+ ACCEL_Y = -0.000610 
+ ACCEL_Z = 1.005371
+GYRO_X = -0.854962 
+ GYRO_Y = 0.183206 
+ GYRO_Z = -0.458015
+this is the pitch: -0.751286
+dt: 0.030292
+angle we are moving at: -3.417063
+[0;32mI (4005) BALANCER: ACCEL_X val: 87 [0m
+ ACEEL_Y val: -11 
+ ACCEL_Z val: 8263 
+ 
+[0;32mI (4015) BALANCER: gyro_x: -56 [0m
+ gyro_y: 10 
+ gyro_z: -26
+ACCEL_X = 0.010620 
+ ACCEL_Y = -0.001343 
+ ACCEL_Z = 1.008667
+GYRO_X = -0.854962 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -0.396947
+this is the pitch: -0.603237
+dt: 0.030292
+angle we are moving at: -3.442962
+[0;32mI (4035) BALANCER: ACCEL_X val: 92 [0m
+ ACEEL_Y val: 3 
+ ACCEL_Z val: 8252 
+ 
+[0;32mI (4045) BALANCER: gyro_x: -59 [0m
+ gyro_y: 13 
+ gyro_z: -27
+ACCEL_X = 0.011230 
+ ACCEL_Y = 0.000366 
+ ACCEL_Z = 1.007324
+GYRO_X = -0.900763 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -0.412214
+this is the pitch: -0.638753
+dt: 0.030032
+angle we are moving at: -3.470014
+[0;32mI (4065) BALANCER: ACCEL_X val: 115 [0m
+ ACEEL_Y val: -6 
+ ACCEL_Z val: 8242 
+ 
+[0;32mI (4075) BALANCER: gyro_x: -63 [0m
+ gyro_y: 20 
+ gyro_z: -28
+ACCEL_X = 0.014038 
+ ACCEL_Y = -0.000732 
+ ACCEL_Z = 1.006104
+GYRO_X = -0.961832 
