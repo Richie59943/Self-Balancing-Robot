@@ -17,7 +17,9 @@
 #define ICM42670_GYRO_CONFIG 0x48
 
 #define ICM42670_ACCEL_ADDR 0x21 //address of our accel
-#define ICM42670_ACCEL_CONFIG 0x48 //hex we want to send to our accel addr 
+#define ICM42670_ACCEL_CONFIG 0x48 //hex we want to send to our accel addr
+
+#define ICM42670_INT_STATUS_DRDY 0x39 // this is going to allow us to check when data from gyro and accel are ready 
 
 
 //this is saying that we are going to have a function named "icm42670_init()" and it will take the i2c bus handle and return error codes 
@@ -57,4 +59,7 @@ esp_err_t icm42670_read_accel(int16_t *accel_x, int16_t *accel_y, int16_t *accel
 
 //function that is going to read our Gyro data from IMU
 esp_err_t icm42670_read_gyro(int16_t *gyro_x, int16_t *gyro_y, int16_t *gyro_z);
+
+//this is our function to just check if we can read a data ready bit 
+esp_err_t icm42670_get_data_ready(uint8_t *data_ready);
 #endif

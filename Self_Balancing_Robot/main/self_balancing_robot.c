@@ -96,6 +96,11 @@ ESP_ERROR_CHECK(icm42670_get_accel_config(&accel_addr));
     ESP_LOGE(TAG,"Failed");
   }
 
+//this is going to check if we can read out IMU data again (every 5ms)
+  uint8_t data_ready = 0;
+ 
+
+
 
 //this fucntion is going to try and read data from our accel 
   int16_t accel_x=0 , accel_y=0,accel_z=0;
@@ -146,9 +151,13 @@ ESP_ERROR_CHECK(icm42670_get_accel_config(&accel_addr));
 while(gyro_count < 1000)
   {
 //this is going to be our start time for our 5ms gyro 200hz read
-  int64_t start_gyro_read_timer = esp_timer_get_time();
+  //int64_t start_gyro_read_timer = esp_timer_get_time();
 
+    //this is going to get rid of the code above so we dont use esp timers and actually only move on once we have data ready bit 
+  ESP_ERROR_CHECK(icm42670_get_data_ready(&data_ready));
 
+    if(data_ready == 0x01)
+    {
   ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
 
 
@@ -168,15 +177,17 @@ while(gyro_count < 1000)
 
      gyro_sum += gyro_conv_x;
 
-int64_t total_time = 0;
+/*int64_t total_time = 0;
     int64_t end_gyro_read_timer =0 ;
     while(total_time <= 5000)
     { 
       end_gyro_read_timer = esp_timer_get_time();
       total_time = end_gyro_read_timer - start_gyro_read_timer;
     }
-
+*/
 gyro_count++;
+  
+    ESP_LOGI(TAG,"Waited 5ms");}
   }
 
 bias = gyro_sum / 1000;
@@ -189,9 +200,13 @@ prev_time = esp_timer_get_time();
   //normal loop 
   while(1)
   {
+   //checking if our gyro or accel is ready to read again 
+  ESP_ERROR_CHECK(icm42670_get_data_ready(&data_ready));
+    if(data_ready == 0x01)
+    {
 
   //keeps track of 200hz 5ms timing 
-  int64_t working_loop_timer_start = esp_timer_get_time();
+  //int64_t working_loop_timer_start = esp_timer_get_time();
   ESP_ERROR_CHECK(icm42670_read_gyro(&gyro_x,&gyro_y,&gyro_z));
   ESP_ERROR_CHECK(icm42670_read_accel(&accel_x,&accel_y,&accel_z)); //these are going in ass addreses since we defined that in our icm.c file they are pointers so they should be pointing to the addr of where we want to store them 
 
@@ -214,7 +229,6 @@ prev_time = esp_timer_get_time();
   elapsed_time = elapsed_time / 1000000;
   float dt = 0;
   dt = elapsed_time;
-  printf("dt: %f\n", dt);
 
 
 
@@ -238,7 +252,16 @@ prev_time = esp_timer_get_time();
 
     //complementary filter 
     filtered_angle = ((0.98)*(gyro_angle_predicted)) + ((1-0.98)*(pitch_deg));
+  
 
+    //printing the actuall filtered angle 
+//    ESP_LOGI(TAG,"Filtered Angle: %f\n", filtered_angle);
+  //    ESP_LOGI(TAG,"Aceel pitch: %f\n", pitch_deg);
+   //   ESP_LOGI(TAG,"ACCEL x: %f Z: %f\n", accel_conv_x,accel_conv_z);
+ESP_LOGI(TAG, "Accel: %.2f | Filtered: %.2f", pitch_deg, filtered_angle);
+
+    }
+  
    /* printf("Filtered Angle: %f\n", filtered_angle);
 
   printf("Accel pitch: %f\n",pitch_deg);
@@ -250,7 +273,7 @@ prev_time = esp_timer_get_time();
 
     printf("angle we are moving at: %f\n", gyro_new);
   
-*/
+
     int64_t working_loop_timer_end=0;
     int64_t check_total_time=0;
     while(check_total_time < 5000)
@@ -258,5 +281,6 @@ prev_time = esp_timer_get_time();
       working_loop_timer_end = esp_timer_get_time();
       check_total_time = working_loop_timer_end -working_loop_timer_start;
     }
+    */
   }
 }

@@ -193,5 +193,30 @@ esp_err_t icm42670_read_gyro(int16_t *gyro_x, int16_t *gyro_y,int16_t *gyro_z)
   *gyro_z = (z1 << 8) | z0;
 
   return ESP_OK;
-
 }
+
+//writing our function to check our data ready bit 
+
+esp_err_t icm42670_get_data_ready(uint8_t *data_ready)
+  {
+  //where we are going to store the entire bit from our ICM42670_INT_STATUS_DRDY
+    uint8_t register_value = 0;
+
+    //reading our int status to check what bit is there to see if ready to read again 
+   esp_err_t err = icm42670_read_reg(ICM42670_INT_STATUS_DRDY,&register_value);
+
+  if(err != ESP_OK)
+    {
+      return err;
+    }
+
+    //creating our bit mask in order to only let 1 bit go throuhg 
+    *data_ready = register_value & 0x01;
+
+    return ESP_OK;
+
+
+  }
+
+
+
