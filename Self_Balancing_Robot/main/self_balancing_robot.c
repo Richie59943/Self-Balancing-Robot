@@ -4,6 +4,8 @@
 #include "esp_log.h"
 #include <math.h>
 #include "driver/i2c_master.h"
+#include "driver/ledc.h" //adding our ledc PWM for motors
+#include "driver/gpio.h" // allows us to call gpio names 
 #include "esp_timer.h"
 #include "icm42670.h"
 
@@ -29,6 +31,102 @@ void app_main(void)
     .glitch_ignore_cnt = 7,
     .flags.enable_internal_pullup = true,
   };
+
+  //function for our ledc_timer_config  to control motors LEDDCC 
+  ledc_timer_config_t motor1_config = {
+    .speed_mode = LEDC_LOW_SPEED_MODE,
+    .duty_resolution = LEDC_TIMER_10_BIT,
+    .timer_num = LEDC_TIMER_0,
+    .freq_hz = 1000,
+    .clk_cfg = LEDC_AUTO_CLK,
+
+  };
+
+  //config for our channel to controll motors LEDC
+  ledc_channel_config_t motor1_channel_config = {
+    .gpio_num = 1,
+    .speed_mode = LEDC_LOW_SPEED_MODE,
+    .channel = LEDC_CHANNEL_0,
+    .timer_sel = LEDC_TIMER_0,
+    .duty = 0,// since we dont have motor connect and we dont want motor to instantly start up 0 = 0%, 512 = 50% , 1023 = 100%
+    .sleep_mode = LEDC_SLEEP_MODE_NO_ALIVE_NO_PD,
+
+  };
+
+
+  //GPIO CONFIGS
+  gpio_config_t gpios_config = {
+    .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
+    .mode = GPIO_MODE_OUTPUT,// we want these pins to just output signals 0/1 
+    .pull_up_en = GPIO_PULLUP_DISABLE, //we are not sing any internal pull up 
+    .pull_down_en = GPIO_PULLDOWN_DISABLE, // we do not need pull down 
+    .intr_type = GPIO_INTR_DISABLE, // we are not using any interupts in these pins 
+  };
+
+  //calling out GPIO config 
+  ESP_ERROR_CHECK(gpio_config(&gpios_config));
+
+
+  //calling out config 
+  ESP_ERROR_CHECK(ledc_timer_config(&motor1_config));
+
+  //calling our channel config 
+  ESP_ERROR_CHECK(ledc_channel_config(&motor1_channel_config));
+
+
+  //going to turn our TB6612 driver off to make sure we are safe 
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
+
+  //make sure our AIN1 and 2 are 0 
+
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+
+  //make sure our duty is 0 before we start 
+  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
+
+  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+
+  vTaskDelay(pdMS_TO_TICKS(5000)); //wait 5 seconds before starting motor 
+
+
+  //make motor move forward 
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,1));
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+ 
+  //going to set our duty 
+ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,153)); // params spped_mode, channel, duty values 
+ESP_LOGI(TAG,"SET DUTY: 15%");
+
+//then we need to update our duty 
+ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));// params spped_mode and channel
+ESP_LOGI(TAG,"UPDATE DUTY");
+
+vTaskDelay(pdMS_TO_TICKS(1000));
+  ESP_LOGI(TAG,"WAIT");
+
+
+//setting our driver to active 
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
+
+
+  /*
+ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,1023));
+ESP_LOGI(TAG,"SET DUTY: 100%");
+
+  ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0);
+ESP_LOGI(TAG,"UPDATE");
+
+ vTaskDelay( pdMS_TO_TICKS(1000));
+ESP_LOGI(TAG,"WAIT");
+
+  */
+
+  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
+
+  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+
+
 
   i2c_master_bus_handle_t bus_handle;
   ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_mst_config,&bus_handle));
