@@ -8,7 +8,7 @@
 #include "driver/gpio.h" // allows us to call gpio names 
 #include "esp_timer.h"
 #include "icm42670.h"
-
+#include <stdbool.h>
 #define ESP_SDA_GPIO 7 
 #define ESP_SCL_GPIO 8
 
@@ -19,6 +19,57 @@ static const char *TAG = "BALANCER";
 //GYRO: +-500 /s @200 
 //ACCEL sensativity: 8192 LSB/g 
 //GYRO sensativity: 65.5 LSB 
+
+
+//these three are volatile becuase they can change value behind our compilers bakc without it being explicitly donw in our main loop 
+
+  //variables so that we can keep trakc of prev ISR values 
+  volatile int prev_a = 0;
+  volatile  int prev_b = 0;
+
+
+//creating a short debug counter 
+volatile int encoder_interrupt_counter = 0;
+
+
+  //our encoder_count  counts how many counts the motor has moved with the sign representing direction 
+  volatile int encoder_count = 0;
+
+
+
+  //only called when one of our gpio is requested to be interupted 
+  void encoder_isr(void *arg)
+  {
+    // variables that are going to hold the retunr of gpio_get_level 
+    int a_return = 0;
+    int b_return = 0;
+
+    //going to check if GPIO PINS are high or low 
+    a_return = gpio_get_level(GPIO_NUM_5);
+    b_return = gpio_get_level(GPIO_NUM_6);
+   
+  //just so we dont have to writ eit all out in a if so this makes it cleaner 
+    bool move_forward = (prev_a == 0 && prev_b == 0 && a_return == 1 && b_return == 0) || (prev_a == 1 && prev_b == 0 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 0 && b_return ==1) || (prev_a == 0 && prev_b == 1 && a_return == 0 && b_return==0);
+    bool move_backward =  (prev_a == 0 && prev_b == 0 && a_return == 0 && b_return == 1) || (prev_a == 0 && prev_b == 1 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 1 && b_return ==0) || (prev_a == 1 && prev_b == 0 && a_return == 0 && b_return==0);
+
+
+    if(move_forward)
+    {
+      // move forward 
+      encoder_count++;
+    }
+    else if(move_backward){
+      //move backward 
+      encoder_count--;
+
+    }
+      prev_a = a_return;
+      prev_b = b_return;
+
+  encoder_interrupt_counter++;
+
+  }
+
 
 
 void app_main(void)
@@ -54,8 +105,8 @@ void app_main(void)
   };
 
 
-  //GPIO CONFIGS
-  gpio_config_t gpios_config = {
+  //GPIO CONFIGS for our outputs sending to driver 
+  gpio_config_t driver_gpio_config = {
     .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
     .mode = GPIO_MODE_OUTPUT,// we want these pins to just output signals 0/1 
     .pull_up_en = GPIO_PULLUP_DISABLE, //we are not sing any internal pull up 
@@ -63,8 +114,38 @@ void app_main(void)
     .intr_type = GPIO_INTR_DISABLE, // we are not using any interupts in these pins 
   };
 
-  //calling out GPIO config 
-  ESP_ERROR_CHECK(gpio_config(&gpios_config));
+
+  //GPIO config for our motors encoder to sned to our esp32 
+  gpio_config_t encoder_gpio_config = {
+    .pin_bit_mask = (1ULL << 5) | (1ULL << 6), // our config is for gpio pin 5 and 6 
+    .mode = GPIO_MODE_INPUT, //configs 5,6 to only take in input from out encoder 
+    .pull_up_en = GPIO_PULLUP_DISABLE, //disbling pull up
+    .pull_down_en = GPIO_PULLDOWN_DISABLE, //disbaling pulldown 
+    .intr_type = GPIO_INTR_ANYEDGE,//this allows us to interupt anytime we see a change wether rises or falls the signal 
+
+
+  };
+
+
+     //calling out GPIO config 
+  ESP_ERROR_CHECK(gpio_config(&driver_gpio_config));
+  
+  //calling our encoder gpio config
+  ESP_ERROR_CHECK(gpio_config(&encoder_gpio_config));
+
+//setting our preva and b to soeting instead of just 0 so tha tthey hold readings form out GPIO pins 
+  prev_a = gpio_get_level(GPIO_NUM_6);
+  prev_b = gpio_get_level(GPIO_NUM_5);
+
+ 
+  //this is going to install our GPIO isr service 
+  ESP_ERROR_CHECK(gpio_install_isr_service(0)); // no special flags so we just put 0 
+
+  
+//this is the gpio isr handler so we are going to add a ISR to our gpio pin 
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_6,encoder_isr,NULL));
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5,encoder_isr,NULL));
+
 
 
   //calling out config 
