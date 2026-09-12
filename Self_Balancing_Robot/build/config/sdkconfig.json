@@ -332,6 +332,7 @@
     "IDF_TARGET_ESP32C3": true,
     "IDF_TOOLCHAIN": "gcc",
     "IDF_TOOLCHAIN_GCC": true,
+    "LEDC_CTRL_FUNC_IN_IRAM": false,
     "LIBC_ASSERT_BUFFER_SIZE": 200,
     "LIBC_LOCKS_PLACE_IN_IRAM": true,
     "LIBC_MISC_IN_IRAM": true,

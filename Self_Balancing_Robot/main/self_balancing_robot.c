@@ -174,6 +174,9 @@ void app_main(void)
   //make motor move forward 
   ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,1));
   ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+
+//setting our driver to active 
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
  
   //going to set our duty 
 ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,153)); // params spped_mode, channel, duty values 
@@ -186,9 +189,9 @@ ESP_LOGI(TAG,"UPDATE DUTY");
 vTaskDelay(pdMS_TO_TICKS(1000));
   ESP_LOGI(TAG,"WAIT");
 
+//now we turn off our tb6617 
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
 
-//setting our driver to active 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
 
 
   /*

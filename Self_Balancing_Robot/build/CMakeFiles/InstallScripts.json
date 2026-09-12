@@ -74,6 +74,8 @@
 		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_i2c/cmake_install.cmake",
 		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_ringbuf/cmake_install.cmake",
 		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_i2c/cmake_install.cmake",
+		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_ledc/cmake_install.cmake",
+		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_ledc/cmake_install.cmake",
 		"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/main/cmake_install.cmake"
 	],
 	"Parallel" : false

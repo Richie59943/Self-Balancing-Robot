@@ -91,5 +91,9 @@
 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a
 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_i2c/libesp_hal_i2c.a
 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_ringbuf/libesp_ringbuf.a
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_ledc/libesp_hal_ledc.a
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/main/libmain.a
 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_i2c/libesp_driver_i2c.a
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a

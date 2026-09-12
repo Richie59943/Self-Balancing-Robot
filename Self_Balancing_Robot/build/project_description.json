@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "Self_Balancing_Robot",
-    "project_version":    "e7fc33e-dirty",
+    "project_version":    "4bfedf4-dirty",
     "project_path":       "/home/richie/esp/Own_Projects/Self_Balancing_Robot",
     "idf_path":           "/home/richie/esp/esp-idf",
     "build_dir":          "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build",
@@ -21,12 +21,12 @@
     "monitor_toolprefix": "riscv32-esp-elf-",
     "c_compiler":         "/home/richie/.espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc",
     "config_environment" : {
-        "COMPONENT_KCONFIGS" : "/home/richie/esp/esp-idf/components/efuse/Kconfig;/home/richie/esp/esp-idf/components/esp_common/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_dma/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_gpio/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_i2c/Kconfig;/home/richie/esp/esp-idf/components/esp_hw_support/Kconfig;/home/richie/esp/esp-idf/components/esp_libc/Kconfig;/home/richie/esp/esp-idf/components/esp_mm/Kconfig;/home/richie/esp/esp-idf/components/esp_partition/Kconfig;/home/richie/esp/esp-idf/components/esp_pm/Kconfig;/home/richie/esp/esp-idf/components/esp_ringbuf/Kconfig;/home/richie/esp/esp-idf/components/esp_rom/Kconfig;/home/richie/esp/esp-idf/components/esp_security/Kconfig;/home/richie/esp/esp-idf/components/esp_stdio/Kconfig;/home/richie/esp/esp-idf/components/esp_system/Kconfig;/home/richie/esp/esp-idf/components/esp_timer/Kconfig;/home/richie/esp/esp-idf/components/freertos/Kconfig;/home/richie/esp/esp-idf/components/hal/Kconfig;/home/richie/esp/esp-idf/components/heap/Kconfig;/home/richie/esp/esp-idf/components/log/Kconfig;/home/richie/esp/esp-idf/components/mbedtls/Kconfig;/home/richie/esp/esp-idf/components/pthread/Kconfig;/home/richie/esp/esp-idf/components/soc/Kconfig;/home/richie/esp/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS" : "/home/richie/esp/esp-idf/components/efuse/Kconfig;/home/richie/esp/esp-idf/components/esp_common/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_dma/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_gpio/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_i2c/Kconfig;/home/richie/esp/esp-idf/components/esp_driver_ledc/Kconfig;/home/richie/esp/esp-idf/components/esp_hw_support/Kconfig;/home/richie/esp/esp-idf/components/esp_libc/Kconfig;/home/richie/esp/esp-idf/components/esp_mm/Kconfig;/home/richie/esp/esp-idf/components/esp_partition/Kconfig;/home/richie/esp/esp-idf/components/esp_pm/Kconfig;/home/richie/esp/esp-idf/components/esp_ringbuf/Kconfig;/home/richie/esp/esp-idf/components/esp_rom/Kconfig;/home/richie/esp/esp-idf/components/esp_security/Kconfig;/home/richie/esp/esp-idf/components/esp_stdio/Kconfig;/home/richie/esp/esp-idf/components/esp_system/Kconfig;/home/richie/esp/esp-idf/components/esp_timer/Kconfig;/home/richie/esp/esp-idf/components/freertos/Kconfig;/home/richie/esp/esp-idf/components/hal/Kconfig;/home/richie/esp/esp-idf/components/heap/Kconfig;/home/richie/esp/esp-idf/components/log/Kconfig;/home/richie/esp/esp-idf/components/mbedtls/Kconfig;/home/richie/esp/esp-idf/components/pthread/Kconfig;/home/richie/esp/esp-idf/components/soc/Kconfig;/home/richie/esp/esp-idf/components/spi_flash/Kconfig",
         "COMPONENT_KCONFIGS_PROJBUILD" : "/home/richie/esp/esp-idf/components/app_update/Kconfig.projbuild;/home/richie/esp/esp-idf/components/bootloader/Kconfig.projbuild;/home/richie/esp/esp-idf/components/esp_app_format/Kconfig.projbuild;/home/richie/esp/esp-idf/components/esp_rom/Kconfig.projbuild;/home/richie/esp/esp-idf/components/esptool_py/Kconfig.projbuild;/home/richie/esp/esp-idf/components/partition_table/Kconfig.projbuild"
     },
     "common_component_reqs": [ "cxx", "esp_libc", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "esp_stdio", "riscv" ],
-    "build_components" : [ "app_update", "bootloader", "bootloader_support", "cxx", "efuse", "esp_app_format", "esp_blockdev", "esp_bootloader_format", "esp_common", "esp_driver_dma", "esp_driver_gpio", "esp_driver_i2c", "esp_hal_ana_conv", "esp_hal_clock", "esp_hal_dma", "esp_hal_gpio", "esp_hal_gpspi", "esp_hal_i2c", "esp_hal_mspi", "esp_hal_pmu", "esp_hal_regi2c", "esp_hal_rtc_timer", "esp_hal_security", "esp_hal_systimer", "esp_hal_timg", "esp_hal_touch_sens", "esp_hal_uart", "esp_hal_usb", "esp_hal_wdt", "esp_hw_support", "esp_libc", "esp_mm", "esp_partition", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_stdio", "esp_system", "esp_timer", "esp_usb_cdc_rom_console", "esptool_py", "freertos", "hal", "heap", "log", "main", "mbedtls", "partition_table", "pthread", "riscv", "soc", "spi_flash", "" ],
-    "build_component_paths" : [ "/home/richie/esp/esp-idf/components/app_update", "/home/richie/esp/esp-idf/components/bootloader", "/home/richie/esp/esp-idf/components/bootloader_support", "/home/richie/esp/esp-idf/components/cxx", "/home/richie/esp/esp-idf/components/efuse", "/home/richie/esp/esp-idf/components/esp_app_format", "/home/richie/esp/esp-idf/components/esp_blockdev", "/home/richie/esp/esp-idf/components/esp_bootloader_format", "/home/richie/esp/esp-idf/components/esp_common", "/home/richie/esp/esp-idf/components/esp_driver_dma", "/home/richie/esp/esp-idf/components/esp_driver_gpio", "/home/richie/esp/esp-idf/components/esp_driver_i2c", "/home/richie/esp/esp-idf/components/esp_hal_ana_conv", "/home/richie/esp/esp-idf/components/esp_hal_clock", "/home/richie/esp/esp-idf/components/esp_hal_dma", "/home/richie/esp/esp-idf/components/esp_hal_gpio", "/home/richie/esp/esp-idf/components/esp_hal_gpspi", "/home/richie/esp/esp-idf/components/esp_hal_i2c", "/home/richie/esp/esp-idf/components/esp_hal_mspi", "/home/richie/esp/esp-idf/components/esp_hal_pmu", "/home/richie/esp/esp-idf/components/esp_hal_regi2c", "/home/richie/esp/esp-idf/components/esp_hal_rtc_timer", "/home/richie/esp/esp-idf/components/esp_hal_security", "/home/richie/esp/esp-idf/components/esp_hal_systimer", "/home/richie/esp/esp-idf/components/esp_hal_timg", "/home/richie/esp/esp-idf/components/esp_hal_touch_sens", "/home/richie/esp/esp-idf/components/esp_hal_uart", "/home/richie/esp/esp-idf/components/esp_hal_usb", "/home/richie/esp/esp-idf/components/esp_hal_wdt", "/home/richie/esp/esp-idf/components/esp_hw_support", "/home/richie/esp/esp-idf/components/esp_libc", "/home/richie/esp/esp-idf/components/esp_mm", "/home/richie/esp/esp-idf/components/esp_partition", "/home/richie/esp/esp-idf/components/esp_pm", "/home/richie/esp/esp-idf/components/esp_ringbuf", "/home/richie/esp/esp-idf/components/esp_rom", "/home/richie/esp/esp-idf/components/esp_security", "/home/richie/esp/esp-idf/components/esp_stdio", "/home/richie/esp/esp-idf/components/esp_system", "/home/richie/esp/esp-idf/components/esp_timer", "/home/richie/esp/esp-idf/components/esp_usb_cdc_rom_console", "/home/richie/esp/esp-idf/components/esptool_py", "/home/richie/esp/esp-idf/components/freertos", "/home/richie/esp/esp-idf/components/hal", "/home/richie/esp/esp-idf/components/heap", "/home/richie/esp/esp-idf/components/log", "/home/richie/esp/Own_Projects/Self_Balancing_Robot/main", "/home/richie/esp/esp-idf/components/mbedtls", "/home/richie/esp/esp-idf/components/partition_table", "/home/richie/esp/esp-idf/components/pthread", "/home/richie/esp/esp-idf/components/riscv", "/home/richie/esp/esp-idf/components/soc", "/home/richie/esp/esp-idf/components/spi_flash", "" ],
+    "build_components" : [ "app_update", "bootloader", "bootloader_support", "cxx", "efuse", "esp_app_format", "esp_blockdev", "esp_bootloader_format", "esp_common", "esp_driver_dma", "esp_driver_gpio", "esp_driver_i2c", "esp_driver_ledc", "esp_hal_ana_conv", "esp_hal_clock", "esp_hal_dma", "esp_hal_gpio", "esp_hal_gpspi", "esp_hal_i2c", "esp_hal_ledc", "esp_hal_mspi", "esp_hal_pmu", "esp_hal_regi2c", "esp_hal_rtc_timer", "esp_hal_security", "esp_hal_systimer", "esp_hal_timg", "esp_hal_touch_sens", "esp_hal_uart", "esp_hal_usb", "esp_hal_wdt", "esp_hw_support", "esp_libc", "esp_mm", "esp_partition", "esp_pm", "esp_ringbuf", "esp_rom", "esp_security", "esp_stdio", "esp_system", "esp_timer", "esp_usb_cdc_rom_console", "esptool_py", "freertos", "hal", "heap", "log", "main", "mbedtls", "partition_table", "pthread", "riscv", "soc", "spi_flash", "" ],
+    "build_component_paths" : [ "/home/richie/esp/esp-idf/components/app_update", "/home/richie/esp/esp-idf/components/bootloader", "/home/richie/esp/esp-idf/components/bootloader_support", "/home/richie/esp/esp-idf/components/cxx", "/home/richie/esp/esp-idf/components/efuse", "/home/richie/esp/esp-idf/components/esp_app_format", "/home/richie/esp/esp-idf/components/esp_blockdev", "/home/richie/esp/esp-idf/components/esp_bootloader_format", "/home/richie/esp/esp-idf/components/esp_common", "/home/richie/esp/esp-idf/components/esp_driver_dma", "/home/richie/esp/esp-idf/components/esp_driver_gpio", "/home/richie/esp/esp-idf/components/esp_driver_i2c", "/home/richie/esp/esp-idf/components/esp_driver_ledc", "/home/richie/esp/esp-idf/components/esp_hal_ana_conv", "/home/richie/esp/esp-idf/components/esp_hal_clock", "/home/richie/esp/esp-idf/components/esp_hal_dma", "/home/richie/esp/esp-idf/components/esp_hal_gpio", "/home/richie/esp/esp-idf/components/esp_hal_gpspi", "/home/richie/esp/esp-idf/components/esp_hal_i2c", "/home/richie/esp/esp-idf/components/esp_hal_ledc", "/home/richie/esp/esp-idf/components/esp_hal_mspi", "/home/richie/esp/esp-idf/components/esp_hal_pmu", "/home/richie/esp/esp-idf/components/esp_hal_regi2c", "/home/richie/esp/esp-idf/components/esp_hal_rtc_timer", "/home/richie/esp/esp-idf/components/esp_hal_security", "/home/richie/esp/esp-idf/components/esp_hal_systimer", "/home/richie/esp/esp-idf/components/esp_hal_timg", "/home/richie/esp/esp-idf/components/esp_hal_touch_sens", "/home/richie/esp/esp-idf/components/esp_hal_uart", "/home/richie/esp/esp-idf/components/esp_hal_usb", "/home/richie/esp/esp-idf/components/esp_hal_wdt", "/home/richie/esp/esp-idf/components/esp_hw_support", "/home/richie/esp/esp-idf/components/esp_libc", "/home/richie/esp/esp-idf/components/esp_mm", "/home/richie/esp/esp-idf/components/esp_partition", "/home/richie/esp/esp-idf/components/esp_pm", "/home/richie/esp/esp-idf/components/esp_ringbuf", "/home/richie/esp/esp-idf/components/esp_rom", "/home/richie/esp/esp-idf/components/esp_security", "/home/richie/esp/esp-idf/components/esp_stdio", "/home/richie/esp/esp-idf/components/esp_system", "/home/richie/esp/esp-idf/components/esp_timer", "/home/richie/esp/esp-idf/components/esp_usb_cdc_rom_console", "/home/richie/esp/esp-idf/components/esptool_py", "/home/richie/esp/esp-idf/components/freertos", "/home/richie/esp/esp-idf/components/hal", "/home/richie/esp/esp-idf/components/heap", "/home/richie/esp/esp-idf/components/log", "/home/richie/esp/Own_Projects/Self_Balancing_Robot/main", "/home/richie/esp/esp-idf/components/mbedtls", "/home/richie/esp/esp-idf/components/partition_table", "/home/richie/esp/esp-idf/components/pthread", "/home/richie/esp/esp-idf/components/riscv", "/home/richie/esp/esp-idf/components/soc", "/home/richie/esp/esp-idf/components/spi_flash", "" ],
     "build_component_info" : {
         "app_update": {
             "alias": "idf::app_update",
@@ -208,6 +208,21 @@
             "sources": [ "/home/richie/esp/esp-idf/components/esp_driver_i2c/i2c_master.c", "/home/richie/esp/esp-idf/components/esp_driver_i2c/i2c_common.c", "/home/richie/esp/esp-idf/components/esp_driver_i2c/i2c_slave.c" ],
             "include_dirs": [ "include" ]
         },
+        "esp_driver_ledc": {
+            "alias": "idf::esp_driver_ledc",
+            "target": "___idf_esp_driver_ledc",
+            "prefix": "idf",
+            "dir": "/home/richie/esp/esp-idf/components/esp_driver_ledc",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_driver_ledc",
+            "reqs": [ "esp_hal_ledc" ],
+            "priv_reqs": [ "esp_pm", "esp_driver_gpio" ],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a",
+            "sources": [ "/home/richie/esp/esp-idf/components/esp_driver_ledc/src/ledc.c" ],
+            "include_dirs": [ "include" ]
+        },
         "esp_hal_ana_conv": {
             "alias": "idf::esp_hal_ana_conv",
             "target": "___idf_esp_hal_ana_conv",
@@ -297,6 +312,21 @@
             "file": "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_i2c/libesp_hal_i2c.a",
             "sources": [ "/home/richie/esp/esp-idf/components/esp_hal_i2c/i2c_hal.c", "/home/richie/esp/esp-idf/components/esp_hal_i2c/i2c_hal_iram.c", "/home/richie/esp/esp-idf/components/esp_hal_i2c/esp32c3/i2c_periph.c" ],
             "include_dirs": [ "esp32c3/include", "include" ]
+        },
+        "esp_hal_ledc": {
+            "alias": "idf::esp_hal_ledc",
+            "target": "___idf_esp_hal_ledc",
+            "prefix": "idf",
+            "dir": "/home/richie/esp/esp-idf/components/esp_hal_ledc",
+            "type": "LIBRARY",
+            "lib": "__idf_esp_hal_ledc",
+            "reqs": [ "soc", "hal" ],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "file": "/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_hal_ledc/libesp_hal_ledc.a",
+            "sources": [ "/home/richie/esp/esp-idf/components/esp_hal_ledc/ledc_hal.c", "/home/richie/esp/esp-idf/components/esp_hal_ledc/ledc_hal_iram.c", "/home/richie/esp/esp-idf/components/esp_hal_ledc/esp32c3/ledc_periph.c" ],
+            "include_dirs": [ "include", "esp32c3/include" ]
         },
         "esp_hal_mspi": {
             "alias": "idf::esp_hal_mspi",
@@ -725,7 +755,7 @@
             "dir": "/home/richie/esp/Own_Projects/Self_Balancing_Robot/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [ "esp_driver_i2c", "esp_timer" ],
+            "reqs": [ "esp_driver_i2c", "esp_timer", "esp_driver_ledc", "esp_driver_gpio" ],
             "priv_reqs": [ "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
@@ -2730,7 +2760,7 @@
             "dir": "/home/richie/esp/Own_Projects/Self_Balancing_Robot/main",
             "source": "project_components",
             "lib": "__idf_main",
-            "reqs": [ "esp_driver_i2c", "esp_timer" ],
+            "reqs": [ "esp_driver_i2c", "esp_timer", "esp_driver_ledc", "esp_driver_gpio" ],
             "priv_reqs": [ "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],

@@ -1,0 +1,80 @@
+Command: ninja all
+[0/1] Re-running CMake...
+-- Component directory /home/richie/esp/esp-idf/components/idf_test does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - ON
+-- Building ESP-IDF components for target esp32c3
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5;esp32c61 SoCs
+-- KCONFIG_REPORT_VERBOSITY not set, using default
+-- Project sdkconfig file /home/richie/esp/Own_Projects/Self_Balancing_Robot/sdkconfig
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Adding linker script /home/richie/esp/esp-idf/components/riscv/ld/rom.api.ld
+-- App "Self_Balancing_Robot" version: e5377cd-dirty
+-- Setting up mbedtls configuration
+-- Linkage type is PUBLIC
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_system/ld/esp32c3/memory.ld.in
+--   -> Preprocessing .in script: /home/richie/esp/esp-idf/components/esp_system/ld/esp32c3/memory.ld.in
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_system/ld/esp32c3/sections.ld.in
+--   -> Preprocessing .in script: /home/richie/esp/esp-idf/components/esp_system/ld/esp32c3/sections.ld.in
+--   -> Applying ldgen processing: /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.api.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.bt_funcs.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.libgcc.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.version.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_master.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_50.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_smp.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_dtm.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_test.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.ble_scan.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.eco3.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.eco3_bt_funcs.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_rom/esp32c3/ld/esp32c3.rom.libc.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/esp_hal_regi2c/esp32c3/rom.regi2c.ld
+-- Adding linker script /home/richie/esp/esp-idf/components/soc/esp32c3/ld/esp32c3.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_blockdev esp_bootloader_format esp_common esp_driver_dma esp_driver_gpio esp_driver_i2c esp_driver_ledc esp_hal_ana_conv esp_hal_clock esp_hal_dma esp_hal_gpio esp_hal_gpspi esp_hal_i2c esp_hal_ledc esp_hal_mspi esp_hal_pmu esp_hal_regi2c esp_hal_rtc_timer esp_hal_security esp_hal_systimer esp_hal_timg esp_hal_touch_sens esp_hal_uart esp_hal_usb esp_hal_wdt esp_hw_support esp_libc esp_mm esp_partition esp_pm esp_ringbuf esp_rom esp_security esp_stdio esp_system esp_timer esp_usb_cdc_rom_console esptool_py freertos hal heap log main mbedtls partition_table pthread riscv soc spi_flash
+-- Component paths: /home/richie/esp/esp-idf/components/app_update /home/richie/esp/esp-idf/components/bootloader /home/richie/esp/esp-idf/components/bootloader_support /home/richie/esp/esp-idf/components/cxx /home/richie/esp/esp-idf/components/efuse /home/richie/esp/esp-idf/components/esp_app_format /home/richie/esp/esp-idf/components/esp_blockdev /home/richie/esp/esp-idf/components/esp_bootloader_format /home/richie/esp/esp-idf/components/esp_common /home/richie/esp/esp-idf/components/esp_driver_dma /home/richie/esp/esp-idf/components/esp_driver_gpio /home/richie/esp/esp-idf/components/esp_driver_i2c /home/richie/esp/esp-idf/components/esp_driver_ledc /home/richie/esp/esp-idf/components/esp_hal_ana_conv /home/richie/esp/esp-idf/components/esp_hal_clock /home/richie/esp/esp-idf/components/esp_hal_dma /home/richie/esp/esp-idf/components/esp_hal_gpio /home/richie/esp/esp-idf/components/esp_hal_gpspi /home/richie/esp/esp-idf/components/esp_hal_i2c /home/richie/esp/esp-idf/components/esp_hal_ledc /home/richie/esp/esp-idf/components/esp_hal_mspi /home/richie/esp/esp-idf/components/esp_hal_pmu /home/richie/esp/esp-idf/components/esp_hal_regi2c /home/richie/esp/esp-idf/components/esp_hal_rtc_timer /home/richie/esp/esp-idf/components/esp_hal_security /home/richie/esp/esp-idf/components/esp_hal_systimer /home/richie/esp/esp-idf/components/esp_hal_timg /home/richie/esp/esp-idf/components/esp_hal_touch_sens /home/richie/esp/esp-idf/components/esp_hal_uart /home/richie/esp/esp-idf/components/esp_hal_usb /home/richie/esp/esp-idf/components/esp_hal_wdt /home/richie/esp/esp-idf/components/esp_hw_support /home/richie/esp/esp-idf/components/esp_libc /home/richie/esp/esp-idf/components/esp_mm /home/richie/esp/esp-idf/components/esp_partition /home/richie/esp/esp-idf/components/esp_pm /home/richie/esp/esp-idf/components/esp_ringbuf /home/richie/esp/esp-idf/components/esp_rom /home/richie/esp/esp-idf/components/esp_security /home/richie/esp/esp-idf/components/esp_stdio /home/richie/esp/esp-idf/components/esp_system /home/richie/esp/esp-idf/components/esp_timer /home/richie/esp/esp-idf/components/esp_usb_cdc_rom_console /home/richie/esp/esp-idf/components/esptool_py /home/richie/esp/esp-idf/components/freertos /home/richie/esp/esp-idf/components/hal /home/richie/esp/esp-idf/components/heap /home/richie/esp/esp-idf/components/log /home/richie/esp/Own_Projects/Self_Balancing_Robot/main /home/richie/esp/esp-idf/components/mbedtls /home/richie/esp/esp-idf/components/partition_table /home/richie/esp/esp-idf/components/pthread /home/richie/esp/esp-idf/components/riscv /home/richie/esp/esp-idf/components/soc /home/richie/esp/esp-idf/components/spi_flash
+-- Configuring done (4.6s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/richie/esp/Own_Projects/Self_Balancing_Robot/build
+[1/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj
+FAILED: [code=1] esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj 
+/home/richie/.espressif/tools/riscv32-esp-elf/esp-15.2.0_20251204/riscv32-esp-elf/bin/riscv32-esp-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v6.1-dev-4427-gc00874869b\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/config -I/home/richie/esp/esp-idf/components/esp_libc/platform_include -I/home/richie/esp/esp-idf/components/freertos/config/include -I/home/richie/esp/esp-idf/components/freertos/config/include/freertos -I/home/richie/esp/esp-idf/components/freertos/config/riscv/include -I/home/richie/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/richie/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include -I/home/richie/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/include/freertos -I/home/richie/esp/esp-idf/components/freertos/esp_additions/include -I/home/richie/esp/esp-idf/components/esp_hw_support/include -I/home/richie/esp/esp-idf/components/esp_hw_support/include/soc -I/home/richie/esp/esp-idf/components/esp_hw_support/ldo/include -I/home/richie/esp/esp-idf/components/esp_hw_support/debug_probe/include -I/home/richie/esp/esp-idf/components/esp_hw_support/etm/include -I/home/richie/esp/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/include -I/home/richie/esp/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/tuning_scheme_impl/include -I/home/richie/esp/esp-idf/components/esp_hw_support/mspi/mspi_intr/include -I/home/richie/esp/esp-idf/components/esp_hw_support/power_supply/include -I/home/richie/esp/esp-idf/components/esp_hw_support/modem/include -I/home/richie/esp/esp-idf/components/esp_hw_support/include/soc/esp32c3 -I/home/richie/esp/esp-idf/components/esp_hw_support/port/esp32c3/. -I/home/richie/esp/esp-idf/components/esp_hw_support/port/esp32c3/include -I/home/richie/esp/esp-idf/components/heap/include -I/home/richie/esp/esp-idf/components/heap/tlsf -I/home/richie/esp/esp-idf/components/log/include -I/home/richie/esp/esp-idf/components/soc/include -I/home/richie/esp/esp-idf/components/soc/esp32c3 -I/home/richie/esp/esp-idf/components/soc/esp32c3/include -I/home/richie/esp/esp-idf/components/soc/esp32c3/register -I/home/richie/esp/esp-idf/components/hal/platform_port/include -I/home/richie/esp/esp-idf/components/hal/esp32c3/include -I/home/richie/esp/esp-idf/components/hal/include -I/home/richie/esp/esp-idf/components/esp_rom/include -I/home/richie/esp/esp-idf/components/esp_rom/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_rom/esp32c3/include/esp32c3 -I/home/richie/esp/esp-idf/components/esp_rom/esp32c3 -I/home/richie/esp/esp-idf/components/esp_common/include -I/home/richie/esp/esp-idf/components/esp_system/include -I/home/richie/esp/esp-idf/components/esp_system/port/soc -I/home/richie/esp/esp-idf/components/esp_system/port/include/riscv -I/home/richie/esp/esp-idf/components/esp_system/port/include/private -I/home/richie/esp/esp-idf/components/esp_stdio/include -I/home/richie/esp/esp-idf/components/riscv/include -I/home/richie/esp/esp-idf/components/esp_hal_gpio/include -I/home/richie/esp/esp-idf/components/esp_hal_gpio/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_usb/include -I/home/richie/esp/esp-idf/components/esp_hal_usb/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_pmu/include -I/home/richie/esp/esp-idf/components/esp_hal_pmu/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_regi2c/include -I/home/richie/esp/esp-idf/components/esp_hal_regi2c/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_ana_conv/include -I/home/richie/esp/esp-idf/components/esp_hal_ana_conv/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_dma/include -I/home/richie/esp/esp-idf/components/esp_hal_dma/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_driver_i2c/include -I/home/richie/esp/esp-idf/components/esp_hal_i2c/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_i2c/include -I/home/richie/esp/esp-idf/components/esp_timer/include -I/home/richie/esp/esp-idf/components/esp_driver_ledc/include -I/home/richie/esp/esp-idf/components/esp_hal_ledc/include -I/home/richie/esp/esp-idf/components/esp_hal_ledc/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_driver_gpio/include -I/home/richie/esp/esp-idf/components/spi_flash/include -I/home/richie/esp/esp-idf/components/esp_hal_mspi/include -I/home/richie/esp/esp-idf/components/esp_hal_mspi/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_gpspi/include -I/home/richie/esp/esp-idf/components/esp_hal_gpspi/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_hal_clock/include -I/home/richie/esp/esp-idf/components/esp_hal_clock/esp32c3/include -I/home/richie/esp/esp-idf/components/esp_blockdev/include @"/home/richie/esp/Own_Projects/Self_Balancing_Robot/build/toolchain/cflags" -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/richie/esp/Own_Projects/Self_Balancing_Robot=. -fmacro-prefix-map=/home/richie/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/self_balancing_robot.c.obj -c /home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:27:12: error: type defaults to 'int' in declaration of 'prev_a' [-Wimplicit-int]
+   27 |   volatile prev_a = 0;
+      |            ^~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:28:12: error: type defaults to 'int' in declaration of 'prev_b' [-Wimplicit-int]
+   28 |   volatile prev_b = 0;
+      |            ^~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:32:12: error: type defaults to 'int' in declaration of 'encoder_count' [-Wimplicit-int]
+   32 |   volatile encoder_count = 0;
+      |            ^~~~~~~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c: In function 'app_main':
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:313:9: warning: unused variable 'gyro_old' [-Wunused-variable]
+  313 |   float gyro_old =0;
+      |         ^~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:300:9: warning: unused variable 'gyro_conv_z_corrected' [-Wunused-variable]
+  300 |   float gyro_conv_z_corrected = 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:299:9: warning: unused variable 'gyro_conv_y_corrected' [-Wunused-variable]
+  299 |   float gyro_conv_y_corrected= 0;
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/home/richie/esp/Own_Projects/Self_Balancing_Robot/main/self_balancing_robot.c:294:9: warning: variable 'accel_conv_y' set but not used [-Wunused-but-set-variable]
+  294 |   float accel_conv_y = 0;
+      |         ^~~~~~~~~~~~
+[2/12] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[3/12] Performing build step for 'bootloader'
+[1/1] cd /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader && /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5280 bytes. 0x2d80 bytes (36%) free.
+ninja: build stopped: subcommand failed.

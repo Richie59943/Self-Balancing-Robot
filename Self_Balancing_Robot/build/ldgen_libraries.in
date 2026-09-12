@@ -91,5 +91,9 @@ $<TARGET_FILE:idf::esp_ringbuf>
 $<TARGET_FILE:idf::esp_driver_i2c>
 $<TARGET_FILE:__idf_esp_hal_i2c>
 $<TARGET_FILE:__idf_esp_ringbuf>
+$<TARGET_FILE:idf::esp_hal_ledc>
+$<TARGET_FILE:idf::esp_driver_ledc>
+$<TARGET_FILE:__idf_esp_hal_ledc>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_esp_driver_i2c>
+$<TARGET_FILE:__idf_esp_driver_ledc>

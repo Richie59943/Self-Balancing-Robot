@@ -6344,6 +6344,24 @@
                     {
                         "children": [],
                         "depends_on": null,
+                        "help": "Place LEDC control functions (ledc_update_duty and ledc_stop) into IRAM,\nso that these functions can be IRAM-safe and able to be called in an IRAM context.\nEnabling this option can improve driver performance as well.",
+                        "id": "LEDC_CTRL_FUNC_IN_IRAM",
+                        "name": "LEDC_CTRL_FUNC_IN_IRAM",
+                        "range": null,
+                        "title": "Place LEDC control functions into IRAM",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-esp-driver-ledc-configurations-home-richie-esp-esp-idf-components-esp_driver_ledc-Kconfig-1",
+                "title": "ESP-Driver:LEDC Configurations",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
                         "help": null,
                         "id": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
                         "name": "ESP_HW_SUPPORT_FUNC_IN_IRAM",
