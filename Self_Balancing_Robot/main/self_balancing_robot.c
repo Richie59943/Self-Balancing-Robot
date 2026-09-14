@@ -45,8 +45,8 @@ volatile int encoder_interrupt_counter = 0;
     int b_return = 0;
 
     //going to check if GPIO PINS are high or low 
-    a_return = gpio_get_level(GPIO_NUM_5);
-    b_return = gpio_get_level(GPIO_NUM_6);
+    a_return = gpio_get_level(GPIO_NUM_6);
+    b_return = gpio_get_level(GPIO_NUM_5);
    
   //just so we dont have to writ eit all out in a if so this makes it cleaner 
     bool move_forward = (prev_a == 0 && prev_b == 0 && a_return == 1 && b_return == 0) || (prev_a == 1 && prev_b == 0 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 0 && b_return ==1) || (prev_a == 0 && prev_b == 1 && a_return == 0 && b_return==0);
@@ -172,15 +172,15 @@ void app_main(void)
 
 
   //make motor move forward 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,1));
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,1));
 
 //setting our driver to active 
   ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
  
   //going to set our duty 
-ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,153)); // params spped_mode, channel, duty values 
-ESP_LOGI(TAG,"SET DUTY: 15%");
+ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,511)); // params spped_mode, channel, duty values 
+ESP_LOGI(TAG,"SET DUTY: 50%");
 
 //then we need to update our duty 
 ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));// params spped_mode and channel
@@ -379,9 +379,59 @@ bias = gyro_sum / 1000;
 
 
 prev_time = esp_timer_get_time();
+
+
+
+
+  //holds prev time for RPM calculation 
+
+ int64_t prev_time_rpm = esp_timer_get_time();
+
+  //going to hold our current counter 
+  int current_count_rpm = 0;
+
+  //will hld our prev_counter 
+  int prev_counter_rpm = encoder_count;
+
+  //hold our prev counter 
+  int64_t current_time_rpm =0;
+
+//these two will hold the differences in each count and time 
+  int64_t delta_count = 0;
+  int64_t delta_time = 0;
+
+  //delta timr converted from microseconds to seconds 
+  float elapsed_time_rpm = 0; 
+
+  float revolutions_conversion = 0;
+  float revolutions_per_second= 0;
+  float revolutions_per_min= 0 ;
+
+
+  
   //normal loop 
   while(1)
   {
+    //getting our time to calculate RPM 
+    current_count_rpm = encoder_count;
+    current_time_rpm = esp_timer_get_time();
+
+    //calculation for rpm
+    delta_count = current_count_rpm - prev_counter_rpm;
+    delta_time = current_time_rpm - prev_time_rpm;
+
+    elapsed_time_rpm = delta_time / 1000000.0f;
+
+    revolutions_conversion = delta_count / 1500.0f; //the 0.f will give us the floating point division so we keep decimla point 
+    revolutions_per_second = revolutions_conversion / elapsed_time_rpm;
+    revolutions_per_min = revolutions_per_second * 60;
+
+
+  //updating our prev to the current 
+    prev_counter_rpm = current_count_rpm;
+    prev_time_rpm = current_time_rpm;
+    
+
    //checking if our gyro or accel is ready to read again 
   ESP_ERROR_CHECK(icm42670_get_data_ready(&data_ready));
     if(data_ready == 0x01)
@@ -442,6 +492,10 @@ prev_time = esp_timer_get_time();
    //   ESP_LOGI(TAG,"ACCEL x: %f Z: %f\n", accel_conv_x,accel_conv_z);
 ESP_LOGI(TAG, "Accel: %.2f | Filtered: %.2f", pitch_deg, filtered_angle);
 
+
+  //testing our encoder see if it works 
+      ESP_LOGI(TAG,"encoder_count: %d\n encoder_interrupt_counter: %d\n",encoder_count,encoder_interrupt_counter);
+   vTaskDelay(pdMS_TO_TICKS(500));
     }
   
    /* printf("Filtered Angle: %f\n", filtered_angle);
