@@ -412,25 +412,8 @@ prev_time = esp_timer_get_time();
   //normal loop 
   while(1)
   {
-    //getting our time to calculate RPM 
-    current_count_rpm = encoder_count;
-    current_time_rpm = esp_timer_get_time();
-
-    //calculation for rpm
-    delta_count = current_count_rpm - prev_counter_rpm;
-    delta_time = current_time_rpm - prev_time_rpm;
-
-    elapsed_time_rpm = delta_time / 1000000.0f;
-
-    revolutions_conversion = delta_count / 1500.0f; //the 0.f will give us the floating point division so we keep decimla point 
-    revolutions_per_second = revolutions_conversion / elapsed_time_rpm;
-    revolutions_per_min = revolutions_per_second * 60;
-
-
-  //updating our prev to the current 
-    prev_counter_rpm = current_count_rpm;
-    prev_time_rpm = current_time_rpm;
-    
+//time counter to check if 50ms have pased in order to check our RPM 
+    int64_t fifty_ms_timer = esp_timer_get_time();
 
    //checking if our gyro or accel is ready to read again 
   ESP_ERROR_CHECK(icm42670_get_data_ready(&data_ready));
@@ -485,18 +468,42 @@ prev_time = esp_timer_get_time();
     //complementary filter 
     filtered_angle = ((0.98)*(gyro_angle_predicted)) + ((1-0.98)*(pitch_deg));
   
+if(fifty_ms_timer == 50000)
+      {
+    //getting our time to calculate RPM 
+    current_count_rpm = encoder_count;
+    current_time_rpm = esp_timer_get_time();
+
+    //calculation for rpm
+    delta_count = current_count_rpm - prev_counter_rpm;
+    delta_time = current_time_rpm - prev_time_rpm;
+
+    elapsed_time_rpm = delta_time / 1000000.0f;
+
+    revolutions_conversion = delta_count / 1500.0f; //the 0.f will give us the floating point division so we keep decimla point 
+    revolutions_per_second = revolutions_conversion / elapsed_time_rpm;
+    revolutions_per_min = revolutions_per_second * 60;
+
+
+  //updating our prev to the current 
+    prev_counter_rpm = current_count_rpm;
+    prev_time_rpm = current_time_rpm;
+ 
+  ESP_LOGI(TAG,"RPM: %.2f\n",revolutions_per_min);
+
+      }
+
 
     //printing the actuall filtered angle 
 //    ESP_LOGI(TAG,"Filtered Angle: %f\n", filtered_angle);
   //    ESP_LOGI(TAG,"Aceel pitch: %f\n", pitch_deg);
    //   ESP_LOGI(TAG,"ACCEL x: %f Z: %f\n", accel_conv_x,accel_conv_z);
-ESP_LOGI(TAG, "Accel: %.2f | Filtered: %.2f", pitch_deg, filtered_angle);
+//ESP_LOGI(TAG, "Accel: %.2f | Filtered: %.2f", pitch_deg, filtered_angle);
 
 
   //testing our encoder see if it works 
-      ESP_LOGI(TAG,"encoder_count: %d\n encoder_interrupt_counter: %d\n",encoder_count,encoder_interrupt_counter);
-   vTaskDelay(pdMS_TO_TICKS(500));
-    }
+    //  ESP_LOGI(TAG,"encoder_count: %d\n encoder_interrupt_counter: %d\n",encoder_count,encoder_interrupt_counter);
+     }
   
    /* printf("Filtered Angle: %f\n", filtered_angle);
 
