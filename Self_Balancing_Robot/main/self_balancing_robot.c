@@ -49,8 +49,8 @@ volatile int encoder_interrupt_counter = 0;
     b_return = gpio_get_level(GPIO_NUM_5);
    
   //just so we dont have to writ eit all out in a if so this makes it cleaner 
-    bool move_forward = (prev_a == 0 && prev_b == 0 && a_return == 1 && b_return == 0) || (prev_a == 1 && prev_b == 0 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 0 && b_return ==1) || (prev_a == 0 && prev_b == 1 && a_return == 0 && b_return==0);
-    bool move_backward =  (prev_a == 0 && prev_b == 0 && a_return == 0 && b_return == 1) || (prev_a == 0 && prev_b == 1 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 1 && b_return ==0) || (prev_a == 1 && prev_b == 0 && a_return == 0 && b_return==0);
+    bool move_backward = (prev_a == 0 && prev_b == 0 && a_return == 1 && b_return == 0) || (prev_a == 1 && prev_b == 0 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 0 && b_return ==1) || (prev_a == 0 && prev_b == 1 && a_return == 0 && b_return==0);
+    bool move_forward =  (prev_a == 0 && prev_b == 0 && a_return == 0 && b_return == 1) || (prev_a == 0 && prev_b == 1 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 1 && b_return ==0) || (prev_a == 1 && prev_b == 0 && a_return == 0 && b_return==0);
 
 
     if(move_forward)
@@ -71,6 +71,97 @@ volatile int encoder_interrupt_counter = 0;
   }
 
 
+//function to caontain all of our low level stuff for motor controll 
+//
+void motor_set_speed(int command)
+{
+
+
+  //CLAMPING OUR COMMAND SO THAT it cannot be under our 0 and over our +- 1023 
+ if (command > 1023)
+  {
+    command = 1023;
+  }
+  else if( command < -1023)
+  {
+    command = -1023;
+  }
+
+
+  //PWM speed 
+  int pwm_speed = command;
+
+  //positive command = moving forward 
+  if (command > 0)
+  {
+    //wakeing up our motor driver 
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
+
+    //setting our motors to forward 
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,1));
+
+    //setting motor b to forward 
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,1 ));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,0));
+
+    //how much power will be needed to correct 
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,pwm_speed));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+  
+    //how much power for motor b 
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_1,pwm_speed));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_1));
+
+  }
+  // negative command = moving backwards 
+  else if (command < 0) 
+  { 
+    pwm_speed = command * (-1);
+    //waking up our motor driver
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
+
+    //setting our motors to backwards
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,1));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,1));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,0));
+
+
+    //how much power will be needed to correct 
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,pwm_speed));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+  
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_1,pwm_speed));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_1));
+
+
+  }
+  // if we reach 0 then the motor should be told to stop  
+  else if (command == 0) {
+
+    //can slepe but since we are going to be needing it on and off fast we shall keep it on 
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
+
+    //setting to 0 
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,0));
+
+    //how much power will be needed to correct 
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+  
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_1,0));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_1));
+  }
+
+
+}
+
 
 void app_main(void)
 {
@@ -84,7 +175,7 @@ void app_main(void)
   };
 
   //function for our ledc_timer_config  to control motors LEDDCC 
-  ledc_timer_config_t motor1_config = {
+  ledc_timer_config_t motor_config = {
     .speed_mode = LEDC_LOW_SPEED_MODE,
     .duty_resolution = LEDC_TIMER_10_BIT,
     .timer_num = LEDC_TIMER_0,
@@ -93,7 +184,7 @@ void app_main(void)
 
   };
 
-  //config for our channel to controll motors LEDC
+  //config for our channel to controll motor 1 
   ledc_channel_config_t motor1_channel_config = {
     .gpio_num = 1,
     .speed_mode = LEDC_LOW_SPEED_MODE,
@@ -104,10 +195,20 @@ void app_main(void)
 
   };
 
+  //config for our second motor 
+  ledc_channel_config_t motor2_channel_config = {
+    .gpio_num = 9,
+    .speed_mode = LEDC_LOW_SPEED_MODE,
+    .channel = LEDC_CHANNEL_1,
+    .timer_sel = LEDC_TIMER_0,
+    .duty = 0,
+    .sleep_mode = LEDC_SLEEP_MODE_NO_ALIVE_NO_PD
+  };
+
 
   //GPIO CONFIGS for our outputs sending to driver 
   gpio_config_t driver_gpio_config = {
-    .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
+    .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4 ) | (1ULL << 18) | (1ULL << 19), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
     .mode = GPIO_MODE_OUTPUT,// we want these pins to just output signals 0/1 
     .pull_up_en = GPIO_PULLUP_DISABLE, //we are not sing any internal pull up 
     .pull_down_en = GPIO_PULLDOWN_DISABLE, // we do not need pull down 
@@ -117,7 +218,7 @@ void app_main(void)
 
   //GPIO config for our motors encoder to sned to our esp32 
   gpio_config_t encoder_gpio_config = {
-    .pin_bit_mask = (1ULL << 5) | (1ULL << 6), // our config is for gpio pin 5 and 6 
+    .pin_bit_mask = (1ULL << 5) | (1ULL << 6) | (1ULL << 21) | (1ULL << 20), // our config is for gpio pin 5 and 6 
     .mode = GPIO_MODE_INPUT, //configs 5,6 to only take in input from out encoder 
     .pull_up_en = GPIO_PULLUP_DISABLE, //disbling pull up
     .pull_down_en = GPIO_PULLDOWN_DISABLE, //disbaling pulldown 
@@ -125,92 +226,6 @@ void app_main(void)
 
 
   };
-
-
-     //calling out GPIO config 
-  ESP_ERROR_CHECK(gpio_config(&driver_gpio_config));
-  
-  //calling our encoder gpio config
-  ESP_ERROR_CHECK(gpio_config(&encoder_gpio_config));
-
-//setting our preva and b to soeting instead of just 0 so tha tthey hold readings form out GPIO pins 
-  prev_a = gpio_get_level(GPIO_NUM_6);
-  prev_b = gpio_get_level(GPIO_NUM_5);
-
- 
-  //this is going to install our GPIO isr service 
-  ESP_ERROR_CHECK(gpio_install_isr_service(0)); // no special flags so we just put 0 
-
-  
-//this is the gpio isr handler so we are going to add a ISR to our gpio pin 
-  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_6,encoder_isr,NULL));
-  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5,encoder_isr,NULL));
-
-
-
-  //calling out config 
-  ESP_ERROR_CHECK(ledc_timer_config(&motor1_config));
-
-  //calling our channel config 
-  ESP_ERROR_CHECK(ledc_channel_config(&motor1_channel_config));
-
-
-  //going to turn our TB6612 driver off to make sure we are safe 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
-
-  //make sure our AIN1 and 2 are 0 
-
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
-
-  //make sure our duty is 0 before we start 
-  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
-
-  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
-
-  vTaskDelay(pdMS_TO_TICKS(5000)); //wait 5 seconds before starting motor 
-
-
-  //make motor move forward 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,1));
-
-//setting our driver to active 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
- 
-  //going to set our duty 
-ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,511)); // params spped_mode, channel, duty values 
-ESP_LOGI(TAG,"SET DUTY: 50%");
-
-//then we need to update our duty 
-ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));// params spped_mode and channel
-ESP_LOGI(TAG,"UPDATE DUTY");
-
-vTaskDelay(pdMS_TO_TICKS(1000));
-  ESP_LOGI(TAG,"WAIT");
-
-//now we turn off our tb6617 
-  ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
-
-
-
-  /*
-ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,1023));
-ESP_LOGI(TAG,"SET DUTY: 100%");
-
-  ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0);
-ESP_LOGI(TAG,"UPDATE");
-
- vTaskDelay( pdMS_TO_TICKS(1000));
-ESP_LOGI(TAG,"WAIT");
-
-  */
-
-  ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
-
-  ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
-
-
 
   i2c_master_bus_handle_t bus_handle;
   ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_mst_config,&bus_handle));
@@ -378,6 +393,9 @@ bias = gyro_sum / 1000;
   printf("this is the bias: %f\n", bias);
 
 
+//Variables for RPM timing and main loop varialbes 
+/////////////////////////////////////////////////////////////////
+
 prev_time = esp_timer_get_time();
 
 
@@ -403,18 +421,114 @@ prev_time = esp_timer_get_time();
   //delta timr converted from microseconds to seconds 
   float elapsed_time_rpm = 0; 
 
+  int64_t elapsed_time_microseconds_rpm = 0;
+
   float revolutions_conversion = 0;
   float revolutions_per_second= 0;
   float revolutions_per_min= 0 ;
 
+/////////////////////////////////////////////////////////////
+  
+
+
+
+  //LEDC and GPIO CONFIG and MOTOR Control 
+  ///////////////////////////////////////////////////////////////////
+
+     //calling out GPIO config 
+  ESP_ERROR_CHECK(gpio_config(&driver_gpio_config));
+  
+  //calling our encoder gpio config
+  ESP_ERROR_CHECK(gpio_config(&encoder_gpio_config));
+
+//setting our preva and b to soeting instead of just 0 so tha tthey hold readings form out GPIO pins 
+  prev_a = gpio_get_level(GPIO_NUM_6);
+  prev_b = gpio_get_level(GPIO_NUM_5);
+
+ 
+  //this is going to install our GPIO isr service 
+  ESP_ERROR_CHECK(gpio_install_isr_service(0)); // no special flags so we just put 0 
 
   
+//this is the gpio isr handler so we are going to add a ISR to our gpio pin 
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_6,encoder_isr,NULL));
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5,encoder_isr,NULL));
+
+
+
+  //calling out config 
+  ESP_ERROR_CHECK(ledc_timer_config(&motor_config));
+
+  //calling our channel config 
+  ESP_ERROR_CHECK(ledc_channel_config(&motor1_channel_config));
+
+  //calling our channel config for motor 2 
+  ESP_ERROR_CHECK(ledc_channel_config(&motor2_channel_config));
+
+  //going to turn our TB6612 driver off to make sure we are safe 
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
+
+  //make sure our AIN1 and 2 are 0 
+
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+
+  //make sure our duty is 0 before we start 
+  //ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
+
+  //ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+
+  //vTaskDelay(pdMS_TO_TICKS(5000)); //wait 5 seconds before starting motor 
+
+
+  //make motor move forward 
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,1));
+
+//setting our driver to active 
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,1));
+ 
+  //going to set our duty 
+//ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,1023)); // params spped_mode, channel, duty values 
+//ESP_LOGI(TAG,"SET DUTY: 15%");
+
+//then we need to update our duty 
+//ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));// params spped_mode and channel
+//ESP_LOGI(TAG,"UPDATE DUTY");
+
+//vTaskDelay(pdMS_TO_TICKS(2000));
+  //ESP_LOGI(TAG,"WAIT");
+
+//now we turn off our tb6617 
+ // ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_4,0));
+
+//make sure our ain1 and 2 are also set to inactive after use 
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
+  //ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
+
+  /*
+ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,1023));
+ESP_LOGI(TAG,"SET DUTY: 100%");
+
+  ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0);
+ESP_LOGI(TAG,"UPDATE");
+
+ vTaskDelay( pdMS_TO_TICKS(1000));
+ESP_LOGI(TAG,"WAIT");
+
+  */
+
+  //ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
+
+  //ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0));
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
   //normal loop 
   while(1)
   {
-//time counter to check if 50ms have pased in order to check our RPM 
-    int64_t fifty_ms_timer = esp_timer_get_time();
-
    //checking if our gyro or accel is ready to read again 
   ESP_ERROR_CHECK(icm42670_get_data_ready(&data_ready));
     if(data_ready == 0x01)
@@ -468,7 +582,12 @@ prev_time = esp_timer_get_time();
     //complementary filter 
     filtered_angle = ((0.98)*(gyro_angle_predicted)) + ((1-0.98)*(pitch_deg));
   
-if(fifty_ms_timer == 50000)
+
+
+////////////////////////////////////////////////////////////////////
+      int64_t current_time_50ms  = esp_timer_get_time();
+      elapsed_time_microseconds_rpm = current_time_50ms - prev_time_rpm;
+if(elapsed_time_microseconds_rpm >= 50000)
       {
     //getting our time to calculate RPM 
     current_count_rpm = encoder_count;
@@ -480,7 +599,7 @@ if(fifty_ms_timer == 50000)
 
     elapsed_time_rpm = delta_time / 1000000.0f;
 
-    revolutions_conversion = delta_count / 1500.0f; //the 0.f will give us the floating point division so we keep decimla point 
+    revolutions_conversion = delta_count / 1508.0f; //the 0.f will give us the floating point division so we keep decimla point 
     revolutions_per_second = revolutions_conversion / elapsed_time_rpm;
     revolutions_per_min = revolutions_per_second * 60;
 
@@ -489,7 +608,22 @@ if(fifty_ms_timer == 50000)
     prev_counter_rpm = current_count_rpm;
     prev_time_rpm = current_time_rpm;
  
-  ESP_LOGI(TAG,"RPM: %.2f\n",revolutions_per_min);
+  //ESP_LOGI(TAG,"Delta: %lld | Time: %lld | RPM: %.2f | IMU dt: %f\n",delta_count,delta_time,revolutions_per_min,dt);
+
+
+
+
+        //going to create first test of P controller 
+    float motor_command = 0;
+    float kp = 40;
+     float pitch_error = filtered_angle - 0;
+      
+
+        motor_command = kp * pitch_error;
+
+        motor_set_speed(motor_command);
+
+
 
       }
 
