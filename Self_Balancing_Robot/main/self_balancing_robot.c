@@ -24,51 +24,95 @@ static const char *TAG = "BALANCER";
 //these three are volatile becuase they can change value behind our compilers bakc without it being explicitly donw in our main loop 
 
   //variables so that we can keep trakc of prev ISR values 
-  volatile int prev_a = 0;
-  volatile  int prev_b = 0;
+  volatile int motor1_prev_a = 0;
+  volatile  int motor1_prev_b = 0;
+
+  volatile int motor2_prev_a = 0;
+  volatile int motor2_prev_b=0;
 
 
 //creating a short debug counter 
-volatile int encoder_interrupt_counter = 0;
-
+volatile int motor1_encoder_interrupt_counter = 0;
+volatile int motor2_encoder_interrupt_counter = 0;
 
   //our encoder_count  counts how many counts the motor has moved with the sign representing direction 
-  volatile int encoder_count = 0;
+  volatile int motor1_encoder_count = 0;
+  volatile int motor2_encoder_count =0;
 
 
 
   //only called when one of our gpio is requested to be interupted 
-  void encoder_isr(void *arg)
+  void motor1_encoder_isr(void *arg)
   {
     // variables that are going to hold the retunr of gpio_get_level 
-    int a_return = 0;
-    int b_return = 0;
-
+    int motor1_a_return = 0;
+    int motor1_b_return = 0;
     //going to check if GPIO PINS are high or low 
-    a_return = gpio_get_level(GPIO_NUM_6);
-    b_return = gpio_get_level(GPIO_NUM_5);
+    motor1_a_return = gpio_get_level(GPIO_NUM_6);
+    motor1_b_return = gpio_get_level(GPIO_NUM_5);
+
+   
+
    
   //just so we dont have to writ eit all out in a if so this makes it cleaner 
-    bool move_backward = (prev_a == 0 && prev_b == 0 && a_return == 1 && b_return == 0) || (prev_a == 1 && prev_b == 0 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 0 && b_return ==1) || (prev_a == 0 && prev_b == 1 && a_return == 0 && b_return==0);
-    bool move_forward =  (prev_a == 0 && prev_b == 0 && a_return == 0 && b_return == 1) || (prev_a == 0 && prev_b == 1 && a_return == 1 && b_return ==1) || (prev_a == 1 && prev_b ==1 && a_return == 1 && b_return ==0) || (prev_a == 1 && prev_b == 0 && a_return == 0 && b_return==0);
+    bool motor1_move_backward = (motor1_prev_a == 0 && motor1_prev_b == 0 && motor1_a_return == 1 && motor1_b_return == 0) || (motor1_prev_a == 1 && motor1_prev_b == 0 && motor1_a_return == 1 && motor1_b_return ==1) || (motor1_prev_a == 1 && motor1_prev_b ==1 && motor1_a_return == 0 && motor1_b_return ==1) || (motor1_prev_a == 0 && motor1_prev_b == 1 && motor1_a_return == 0 && motor1_b_return==0);
+    bool motor1_move_forward =  (motor1_prev_a == 0 && motor1_prev_b == 0 && motor1_a_return == 0 && motor1_b_return == 1) || (motor1_prev_a == 0 && motor1_prev_b == 1 && motor1_a_return == 1 && motor1_b_return ==1) || (motor1_prev_a == 1 && motor1_prev_b ==1 && motor1_a_return == 1 && motor1_b_return ==0) || (motor1_prev_a == 1 && motor1_prev_b == 0 && motor1_a_return == 0 && motor1_b_return==0);
 
 
-    if(move_forward)
-    {
-      // move forward 
-      encoder_count++;
-    }
-    else if(move_backward){
-      //move backward 
-      encoder_count--;
+    if(motor1_move_forward)
+  {
+    motor1_encoder_count++;
+  }
+  else if (motor1_move_backward)
+  {
+    motor1_encoder_count--;
+  }
 
-    }
-      prev_a = a_return;
-      prev_b = b_return;
 
-  encoder_interrupt_counter++;
+
+      motor1_prev_a = motor1_a_return;
+      motor1_prev_b = motor1_b_return;
+
+
+  motor1_encoder_interrupt_counter++;
 
   }
+
+
+void motor2_encoder_isr (void *arg)
+{
+    //these are going to hold our values from our yellow and green wires motor2 from encoder 
+    int motor2_a_return = 0;
+    int motor2_b_return = 0;
+
+    //command to get level from our encoder 
+    motor2_a_return = gpio_get_level(GPIO_NUM_18);
+    motor2_b_return = gpio_get_level(GPIO_NUM_19);
+ 
+
+
+    //telling us which sequence of bits from ecnoder is forward and whihc is backward 
+    bool motor2_move_backward = (motor2_prev_a == 0 && motor2_prev_b == 0 && motor2_a_return == 1 && motor2_b_return == 0) || (motor2_prev_a == 1 && motor2_prev_b == 0 && motor2_a_return == 1 && motor2_b_return ==1) || (motor2_prev_a == 1 && motor2_prev_b ==1 && motor2_a_return == 0 && motor2_b_return ==1) || (motor2_prev_a == 0 && motor2_prev_b == 1 && motor2_a_return == 0 && motor2_b_return==0);
+    bool motor2_move_forward =  (motor2_prev_a == 0 && motor2_prev_b == 0 && motor2_a_return == 0 && motor2_b_return == 1) || (motor2_prev_a == 0 && motor2_prev_b == 1 && motor2_a_return == 1 && motor2_b_return ==1) || (motor2_prev_a == 1 && motor2_prev_b ==1 && motor2_a_return == 1 && motor2_b_return ==0) || (motor2_prev_a == 1 && motor2_prev_b == 0 && motor2_a_return == 0 && motor2_b_return==0);
+
+
+//if we move forward then we increase our encoder count to let us know forward 
+  if(motor2_move_forward)
+  {
+    motor2_encoder_count++;
+  }
+  else if (motor2_move_backward)
+  {
+    motor2_encoder_count--;
+  }
+      //setting our prev to our current so that when a new curr arrives we see the prev and keep that loop going 
+      motor2_prev_a = motor2_a_return;
+      motor2_prev_b = motor2_b_return;
+
+  //increase our total 
+  motor2_encoder_interrupt_counter++;
+
+}
 
 
 //function to caontain all of our low level stuff for motor controll 
@@ -102,8 +146,8 @@ void motor_set_speed(int command)
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,1));
 
     //setting motor b to forward 
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,1 ));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_21,1 ));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_20,0));
 
     //how much power will be needed to correct 
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,pwm_speed));
@@ -125,8 +169,8 @@ void motor_set_speed(int command)
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,1));
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
 
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,1));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_20,1));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_21,0));
 
 
     //how much power will be needed to correct 
@@ -148,8 +192,8 @@ void motor_set_speed(int command)
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_3,0));
     ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_0,0));
 
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_19,0));
-    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_18,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_21,0));
+    ESP_ERROR_CHECK(gpio_set_level(GPIO_NUM_20,0));
 
     //how much power will be needed to correct 
     ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE,LEDC_CHANNEL_0,0));
@@ -208,7 +252,8 @@ void app_main(void)
 
   //GPIO CONFIGS for our outputs sending to driver 
   gpio_config_t driver_gpio_config = {
-    .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4 ) | (1ULL << 18) | (1ULL << 19), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
+    
+    .pin_bit_mask = (1ULL << 3) | (1ULL << 0) | (1ULL <<4) | (1ULL << 21) | (1ULL <<20), // tells our esp which gpio pins this config applies too and rihgt now we have it say gpio0 or 3 or 4 
     .mode = GPIO_MODE_OUTPUT,// we want these pins to just output signals 0/1 
     .pull_up_en = GPIO_PULLUP_DISABLE, //we are not sing any internal pull up 
     .pull_down_en = GPIO_PULLDOWN_DISABLE, // we do not need pull down 
@@ -218,7 +263,8 @@ void app_main(void)
 
   //GPIO config for our motors encoder to sned to our esp32 
   gpio_config_t encoder_gpio_config = {
-    .pin_bit_mask = (1ULL << 5) | (1ULL << 6) | (1ULL << 21) | (1ULL << 20), // our config is for gpio pin 5 and 6 
+    //can add 18 and 19 to read from encoder but for now no 
+    .pin_bit_mask = (1ULL << 5) | (1ULL << 6) , // our config is for gpio pin 5 and 6 
     .mode = GPIO_MODE_INPUT, //configs 5,6 to only take in input from out encoder 
     .pull_up_en = GPIO_PULLUP_DISABLE, //disbling pull up
     .pull_down_en = GPIO_PULLDOWN_DISABLE, //disbaling pulldown 
@@ -372,7 +418,7 @@ while(gyro_count < 1000)
  printf("GYRO_X = %f \n GYRO_Y = %f \n GYRO_Z = %f\n", gyro_conv_x,gyro_conv_y,gyro_conv_z);
 
 
-     gyro_sum += gyro_conv_x;
+     gyro_sum += gyro_conv_y;
 
 /*int64_t total_time = 0;
     int64_t end_gyro_read_timer =0 ;
@@ -409,7 +455,7 @@ prev_time = esp_timer_get_time();
   int current_count_rpm = 0;
 
   //will hld our prev_counter 
-  int prev_counter_rpm = encoder_count;
+  int prev_counter_rpm = motor1_encoder_count;
 
   //hold our prev counter 
   int64_t current_time_rpm =0;
@@ -427,6 +473,22 @@ prev_time = esp_timer_get_time();
   float revolutions_per_second= 0;
   float revolutions_per_min= 0 ;
 
+
+  //motor2 variables 
+int current_count_rpm_motor2 = 0;
+int prev_counter_rpm_motor2 = motor2_encoder_count;
+int64_t current_time_rpm_motor2 = 0;
+int64_t current_time_50ms_motor2 = 0;
+int64_t delta_count_motor2 = 0;
+int64_t delta_time_motor2 = 0;
+float elapsed_time_rpm_motor2 = 0;
+int64_t elapsed_time_microseconds_rpm_motor2 = 0;
+float revolutions_conversion_motor2 = 0;
+float revolutions_per_second_motor2 = 0;
+float revolutions_per_min_motor2 = 0;
+
+int64_t prev_time_rpm_motor2 = esp_timer_get_time();
+
 /////////////////////////////////////////////////////////////
   
 
@@ -442,8 +504,11 @@ prev_time = esp_timer_get_time();
   ESP_ERROR_CHECK(gpio_config(&encoder_gpio_config));
 
 //setting our preva and b to soeting instead of just 0 so tha tthey hold readings form out GPIO pins 
-  prev_a = gpio_get_level(GPIO_NUM_6);
-  prev_b = gpio_get_level(GPIO_NUM_5);
+  motor1_prev_a = gpio_get_level(GPIO_NUM_6);
+  motor1_prev_b = gpio_get_level(GPIO_NUM_5);
+
+  //motor2_prev_a = gpio_get_level(GPIO_NUM_18);
+  //motor2_prev_b = gpio_get_level(GPIO_NUM_19);
 
  
   //this is going to install our GPIO isr service 
@@ -451,8 +516,11 @@ prev_time = esp_timer_get_time();
 
   
 //this is the gpio isr handler so we are going to add a ISR to our gpio pin 
-  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_6,encoder_isr,NULL));
-  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5,encoder_isr,NULL));
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_6,motor1_encoder_isr,NULL));
+  ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_5,motor1_encoder_isr,NULL));
+
+  //ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_18,motor2_encoder_isr,NULL));
+  //ESP_ERROR_CHECK(gpio_isr_handler_add(GPIO_NUM_19,motor2_encoder_isr,NULL));
 
 
 
@@ -526,6 +594,9 @@ ESP_LOGI(TAG,"WAIT");
 ///////////////////////////////////////////////////////////////////////////////
 
 
+  //variable for our I (integral) part of the PID we need it outside so we remeber the error 
+  float integral_error = 0.0f;
+
   //normal loop 
   while(1)
   {
@@ -548,8 +619,9 @@ ESP_LOGI(TAG,"WAIT");
 
 
   //going to create the conversion from GYRO data into physical units example g for accelorometer and /s for gyroscope 
-  gyro_conv_x_corrected = ((float)gyro_x / 65.5) - (bias); // only need x axis since this is our pitch angle for robot 
 
+  gyro_conv_y_corrected = ((float)gyro_y / 65.5) - (bias); // only need y xis since our robot is rotating arounf that axis 
+  gyro_conv_z_corrected = ((float)gyro_z / 65.5) - (bias);
 
   //creating the dt so the time difference between prv time and new time 
   int64_t now = esp_timer_get_time();
@@ -563,7 +635,7 @@ ESP_LOGI(TAG,"WAIT");
 
 //to get our change in angle duirng dt from gyro
   float angle_change = 0;
-    angle_change = gyro_conv_x_corrected * dt ;
+    angle_change = gyro_conv_y_corrected * dt ;
 
     float gyro_new = filtered_angle + angle_change; 
 
@@ -582,15 +654,17 @@ ESP_LOGI(TAG,"WAIT");
     //complementary filter 
     filtered_angle = ((0.98)*(gyro_angle_predicted)) + ((1-0.98)*(pitch_deg));
   
-
-
 ////////////////////////////////////////////////////////////////////
-      int64_t current_time_50ms  = esp_timer_get_time();
-      elapsed_time_microseconds_rpm = current_time_50ms - prev_time_rpm;
+// Motor 1 RPM
+////////////////////////////////////////////////////////////////////
+
+int64_t current_time_50ms = esp_timer_get_time();
+elapsed_time_microseconds_rpm = current_time_50ms - prev_time_rpm;
+
 if(elapsed_time_microseconds_rpm >= 50000)
-      {
+{
     //getting our time to calculate RPM 
-    current_count_rpm = encoder_count;
+    current_count_rpm = motor1_encoder_count;
     current_time_rpm = esp_timer_get_time();
 
     //calculation for rpm
@@ -599,15 +673,47 @@ if(elapsed_time_microseconds_rpm >= 50000)
 
     elapsed_time_rpm = delta_time / 1000000.0f;
 
-    revolutions_conversion = delta_count / 1508.0f; //the 0.f will give us the floating point division so we keep decimla point 
+    revolutions_conversion = delta_count / 1508.0f;
     revolutions_per_second = revolutions_conversion / elapsed_time_rpm;
     revolutions_per_min = revolutions_per_second * 60;
 
-
-  //updating our prev to the current 
+    //updating our prev to the current
     prev_counter_rpm = current_count_rpm;
     prev_time_rpm = current_time_rpm;
- 
+
+    //ESP_LOGI(TAG,"Motor 1 RPM: %.2f\n", revolutions_per_min);
+}
+
+
+////////////////////////////////////////////////////////////////////
+// Motor 2 RPM
+////////////////////////////////////////////////////////////////////
+
+int64_t current_time_50ms_motor2 = esp_timer_get_time();
+elapsed_time_microseconds_rpm_motor2 = current_time_50ms_motor2 - prev_time_rpm_motor2;
+
+if(elapsed_time_microseconds_rpm_motor2 >= 50000)
+{
+    //getting our time to calculate RPM 
+    current_count_rpm_motor2 = motor2_encoder_count;
+    current_time_rpm_motor2 = esp_timer_get_time();
+
+    //calculation for rpm
+    delta_count_motor2 = current_count_rpm_motor2 - prev_counter_rpm_motor2;
+    delta_time_motor2 = current_time_rpm_motor2 - prev_time_rpm_motor2;
+
+    elapsed_time_rpm_motor2 = delta_time_motor2 / 1000000.0f;
+
+    revolutions_conversion_motor2 = delta_count_motor2 / 1508.0f;
+    revolutions_per_second_motor2 = revolutions_conversion_motor2 / elapsed_time_rpm_motor2;
+    revolutions_per_min_motor2 = revolutions_per_second_motor2 * 60;
+
+    //updating our prev to the current
+    prev_counter_rpm_motor2 = current_count_rpm_motor2;
+    prev_time_rpm_motor2 = current_time_rpm_motor2;
+
+   // ESP_LOGI(TAG,"Motor 2 RPM: %.2f\n", revolutions_per_min_motor2);
+}
   //ESP_LOGI(TAG,"Delta: %lld | Time: %lld | RPM: %.2f | IMU dt: %f\n",delta_count,delta_time,revolutions_per_min,dt);
 
 
@@ -615,14 +721,33 @@ if(elapsed_time_microseconds_rpm >= 50000)
 
         //going to create first test of P controller 
     float motor_command = 0;
-    float kp = 40;
-     float pitch_error = filtered_angle - 0;
+    float kp = 160;
+      float kd = .8;
+      float ki = .3;
+     float pitch_error = filtered_angle + .43;
+
+      integral_error = integral_error + (pitch_error * dt);
+
+      float i = integral_error * ki;
+
+      float p = (kp * pitch_error);
+      float d = (kd * gyro_conv_y_corrected);
+      float raw_command = p + d;
+        motor_command = p + i + d;
+
       
 
-        motor_command = kp * pitch_error;
+      motor_set_speed(motor_command);
+    
+     //ESP_LOGI(TAG,"Pitch: %f Gyro: %f P: %f I: %f D: %f Motor: %f pitch_error: %f",pitch_deg,gyro_conv_y_corrected,p,i,d,motor_command,pitch_error);
+      //ESP_LOGI(TAG, "Accel Pitch : %.2f | filtered_angle: %.2f | GX: %.2f | GY: %.2f | GZ: %.2f",pitch_deg,filtered_angle, gyro_conv_x_corrected,gyro_conv_y_corrected,gyro_conv_z_corrected);
 
-        motor_set_speed(motor_command);
-
+        ESP_LOGI(TAG,
+    "Filtered: %.3f | Accel: %.3f | Gyro: %.3f | Error: %.3f",
+    filtered_angle,
+    pitch_deg,
+    gyro_conv_y_corrected,
+    pitch_error);
 
 
       }
@@ -660,4 +785,4 @@ if(elapsed_time_microseconds_rpm >= 50000)
     }
     */
   }
-}
+
