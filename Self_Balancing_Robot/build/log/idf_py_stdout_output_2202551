@@ -1,0 +1,7096 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/Self_Balancing_Robot.elf /home/richie/esp/Own_Projects/Self_Balancing_Robot/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size 617[0mESP-ROM:esp32c3-eco7-20230720
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004dc18
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug 26 2026 16:10:48[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=08600h ( 34304) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=00018628 vaddr=3fc89a00 size=0184ch (  6220) load[0m
+[0;32mI (93) esp_image: segment 2: paddr=00019e7c vaddr=40380000 size=0619ch ( 24988) load[0m
+[0;32mI (104) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=16224h ( 90660) map[0m
+[0;32mI (121) esp_image: segment 4: paddr=0003624c vaddr=4038619c size=03684h ( 13956) load[0m
+[0;32mI (124) esp_image: segment 5: paddr=000398d8 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (128) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (130) boot: Disabling RNG early entropy source...[0m
+[0;32mI (146) cpu_start: Unicore app[0m
+[0;32mI (154) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (155) cpu_start: Pro cpu start user code[0m
+[0;32mI (155) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (157) app_init: Application information:[0m
+[0;32mI (160) app_init: Project name:     Self_Balancing_Robot[0m
+[0;32mI (165) app_init: App version:      67120a5-dirty[0m
+[0;32mI (170) app_init: Compile time:     Sep 19 2026 11:49:52[0m
+[0;32mI (175) app_init: ELF file SHA256:  33c17c43d...[0m
+[0;32mI (179) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (185) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (189) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (193) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (196) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (203) heap_init: At 3FC8C1C0 len 00033E40 (207 KiB): RAM[0m
+[0;32mI (208) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (214) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (220) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (226) spi_flash: detected chip: generic[0m
+[0;32mI (229) spi_flash: flash io: dio[0m
+[0;33mW (232) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (244) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (250) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (257) main_task: Started on CPU0[0m
+[0;32mI (257) main_task: Calling app_main()[0m
+[0;32mI (257) ICM42670: ICM-42670-P added to I2C bus[0m
+[0;32mI (267) BALANCER: ICM-42670-P configured[0m
+[0;32mI (267) BALANCER: GYRO Configured[0m
+[0;32mI (267) BALANCER: ICM-42670-P detected successfully![0m
+[0;32mI (277) BALANCER: GYRO = 0x48[0m
+[0;32mI (277) BALANCER: GYRo config verified[0m
+[0;32mI (277) BALANCER: accel aconfigured[0m
+[0;32mI (287) BALANCER: ACCEL = 0x48[0m
+[0;32mI (287) BALANCER:  accel config verified[0m
+[0;32mI (287) BALANCER: gyro_x: 468 [0m
+ gyro_y: 222 
+ gyro_z: 407
+GYRO_X = 7.145038 
+ GYRO_Y = 3.389313 
+ GYRO_Z = 6.213740
+[0;32mI (297) BALANCER: Waited 5ms[0m
+[0;32mI (307) BALANCER: gyro_x: 582 [0m
+ gyro_y: 238 
+ gyro_z: 410
+GYRO_X = 8.885496 
+ GYRO_Y = 3.633588 
+ GYRO_Z = 6.259542
+[0;32mI (317) BALANCER: Waited 5ms[0m
+[0;32mI (317) BALANCER: gyro_x: 661 [0m
+ gyro_y: 266 
+ gyro_z: 391
+GYRO_X = 10.091603 
+ GYRO_Y = 4.061069 
+ GYRO_Z = 5.969466
+[0;32mI (327) BALANCER: Waited 5ms[0m
+[0;32mI (327) BALANCER: gyro_x: 704 [0m
+ gyro_y: 265 
+ gyro_z: 334
+GYRO_X = 10.748092 
+ GYRO_Y = 4.045802 
+ GYRO_Z = 5.099236
+[0;32mI (337) BALANCER: Waited 5ms[0m
+[0;32mI (347) BALANCER: gyro_x: 723 [0m
+ gyro_y: 291 
+ gyro_z: 220
+GYRO_X = 11.038168 
+ GYRO_Y = 4.442748 
+ GYRO_Z = 3.358779
+[0;32mI (357) BALANCER: Waited 5ms[0m
+[0;32mI (357) BALANCER: gyro_x: 677 [0m
+ gyro_y: 308 
+ gyro_z: 81
+GYRO_X = 10.335877 
+ GYRO_Y = 4.702290 
+ GYRO_Z = 1.236641
+[0;32mI (367) BALANCER: Waited 5ms[0m
+[0;32mI (367) BALANCER: gyro_x: 623 [0m
+ gyro_y: 289 
+ gyro_z: -20
+GYRO_X = 9.511451 
+ GYRO_Y = 4.412214 
+ GYRO_Z = -0.305344
+[0;32mI (377) BALANCER: Waited 5ms[0m
+[0;32mI (387) BALANCER: gyro_x: 514 [0m
+ gyro_y: 195 
+ gyro_z: -175
+GYRO_X = 7.847328 
+ GYRO_Y = 2.977099 
+ GYRO_Z = -2.671756
+[0;32mI (397) BALANCER: Waited 5ms[0m
+[0;32mI (397) BALANCER: gyro_x: 359 [0m
+ gyro_y: 118 
+ gyro_z: -319
+GYRO_X = 5.480916 
+ GYRO_Y = 1.801527 
+ GYRO_Z = -4.870229
+[0;32mI (407) BALANCER: Waited 5ms[0m
+[0;32mI (407) BALANCER: gyro_x: 250 [0m
+ gyro_y: 107 
+ gyro_z: -418
+GYRO_X = 3.816794 
+ GYRO_Y = 1.633588 
+ GYRO_Z = -6.381680
+[0;32mI (417) BALANCER: Waited 5ms[0m
+[0;32mI (427) BALANCER: gyro_x: 77 [0m
+ gyro_y: 115 
+ gyro_z: -574
+GYRO_X = 1.175573 
+ GYRO_Y = 1.755725 
+ GYRO_Z = -8.763359
+[0;32mI (437) BALANCER: Waited 5ms[0m
+[0;32mI (437) BALANCER: gyro_x: -78 [0m
+ gyro_y: 135 
+ gyro_z: -720
+GYRO_X = -1.190840 
+ GYRO_Y = 2.061069 
+ GYRO_Z = -10.992367
+[0;32mI (447) BALANCER: Waited 5ms[0m
+[0;32mI (447) BALANCER: gyro_x: -174 [0m
+ gyro_y: 134 
+ gyro_z: -786
+GYRO_X = -2.656489 
+ GYRO_Y = 2.045802 
+ GYRO_Z = -12.000000
+[0;32mI (457) BALANCER: Waited 5ms[0m
+[0;32mI (467) BALANCER: gyro_x: -250 [0m
+ gyro_y: 87 
+ gyro_z: -792
+GYRO_X = -3.816794 
+ GYRO_Y = 1.328244 
+ GYRO_Z = -12.091603
+[0;32mI (477) BALANCER: Waited 5ms[0m
+[0;32mI (477) BALANCER: gyro_x: -271 [0m
+ gyro_y: 6 
+ gyro_z: -688
+GYRO_X = -4.137404 
+ GYRO_Y = 0.091603 
+ GYRO_Z = -10.503817
+[0;32mI (487) BALANCER: Waited 5ms[0m
+[0;32mI (487) BALANCER: gyro_x: -275 [0m
+ gyro_y: -62 
+ gyro_z: -589
+GYRO_X = -4.198473 
+ GYRO_Y = -0.946565 
+ GYRO_Z = -8.992367
+[0;32mI (497) BALANCER: Waited 5ms[0m
+[0;32mI (507) BALANCER: gyro_x: -244 [0m
+ gyro_y: -190 
+ gyro_z: -407
+GYRO_X = -3.725191 
+ GYRO_Y = -2.900763 
+ GYRO_Z = -6.213740
+[0;32mI (517) BALANCER: Waited 5ms[0m
+[0;32mI (517) BALANCER: gyro_x: -164 [0m
+ gyro_y: -296 
+ gyro_z: -238
+GYRO_X = -2.503817 
+ GYRO_Y = -4.519084 
+ GYRO_Z = -3.633588
+[0;32mI (527) BALANCER: Waited 5ms[0m
+[0;32mI (527) BALANCER: gyro_x: -46 [0m
+ gyro_y: -340 
+ gyro_z: -134
+GYRO_X = -0.702290 
+ GYRO_Y = -5.190840 
+ GYRO_Z = -2.045802
+[0;32mI (537) BALANCER: Waited 5ms[0m
+[0;32mI (547) BALANCER: gyro_x: 27 [0m
+ gyro_y: -358 
+ gyro_z: -111
+GYRO_X = 0.412214 
+ GYRO_Y = -5.465649 
+ GYRO_Z = -1.694656
+[0;32mI (557) BALANCER: Waited 5ms[0m
+[0;32mI (557) BALANCER: gyro_x: 129 [0m
+ gyro_y: -399 
+ gyro_z: -154
+GYRO_X = 1.969466 
+ GYRO_Y = -6.091603 
+ GYRO_Z = -2.351145
+[0;32mI (567) BALANCER: Waited 5ms[0m
+[0;32mI (567) BALANCER: gyro_x: 200 [0m
+ gyro_y: -394 
+ gyro_z: -206
+GYRO_X = 3.053435 
+ GYRO_Y = -6.015267 
+ GYRO_Z = -3.145038
+[0;32mI (587) BALANCER: Waited 5ms[0m
+[0;32mI (587) BALANCER: gyro_x: 238 [0m
+ gyro_y: -295 
+ gyro_z: -200
+GYRO_X = 3.633588 
+ GYRO_Y = -4.503817 
+ GYRO_Z = -3.053435
+[0;32mI (597) BALANCER: Waited 5ms[0m
+[0;32mI (597) BALANCER: gyro_x: 268 [0m
+ gyro_y: -177 
+ gyro_z: -178
+GYRO_X = 4.091603 
+ GYRO_Y = -2.702290 
+ GYRO_Z = -2.717557
+[0;32mI (607) BALANCER: Waited 5ms[0m
+[0;32mI (617) BALANCER: gyro_x: 294 [0m
+ gyro_y: -81 
+ gyro_z: -123
+GYRO_X = 4.488550 
+ GYRO_Y = -1.236641 
+ GYRO_Z = -1.877863
+[0;32mI (627) BALANCER: Waited 5ms[0m
+[0;32mI (627) BALANCER: gyro_x: 294 [0m
+ gyro_y: -50 
+ gyro_z: -67
+GYRO_X = 4.488550 
+ GYRO_Y = -0.763359 
+ GYRO_Z = -1.022901
+[0;32mI (637) BALANCER: Waited 5ms[0m
+[0;32mI (637) BALANCER: gyro_x: 268 [0m
+ gyro_y: -64 
+ gyro_z: -48
+GYRO_X = 4.091603 
+ GYRO_Y = -0.977099 
+ GYRO_Z = -0.732824
+[0;32mI (647) BALANCER: Waited 5ms[0m
+[0;32mI (657) BALANCER: gyro_x: 238 [0m
+ gyro_y: -103 
+ gyro_z: -43
+GYRO_X = 3.633588 
+ GYRO_Y = -1.572519 
+ GYRO_Z = -0.656489
+[0;32mI (667) BALANCER: Waited 5ms[0m
+[0;32mI (667) BALANCER: gyro_x: 209 [0m
+ gyro_y: -138 
+ gyro_z: -51
+GYRO_X = 3.190840 
+ GYRO_Y = -2.106870 
+ GYRO_Z = -0.778626
+[0;32mI (677) BALANCER: Waited 5ms[0m
+[0;32mI (677) BALANCER: gyro_x: 203 [0m
+ gyro_y: -163 
+ gyro_z: -76
+GYRO_X = 3.099237 
+ GYRO_Y = -2.488550 
+ GYRO_Z = -1.160305
+[0;32mI (687) BALANCER: Waited 5ms[0m
+[0;32mI (697) BALANCER: gyro_x: 202 [0m
+ gyro_y: -194 
+ gyro_z: -141
+GYRO_X = 3.083969 
+ GYRO_Y = -2.961832 
+ GYRO_Z = -2.152672
+[0;32mI (707) BALANCER: Waited 5ms[0m
+[0;32mI (707) BALANCER: gyro_x: 183 [0m
+ gyro_y: -175 
+ gyro_z: -216
+GYRO_X = 2.793893 
+ GYRO_Y = -2.671756 
+ GYRO_Z = -3.297710
+[0;32mI (717) BALANCER: Waited 5ms[0m
+[0;32mI (717) BALANCER: gyro_x: 158 [0m
+ gyro_y: -162 
+ gyro_z: -258
+GYRO_X = 2.412214 
+ GYRO_Y = -2.473282 
+ GYRO_Z = -3.938931
+[0;32mI (727) BALANCER: Waited 5ms[0m
+[0;32mI (737) BALANCER: gyro_x: 128 [0m
+ gyro_y: -171 
+ gyro_z: -290
+GYRO_X = 1.954198 
+ GYRO_Y = -2.610687 
+ GYRO_Z = -4.427481
+[0;32mI (747) BALANCER: Waited 5ms[0m
+[0;32mI (747) BALANCER: gyro_x: 133 [0m
+ gyro_y: -216 
+ gyro_z: -273
+GYRO_X = 2.030534 
+ GYRO_Y = -3.297710 
+ GYRO_Z = -4.167939
+[0;32mI (757) BALANCER: Waited 5ms[0m
+[0;32mI (757) BALANCER: gyro_x: 154 [0m
+ gyro_y: -237 
+ gyro_z: -213
+GYRO_X = 2.351145 
+ GYRO_Y = -3.618321 
+ GYRO_Z = -3.251908
+[0;32mI (767) BALANCER: Waited 5ms[0m
+[0;32mI (777) BALANCER: gyro_x: 176 [0m
+ gyro_y: -246 
+ gyro_z: -191
+GYRO_X = 2.687023 
+ GYRO_Y = -3.755725 
+ GYRO_Z = -2.916031
+[0;32mI (787) BALANCER: Waited 5ms[0m
+[0;32mI (787) BALANCER: gyro_x: 199 [0m
+ gyro_y: -253 
+ gyro_z: -197
+GYRO_X = 3.038168 
+ GYRO_Y = -3.862595 
+ GYRO_Z = -3.007634
+[0;32mI (797) BALANCER: Waited 5ms[0m
+[0;32mI (797) BALANCER: gyro_x: 215 [0m
+ gyro_y: -304 
+ gyro_z: -192
+GYRO_X = 3.282443 
+ GYRO_Y = -4.641222 
+ GYRO_Z = -2.931298
+[0;32mI (807) BALANCER: Waited 5ms[0m
+[0;32mI (817) BALANCER: gyro_x: 214 [0m
+ gyro_y: -327 
+ gyro_z: -189
+GYRO_X = 3.267176 
+ GYRO_Y = -4.992366 
+ GYRO_Z = -2.885496
+[0;32mI (827) BALANCER: Waited 5ms[0m
+[0;32mI (827) BALANCER: gyro_x: 189 [0m
+ gyro_y: -371 
+ gyro_z: -144
+GYRO_X = 2.885496 
+ GYRO_Y = -5.664122 
+ GYRO_Z = -2.198473
+[0;32mI (837) BALANCER: Waited 5ms[0m
+[0;32mI (837) BALANCER: gyro_x: 145 [0m
+ gyro_y: -400 
+ gyro_z: -87
+GYRO_X = 2.213740 
+ GYRO_Y = -6.106870 
+ GYRO_Z = -1.328244
+[0;32mI (857) BALANCER: Waited 5ms[0m
+[0;32mI (857) BALANCER: gyro_x: 100 [0m
+ gyro_y: -398 
+ gyro_z: -53
+GYRO_X = 1.526718 
+ GYRO_Y = -6.076336 
+ GYRO_Z = -0.809160
+[0;32mI (867) BALANCER: Waited 5ms[0m
+[0;32mI (867) BALANCER: gyro_x: 55 [0m
+ gyro_y: -375 
+ gyro_z: -10
+GYRO_X = 0.839695 
+ GYRO_Y = -5.725191 
+ GYRO_Z = -0.152672
+[0;32mI (877) BALANCER: Waited 5ms[0m
+[0;32mI (887) BALANCER: gyro_x: 19 [0m
+ gyro_y: -333 
+ gyro_z: -9
+GYRO_X = 0.290076 
+ GYRO_Y = -5.083970 
+ GYRO_Z = -0.137405
+[0;32mI (897) BALANCER: Waited 5ms[0m
+[0;32mI (897) BALANCER: gyro_x: 6 [0m
+ gyro_y: -241 
+ gyro_z: -61
+GYRO_X = 0.091603 
+ GYRO_Y = -3.679389 
+ GYRO_Z = -0.931298
+[0;32mI (907) BALANCER: Waited 5ms[0m
+[0;32mI (907) BALANCER: gyro_x: -11 [0m
+ gyro_y: -179 
+ gyro_z: -131
+GYRO_X = -0.167939 
+ GYRO_Y = -2.732824 
+ GYRO_Z = -2.000000
+[0;32mI (917) BALANCER: Waited 5ms[0m
+[0;32mI (927) BALANCER: gyro_x: -34 [0m
+ gyro_y: -147 
+ gyro_z: -267
+GYRO_X = -0.519084 
+ GYRO_Y = -2.244275 
+ GYRO_Z = -4.076336
+[0;32mI (937) BALANCER: Waited 5ms[0m
+[0;32mI (937) BALANCER: gyro_x: -68 [0m
+ gyro_y: -61 
+ gyro_z: -363
+GYRO_X = -1.038168 
+ GYRO_Y = -0.931298 
+ GYRO_Z = -5.541985
+[0;32mI (947) BALANCER: Waited 5ms[0m
+[0;32mI (947) BALANCER: gyro_x: -98 [0m
+ gyro_y: 19 
+ gyro_z: -387
+GYRO_X = -1.496183 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -5.908397
+[0;32mI (957) BALANCER: Waited 5ms[0m
+[0;32mI (967) BALANCER: gyro_x: -90 [0m
+ gyro_y: 128 
+ gyro_z: -354
+GYRO_X = -1.374046 
+ GYRO_Y = 1.954198 
+ GYRO_Z = -5.404580
+[0;32mI (977) BALANCER: Waited 5ms[0m
+[0;32mI (977) BALANCER: gyro_x: -77 [0m
+ gyro_y: 212 
+ gyro_z: -285
+GYRO_X = -1.175573 
+ GYRO_Y = 3.236641 
+ GYRO_Z = -4.351145
+[0;32mI (987) BALANCER: Waited 5ms[0m
+[0;32mI (987) BALANCER: gyro_x: -47 [0m
+ gyro_y: 260 
+ gyro_z: -251
+GYRO_X = -0.717557 
+ GYRO_Y = 3.969466 
+ GYRO_Z = -3.832061
+[0;32mI (997) BALANCER: Waited 5ms[0m
+[0;32mI (1007) BALANCER: gyro_x: -8 [0m
+ gyro_y: 290 
+ gyro_z: -226
+GYRO_X = -0.122137 
+ GYRO_Y = 4.427481 
+ GYRO_Z = -3.450382
+[0;32mI (1017) BALANCER: Waited 5ms[0m
+[0;32mI (1017) BALANCER: gyro_x: 51 [0m
+ gyro_y: 316 
+ gyro_z: -213
+GYRO_X = 0.778626 
+ GYRO_Y = 4.824428 
+ GYRO_Z = -3.251908
+[0;32mI (1027) BALANCER: Waited 5ms[0m
+[0;32mI (1027) BALANCER: gyro_x: 110 [0m
+ gyro_y: 331 
+ gyro_z: -211
+GYRO_X = 1.679389 
+ GYRO_Y = 5.053435 
+ GYRO_Z = -3.221374
+[0;32mI (1037) BALANCER: Waited 5ms[0m
+[0;32mI (1047) BALANCER: gyro_x: 187 [0m
+ gyro_y: 303 
+ gyro_z: -241
+GYRO_X = 2.854962 
+ GYRO_Y = 4.625954 
+ GYRO_Z = -3.679389
+[0;32mI (1057) BALANCER: Waited 5ms[0m
+[0;32mI (1057) BALANCER: gyro_x: 225 [0m
+ gyro_y: 265 
+ gyro_z: -293
+GYRO_X = 3.435115 
+ GYRO_Y = 4.045802 
+ GYRO_Z = -4.473282
+[0;32mI (1067) BALANCER: Waited 5ms[0m
+[0;32mI (1067) BALANCER: gyro_x: 191 [0m
+ gyro_y: 287 
+ gyro_z: -377
+GYRO_X = 2.916031 
+ GYRO_Y = 4.381680 
+ GYRO_Z = -5.755725
+[0;32mI (1077) BALANCER: Waited 5ms[0m
+[0;32mI (1087) BALANCER: gyro_x: 136 [0m
+ gyro_y: 287 
+ gyro_z: -439
+GYRO_X = 2.076336 
+ GYRO_Y = 4.381680 
+ GYRO_Z = -6.702290
+[0;32mI (1097) BALANCER: Waited 5ms[0m
+[0;32mI (1097) BALANCER: gyro_x: 26 [0m
+ gyro_y: 323 
+ gyro_z: -492
+GYRO_X = 0.396947 
+ GYRO_Y = 4.931298 
+ GYRO_Z = -7.511450
+[0;32mI (1107) BALANCER: Waited 5ms[0m
+[0;32mI (1107) BALANCER: gyro_x: -61 [0m
+ gyro_y: 362 
+ gyro_z: -458
+GYRO_X = -0.931298 
+ GYRO_Y = 5.526718 
+ GYRO_Z = -6.992366
+[0;32mI (1117) BALANCER: Waited 5ms[0m
+[0;32mI (1127) BALANCER: gyro_x: -133 [0m
+ gyro_y: 368 
+ gyro_z: -435
+GYRO_X = -2.030534 
+ GYRO_Y = 5.618320 
+ GYRO_Z = -6.641222
+[0;32mI (1137) BALANCER: Waited 5ms[0m
+[0;32mI (1137) BALANCER: gyro_x: -208 [0m
+ gyro_y: 340 
+ gyro_z: -405
+GYRO_X = -3.175573 
+ GYRO_Y = 5.190840 
+ GYRO_Z = -6.183206
+[0;32mI (1147) BALANCER: Waited 5ms[0m
+[0;32mI (1157) BALANCER: gyro_x: -228 [0m
+ gyro_y: 250 
+ gyro_z: -436
+GYRO_X = -3.480916 
+ GYRO_Y = 3.816794 
+ GYRO_Z = -6.656488
+[0;32mI (1167) BALANCER: Waited 5ms[0m
+[0;32mI (1167) BALANCER: gyro_x: -236 [0m
+ gyro_y: 116 
+ gyro_z: -489
+GYRO_X = -3.603053 
+ GYRO_Y = 1.770992 
+ GYRO_Z = -7.465649
+[0;32mI (1177) BALANCER: Waited 5ms[0m
+[0;32mI (1177) BALANCER: gyro_x: -248 [0m
+ gyro_y: 10 
+ gyro_z: -492
+GYRO_X = -3.786260 
+ GYRO_Y = 0.152672 
+ GYRO_Z = -7.511450
+[0;32mI (1187) BALANCER: Waited 5ms[0m
+[0;32mI (1197) BALANCER: gyro_x: -272 [0m
+ gyro_y: -74 
+ gyro_z: -434
+GYRO_X = -4.152672 
+ GYRO_Y = -1.129771 
+ GYRO_Z = -6.625954
+[0;32mI (1207) BALANCER: Waited 5ms[0m
+[0;32mI (1207) BALANCER: gyro_x: -269 [0m
+ gyro_y: -132 
+ gyro_z: -345
+GYRO_X = -4.106870 
+ GYRO_Y = -2.015267 
+ GYRO_Z = -5.267176
+[0;32mI (1217) BALANCER: Waited 5ms[0m
+[0;32mI (1217) BALANCER: gyro_x: -223 [0m
+ gyro_y: -106 
+ gyro_z: -259
+GYRO_X = -3.404580 
+ GYRO_Y = -1.618321 
+ GYRO_Z = -3.954198
+[0;32mI (1227) BALANCER: Waited 5ms[0m
+[0;32mI (1237) BALANCER: gyro_x: -174 [0m
+ gyro_y: -77 
+ gyro_z: -232
+GYRO_X = -2.656489 
+ GYRO_Y = -1.175573 
+ GYRO_Z = -3.541985
+[0;32mI (1247) BALANCER: Waited 5ms[0m
+[0;32mI (1247) BALANCER: gyro_x: -92 [0m
+ gyro_y: -19 
+ gyro_z: -248
+GYRO_X = -1.404580 
+ GYRO_Y = -0.290076 
+ GYRO_Z = -3.786260
+[0;32mI (1257) BALANCER: Waited 5ms[0m
+[0;32mI (1267) BALANCER: gyro_x: -8 [0m
+ gyro_y: 53 
+ gyro_z: -319
+GYRO_X = -0.122137 
+ GYRO_Y = 0.809160 
+ GYRO_Z = -4.870229
+[0;32mI (1277) BALANCER: Waited 5ms[0m
+[0;32mI (1277) BALANCER: gyro_x: 43 [0m
+ gyro_y: 137 
+ gyro_z: -389
+GYRO_X = 0.656489 
+ GYRO_Y = 2.091603 
+ GYRO_Z = -5.938931
+[0;32mI (1287) BALANCER: Waited 5ms[0m
+[0;32mI (1287) BALANCER: gyro_x: 56 [0m
+ gyro_y: 176 
+ gyro_z: -433
+GYRO_X = 0.854962 
+ GYRO_Y = 2.687023 
+ GYRO_Z = -6.610687
+[0;32mI (1297) BALANCER: Waited 5ms[0m
+[0;32mI (1307) BALANCER: gyro_x: 68 [0m
+ gyro_y: 158 
+ gyro_z: -492
+GYRO_X = 1.038168 
+ GYRO_Y = 2.412214 
+ GYRO_Z = -7.511450
+[0;32mI (1317) BALANCER: Waited 5ms[0m
+[0;32mI (1317) BALANCER: gyro_x: 74 [0m
+ gyro_y: 135 
+ gyro_z: -532
+GYRO_X = 1.129771 
+ GYRO_Y = 2.061069 
+ GYRO_Z = -8.122137
+[0;32mI (1327) BALANCER: Waited 5ms[0m
+[0;32mI (1327) BALANCER: gyro_x: 76 [0m
+ gyro_y: 130 
+ gyro_z: -568
+GYRO_X = 1.160305 
+ GYRO_Y = 1.984733 
+ GYRO_Z = -8.671756
+[0;32mI (1337) BALANCER: Waited 5ms[0m
+[0;32mI (1347) BALANCER: gyro_x: 67 [0m
+ gyro_y: 131 
+ gyro_z: -623
+GYRO_X = 1.022901 
+ GYRO_Y = 2.000000 
+ GYRO_Z = -9.511451
+[0;32mI (1357) BALANCER: Waited 5ms[0m
+[0;32mI (1357) BALANCER: gyro_x: 34 [0m
+ gyro_y: 146 
+ gyro_z: -649
+GYRO_X = 0.519084 
+ GYRO_Y = 2.229008 
+ GYRO_Z = -9.908397
+[0;32mI (1367) BALANCER: Waited 5ms[0m
+[0;32mI (1367) BALANCER: gyro_x: -6 [0m
+ gyro_y: 144 
+ gyro_z: -658
+GYRO_X = -0.091603 
+ GYRO_Y = 2.198473 
+ GYRO_Z = -10.045801
+[0;32mI (1377) BALANCER: Waited 5ms[0m
+[0;32mI (1387) BALANCER: gyro_x: -84 [0m
+ gyro_y: 107 
+ gyro_z: -651
+GYRO_X = -1.282443 
+ GYRO_Y = 1.633588 
+ GYRO_Z = -9.938931
+[0;32mI (1397) BALANCER: Waited 5ms[0m
+[0;32mI (1397) BALANCER: gyro_x: -178 [0m
+ gyro_y: 89 
+ gyro_z: -612
+GYRO_X = -2.717557 
+ GYRO_Y = 1.358779 
+ GYRO_Z = -9.343512
+[0;32mI (1407) BALANCER: Waited 5ms[0m
+[0;32mI (1407) BALANCER: gyro_x: -243 [0m
+ gyro_y: 116 
+ gyro_z: -577
+GYRO_X = -3.709924 
+ GYRO_Y = 1.770992 
+ GYRO_Z = -8.809160
+[0;32mI (1417) BALANCER: Waited 5ms[0m
+[0;32mI (1427) BALANCER: gyro_x: -70 [0m
+ gyro_y: 249 
+ gyro_z: -640
+GYRO_X = -1.068702 
+ GYRO_Y = 3.801527 
+ GYRO_Z = -9.770992
+[0;32mI (1437) BALANCER: Waited 5ms[0m
+[0;32mI (1437) BALANCER: gyro_x: 266 [0m
+ gyro_y: 344 
+ gyro_z: -699
+GYRO_X = 4.061069 
+ GYRO_Y = 5.251908 
+ GYRO_Z = -10.671756
+[0;32mI (1447) BALANCER: Waited 5ms[0m
+[0;32mI (1457) BALANCER: gyro_x: 464 [0m
+ gyro_y: 386 
+ gyro_z: -637
+GYRO_X = 7.083970 
+ GYRO_Y = 5.893130 
+ GYRO_Z = -9.725191
+[0;32mI (1467) BALANCER: Waited 5ms[0m
+[0;32mI (1467) BALANCER: gyro_x: 577 [0m
+ gyro_y: 461 
+ gyro_z: -604
+GYRO_X = 8.809160 
+ GYRO_Y = 7.038168 
+ GYRO_Z = -9.221375
+[0;32mI (1477) BALANCER: Waited 5ms[0m
+[0;32mI (1477) BALANCER: gyro_x: 715 [0m
+ gyro_y: 501 
+ gyro_z: -616
+GYRO_X = 10.916031 
+ GYRO_Y = 7.648855 
+ GYRO_Z = -9.404580
+[0;32mI (1487) BALANCER: Waited 5ms[0m
+[0;32mI (1497) BALANCER: gyro_x: 703 [0m
+ gyro_y: 509 
+ gyro_z: -628
+GYRO_X = 10.732824 
+ GYRO_Y = 7.770992 
+ GYRO_Z = -9.587787
+[0;32mI (1507) BALANCER: Waited 5ms[0m
+[0;32mI (1507) BALANCER: gyro_x: 554 [0m
+ gyro_y: 453 
+ gyro_z: -640
+GYRO_X = 8.458015 
+ GYRO_Y = 6.916030 
+ GYRO_Z = -9.770992
+[0;32mI (1517) BALANCER: Waited 5ms[0m
+[0;32mI (1517) BALANCER: gyro_x: 450 [0m
+ gyro_y: 400 
+ gyro_z: -650
+GYRO_X = 6.870229 
+ GYRO_Y = 6.106870 
+ GYRO_Z = -9.923664
+[0;32mI (1527) BALANCER: Waited 5ms[0m
+[0;32mI (1537) BALANCER: gyro_x: 327 [0m
+ gyro_y: 317 
+ gyro_z: -711
+GYRO_X = 4.992366 
+ GYRO_Y = 4.839694 
+ GYRO_Z = -10.854961
+[0;32mI (1547) BALANCER: Waited 5ms[0m
+[0;32mI (1547) BALANCER: gyro_x: 179 [0m
+ gyro_y: 271 
+ gyro_z: -828
+GYRO_X = 2.732824 
+ GYRO_Y = 4.137404 
+ GYRO_Z = -12.641221
+[0;32mI (1557) BALANCER: Waited 5ms[0m
+[0;32mI (1557) BALANCER: gyro_x: 63 [0m
+ gyro_y: 224 
+ gyro_z: -896
+GYRO_X = 0.961832 
+ GYRO_Y = 3.419847 
+ GYRO_Z = -13.679389
+[0;32mI (1567) BALANCER: Waited 5ms[0m
+[0;32mI (1577) BALANCER: gyro_x: -133 [0m
+ gyro_y: 90 
+ gyro_z: -938
+GYRO_X = -2.030534 
+ GYRO_Y = 1.374046 
+ GYRO_Z = -14.320611
+[0;32mI (1587) BALANCER: Waited 5ms[0m
+[0;32mI (1587) BALANCER: gyro_x: -373 [0m
+ gyro_y: -72 
+ gyro_z: -869
+GYRO_X = -5.694656 
+ GYRO_Y = -1.099237 
+ GYRO_Z = -13.267176
+[0;32mI (1597) BALANCER: Waited 5ms[0m
+[0;32mI (1597) BALANCER: gyro_x: -498 [0m
+ gyro_y: -207 
+ gyro_z: -819
+GYRO_X = -7.603054 
+ GYRO_Y = -3.160305 
+ GYRO_Z = -12.503817
+[0;32mI (1617) BALANCER: Waited 5ms[0m
+[0;32mI (1617) BALANCER: gyro_x: -541 [0m
+ gyro_y: -283 
+ gyro_z: -818
+GYRO_X = -8.259542 
+ GYRO_Y = -4.320611 
+ GYRO_Z = -12.488549
+[0;32mI (1627) BALANCER: Waited 5ms[0m
+[0;32mI (1627) BALANCER: gyro_x: -564 [0m
+ gyro_y: -295 
+ gyro_z: -840
+GYRO_X = -8.610687 
+ GYRO_Y = -4.503817 
+ GYRO_Z = -12.824428
+[0;32mI (1637) BALANCER: Waited 5ms[0m
+[0;32mI (1647) BALANCER: gyro_x: -521 [0m
+ gyro_y: -297 
+ gyro_z: -859
+GYRO_X = -7.954198 
+ GYRO_Y = -4.534351 
+ GYRO_Z = -13.114504
+[0;32mI (1657) BALANCER: Waited 5ms[0m
+[0;32mI (1657) BALANCER: gyro_x: -394 [0m
+ gyro_y: -348 
+ gyro_z: -782
+GYRO_X = -6.015267 
+ GYRO_Y = -5.312977 
+ GYRO_Z = -11.938931
+[0;32mI (1667) BALANCER: Waited 5ms[0m
+[0;32mI (1667) BALANCER: gyro_x: -236 [0m
+ gyro_y: -295 
+ gyro_z: -665
+GYRO_X = -3.603053 
+ GYRO_Y = -4.503817 
+ GYRO_Z = -10.152672
+[0;32mI (1687) BALANCER: Waited 5ms[0m
+[0;32mI (1687) BALANCER: gyro_x: -160 [0m
+ gyro_y: -263 
+ gyro_z: -584
+GYRO_X = -2.442748 
+ GYRO_Y = -4.015267 
+ GYRO_Z = -8.916031
+[0;32mI (1697) BALANCER: Waited 5ms[0m
+[0;32mI (1697) BALANCER: gyro_x: -84 [0m
+ gyro_y: -248 
+ gyro_z: -505
+GYRO_X = -1.282443 
+ GYRO_Y = -3.786260 
+ GYRO_Z = -7.709924
+[0;32mI (1707) BALANCER: Waited 5ms[0m
+[0;32mI (1717) BALANCER: gyro_x: -31 [0m
+ gyro_y: -174 
+ gyro_z: -501
+GYRO_X = -0.473282 
+ GYRO_Y = -2.656489 
+ GYRO_Z = -7.648855
+[0;32mI (1727) BALANCER: Waited 5ms[0m
+[0;32mI (1727) BALANCER: gyro_x: -35 [0m
+ gyro_y: -107 
+ gyro_z: -611
+GYRO_X = -0.534351 
+ GYRO_Y = -1.633588 
+ GYRO_Z = -9.328244
+[0;32mI (1737) BALANCER: Waited 5ms[0m
+[0;32mI (1737) BALANCER: gyro_x: -59 [0m
+ gyro_y: -57 
+ gyro_z: -702
+GYRO_X = -0.900763 
+ GYRO_Y = -0.870229 
+ GYRO_Z = -10.717557
+[0;32mI (1747) BALANCER: Waited 5ms[0m
+[0;32mI (1757) BALANCER: gyro_x: -105 [0m
+ gyro_y: -58 
+ gyro_z: -832
+GYRO_X = -1.603053 
+ GYRO_Y = -0.885496 
+ GYRO_Z = -12.702291
+[0;32mI (1767) BALANCER: Waited 5ms[0m
+[0;32mI (1767) BALANCER: gyro_x: -91 [0m
+ gyro_y: -51 
+ gyro_z: -795
+GYRO_X = -1.389313 
+ GYRO_Y = -0.778626 
+ GYRO_Z = -12.137404
+[0;32mI (1777) BALANCER: Waited 5ms[0m
+[0;32mI (1787) BALANCER: gyro_x: -83 [0m
+ gyro_y: -4 
+ gyro_z: -618
+GYRO_X = -1.267176 
+ GYRO_Y = -0.061069 
+ GYRO_Z = -9.435115
+[0;32mI (1797) BALANCER: Waited 5ms[0m
+[0;32mI (1797) BALANCER: gyro_x: -56 [0m
+ gyro_y: 13 
+ gyro_z: -463
+GYRO_X = -0.854962 
+ GYRO_Y = 0.198473 
+ GYRO_Z = -7.068702
+[0;32mI (1807) BALANCER: Waited 5ms[0m
+[0;32mI (1807) BALANCER: gyro_x: -64 [0m
+ gyro_y: 18 
+ gyro_z: -417
+GYRO_X = -0.977099 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -6.366412
+[0;32mI (1817) BALANCER: Waited 5ms[0m
+[0;32mI (1827) BALANCER: gyro_x: -131 [0m
+ gyro_y: -9 
+ gyro_z: -395
+GYRO_X = -2.000000 
+ GYRO_Y = -0.137405 
+ GYRO_Z = -6.030534
+[0;32mI (1837) BALANCER: Waited 5ms[0m
+[0;32mI (1837) BALANCER: gyro_x: -221 [0m
+ gyro_y: -60 
+ gyro_z: -441
+GYRO_X = -3.374046 
+ GYRO_Y = -0.916031 
+ GYRO_Z = -6.732824
+[0;32mI (1847) BALANCER: Waited 5ms[0m
+[0;32mI (1847) BALANCER: gyro_x: -283 [0m
+ gyro_y: -92 
+ gyro_z: -460
+GYRO_X = -4.320611 
+ GYRO_Y = -1.404580 
+ GYRO_Z = -7.022901
+[0;32mI (1857) BALANCER: Waited 5ms[0m
+[0;32mI (1867) BALANCER: gyro_x: -388 [0m
+ gyro_y: -211 
+ gyro_z: -445
+GYRO_X = -5.923664 
+ GYRO_Y = -3.221374 
+ GYRO_Z = -6.793893
+[0;32mI (1877) BALANCER: Waited 5ms[0m
+[0;32mI (1877) BALANCER: gyro_x: -476 [0m
+ gyro_y: -282 
+ gyro_z: -361
+GYRO_X = -7.267176 
+ GYRO_Y = -4.305344 
+ GYRO_Z = -5.511450
+[0;32mI (1887) BALANCER: Waited 5ms[0m
+[0;32mI (1897) BALANCER: gyro_x: -445 [0m
+ gyro_y: -301 
+ gyro_z: -230
+GYRO_X = -6.793893 
+ GYRO_Y = -4.595420 
+ GYRO_Z = -3.511450
+[0;32mI (1907) BALANCER: Waited 5ms[0m
+[0;32mI (1907) BALANCER: gyro_x: -301 [0m
+ gyro_y: -225 
+ gyro_z: -121
+GYRO_X = -4.595420 
+ GYRO_Y = -3.435115 
+ GYRO_Z = -1.847328
+[0;32mI (1917) BALANCER: Waited 5ms[0m
+[0;32mI (1917) BALANCER: gyro_x: -180 [0m
+ gyro_y: -156 
+ gyro_z: -67
+GYRO_X = -2.748092 
+ GYRO_Y = -2.381679 
+ GYRO_Z = -1.022901
+[0;32mI (1927) BALANCER: Waited 5ms[0m
+[0;32mI (1937) BALANCER: gyro_x: -34 [0m
+ gyro_y: -56 
+ gyro_z: 41
+GYRO_X = -0.519084 
+ GYRO_Y = -0.854962 
+ GYRO_Z = 0.625954
+[0;32mI (1947) BALANCER: Waited 5ms[0m
+[0;32mI (1947) BALANCER: gyro_x: 23 [0m
+ gyro_y: 23 
+ gyro_z: 216
+GYRO_X = 0.351145 
+ GYRO_Y = 0.351145 
+ GYRO_Z = 3.297710
+[0;32mI (1957) BALANCER: Waited 5ms[0m
+[0;32mI (1957) BALANCER: gyro_x: 54 [0m
+ gyro_y: 66 
+ gyro_z: 335
+GYRO_X = 0.824427 
+ GYRO_Y = 1.007634 
+ GYRO_Z = 5.114504
+[0;32mI (1967) BALANCER: Waited 5ms[0m
+[0;32mI (1977) BALANCER: gyro_x: 116 [0m
+ gyro_y: 115 
+ gyro_z: 411
+GYRO_X = 1.770992 
+ GYRO_Y = 1.755725 
+ GYRO_Z = 6.274809
+[0;32mI (1987) BALANCER: Waited 5ms[0m
+[0;32mI (1987) BALANCER: gyro_x: 153 [0m
+ gyro_y: 159 
+ gyro_z: 460
+GYRO_X = 2.335878 
+ GYRO_Y = 2.427481 
+ GYRO_Z = 7.022901
+[0;32mI (1997) BALANCER: Waited 5ms[0m
+[0;32mI (1997) BALANCER: gyro_x: 161 [0m
+ gyro_y: 205 
+ gyro_z: 476
+GYRO_X = 2.458015 
+ GYRO_Y = 3.129771 
+ GYRO_Z = 7.267176
+[0;32mI (2007) BALANCER: Waited 5ms[0m
+[0;32mI (2017) BALANCER: gyro_x: 211 [0m
+ gyro_y: 264 
+ gyro_z: 510
+GYRO_X = 3.221374 
+ GYRO_Y = 4.030534 
+ GYRO_Z = 7.786260
+[0;32mI (2027) BALANCER: Waited 5ms[0m
+[0;32mI (2027) BALANCER: gyro_x: 248 [0m
+ gyro_y: 278 
+ gyro_z: 551
+GYRO_X = 3.786260 
+ GYRO_Y = 4.244275 
+ GYRO_Z = 8.412213
+[0;32mI (2037) BALANCER: Waited 5ms[0m
+[0;32mI (2037) BALANCER: gyro_x: 238 [0m
+ gyro_y: 310 
+ gyro_z: 572
+GYRO_X = 3.633588 
+ GYRO_Y = 4.732824 
+ GYRO_Z = 8.732824
+[0;32mI (2047) BALANCER: Waited 5ms[0m
+[0;32mI (2057) BALANCER: gyro_x: 192 [0m
+ gyro_y: 335 
+ gyro_z: 531
+GYRO_X = 2.931298 
+ GYRO_Y = 5.114504 
+ GYRO_Z = 8.106871
+[0;32mI (2067) BALANCER: Waited 5ms[0m
+[0;32mI (2067) BALANCER: gyro_x: 122 [0m
+ gyro_y: 370 
+ gyro_z: 454
+GYRO_X = 1.862595 
+ GYRO_Y = 5.648855 
+ GYRO_Z = 6.931298
+[0;32mI (2077) BALANCER: Waited 5ms[0m
+[0;32mI (2077) BALANCER: gyro_x: 76 [0m
+ gyro_y: 378 
+ gyro_z: 381
+GYRO_X = 1.160305 
+ GYRO_Y = 5.770992 
+ GYRO_Z = 5.816794
+[0;32mI (2087) BALANCER: Waited 5ms[0m
+[0;32mI (2097) BALANCER: gyro_x: 19 [0m
+ gyro_y: 377 
+ gyro_z: 269
+GYRO_X = 0.290076 
+ GYRO_Y = 5.755725 
+ GYRO_Z = 4.106870
+[0;32mI (2107) BALANCER: Waited 5ms[0m
+[0;32mI (2107) BALANCER: gyro_x: -4 [0m
+ gyro_y: 359 
+ gyro_z: 162
+GYRO_X = -0.061069 
+ GYRO_Y = 5.480916 
+ GYRO_Z = 2.473282
+[0;32mI (2117) BALANCER: Waited 5ms[0m
+[0;32mI (2117) BALANCER: gyro_x: -17 [0m
+ gyro_y: 320 
+ gyro_z: 86
+GYRO_X = -0.259542 
+ GYRO_Y = 4.885496 
+ GYRO_Z = 1.312977
+[0;32mI (2127) BALANCER: Waited 5ms[0m
+[0;32mI (2137) BALANCER: gyro_x: 57 [0m
+ gyro_y: 308 
+ gyro_z: -63
+GYRO_X = 0.870229 
+ GYRO_Y = 4.702290 
+ GYRO_Z = -0.961832
+[0;32mI (2147) BALANCER: Waited 5ms[0m
+[0;32mI (2147) BALANCER: gyro_x: 159 [0m
+ gyro_y: 286 
+ gyro_z: -227
+GYRO_X = 2.427481 
+ GYRO_Y = 4.366412 
+ GYRO_Z = -3.465649
+[0;32mI (2157) BALANCER: Waited 5ms[0m
+[0;32mI (2157) BALANCER: gyro_x: 185 [0m
+ gyro_y: 267 
+ gyro_z: -268
+GYRO_X = 2.824427 
+ GYRO_Y = 4.076336 
+ GYRO_Z = -4.091603
+[0;32mI (2167) BALANCER: Waited 5ms[0m
+[0;32mI (2177) BALANCER: gyro_x: 125 [0m
+ gyro_y: 308 
+ gyro_z: -262
+GYRO_X = 1.908397 
+ GYRO_Y = 4.702290 
+ GYRO_Z = -4.000000
+[0;32mI (2187) BALANCER: Waited 5ms[0m
+[0;32mI (2187) BALANCER: gyro_x: 54 [0m
+ gyro_y: 297 
+ gyro_z: -247
+GYRO_X = 0.824427 
+ GYRO_Y = 4.534351 
+ GYRO_Z = -3.770992
+[0;32mI (2197) BALANCER: Waited 5ms[0m
+[0;32mI (2197) BALANCER: gyro_x: 28 [0m
+ gyro_y: 204 
+ gyro_z: -233
+GYRO_X = 0.427481 
+ GYRO_Y = 3.114504 
+ GYRO_Z = -3.557252
+[0;32mI (2207) BALANCER: Waited 5ms[0m
+[0;32mI (2217) BALANCER: gyro_x: -8 [0m
+ gyro_y: 180 
+ gyro_z: -227
+GYRO_X = -0.122137 
+ GYRO_Y = 2.748092 
+ GYRO_Z = -3.465649
+[0;32mI (2227) BALANCER: Waited 5ms[0m
+[0;32mI (2227) BALANCER: gyro_x: -50 [0m
+ gyro_y: 61 
+ gyro_z: -301
+GYRO_X = -0.763359 
+ GYRO_Y = 0.931298 
+ GYRO_Z = -4.595420
+[0;32mI (2237) BALANCER: Waited 5ms[0m
+[0;32mI (2237) BALANCER: gyro_x: -98 [0m
+ gyro_y: -63 
+ gyro_z: -418
+GYRO_X = -1.496183 
+ GYRO_Y = -0.961832 
+ GYRO_Z = -6.381680
+[0;32mI (2257) BALANCER: Waited 5ms[0m
+[0;32mI (2257) BALANCER: gyro_x: -143 [0m
+ gyro_y: -115 
+ gyro_z: -493
+GYRO_X = -2.183206 
+ GYRO_Y = -1.755725 
+ GYRO_Z = -7.526718
+[0;32mI (2267) BALANCER: Waited 5ms[0m
+[0;32mI (2267) BALANCER: gyro_x: -332 [0m
+ gyro_y: -257 
+ gyro_z: -531
+GYRO_X = -5.068702 
+ GYRO_Y = -3.923664 
+ GYRO_Z = -8.106871
+[0;32mI (2277) BALANCER: Waited 5ms[0m
+[0;32mI (2287) BALANCER: gyro_x: -445 [0m
+ gyro_y: -258 
+ gyro_z: -582
+GYRO_X = -6.793893 
+ GYRO_Y = -3.938931 
+ GYRO_Z = -8.885496
+[0;32mI (2297) BALANCER: Waited 5ms[0m
+[0;32mI (2297) BALANCER: gyro_x: -483 [0m
+ gyro_y: -209 
+ gyro_z: -600
+GYRO_X = -7.374046 
+ GYRO_Y = -3.190840 
+ GYRO_Z = -9.160305
+[0;32mI (2307) BALANCER: Waited 5ms[0m
+[0;32mI (2307) BALANCER: gyro_x: -486 [0m
+ gyro_y: -139 
+ gyro_z: -583
+GYRO_X = -7.419847 
+ GYRO_Y = -2.122137 
+ GYRO_Z = -8.900764
+[0;32mI (2317) BALANCER: Waited 5ms[0m
+[0;32mI (2327) BALANCER: gyro_x: -499 [0m
+ gyro_y: -60 
+ gyro_z: -541
+GYRO_X = -7.618320 
+ GYRO_Y = -0.916031 
+ GYRO_Z = -8.259542
+[0;32mI (2337) BALANCER: Waited 5ms[0m
+[0;32mI (2337) BALANCER: gyro_x: -475 [0m
+ gyro_y: 0 
+ gyro_z: -488
+GYRO_X = -7.251908 
+ GYRO_Y = 0.000000 
+ GYRO_Z = -7.450382
+[0;32mI (2347) BALANCER: Waited 5ms[0m
+[0;32mI (2357) BALANCER: gyro_x: -443 [0m
+ gyro_y: 4 
+ gyro_z: -375
+GYRO_X = -6.763359 
+ GYRO_Y = 0.061069 
+ GYRO_Z = -5.725191
+[0;32mI (2367) BALANCER: Waited 5ms[0m
+[0;32mI (2367) BALANCER: gyro_x: -410 [0m
+ gyro_y: 21 
+ gyro_z: -281
+GYRO_X = -6.259542 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -4.290076
+[0;32mI (2377) BALANCER: Waited 5ms[0m
+[0;32mI (2377) BALANCER: gyro_x: -321 [0m
+ gyro_y: -26 
+ gyro_z: -174
+GYRO_X = -4.900764 
+ GYRO_Y = -0.396947 
+ GYRO_Z = -2.656489
+[0;32mI (2387) BALANCER: Waited 5ms[0m
+[0;32mI (2397) BALANCER: gyro_x: -202 [0m
+ gyro_y: -47 
+ gyro_z: -88
+GYRO_X = -3.083969 
+ GYRO_Y = -0.717557 
+ GYRO_Z = -1.343511
+[0;32mI (2407) BALANCER: Waited 5ms[0m
+[0;32mI (2407) BALANCER: gyro_x: -153 [0m
+ gyro_y: -59 
+ gyro_z: 23
+GYRO_X = -2.335878 
+ GYRO_Y = -0.900763 
+ GYRO_Z = 0.351145
+[0;32mI (2417) BALANCER: Waited 5ms[0m
+[0;32mI (2417) BALANCER: gyro_x: -122 [0m
+ gyro_y: -34 
+ gyro_z: 105
+GYRO_X = -1.862595 
+ GYRO_Y = -0.519084 
+ GYRO_Z = 1.603053
+[0;32mI (2427) BALANCER: Waited 5ms[0m
+[0;32mI (2437) BALANCER: gyro_x: -57 [0m
+ gyro_y: 37 
+ gyro_z: 200
+GYRO_X = -0.870229 
+ GYRO_Y = 0.564885 
+ GYRO_Z = 3.053435
+[0;32mI (2447) BALANCER: Waited 5ms[0m
+[0;32mI (2447) BALANCER: gyro_x: 67 [0m
+ gyro_y: 190 
+ gyro_z: 195
+GYRO_X = 1.022901 
+ GYRO_Y = 2.900763 
+ GYRO_Z = 2.977099
+[0;32mI (2457) BALANCER: Waited 5ms[0m
+[0;32mI (2457) BALANCER: gyro_x: 146 [0m
+ gyro_y: 293 
+ gyro_z: 160
+GYRO_X = 2.229008 
+ GYRO_Y = 4.473282 
+ GYRO_Z = 2.442748
+[0;32mI (2467) BALANCER: Waited 5ms[0m
+[0;32mI (2477) BALANCER: gyro_x: 191 [0m
+ gyro_y: 348 
+ gyro_z: 108
+GYRO_X = 2.916031 
+ GYRO_Y = 5.312977 
+ GYRO_Z = 1.648855
+[0;32mI (2487) BALANCER: Waited 5ms[0m
+[0;32mI (2487) BALANCER: gyro_x: 186 [0m
+ gyro_y: 402 
+ gyro_z: 100
+GYRO_X = 2.839695 
+ GYRO_Y = 6.137404 
+ GYRO_Z = 1.526718
+[0;32mI (2497) BALANCER: Waited 5ms[0m
+[0;32mI (2497) BALANCER: gyro_x: 138 [0m
+ gyro_y: 402 
+ gyro_z: 106
+GYRO_X = 2.106870 
+ GYRO_Y = 6.137404 
+ GYRO_Z = 1.618321
+[0;32mI (2507) BALANCER: Waited 5ms[0m
+[0;32mI (2517) BALANCER: gyro_x: -33 [0m
+ gyro_y: 316 
+ gyro_z: 180
+GYRO_X = -0.503817 
+ GYRO_Y = 4.824428 
+ GYRO_Z = 2.748092
+[0;32mI (2527) BALANCER: Waited 5ms[0m
+[0;32mI (2527) BALANCER: gyro_x: -60 [0m
+ gyro_y: 239 
+ gyro_z: 200
+GYRO_X = -0.916031 
+ GYRO_Y = 3.648855 
+ GYRO_Z = 3.053435
+[0;32mI (2537) BALANCER: Waited 5ms[0m
+[0;32mI (2537) BALANCER: gyro_x: -19 [0m
+ gyro_y: 150 
+ gyro_z: 204
+GYRO_X = -0.290076 
+ GYRO_Y = 2.290076 
+ GYRO_Z = 3.114504
+[0;32mI (2547) BALANCER: Waited 5ms[0m
+[0;32mI (2557) BALANCER: gyro_x: 68 [0m
+ gyro_y: 88 
+ gyro_z: 194
+GYRO_X = 1.038168 
+ GYRO_Y = 1.343511 
+ GYRO_Z = 2.961832
+[0;32mI (2567) BALANCER: Waited 5ms[0m
+[0;32mI (2567) BALANCER: gyro_x: 168 [0m
+ gyro_y: 103 
+ gyro_z: 123
+GYRO_X = 2.564885 
+ GYRO_Y = 1.572519 
+ GYRO_Z = 1.877863
+[0;32mI (2577) BALANCER: Waited 5ms[0m
+[0;32mI (2577) BALANCER: gyro_x: 213 [0m
+ gyro_y: 163 
+ gyro_z: 47
+GYRO_X = 3.251908 
+ GYRO_Y = 2.488550 
+ GYRO_Z = 0.717557
+[0;32mI (2587) BALANCER: Waited 5ms[0m
+[0;32mI (2597) BALANCER: gyro_x: 208 [0m
+ gyro_y: 255 
+ gyro_z: -41
+GYRO_X = 3.175573 
+ GYRO_Y = 3.893130 
+ GYRO_Z = -0.625954
+[0;32mI (2607) BALANCER: Waited 5ms[0m
+[0;32mI (2607) BALANCER: gyro_x: 156 [0m
+ gyro_y: 282 
+ gyro_z: -82
+GYRO_X = 2.381679 
+ GYRO_Y = 4.305344 
+ GYRO_Z = -1.251908
+[0;32mI (2617) BALANCER: Waited 5ms[0m
+[0;32mI (2617) BALANCER: gyro_x: 112 [0m
+ gyro_y: 303 
+ gyro_z: -93
+GYRO_X = 1.709924 
+ GYRO_Y = 4.625954 
+ GYRO_Z = -1.419847
+[0;32mI (2627) BALANCER: Waited 5ms[0m
+[0;32mI (2637) BALANCER: gyro_x: 44 [0m
+ gyro_y: 227 
+ gyro_z: -146
+GYRO_X = 0.671756 
+ GYRO_Y = 3.465649 
+ GYRO_Z = -2.229008
+[0;32mI (2647) BALANCER: Waited 5ms[0m
+[0;32mI (2647) BALANCER: gyro_x: -66 [0m
+ gyro_y: 152 
+ gyro_z: -154
+GYRO_X = -1.007634 
+ GYRO_Y = 2.320611 
+ GYRO_Z = -2.351145
+[0;32mI (2657) BALANCER: Waited 5ms[0m
+[0;32mI (2657) BALANCER: gyro_x: -34 [0m
+ gyro_y: 71 
+ gyro_z: -189
+GYRO_X = -0.519084 
+ GYRO_Y = 1.083969 
+ GYRO_Z = -2.885496
+[0;32mI (2677) BALANCER: Waited 5ms[0m
+[0;32mI (2677) BALANCER: gyro_x: -32 [0m
+ gyro_y: -9 
+ gyro_z: -208
+GYRO_X = -0.488550 
+ GYRO_Y = -0.137405 
+ GYRO_Z = -3.175573
+[0;32mI (2687) BALANCER: Waited 5ms[0m
+[0;32mI (2687) BALANCER: gyro_x: -28 [0m
+ gyro_y: -61 
+ gyro_z: -203
+GYRO_X = -0.427481 
+ GYRO_Y = -0.931298 
+ GYRO_Z = -3.099237
+[0;32mI (2697) BALANCER: Waited 5ms[0m
+[0;32mI (2707) BALANCER: gyro_x: -70 [0m
+ gyro_y: -89 
+ gyro_z: -187
+GYRO_X = -1.068702 
+ GYRO_Y = -1.358779 
+ GYRO_Z = -2.854962
+[0;32mI (2717) BALANCER: Waited 5ms[0m
+[0;32mI (2717) BALANCER: gyro_x: -124 [0m
+ gyro_y: -39 
+ gyro_z: -167
+GYRO_X = -1.893130 
+ GYRO_Y = -0.595420 
+ GYRO_Z = -2.549618
+[0;32mI (2727) BALANCER: Waited 5ms[0m
+[0;32mI (2727) BALANCER: gyro_x: -146 [0m
+ gyro_y: 55 
+ gyro_z: -149
+GYRO_X = -2.229008 
+ GYRO_Y = 0.839695 
+ GYRO_Z = -2.274809
+[0;32mI (2737) BALANCER: Waited 5ms[0m
+[0;32mI (2747) BALANCER: gyro_x: -148 [0m
+ gyro_y: 113 
+ gyro_z: -162
+GYRO_X = -2.259542 
+ GYRO_Y = 1.725191 
+ GYRO_Z = -2.473282
+[0;32mI (2757) BALANCER: Waited 5ms[0m
+[0;32mI (2757) BALANCER: gyro_x: -121 [0m
+ gyro_y: 200 
+ gyro_z: -240
+GYRO_X = -1.847328 
+ GYRO_Y = 3.053435 
+ GYRO_Z = -3.664122
+[0;32mI (2767) BALANCER: Waited 5ms[0m
+[0;32mI (2767) BALANCER: gyro_x: -109 [0m
+ gyro_y: 219 
+ gyro_z: -292
+GYRO_X = -1.664122 
+ GYRO_Y = 3.343511 
+ GYRO_Z = -4.458015
+[0;32mI (2777) BALANCER: Waited 5ms[0m
+[0;32mI (2787) BALANCER: gyro_x: -131 [0m
+ gyro_y: 173 
+ gyro_z: -335
+GYRO_X = -2.000000 
+ GYRO_Y = 2.641221 
+ GYRO_Z = -5.114504
+[0;32mI (2797) BALANCER: Waited 5ms[0m
+[0;32mI (2797) BALANCER: gyro_x: -171 [0m
+ gyro_y: 173 
+ gyro_z: -314
+GYRO_X = -2.610687 
+ GYRO_Y = 2.641221 
+ GYRO_Z = -4.793893
+[0;32mI (2807) BALANCER: Waited 5ms[0m
+[0;32mI (2817) BALANCER: gyro_x: -179 [0m
+ gyro_y: 149 
+ gyro_z: -291
+GYRO_X = -2.732824 
+ GYRO_Y = 2.274809 
+ GYRO_Z = -4.442748
+[0;32mI (2827) BALANCER: Waited 5ms[0m
+[0;32mI (2827) BALANCER: gyro_x: -187 [0m
+ gyro_y: 111 
+ gyro_z: -265
+GYRO_X = -2.854962 
+ GYRO_Y = 1.694656 
+ GYRO_Z = -4.045802
+[0;32mI (2837) BALANCER: Waited 5ms[0m
+[0;32mI (2837) BALANCER: gyro_x: -235 [0m
+ gyro_y: 20 
+ gyro_z: -183
+GYRO_X = -3.587786 
+ GYRO_Y = 0.305344 
+ GYRO_Z = -2.793893
+[0;32mI (2847) BALANCER: Waited 5ms[0m
+[0;32mI (2857) BALANCER: gyro_x: -251 [0m
+ gyro_y: -11 
+ gyro_z: -129
+GYRO_X = -3.832061 
+ GYRO_Y = -0.167939 
+ GYRO_Z = -1.969466
+[0;32mI (2867) BALANCER: Waited 5ms[0m
+[0;32mI (2867) BALANCER: gyro_x: -246 [0m
+ gyro_y: -55 
+ gyro_z: -125
+GYRO_X = -3.755725 
+ GYRO_Y = -0.839695 
+ GYRO_Z = -1.908397
+[0;32mI (2877) BALANCER: Waited 5ms[0m
+[0;32mI (2877) BALANCER: gyro_x: -227 [0m
+ gyro_y: -53 
+ gyro_z: -117
+GYRO_X = -3.465649 
+ GYRO_Y = -0.809160 
+ GYRO_Z = -1.786260
+[0;32mI (2887) BALANCER: Waited 5ms[0m
+[0;32mI (2897) BALANCER: gyro_x: -196 [0m
+ gyro_y: -56 
+ gyro_z: -88
+GYRO_X = -2.992366 
+ GYRO_Y = -0.854962 
+ GYRO_Z = -1.343511
+[0;32mI (2907) BALANCER: Waited 5ms[0m
+[0;32mI (2907) BALANCER: gyro_x: -166 [0m
+ gyro_y: -36 
+ gyro_z: -36
+GYRO_X = -2.534351 
+ GYRO_Y = -0.549618 
+ GYRO_Z = -0.549618
+[0;32mI (2917) BALANCER: Waited 5ms[0m
+[0;32mI (2927) BALANCER: gyro_x: -186 [0m
+ gyro_y: 4 
+ gyro_z: -24
+GYRO_X = -2.839695 
+ GYRO_Y = 0.061069 
+ GYRO_Z = -0.366412
+[0;32mI (2937) BALANCER: Waited 5ms[0m
+[0;32mI (2937) BALANCER: gyro_x: -214 [0m
+ gyro_y: 37 
+ gyro_z: -35
+GYRO_X = -3.267176 
+ GYRO_Y = 0.564885 
+ GYRO_Z = -0.534351
+[0;32mI (2947) BALANCER: Waited 5ms[0m
+[0;32mI (2947) BALANCER: gyro_x: -260 [0m
+ gyro_y: 76 
+ gyro_z: -45
+GYRO_X = -3.969466 
+ GYRO_Y = 1.160305 
+ GYRO_Z = -0.687023
+[0;32mI (2957) BALANCER: Waited 5ms[0m
+[0;32mI (2967) BALANCER: gyro_x: -283 [0m
+ gyro_y: 38 
+ gyro_z: -12
+GYRO_X = -4.320611 
+ GYRO_Y = 0.580153 
+ GYRO_Z = -0.183206
+[0;32mI (2977) BALANCER: Waited 5ms[0m
+[0;32mI (2977) BALANCER: gyro_x: -233 [0m
+ gyro_y: 22 
+ gyro_z: 12
+GYRO_X = -3.557252 
+ GYRO_Y = 0.335878 
+ GYRO_Z = 0.183206
+[0;32mI (2987) BALANCER: Waited 5ms[0m
+[0;32mI (2987) BALANCER: gyro_x: -158 [0m
+ gyro_y: -36 
+ gyro_z: 91
+GYRO_X = -2.412214 
+ GYRO_Y = -0.549618 
+ GYRO_Z = 1.389313
+[0;32mI (2997) BALANCER: Waited 5ms[0m
+[0;32mI (3007) BALANCER: gyro_x: -54 [0m
+ gyro_y: -3 
+ gyro_z: 150
+GYRO_X = -0.824427 
+ GYRO_Y = -0.045802 
+ GYRO_Z = 2.290076
+[0;32mI (3017) BALANCER: Waited 5ms[0m
+[0;32mI (3017) BALANCER: gyro_x: -1 [0m
+ gyro_y: 45 
+ gyro_z: 118
+GYRO_X = -0.015267 
+ GYRO_Y = 0.687023 
+ GYRO_Z = 1.801527
+[0;32mI (3027) BALANCER: Waited 5ms[0m
+[0;32mI (3027) BALANCER: gyro_x: 32 [0m
+ gyro_y: 141 
+ gyro_z: 60
+GYRO_X = 0.488550 
+ GYRO_Y = 2.152672 
+ GYRO_Z = 0.916031
+[0;32mI (3037) BALANCER: Waited 5ms[0m
+[0;32mI (3047) BALANCER: gyro_x: 27 [0m
+ gyro_y: 195 
+ gyro_z: 3
+GYRO_X = 0.412214 
+ GYRO_Y = 2.977099 
+ GYRO_Z = 0.045802
+[0;32mI (3057) BALANCER: Waited 5ms[0m
+[0;32mI (3057) BALANCER: gyro_x: 31 [0m
+ gyro_y: 213 
+ gyro_z: -15
+GYRO_X = 0.473282 
+ GYRO_Y = 3.251908 
+ GYRO_Z = -0.229008
+[0;32mI (3067) BALANCER: Waited 5ms[0m
+[0;32mI (3067) BALANCER: gyro_x: 46 [0m
+ gyro_y: 207 
+ gyro_z: -21
+GYRO_X = 0.702290 
+ GYRO_Y = 3.160305 
+ GYRO_Z = -0.320611
+[0;32mI (3077) BALANCER: Waited 5ms[0m
+[0;32mI (3087) BALANCER: gyro_x: 79 [0m
+ gyro_y: 225 
+ gyro_z: -53
+GYRO_X = 1.206107 
+ GYRO_Y = 3.435115 
+ GYRO_Z = -0.809160
+[0;32mI (3097) BALANCER: Waited 5ms[0m
+[0;32mI (3097) BALANCER: gyro_x: 100 [0m
+ gyro_y: 230 
+ gyro_z: -89
+GYRO_X = 1.526718 
+ GYRO_Y = 3.511450 
+ GYRO_Z = -1.358779
+[0;32mI (3107) BALANCER: Waited 5ms[0m
+[0;32mI (3107) BALANCER: gyro_x: 197 [0m
+ gyro_y: 290 
+ gyro_z: -162
+GYRO_X = 3.007634 
+ GYRO_Y = 4.427481 
+ GYRO_Z = -2.473282
+[0;32mI (3117) BALANCER: Waited 5ms[0m
+[0;32mI (3127) BALANCER: gyro_x: 225 [0m
+ gyro_y: 310 
+ gyro_z: -200
+GYRO_X = 3.435115 
+ GYRO_Y = 4.732824 
+ GYRO_Z = -3.053435
+[0;32mI (3137) BALANCER: Waited 5ms[0m
+[0;32mI (3137) BALANCER: gyro_x: 176 [0m
+ gyro_y: 294 
+ gyro_z: -149
+GYRO_X = 2.687023 
+ GYRO_Y = 4.488550 
+ GYRO_Z = -2.274809
+[0;32mI (3147) BALANCER: Waited 5ms[0m
+[0;32mI (3147) BALANCER: gyro_x: 142 [0m
+ gyro_y: 258 
+ gyro_z: -89
+GYRO_X = 2.167939 
+ GYRO_Y = 3.938931 
+ GYRO_Z = -1.358779
+[0;32mI (3157) BALANCER: Waited 5ms[0m
+[0;32mI (3167) BALANCER: gyro_x: 116 [0m
+ gyro_y: 219 
+ gyro_z: -10
+GYRO_X = 1.770992 
+ GYRO_Y = 3.343511 
+ GYRO_Z = -0.152672
+[0;32mI (3177) BALANCER: Waited 5ms[0m
+[0;32mI (3177) BALANCER: gyro_x: 74 [0m
+ gyro_y: 136 
+ gyro_z: 29
+GYRO_X = 1.129771 
+ GYRO_Y = 2.076336 
+ GYRO_Z = 0.442748
+[0;32mI (3187) BALANCER: Waited 5ms[0m
+[0;32mI (3187) BALANCER: gyro_x: 41 [0m
+ gyro_y: 77 
+ gyro_z: 28
+GYRO_X = 0.625954 
+ GYRO_Y = 1.175573 
+ GYRO_Z = 0.427481
+[0;32mI (3197) BALANCER: Waited 5ms[0m
+[0;32mI (3207) BALANCER: gyro_x: 13 [0m
+ gyro_y: 21 
+ gyro_z: -1
+GYRO_X = 0.198473 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -0.015267
+[0;32mI (3217) BALANCER: Waited 5ms[0m
+[0;32mI (3217) BALANCER: gyro_x: -18 [0m
+ gyro_y: 14 
+ gyro_z: -39
+GYRO_X = -0.274809 
+ GYRO_Y = 0.213740 
+ GYRO_Z = -0.595420
+[0;32mI (3227) BALANCER: Waited 5ms[0m
+[0;32mI (3227) BALANCER: gyro_x: -36 [0m
+ gyro_y: 79 
+ gyro_z: -104
+GYRO_X = -0.549618 
+ GYRO_Y = 1.206107 
+ GYRO_Z = -1.587786
+[0;32mI (3237) BALANCER: Waited 5ms[0m
+[0;32mI (3247) BALANCER: gyro_x: -50 [0m
+ gyro_y: 160 
+ gyro_z: -147
+GYRO_X = -0.763359 
+ GYRO_Y = 2.442748 
+ GYRO_Z = -2.244275
+[0;32mI (3257) BALANCER: Waited 5ms[0m
+[0;32mI (3257) BALANCER: gyro_x: -47 [0m
+ gyro_y: 190 
+ gyro_z: -148
+GYRO_X = -0.717557 
+ GYRO_Y = 2.900763 
+ GYRO_Z = -2.259542
+[0;32mI (3267) BALANCER: Waited 5ms[0m
+[0;32mI (3267) BALANCER: gyro_x: -43 [0m
+ gyro_y: 174 
+ gyro_z: -135
+GYRO_X = -0.656489 
+ GYRO_Y = 2.656489 
+ GYRO_Z = -2.061069
+[0;32mI (3277) BALANCER: Waited 5ms[0m
+[0;32mI (3287) BALANCER: gyro_x: -76 [0m
+ gyro_y: 107 
+ gyro_z: -95
+GYRO_X = -1.160305 
+ GYRO_Y = 1.633588 
+ GYRO_Z = -1.450382
+[0;32mI (3297) BALANCER: Waited 5ms[0m
+[0;32mI (3297) BALANCER: gyro_x: -97 [0m
+ gyro_y: 38 
+ gyro_z: -48
+GYRO_X = -1.480916 
+ GYRO_Y = 0.580153 
+ GYRO_Z = -0.732824
+[0;32mI (3307) BALANCER: Waited 5ms[0m
+[0;32mI (3307) BALANCER: gyro_x: -123 [0m
+ gyro_y: 17 
+ gyro_z: -23
+GYRO_X = -1.877863 
+ GYRO_Y = 0.259542 
+ GYRO_Z = -0.351145
+[0;32mI (3327) BALANCER: Waited 5ms[0m
+[0;32mI (3327) BALANCER: gyro_x: -172 [0m
+ gyro_y: -9 
+ gyro_z: 19
+GYRO_X = -2.625954 
+ GYRO_Y = -0.137405 
+ GYRO_Z = 0.290076
+[0;32mI (3337) BALANCER: Waited 5ms[0m
+[0;32mI (3337) BALANCER: gyro_x: -249 [0m
+ gyro_y: -33 
+ gyro_z: 54
+GYRO_X = -3.801527 
+ GYRO_Y = -0.503817 
+ GYRO_Z = 0.824427
+[0;32mI (3347) BALANCER: Waited 5ms[0m
+[0;32mI (3357) BALANCER: gyro_x: -336 [0m
+ gyro_y: -116 
+ gyro_z: 71
+GYRO_X = -5.129771 
+ GYRO_Y = -1.770992 
+ GYRO_Z = 1.083969
+[0;32mI (3367) BALANCER: Waited 5ms[0m
+[0;32mI (3367) BALANCER: gyro_x: -390 [0m
+ gyro_y: -178 
+ gyro_z: 61
+GYRO_X = -5.954198 
+ GYRO_Y = -2.717557 
+ GYRO_Z = 0.931298
+[0;32mI (3377) BALANCER: Waited 5ms[0m
+[0;32mI (3377) BALANCER: gyro_x: -443 [0m
+ gyro_y: -171 
+ gyro_z: -12
+GYRO_X = -6.763359 
+ GYRO_Y = -2.610687 
+ GYRO_Z = -0.183206
+[0;32mI (3387) BALANCER: Waited 5ms[0m
+[0;32mI (3397) BALANCER: gyro_x: -409 [0m
+ gyro_y: -100 
+ gyro_z: -128
+GYRO_X = -6.244275 
+ GYRO_Y = -1.526718 
+ GYRO_Z = -1.954198
+[0;32mI (3407) BALANCER: Waited 5ms[0m
+[0;32mI (3407) BALANCER: gyro_x: -283 [0m
+ gyro_y: -47 
+ gyro_z: -234
+GYRO_X = -4.320611 
+ GYRO_Y = -0.717557 
+ GYRO_Z = -3.572519
+[0;32mI (3417) BALANCER: Waited 5ms[0m
+[0;32mI (3417) BALANCER: gyro_x: -185 [0m
+ gyro_y: 7 
+ gyro_z: -291
+GYRO_X = -2.824427 
+ GYRO_Y = 0.106870 
+ GYRO_Z = -4.442748
+[0;32mI (3427) BALANCER: Waited 5ms[0m
+[0;32mI (3437) BALANCER: gyro_x: -34 [0m
+ gyro_y: 98 
+ gyro_z: -323
+GYRO_X = -0.519084 
+ GYRO_Y = 1.496183 
+ GYRO_Z = -4.931298
+[0;32mI (3447) BALANCER: Waited 5ms[0m
+[0;32mI (3447) BALANCER: gyro_x: 70 [0m
+ gyro_y: 210 
+ gyro_z: -298
+GYRO_X = 1.068702 
+ GYRO_Y = 3.206107 
+ GYRO_Z = -4.549618
+[0;32mI (3457) BALANCER: Waited 5ms[0m
+[0;32mI (3457) BALANCER: gyro_x: 116 [0m
+ gyro_y: 283 
+ gyro_z: -249
+GYRO_X = 1.770992 
+ GYRO_Y = 4.320611 
+ GYRO_Z = -3.801527
+[0;32mI (3477) BALANCER: Waited 5ms[0m
+[0;32mI (3477) BALANCER: gyro_x: 175 [0m
+ gyro_y: 340 
+ gyro_z: -183
+GYRO_X = 2.671756 
+ GYRO_Y = 5.190840 
+ GYRO_Z = -2.793893
+[0;32mI (3487) BALANCER: Waited 5ms[0m
+[0;32mI (3487) BALANCER: gyro_x: 223 [0m
+ gyro_y: 353 
+ gyro_z: -149
+GYRO_X = 3.404580 
+ GYRO_Y = 5.389313 
+ GYRO_Z = -2.274809
+[0;32mI (3497) BALANCER: Waited 5ms[0m
+[0;32mI (3507) BALANCER: gyro_x: 256 [0m
+ gyro_y: 334 
+ gyro_z: -194
+GYRO_X = 3.908397 
+ GYRO_Y = 5.099236 
+ GYRO_Z = -2.961832
+[0;32mI (3517) BALANCER: Waited 5ms[0m
+[0;32mI (3517) BALANCER: gyro_x: 278 [0m
+ gyro_y: 314 
+ gyro_z: -246
+GYRO_X = 4.244275 
+ GYRO_Y = 4.793893 
+ GYRO_Z = -3.755725
+[0;32mI (3527) BALANCER: Waited 5ms[0m
+[0;32mI (3527) BALANCER: gyro_x: 272 [0m
+ gyro_y: 254 
+ gyro_z: -313
+GYRO_X = 4.152672 
+ GYRO_Y = 3.877863 
+ GYRO_Z = -4.778626
+[0;32mI (3537) BALANCER: Waited 5ms[0m
+[0;32mI (3547) BALANCER: gyro_x: 206 [0m
+ gyro_y: 203 
+ gyro_z: -309
+GYRO_X = 3.145038 
+ GYRO_Y = 3.099237 
+ GYRO_Z = -4.717557
+[0;32mI (3557) BALANCER: Waited 5ms[0m
+[0;32mI (3557) BALANCER: gyro_x: 139 [0m
+ gyro_y: 164 
+ gyro_z: -264
+GYRO_X = 2.122137 
+ GYRO_Y = 2.503817 
+ GYRO_Z = -4.030534
+[0;32mI (3567) BALANCER: Waited 5ms[0m
+[0;32mI (3567) BALANCER: gyro_x: 87 [0m
+ gyro_y: 126 
+ gyro_z: -184
+GYRO_X = 1.328244 
+ GYRO_Y = 1.923664 
+ GYRO_Z = -2.809160
+[0;32mI (3577) BALANCER: Waited 5ms[0m
+[0;32mI (3587) BALANCER: gyro_x: 69 [0m
+ gyro_y: 125 
+ gyro_z: -139
+GYRO_X = 1.053435 
+ GYRO_Y = 1.908397 
+ GYRO_Z = -2.122137
+[0;32mI (3597) BALANCER: Waited 5ms[0m
+[0;32mI (3597) BALANCER: gyro_x: 56 [0m
+ gyro_y: 124 
+ gyro_z: -130
+GYRO_X = 0.854962 
+ GYRO_Y = 1.893130 
+ GYRO_Z = -1.984733
+[0;32mI (3607) BALANCER: Waited 5ms[0m
+[0;32mI (3607) BALANCER: gyro_x: 57 [0m
+ gyro_y: 119 
+ gyro_z: -150
+GYRO_X = 0.870229 
+ GYRO_Y = 1.816794 
+ GYRO_Z = -2.290076
+[0;32mI (3617) BALANCER: Waited 5ms[0m
+[0;32mI (3627) BALANCER: gyro_x: 39 [0m
+ gyro_y: 84 
+ gyro_z: -169
+GYRO_X = 0.595420 
+ GYRO_Y = 1.282443 
+ GYRO_Z = -2.580153
+[0;32mI (3637) BALANCER: Waited 5ms[0m
+[0;32mI (3637) BALANCER: gyro_x: -5 [0m
+ gyro_y: 64 
+ gyro_z: -164
+GYRO_X = -0.076336 
+ GYRO_Y = 0.977099 
+ GYRO_Z = -2.503817
+[0;32mI (3647) BALANCER: Waited 5ms[0m
+[0;32mI (3647) BALANCER: gyro_x: -63 [0m
+ gyro_y: 60 
+ gyro_z: -166
+GYRO_X = -0.961832 
+ GYRO_Y = 0.916031 
+ GYRO_Z = -2.534351
+[0;32mI (3657) BALANCER: Waited 5ms[0m
+[0;32mI (3667) BALANCER: gyro_x: -94 [0m
+ gyro_y: 41 
+ gyro_z: -180
+GYRO_X = -1.435115 
+ GYRO_Y = 0.625954 
+ GYRO_Z = -2.748092
+[0;32mI (3677) BALANCER: Waited 5ms[0m
+[0;32mI (3677) BALANCER: gyro_x: -130 [0m
+ gyro_y: 34 
+ gyro_z: -121
+GYRO_X = -1.984733 
+ GYRO_Y = 0.519084 
+ GYRO_Z = -1.847328
+[0;32mI (3687) BALANCER: Waited 5ms[0m
+[0;32mI (3687) BALANCER: gyro_x: -154 [0m
+ gyro_y: 55 
+ gyro_z: -62
+GYRO_X = -2.351145 
+ GYRO_Y = 0.839695 
+ GYRO_Z = -0.946565
+[0;32mI (3697) BALANCER: Waited 5ms[0m
+[0;32mI (3707) BALANCER: gyro_x: -154 [0m
+ gyro_y: 85 
+ gyro_z: -10
+GYRO_X = -2.351145 
+ GYRO_Y = 1.297710 
+ GYRO_Z = -0.152672
+[0;32mI (3717) BALANCER: Waited 5ms[0m
+[0;32mI (3717) BALANCER: gyro_x: -148 [0m
+ gyro_y: 96 
+ gyro_z: -9
+GYRO_X = -2.259542 
+ GYRO_Y = 1.465649 
+ GYRO_Z = -0.137405
+[0;32mI (3727) BALANCER: Waited 5ms[0m
+[0;32mI (3727) BALANCER: gyro_x: -169 [0m
+ gyro_y: 69 
+ gyro_z: -27
+GYRO_X = -2.580153 
+ GYRO_Y = 1.053435 
+ GYRO_Z = -0.412214
+[0;32mI (3747) BALANCER: Waited 5ms[0m
+[0;32mI (3747) BALANCER: gyro_x: -191 [0m
+ gyro_y: -1 
+ gyro_z: -54
+GYRO_X = -2.916031 
+ GYRO_Y = -0.015267 
+ GYRO_Z = -0.824427
+[0;32mI (3757) BALANCER: Waited 5ms[0m
+[0;32mI (3757) BALANCER: gyro_x: -189 [0m
+ gyro_y: -47 
+ gyro_z: -54
+GYRO_X = -2.885496 
+ GYRO_Y = -0.717557 
+ GYRO_Z = -0.824427
+[0;32mI (3767) BALANCER: Waited 5ms[0m
+[0;32mI (3777) BALANCER: gyro_x: -197 [0m
+ gyro_y: -45 
+ gyro_z: -65
+GYRO_X = -3.007634 
+ GYRO_Y = -0.687023 
+ GYRO_Z = -0.992366
+[0;32mI (3787) BALANCER: Waited 5ms[0m
+[0;32mI (3787) BALANCER: gyro_x: -199 [0m
+ gyro_y: -29 
+ gyro_z: -90
+GYRO_X = -3.038168 
+ GYRO_Y = -0.442748 
+ GYRO_Z = -1.374046
+[0;32mI (3797) BALANCER: Waited 5ms[0m
+[0;32mI (3797) BALANCER: gyro_x: -145 [0m
+ gyro_y: 60 
+ gyro_z: -162
+GYRO_X = -2.213740 
+ GYRO_Y = 0.916031 
+ GYRO_Z = -2.473282
+[0;32mI (3807) BALANCER: Waited 5ms[0m
+[0;32mI (3817) BALANCER: gyro_x: -127 [0m
+ gyro_y: 68 
+ gyro_z: -228
+GYRO_X = -1.938931 
+ GYRO_Y = 1.038168 
+ GYRO_Z = -3.480916
+[0;32mI (3827) BALANCER: Waited 5ms[0m
+[0;32mI (3827) BALANCER: gyro_x: -132 [0m
+ gyro_y: 32 
+ gyro_z: -226
+GYRO_X = -2.015267 
+ GYRO_Y = 0.488550 
+ GYRO_Z = -3.450382
+[0;32mI (3837) BALANCER: Waited 5ms[0m
+[0;32mI (3837) BALANCER: gyro_x: -140 [0m
+ gyro_y: 30 
+ gyro_z: -190
+GYRO_X = -2.137405 
+ GYRO_Y = 0.458015 
+ GYRO_Z = -2.900763
+[0;32mI (3847) BALANCER: Waited 5ms[0m
+[0;32mI (3857) BALANCER: gyro_x: -141 [0m
+ gyro_y: 66 
+ gyro_z: -125
+GYRO_X = -2.152672 
+ GYRO_Y = 1.007634 
+ GYRO_Z = -1.908397
+[0;32mI (3867) BALANCER: Waited 5ms[0m
+[0;32mI (3867) BALANCER: gyro_x: -129 [0m
+ gyro_y: 59 
+ gyro_z: -70
+GYRO_X = -1.969466 
+ GYRO_Y = 0.900763 
+ GYRO_Z = -1.068702
+[0;32mI (3877) BALANCER: Waited 5ms[0m
+[0;32mI (3877) BALANCER: gyro_x: -128 [0m
+ gyro_y: 81 
+ gyro_z: -42
+GYRO_X = -1.954198 
+ GYRO_Y = 1.236641 
+ GYRO_Z = -0.641221
+[0;32mI (3897) BALANCER: Waited 5ms[0m
+[0;32mI (3897) BALANCER: gyro_x: -123 [0m
+ gyro_y: 80 
+ gyro_z: -41
+GYRO_X = -1.877863 
+ GYRO_Y = 1.221374 
+ GYRO_Z = -0.625954
+[0;32mI (3907) BALANCER: Waited 5ms[0m
+[0;32mI (3907) BALANCER: gyro_x: -142 [0m
+ gyro_y: 30 
+ gyro_z: -48
+GYRO_X = -2.167939 
+ GYRO_Y = 0.458015 
+ GYRO_Z = -0.732824
+[0;32mI (3917) BALANCER: Waited 5ms[0m
+[0;32mI (3927) BALANCER: gyro_x: -166 [0m
+ gyro_y: -10 
+ gyro_z: -56
+GYRO_X = -2.534351 
+ GYRO_Y = -0.152672 
+ GYRO_Z = -0.854962
+[0;32mI (3937) BALANCER: Waited 5ms[0m
+[0;32mI (3937) BALANCER: gyro_x: -151 [0m
+ gyro_y: -41 
+ gyro_z: -70
+GYRO_X = -2.305344 
+ GYRO_Y = -0.625954 
+ GYRO_Z = -1.068702
+[0;32mI (3947) BALANCER: Waited 5ms[0m
+[0;32mI (3947) BALANCER: gyro_x: -147 [0m
+ gyro_y: -73 
+ gyro_z: -56
+GYRO_X = -2.244275 
+ GYRO_Y = -1.114504 
+ GYRO_Z = -0.854962
+[0;32mI (3957) BALANCER: Waited 5ms[0m
+[0;32mI (3967) BALANCER: gyro_x: -102 [0m
+ gyro_y: -34 
+ gyro_z: -20
+GYRO_X = -1.557252 
+ GYRO_Y = -0.519084 
+ GYRO_Z = -0.305344
+[0;32mI (3977) BALANCER: Waited 5ms[0m
+[0;32mI (3977) BALANCER: gyro_x: -41 [0m
+ gyro_y: 18 
+ gyro_z: -20
+GYRO_X = -0.625954 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -0.305344
+[0;32mI (3987) BALANCER: Waited 5ms[0m
+[0;32mI (3987) BALANCER: gyro_x: 52 [0m
+ gyro_y: 70 
+ gyro_z: -24
+GYRO_X = 0.793893 
+ GYRO_Y = 1.068702 
+ GYRO_Z = -0.366412
+[0;32mI (3997) BALANCER: Waited 5ms[0m
+[0;32mI (4007) BALANCER: gyro_x: 107 [0m
+ gyro_y: 128 
+ gyro_z: -9
+GYRO_X = 1.633588 
+ GYRO_Y = 1.954198 
+ GYRO_Z = -0.137405
+[0;32mI (4017) BALANCER: Waited 5ms[0m
+[0;32mI (4017) BALANCER: gyro_x: 133 [0m
+ gyro_y: 170 
+ gyro_z: 5
+GYRO_X = 2.030534 
+ GYRO_Y = 2.595420 
+ GYRO_Z = 0.076336
+[0;32mI (4027) BALANCER: Waited 5ms[0m
+[0;32mI (4027) BALANCER: gyro_x: 120 [0m
+ gyro_y: 200 
+ gyro_z: 77
+GYRO_X = 1.832061 
+ GYRO_Y = 3.053435 
+ GYRO_Z = 1.175573
+[0;32mI (4037) BALANCER: Waited 5ms[0m
+[0;32mI (4047) BALANCER: gyro_x: 115 [0m
+ gyro_y: 219 
+ gyro_z: 158
+GYRO_X = 1.755725 
+ GYRO_Y = 3.343511 
+ GYRO_Z = 2.412214
+[0;32mI (4057) BALANCER: Waited 5ms[0m
+[0;32mI (4057) BALANCER: gyro_x: 101 [0m
+ gyro_y: 175 
+ gyro_z: 188
+GYRO_X = 1.541985 
+ GYRO_Y = 2.671756 
+ GYRO_Z = 2.870229
+[0;32mI (4067) BALANCER: Waited 5ms[0m
+[0;32mI (4067) BALANCER: gyro_x: 3 [0m
+ gyro_y: 109 
+ gyro_z: 230
+GYRO_X = 0.045802 
+ GYRO_Y = 1.664122 
+ GYRO_Z = 3.511450
+[0;32mI (4077) BALANCER: Waited 5ms[0m
+[0;32mI (4087) BALANCER: gyro_x: -113 [0m
+ gyro_y: 11 
+ gyro_z: 223
+GYRO_X = -1.725191 
+ GYRO_Y = 0.167939 
+ GYRO_Z = 3.404580
+[0;32mI (4097) BALANCER: Waited 5ms[0m
+[0;32mI (4097) BALANCER: gyro_x: -178 [0m
+ gyro_y: -50 
+ gyro_z: 191
+GYRO_X = -2.717557 
+ GYRO_Y = -0.763359 
+ GYRO_Z = 2.916031
+[0;32mI (4107) BALANCER: Waited 5ms[0m
+[0;32mI (4107) BALANCER: gyro_x: -245 [0m
+ gyro_y: -92 
+ gyro_z: 100
+GYRO_X = -3.740458 
+ GYRO_Y = -1.404580 
+ GYRO_Z = 1.526718
+[0;32mI (4117) BALANCER: Waited 5ms[0m
+[0;32mI (4127) BALANCER: gyro_x: -245 [0m
+ gyro_y: -63 
+ gyro_z: -10
+GYRO_X = -3.740458 
+ GYRO_Y = -0.961832 
+ GYRO_Z = -0.152672
+[0;32mI (4137) BALANCER: Waited 5ms[0m
+[0;32mI (4137) BALANCER: gyro_x: -212 [0m
+ gyro_y: -3 
+ gyro_z: -102
+GYRO_X = -3.236641 
+ GYRO_Y = -0.045802 
+ GYRO_Z = -1.557252
+[0;32mI (4147) BALANCER: Waited 5ms[0m
+[0;32mI (4157) BALANCER: gyro_x: -195 [0m
+ gyro_y: 37 
+ gyro_z: -135
+GYRO_X = -2.977099 
+ GYRO_Y = 0.564885 
+ GYRO_Z = -2.061069
+[0;32mI (4167) BALANCER: Waited 5ms[0m
+[0;32mI (4167) BALANCER: gyro_x: -147 [0m
+ gyro_y: 118 
+ gyro_z: -186
+GYRO_X = -2.244275 
+ GYRO_Y = 1.801527 
+ GYRO_Z = -2.839695
+[0;32mI (4177) BALANCER: Waited 5ms[0m
+[0;32mI (4177) BALANCER: gyro_x: -106 [0m
+ gyro_y: 164 
+ gyro_z: -239
+GYRO_X = -1.618321 
+ GYRO_Y = 2.503817 
+ GYRO_Z = -3.648855
+[0;32mI (4187) BALANCER: Waited 5ms[0m
+[0;32mI (4197) BALANCER: gyro_x: -77 [0m
+ gyro_y: 187 
+ gyro_z: -276
+GYRO_X = -1.175573 
+ GYRO_Y = 2.854962 
+ GYRO_Z = -4.213740
+[0;32mI (4207) BALANCER: Waited 5ms[0m
+[0;32mI (4207) BALANCER: gyro_x: -78 [0m
+ gyro_y: 177 
+ gyro_z: -275
+GYRO_X = -1.190840 
+ GYRO_Y = 2.702290 
+ GYRO_Z = -4.198473
+[0;32mI (4217) BALANCER: Waited 5ms[0m
+[0;32mI (4217) BALANCER: gyro_x: -116 [0m
+ gyro_y: 151 
+ gyro_z: -215
+GYRO_X = -1.770992 
+ GYRO_Y = 2.305344 
+ GYRO_Z = -3.282443
+[0;32mI (4227) BALANCER: Waited 5ms[0m
+[0;32mI (4237) BALANCER: gyro_x: -209 [0m
+ gyro_y: 48 
+ gyro_z: -136
+GYRO_X = -3.190840 
+ GYRO_Y = 0.732824 
+ GYRO_Z = -2.076336
+[0;32mI (4247) BALANCER: Waited 5ms[0m
+[0;32mI (4247) BALANCER: gyro_x: -242 [0m
+ gyro_y: -15 
+ gyro_z: -79
+GYRO_X = -3.694656 
+ GYRO_Y = -0.229008 
+ GYRO_Z = -1.206107
+[0;32mI (4257) BALANCER: Waited 5ms[0m
+[0;32mI (4257) BALANCER: gyro_x: -262 [0m
+ gyro_y: -97 
+ gyro_z: -21
+GYRO_X = -4.000000 
+ GYRO_Y = -1.480916 
+ GYRO_Z = -0.320611
+[0;32mI (4267) BALANCER: Waited 5ms[0m
+[0;32mI (4277) BALANCER: gyro_x: -214 [0m
+ gyro_y: -113 
+ gyro_z: -5
+GYRO_X = -3.267176 
+ GYRO_Y = -1.725191 
+ GYRO_Z = -0.076336
+[0;32mI (4287) BALANCER: Waited 5ms[0m
+[0;32mI (4287) BALANCER: gyro_x: -140 [0m
+ gyro_y: -67 
+ gyro_z: -13
+GYRO_X = -2.137405 
+ GYRO_Y = -1.022901 
+ GYRO_Z = -0.198473
+[0;32mI (4297) BALANCER: Waited 5ms[0m
+[0;32mI (4307) BALANCER: gyro_x: -110 [0m
+ gyro_y: -3 
+ gyro_z: 1
+GYRO_X = -1.679389 
+ GYRO_Y = -0.045802 
+ GYRO_Z = 0.015267
+[0;32mI (4317) BALANCER: Waited 5ms[0m
+[0;32mI (4317) BALANCER: gyro_x: -155 [0m
+ gyro_y: 49 
+ gyro_z: 32
+GYRO_X = -2.366412 
+ GYRO_Y = 0.748092 
+ GYRO_Z = 0.488550
+[0;32mI (4327) BALANCER: Waited 5ms[0m
+[0;32mI (4327) BALANCER: gyro_x: -200 [0m
+ gyro_y: 72 
+ gyro_z: 66
+GYRO_X = -3.053435 
+ GYRO_Y = 1.099237 
+ GYRO_Z = 1.007634
+[0;32mI (4337) BALANCER: Waited 5ms[0m
+[0;32mI (4347) BALANCER: gyro_x: -218 [0m
+ gyro_y: 57 
+ gyro_z: 83
+GYRO_X = -3.328244 
+ GYRO_Y = 0.870229 
+ GYRO_Z = 1.267176
+[0;32mI (4357) BALANCER: Waited 5ms[0m
+[0;32mI (4357) BALANCER: gyro_x: -128 [0m
+ gyro_y: 84 
+ gyro_z: 44
+GYRO_X = -1.954198 
+ GYRO_Y = 1.282443 
+ GYRO_Z = 0.671756
+[0;32mI (4367) BALANCER: Waited 5ms[0m
+[0;32mI (4367) BALANCER: gyro_x: -24 [0m
+ gyro_y: 67 
+ gyro_z: 4
+GYRO_X = -0.366412 
+ GYRO_Y = 1.022901 
+ GYRO_Z = 0.061069
+[0;32mI (4377) BALANCER: Waited 5ms[0m
+[0;32mI (4387) BALANCER: gyro_x: 7 [0m
+ gyro_y: 74 
+ gyro_z: -12
+GYRO_X = 0.106870 
+ GYRO_Y = 1.129771 
+ GYRO_Z = -0.183206
+[0;32mI (4397) BALANCER: Waited 5ms[0m
+[0;32mI (4397) BALANCER: gyro_x: 13 [0m
+ gyro_y: 139 
+ gyro_z: -45
+GYRO_X = 0.198473 
+ GYRO_Y = 2.122137 
+ GYRO_Z = -0.687023
+[0;32mI (4407) BALANCER: Waited 5ms[0m
+[0;32mI (4407) BALANCER: gyro_x: -30 [0m
+ gyro_y: 158 
+ gyro_z: -29
+GYRO_X = -0.458015 
+ GYRO_Y = 2.412214 
+ GYRO_Z = -0.442748
+[0;32mI (4417) BALANCER: Waited 5ms[0m
+[0;32mI (4427) BALANCER: gyro_x: -90 [0m
+ gyro_y: 156 
+ gyro_z: -1
+GYRO_X = -1.374046 
+ GYRO_Y = 2.381679 
+ GYRO_Z = -0.015267
+[0;32mI (4437) BALANCER: Waited 5ms[0m
+[0;32mI (4437) BALANCER: gyro_x: -139 [0m
+ gyro_y: 105 
+ gyro_z: 58
+GYRO_X = -2.122137 
+ GYRO_Y = 1.603053 
+ GYRO_Z = 0.885496
+[0;32mI (4447) BALANCER: Waited 5ms[0m
+[0;32mI (4447) BALANCER: gyro_x: -128 [0m
+ gyro_y: 32 
+ gyro_z: 70
+GYRO_X = -1.954198 
+ GYRO_Y = 0.488550 
+ GYRO_Z = 1.068702
+[0;32mI (4457) BALANCER: Waited 5ms[0m
+[0;32mI (4467) BALANCER: gyro_x: -110 [0m
+ gyro_y: 21 
+ gyro_z: 45
+GYRO_X = -1.679389 
+ GYRO_Y = 0.320611 
+ GYRO_Z = 0.687023
+[0;32mI (4477) BALANCER: Waited 5ms[0m
+[0;32mI (4477) BALANCER: gyro_x: -119 [0m
+ gyro_y: 41 
+ gyro_z: 11
+GYRO_X = -1.816794 
+ GYRO_Y = 0.625954 
+ GYRO_Z = 0.167939
+[0;32mI (4487) BALANCER: Waited 5ms[0m
+[0;32mI (4487) BALANCER: gyro_x: -170 [0m
+ gyro_y: 89 
+ gyro_z: 13
+GYRO_X = -2.595420 
+ GYRO_Y = 1.358779 
+ GYRO_Z = 0.198473
+[0;32mI (4497) BALANCER: Waited 5ms[0m
+[0;32mI (4507) BALANCER: gyro_x: -200 [0m
+ gyro_y: 107 
+ gyro_z: 47
+GYRO_X = -3.053435 
+ GYRO_Y = 1.633588 
+ GYRO_Z = 0.717557
+[0;32mI (4517) BALANCER: Waited 5ms[0m
+[0;32mI (4517) BALANCER: gyro_x: -216 [0m
+ gyro_y: 98 
+ gyro_z: 94
+GYRO_X = -3.297710 
+ GYRO_Y = 1.496183 
+ GYRO_Z = 1.435115
+[0;32mI (4527) BALANCER: Waited 5ms[0m
+[0;32mI (4527) BALANCER: gyro_x: -164 [0m
+ gyro_y: 71 
+ gyro_z: 84
+GYRO_X = -2.503817 
+ GYRO_Y = 1.083969 
+ GYRO_Z = 1.282443
+[0;32mI (4537) BALANCER: Waited 5ms[0m
+[0;32mI (4547) BALANCER: gyro_x: -87 [0m
+ gyro_y: 87 
+ gyro_z: 42
+GYRO_X = -1.328244 
+ GYRO_Y = 1.328244 
+ GYRO_Z = 0.641221
+[0;32mI (4557) BALANCER: Waited 5ms[0m
+[0;32mI (4557) BALANCER: gyro_x: -30 [0m
+ gyro_y: 95 
+ gyro_z: 23
+GYRO_X = -0.458015 
+ GYRO_Y = 1.450382 
+ GYRO_Z = 0.351145
+[0;32mI (4567) BALANCER: Waited 5ms[0m
+[0;32mI (4567) BALANCER: gyro_x: 65 [0m
+ gyro_y: 110 
+ gyro_z: 8
+GYRO_X = 0.992366 
+ GYRO_Y = 1.679389 
+ GYRO_Z = 0.122137
+[0;32mI (4577) BALANCER: Waited 5ms[0m
+[0;32mI (4587) BALANCER: gyro_x: 7 [0m
+ gyro_y: 17 
+ gyro_z: 53
+GYRO_X = 0.106870 
+ GYRO_Y = 0.259542 
+ GYRO_Z = 0.809160
+[0;32mI (4597) BALANCER: Waited 5ms[0m
+[0;32mI (4597) BALANCER: gyro_x: -197 [0m
+ gyro_y: 26 
+ gyro_z: 101
+GYRO_X = -3.007634 
+ GYRO_Y = 0.396947 
+ GYRO_Z = 1.541985
+[0;32mI (4607) BALANCER: Waited 5ms[0m
+[0;32mI (4607) BALANCER: gyro_x: -405 [0m
+ gyro_y: -6 
+ gyro_z: 166
+GYRO_X = -6.183206 
+ GYRO_Y = -0.091603 
+ GYRO_Z = 2.534351
+[0;32mI (4617) BALANCER: Waited 5ms[0m
+[0;32mI (4627) BALANCER: gyro_x: -486 [0m
+ gyro_y: -62 
+ gyro_z: 161
+GYRO_X = -7.419847 
+ GYRO_Y = -0.946565 
+ GYRO_Z = 2.458015
+[0;32mI (4637) BALANCER: Waited 5ms[0m
+[0;32mI (4637) BALANCER: gyro_x: -513 [0m
+ gyro_y: -122 
+ gyro_z: 129
+GYRO_X = -7.832061 
+ GYRO_Y = -1.862595 
+ GYRO_Z = 1.969466
+[0;32mI (4647) BALANCER: Waited 5ms[0m
+[0;32mI (4647) BALANCER: gyro_x: -415 [0m
+ gyro_y: -140 
+ gyro_z: 91
+GYRO_X = -6.335878 
+ GYRO_Y = -2.137405 
+ GYRO_Z = 1.389313
+[0;32mI (4657) BALANCER: Waited 5ms[0m
+[0;32mI (4667) BALANCER: gyro_x: -258 [0m
+ gyro_y: -62 
+ gyro_z: 49
+GYRO_X = -3.938931 
+ GYRO_Y = -0.946565 
+ GYRO_Z = 0.748092
+[0;32mI (4677) BALANCER: Waited 5ms[0m
+[0;32mI (4677) BALANCER: gyro_x: -180 [0m
+ gyro_y: 22 
+ gyro_z: 45
+GYRO_X = -2.748092 
+ GYRO_Y = 0.335878 
+ GYRO_Z = 0.687023
+[0;32mI (4687) BALANCER: Waited 5ms[0m
+[0;32mI (4687) BALANCER: gyro_x: -68 [0m
+ gyro_y: 188 
+ gyro_z: 26
+GYRO_X = -1.038168 
+ GYRO_Y = 2.870229 
+ GYRO_Z = 0.396947
+[0;32mI (4697) BALANCER: Waited 5ms[0m
+[0;32mI (4707) BALANCER: gyro_x: 55 [0m
+ gyro_y: 369 
+ gyro_z: -43
+GYRO_X = 0.839695 
+ GYRO_Y = 5.633588 
+ GYRO_Z = -0.656489
+[0;32mI (4717) BALANCER: Waited 5ms[0m
+[0;32mI (4717) BALANCER: gyro_x: 155 [0m
+ gyro_y: 467 
+ gyro_z: -112
+GYRO_X = 2.366412 
+ GYRO_Y = 7.129771 
+ GYRO_Z = -1.709924
+[0;32mI (4727) BALANCER: Waited 5ms[0m
+[0;32mI (4727) BALANCER: gyro_x: 277 [0m
+ gyro_y: 477 
+ gyro_z: -222
+GYRO_X = 4.229008 
+ GYRO_Y = 7.282443 
+ GYRO_Z = -3.389313
+[0;32mI (4737) BALANCER: Waited 5ms[0m
+[0;32mI (4747) BALANCER: gyro_x: 313 [0m
+ gyro_y: 403 
+ gyro_z: -243
+GYRO_X = 4.778626 
+ GYRO_Y = 6.152672 
+ GYRO_Z = -3.709924
+[0;32mI (4757) BALANCER: Waited 5ms[0m
+[0;32mI (4757) BALANCER: gyro_x: 265 [0m
+ gyro_y: 326 
+ gyro_z: -189
+GYRO_X = 4.045802 
+ GYRO_Y = 4.977099 
+ GYRO_Z = -2.885496
+[0;32mI (4767) BALANCER: Waited 5ms[0m
+[0;32mI (4767) BALANCER: gyro_x: 112 [0m
+ gyro_y: 195 
+ gyro_z: -101
+GYRO_X = 1.709924 
+ GYRO_Y = 2.977099 
+ GYRO_Z = -1.541985
+[0;32mI (4787) BALANCER: Waited 5ms[0m
+[0;32mI (4787) BALANCER: gyro_x: -36 [0m
+ gyro_y: 78 
+ gyro_z: -82
+GYRO_X = -0.549618 
+ GYRO_Y = 1.190840 
+ GYRO_Z = -1.251908
+[0;32mI (4797) BALANCER: Waited 5ms[0m
+[0;32mI (4797) BALANCER: gyro_x: -106 [0m
+ gyro_y: -14 
+ gyro_z: -121
+GYRO_X = -1.618321 
+ GYRO_Y = -0.213740 
+ GYRO_Z = -1.847328
+[0;32mI (4807) BALANCER: Waited 5ms[0m
+[0;32mI (4817) BALANCER: gyro_x: -151 [0m
+ gyro_y: -91 
+ gyro_z: -148
+GYRO_X = -2.305344 
+ GYRO_Y = -1.389313 
+ GYRO_Z = -2.259542
+[0;32mI (4827) BALANCER: Waited 5ms[0m
+[0;32mI (4827) BALANCER: gyro_x: -221 [0m
+ gyro_y: -145 
+ gyro_z: -122
+GYRO_X = -3.374046 
+ GYRO_Y = -2.213740 
+ GYRO_Z = -1.862595
+[0;32mI (4837) BALANCER: Waited 5ms[0m
+[0;32mI (4837) BALANCER: gyro_x: -297 [0m
+ gyro_y: -155 
+ gyro_z: -62
+GYRO_X = -4.534351 
+ GYRO_Y = -2.366412 
+ GYRO_Z = -0.946565
+[0;32mI (4847) BALANCER: Waited 5ms[0m
+[0;32mI (4857) BALANCER: gyro_x: -313 [0m
+ gyro_y: -135 
+ gyro_z: -51
+GYRO_X = -4.778626 
+ GYRO_Y = -2.061069 
+ GYRO_Z = -0.778626
+[0;32mI (4867) BALANCER: Waited 5ms[0m
+[0;32mI (4867) BALANCER: gyro_x: -283 [0m
+ gyro_y: -129 
+ gyro_z: -87
+GYRO_X = -4.320611 
+ GYRO_Y = -1.969466 
+ GYRO_Z = -1.328244
+[0;32mI (4877) BALANCER: Waited 5ms[0m
+[0;32mI (4877) BALANCER: gyro_x: -180 [0m
+ gyro_y: -92 
+ gyro_z: -167
+GYRO_X = -2.748092 
+ GYRO_Y = -1.404580 
+ GYRO_Z = -2.549618
+[0;32mI (4897) BALANCER: Waited 5ms[0m
+[0;32mI (4897) BALANCER: gyro_x: -75 [0m
+ gyro_y: -24 
+ gyro_z: -225
+GYRO_X = -1.145038 
+ GYRO_Y = -0.366412 
+ GYRO_Z = -3.435115
+[0;32mI (4907) BALANCER: Waited 5ms[0m
+[0;32mI (4907) BALANCER: gyro_x: -11 [0m
+ gyro_y: 122 
+ gyro_z: -207
+GYRO_X = -0.167939 
+ GYRO_Y = 1.862595 
+ GYRO_Z = -3.160305
+[0;32mI (4917) BALANCER: Waited 5ms[0m
+[0;32mI (4927) BALANCER: gyro_x: 0 [0m
+ gyro_y: 207 
+ gyro_z: -142
+GYRO_X = 0.000000 
+ GYRO_Y = 3.160305 
+ GYRO_Z = -2.167939
+[0;32mI (4937) BALANCER: Waited 5ms[0m
+[0;32mI (4937) BALANCER: gyro_x: -7 [0m
+ gyro_y: 289 
+ gyro_z: -34
+GYRO_X = -0.106870 
+ GYRO_Y = 4.412214 
+ GYRO_Z = -0.519084
+[0;32mI (4947) BALANCER: Waited 5ms[0m
+[0;32mI (4947) BALANCER: gyro_x: -6 [0m
+ gyro_y: 267 
+ gyro_z: 39
+GYRO_X = -0.091603 
+ GYRO_Y = 4.076336 
+ GYRO_Z = 0.595420
+[0;32mI (4957) BALANCER: Waited 5ms[0m
+[0;32mI (4967) BALANCER: gyro_x: 65 [0m
+ gyro_y: 211 
+ gyro_z: 12
+GYRO_X = 0.992366 
+ GYRO_Y = 3.221374 
+ GYRO_Z = 0.183206
+[0;32mI (4977) BALANCER: Waited 5ms[0m
+[0;32mI (4977) BALANCER: gyro_x: 258 [0m
+ gyro_y: 164 
+ gyro_z: -128
+GYRO_X = 3.938931 
+ GYRO_Y = 2.503817 
+ GYRO_Z = -1.954198
+[0;32mI (4987) BALANCER: Waited 5ms[0m
+[0;32mI (4987) BALANCER: gyro_x: 467 [0m
+ gyro_y: 215 
+ gyro_z: -268
+GYRO_X = 7.129771 
+ GYRO_Y = 3.282443 
+ GYRO_Z = -4.091603
+[0;32mI (4997) BALANCER: Waited 5ms[0m
+[0;32mI (5007) BALANCER: gyro_x: 559 [0m
+ gyro_y: 283 
+ gyro_z: -341
+GYRO_X = 8.534351 
+ GYRO_Y = 4.320611 
+ GYRO_Z = -5.206107
+[0;32mI (5017) BALANCER: Waited 5ms[0m
+[0;32mI (5017) BALANCER: gyro_x: 506 [0m
+ gyro_y: 401 
+ gyro_z: -290
+GYRO_X = 7.725191 
+ GYRO_Y = 6.122138 
+ GYRO_Z = -4.427481
+[0;32mI (5027) BALANCER: Waited 5ms[0m
+[0;32mI (5027) BALANCER: gyro_x: 292 [0m
+ gyro_y: 400 
+ gyro_z: -118
+GYRO_X = 4.458015 
+ GYRO_Y = 6.106870 
+ GYRO_Z = -1.801527
+[0;32mI (5037) BALANCER: Waited 5ms[0m
+[0;32mI (5047) BALANCER: gyro_x: 49 [0m
+ gyro_y: 336 
+ gyro_z: 59
+GYRO_X = 0.748092 
+ GYRO_Y = 5.129771 
+ GYRO_Z = 0.900763
+[0;32mI (5057) BALANCER: Waited 5ms[0m
+[0;32mI (5057) BALANCER: gyro_x: -57 [0m
+ gyro_y: 224 
+ gyro_z: 124
+GYRO_X = -0.870229 
+ GYRO_Y = 3.419847 
+ GYRO_Z = 1.893130
+[0;32mI (5067) BALANCER: Waited 5ms[0m
+[0;32mI (5067) BALANCER: gyro_x: -194 [0m
+ gyro_y: -31 
+ gyro_z: 144
+GYRO_X = -2.961832 
+ GYRO_Y = -0.473282 
+ GYRO_Z = 2.198473
+[0;32mI (5077) BALANCER: Waited 5ms[0m
+[0;32mI (5087) BALANCER: gyro_x: -288 [0m
+ gyro_y: -263 
+ gyro_z: 73
+GYRO_X = -4.396946 
+ GYRO_Y = -4.015267 
+ GYRO_Z = 1.114504
+[0;32mI (5097) BALANCER: Waited 5ms[0m
+[0;32mI (5097) BALANCER: gyro_x: -304 [0m
+ gyro_y: -376 
+ gyro_z: -65
+GYRO_X = -4.641222 
+ GYRO_Y = -5.740458 
+ GYRO_Z = -0.992366
+[0;32mI (5107) BALANCER: Waited 5ms[0m
+[0;32mI (5107) BALANCER: gyro_x: -289 [0m
+ gyro_y: -310 
+ gyro_z: -266
+GYRO_X = -4.412214 
+ GYRO_Y = -4.732824 
+ GYRO_Z = -4.061069
+[0;32mI (5127) BALANCER: Waited 5ms[0m
+[0;32mI (5127) BALANCER: gyro_x: -217 [0m
+ gyro_y: -146 
+ gyro_z: -411
+GYRO_X = -3.312977 
+ GYRO_Y = -2.229008 
+ GYRO_Z = -6.274809
+[0;32mI (5137) BALANCER: Waited 5ms[0m
+[0;32mI (5137) BALANCER: gyro_x: -147 [0m
+ gyro_y: 56 
+ gyro_z: -404
+GYRO_X = -2.244275 
+ GYRO_Y = 0.854962 
+ GYRO_Z = -6.167939
+[0;32mI (5147) BALANCER: Waited 5ms[0m
+[0;32mI (5157) BALANCER: gyro_x: -151 [0m
+ gyro_y: 146 
+ gyro_z: -323
+GYRO_X = -2.305344 
+ GYRO_Y = 2.229008 
+ GYRO_Z = -4.931298
+[0;32mI (5167) BALANCER: Waited 5ms[0m
+[0;32mI (5167) BALANCER: gyro_x: -119 [0m
+ gyro_y: 273 
+ gyro_z: -225
+GYRO_X = -1.816794 
+ GYRO_Y = 4.167939 
+ GYRO_Z = -3.435115
+[0;32mI (5177) BALANCER: Waited 5ms[0m
+[0;32mI (5177) BALANCER: gyro_x: 34 [0m
+ gyro_y: 335 
+ gyro_z: -221
+GYRO_X = 0.519084 
+ GYRO_Y = 5.114504 
+ GYRO_Z = -3.374046
+[0;32mI (5187) BALANCER: Waited 5ms[0m
+[0;32mI (5197) BALANCER: gyro_x: 247 [0m
+ gyro_y: 286 
+ gyro_z: -279
+GYRO_X = 3.770992 
+ GYRO_Y = 4.366412 
+ GYRO_Z = -4.259542
+[0;32mI (5207) BALANCER: Waited 5ms[0m
+[0;32mI (5207) BALANCER: gyro_x: 353 [0m
+ gyro_y: 193 
+ gyro_z: -320
+GYRO_X = 5.389313 
+ GYRO_Y = 2.946565 
+ GYRO_Z = -4.885496
+[0;32mI (5217) BALANCER: Waited 5ms[0m
+[0;32mI (5217) BALANCER: gyro_x: 445 [0m
+ gyro_y: -19 
+ gyro_z: -357
+GYRO_X = 6.793893 
+ GYRO_Y = -0.290076 
+ GYRO_Z = -5.450382
+[0;32mI (5227) BALANCER: Waited 5ms[0m
+[0;32mI (5237) BALANCER: gyro_x: 440 [0m
+ gyro_y: -208 
+ gyro_z: -374
+GYRO_X = 6.717557 
+ GYRO_Y = -3.175573 
+ GYRO_Z = -5.709924
+[0;32mI (5247) BALANCER: Waited 5ms[0m
+[0;32mI (5247) BALANCER: gyro_x: 325 [0m
+ gyro_y: -327 
+ gyro_z: -377
+GYRO_X = 4.961832 
+ GYRO_Y = -4.992366 
+ GYRO_Z = -5.755725
+[0;32mI (5257) BALANCER: Waited 5ms[0m
+[0;32mI (5257) BALANCER: gyro_x: 10 [0m
+ gyro_y: -449 
+ gyro_z: -324
+GYRO_X = 0.152672 
+ GYRO_Y = -6.854962 
+ GYRO_Z = -4.946565
+[0;32mI (5277) BALANCER: Waited 5ms[0m
+[0;32mI (5277) BALANCER: gyro_x: -327 [0m
+ gyro_y: -424 
+ gyro_z: -278
+GYRO_X = -4.992366 
+ GYRO_Y = -6.473282 
+ GYRO_Z = -4.244275
+[0;32mI (5287) BALANCER: Waited 5ms[0m
+[0;32mI (5287) BALANCER: gyro_x: -416 [0m
+ gyro_y: -218 
+ gyro_z: -324
+GYRO_X = -6.351145 
+ GYRO_Y = -3.328244 
+ GYRO_Z = -4.946565
+[0;32mI (5297) BALANCER: Waited 5ms[0m
+[0;32mI (5307) BALANCER: gyro_x: -331 [0m
+ gyro_y: -36 
+ gyro_z: -425
+GYRO_X = -5.053435 
+ GYRO_Y = -0.549618 
+ GYRO_Z = -6.488550
+[0;32mI (5317) BALANCER: Waited 5ms[0m
+[0;32mI (5317) BALANCER: gyro_x: -75 [0m
+ gyro_y: 299 
+ gyro_z: -576
+GYRO_X = -1.145038 
+ GYRO_Y = 4.564886 
+ GYRO_Z = -8.793893
+[0;32mI (5327) BALANCER: Waited 5ms[0m
+[0;32mI (5327) BALANCER: gyro_x: 131 [0m
+ gyro_y: 524 
+ gyro_z: -680
+GYRO_X = 2.000000 
+ GYRO_Y = 8.000000 
+ GYRO_Z = -10.381680
+[0;32mI (5337) BALANCER: Waited 5ms[0m
+[0;32mI (5347) BALANCER: gyro_x: 295 [0m
+ gyro_y: 702 
+ gyro_z: -771
+GYRO_X = 4.503817 
+ GYRO_Y = 10.717557 
+ GYRO_Z = -11.770992
+[0;32mI (5357) BALANCER: Waited 5ms[0m
+[0;32mI (5357) BALANCER: gyro_x: 392 [0m
+ gyro_y: 690 
+ gyro_z: -845
+GYRO_X = 5.984733 
+ GYRO_Y = 10.534351 
+ GYRO_Z = -12.900764
+[0;32mI (5367) BALANCER: Waited 5ms[0m
+[0;32mI (5367) BALANCER: gyro_x: 605 [0m
+ gyro_y: 784 
+ gyro_z: -989
+GYRO_X = 9.236641 
+ GYRO_Y = 11.969465 
+ GYRO_Z = -15.099236
+[0;32mI (5387) BALANCER: Waited 5ms[0m
+[0;32mI (5387) BALANCER: gyro_x: 850 [0m
+ gyro_y: 943 
+ gyro_z: -1185
+GYRO_X = 12.977099 
+ GYRO_Y = 14.396947 
+ GYRO_Z = -18.091602
+[0;32mI (5397) BALANCER: Waited 5ms[0m
+[0;32mI (5397) BALANCER: gyro_x: 1064 [0m
+ gyro_y: 1164 
+ gyro_z: -1346
+GYRO_X = 16.244274 
+ GYRO_Y = 17.770992 
+ GYRO_Z = -20.549618
+[0;32mI (5407) BALANCER: Waited 5ms[0m
+[0;32mI (5417) BALANCER: gyro_x: 605 [0m
+ gyro_y: 542 
+ gyro_z: -990
+GYRO_X = 9.236641 
+ GYRO_Y = 8.274809 
+ GYRO_Z = -15.114504
+[0;32mI (5427) BALANCER: Waited 5ms[0m
+[0;32mI (5427) BALANCER: gyro_x: -310 [0m
+ gyro_y: -32 
+ gyro_z: -227
+GYRO_X = -4.732824 
+ GYRO_Y = -0.488550 
+ GYRO_Z = -3.465649
+[0;32mI (5437) BALANCER: Waited 5ms[0m
+[0;32mI (5437) BALANCER: gyro_x: -699 [0m
+ gyro_y: -202 
+ gyro_z: 27
+GYRO_X = -10.671756 
+ GYRO_Y = -3.083969 
+ GYRO_Z = 0.412214
+[0;32mI (5447) BALANCER: Waited 5ms[0m
+[0;32mI (5457) BALANCER: gyro_x: -795 [0m
+ gyro_y: -418 
+ gyro_z: -148
+GYRO_X = -12.137404 
+ GYRO_Y = -6.381680 
+ GYRO_Z = -2.259542
+[0;32mI (5467) BALANCER: Waited 5ms[0m
+[0;32mI (5467) BALANCER: gyro_x: -772 [0m
+ gyro_y: -637 
+ gyro_z: -292
+GYRO_X = -11.786260 
+ GYRO_Y = -9.725191 
+ GYRO_Z = -4.458015
+[0;32mI (5477) BALANCER: Waited 5ms[0m
+[0;32mI (5487) BALANCER: gyro_x: -679 [0m
+ gyro_y: -867 
+ gyro_z: -479
+GYRO_X = -10.366412 
+ GYRO_Y = -13.236641 
+ GYRO_Z = -7.312977
+[0;32mI (5497) BALANCER: Waited 5ms[0m
+[0;32mI (5497) BALANCER: gyro_x: -574 [0m
+ gyro_y: -1107 
+ gyro_z: -702
+GYRO_X = -8.763359 
+ GYRO_Y = -16.900763 
+ GYRO_Z = -10.717557
+[0;32mI (5507) BALANCER: Waited 5ms[0m
+[0;32mI (5507) BALANCER: gyro_x: -489 [0m
+ gyro_y: -1267 
+ gyro_z: -946
+GYRO_X = -7.465649 
+ GYRO_Y = -19.343512 
+ GYRO_Z = -14.442748
+[0;32mI (5517) BALANCER: Waited 5ms[0m
+[0;32mI (5527) BALANCER: gyro_x: -394 [0m
+ gyro_y: -1282 
+ gyro_z: -1149
+GYRO_X = -6.015267 
+ GYRO_Y = -19.572519 
+ GYRO_Z = -17.541985
+[0;32mI (5537) BALANCER: Waited 5ms[0m
+[0;32mI (5537) BALANCER: gyro_x: -355 [0m
+ gyro_y: -1203 
+ gyro_z: -1222
+GYRO_X = -5.419847 
+ GYRO_Y = -18.366413 
+ GYRO_Z = -18.656488
+[0;32mI (5547) BALANCER: Waited 5ms[0m
+[0;32mI (5557) BALANCER: gyro_x: -387 [0m
+ gyro_y: -1126 
+ gyro_z: -1160
+GYRO_X = -5.908397 
+ GYRO_Y = -17.190840 
+ GYRO_Z = -17.709923
+[0;32mI (5567) BALANCER: Waited 5ms[0m
+[0;32mI (5567) BALANCER: gyro_x: -466 [0m
+ gyro_y: -968 
+ gyro_z: -976
+GYRO_X = -7.114504 
+ GYRO_Y = -14.778625 
+ GYRO_Z = -14.900764
+[0;32mI (5577) BALANCER: Waited 5ms[0m
+[0;32mI (5577) BALANCER: gyro_x: -516 [0m
+ gyro_y: -734 
+ gyro_z: -737
+GYRO_X = -7.877862 
+ GYRO_Y = -11.206107 
+ GYRO_Z = -11.251908
+[0;32mI (5597) BALANCER: Waited 5ms[0m
+[0;32mI (5597) BALANCER: gyro_x: -518 [0m
+ gyro_y: -514 
+ gyro_z: -474
+GYRO_X = -7.908397 
+ GYRO_Y = -7.847328 
+ GYRO_Z = -7.236641
+[0;32mI (5607) BALANCER: Waited 5ms[0m
+[0;32mI (5607) BALANCER: gyro_x: -467 [0m
+ gyro_y: -335 
+ gyro_z: -226
+GYRO_X = -7.129771 
+ GYRO_Y = -5.114504 
+ GYRO_Z = -3.450382
+[0;32mI (5617) BALANCER: Waited 5ms[0m
+[0;32mI (5627) BALANCER: gyro_x: -425 [0m
+ gyro_y: -198 
+ gyro_z: -86
+GYRO_X = -6.488550 
+ GYRO_Y = -3.022901 
+ GYRO_Z = -1.312977
+[0;32mI (5637) BALANCER: Waited 5ms[0m
+[0;32mI (5637) BALANCER: gyro_x: -311 [0m
+ gyro_y: -36 
+ gyro_z: -35
+GYRO_X = -4.748092 
+ GYRO_Y = -0.549618 
+ GYRO_Z = -0.534351
+[0;32mI (5647) BALANCER: Waited 5ms[0m
+[0;32mI (5647) BALANCER: gyro_x: -177 [0m
+ gyro_y: 63 
+ gyro_z: -124
+GYRO_X = -2.702290 
+ GYRO_Y = 0.961832 
+ GYRO_Z = -1.893130
+[0;32mI (5657) BALANCER: Waited 5ms[0m
+[0;32mI (5667) BALANCER: gyro_x: -99 [0m
+ gyro_y: 37 
+ gyro_z: -230
+GYRO_X = -1.511450 
+ GYRO_Y = 0.564885 
+ GYRO_Z = -3.511450
+[0;32mI (5677) BALANCER: Waited 5ms[0m
+[0;32mI (5677) BALANCER: gyro_x: -63 [0m
+ gyro_y: -11 
+ gyro_z: -301
+GYRO_X = -0.961832 
+ GYRO_Y = -0.167939 
+ GYRO_Z = -4.595420
+[0;32mI (5687) BALANCER: Waited 5ms[0m
+[0;32mI (5687) BALANCER: gyro_x: -29 [0m
+ gyro_y: -140 
+ gyro_z: -403
+GYRO_X = -0.442748 
+ GYRO_Y = -2.137405 
+ GYRO_Z = -6.152672
+[0;32mI (5707) BALANCER: Waited 5ms[0m
+[0;32mI (5707) BALANCER: gyro_x: -60 [0m
+ gyro_y: -121 
+ gyro_z: -581
+GYRO_X = -0.916031 
+ GYRO_Y = -1.847328 
+ GYRO_Z = -8.870229
+[0;32mI (5717) BALANCER: Waited 5ms[0m
+[0;32mI (5717) BALANCER: gyro_x: -120 [0m
+ gyro_y: 18 
+ gyro_z: -792
+GYRO_X = -1.832061 
+ GYRO_Y = 0.274809 
+ GYRO_Z = -12.091603
+[0;32mI (5727) BALANCER: Waited 5ms[0m
+[0;32mI (5737) BALANCER: gyro_x: -191 [0m
+ gyro_y: 129 
+ gyro_z: -910
+GYRO_X = -2.916031 
+ GYRO_Y = 1.969466 
+ GYRO_Z = -13.893129
+[0;32mI (5747) BALANCER: Waited 5ms[0m
+[0;32mI (5747) BALANCER: gyro_x: -333 [0m
+ gyro_y: 315 
+ gyro_z: -991
+GYRO_X = -5.083970 
+ GYRO_Y = 4.809160 
+ GYRO_Z = -15.129771
+[0;32mI (5757) BALANCER: Waited 5ms[0m
+[0;32mI (5757) BALANCER: gyro_x: -526 [0m
+ gyro_y: 417 
+ gyro_z: -996
+GYRO_X = -8.030535 
+ GYRO_Y = 6.366412 
+ GYRO_Z = -15.206107
+[0;32mI (5767) BALANCER: Waited 5ms[0m
+[0;32mI (5777) BALANCER: gyro_x: -699 [0m
+ gyro_y: 391 
+ gyro_z: -1000
+GYRO_X = -10.671756 
+ GYRO_Y = 5.969466 
+ GYRO_Z = -15.267176
+[0;32mI (5787) BALANCER: Waited 5ms[0m
+[0;32mI (5787) BALANCER: gyro_x: -762 [0m
+ gyro_y: 350 
+ gyro_z: -1043
+GYRO_X = -11.633588 
+ GYRO_Y = 5.343512 
+ GYRO_Z = -15.923664
+[0;32mI (5797) BALANCER: Waited 5ms[0m
+[0;32mI (5807) BALANCER: gyro_x: -790 [0m
+ gyro_y: 264 
+ gyro_z: -1167
+GYRO_X = -12.061069 
+ GYRO_Y = 4.030534 
+ GYRO_Z = -17.816793
+[0;32mI (5817) BALANCER: Waited 5ms[0m
+[0;32mI (5817) BALANCER: gyro_x: -760 [0m
+ gyro_y: -4 
+ gyro_z: -1318
+GYRO_X = -11.603053 
+ GYRO_Y = -0.061069 
+ GYRO_Z = -20.122137
+[0;32mI (5827) BALANCER: Waited 5ms[0m
+[0;32mI (5827) BALANCER: gyro_x: -719 [0m
+ gyro_y: -190 
+ gyro_z: -1474
+GYRO_X = -10.977099 
+ GYRO_Y = -2.900763 
+ GYRO_Z = -22.503817
+[0;32mI (5837) BALANCER: Waited 5ms[0m
+[0;32mI (5847) BALANCER: gyro_x: -678 [0m
+ gyro_y: -227 
+ gyro_z: -1555
+GYRO_X = -10.351145 
+ GYRO_Y = -3.465649 
+ GYRO_Z = -23.740458
+[0;32mI (5857) BALANCER: Waited 5ms[0m
+[0;32mI (5857) BALANCER: gyro_x: -697 [0m
+ gyro_y: -228 
+ gyro_z: -1561
+GYRO_X = -10.641221 
+ GYRO_Y = -3.480916 
+ GYRO_Z = -23.832062
+[0;32mI (5867) BALANCER: Waited 5ms[0m
+[0;32mI (5877) BALANCER: gyro_x: -748 [0m
+ gyro_y: -350 
+ gyro_z: -1467
+GYRO_X = -11.419847 
+ GYRO_Y = -5.343512 
+ GYRO_Z = -22.396946
+[0;32mI (5887) BALANCER: Waited 5ms[0m
+[0;32mI (5887) BALANCER: gyro_x: -788 [0m
+ gyro_y: -457 
+ gyro_z: -1329
+GYRO_X = -12.030535 
+ GYRO_Y = -6.977099 
+ GYRO_Z = -20.290077
+[0;32mI (5897) BALANCER: Waited 5ms[0m
+[0;32mI (5897) BALANCER: gyro_x: -750 [0m
+ gyro_y: -350 
+ gyro_z: -1322
+GYRO_X = -11.450381 
+ GYRO_Y = -5.343512 
+ GYRO_Z = -20.183207
+[0;32mI (5917) BALANCER: Waited 5ms[0m
+[0;32mI (5917) BALANCER: gyro_x: -674 [0m
+ gyro_y: -199 
+ gyro_z: -1402
+GYRO_X = -10.290076 
+ GYRO_Y = -3.038168 
+ GYRO_Z = -21.404581
+[0;32mI (5927) BALANCER: Waited 5ms[0m
+[0;32mI (5927) BALANCER: gyro_x: -622 [0m
+ gyro_y: -14 
+ gyro_z: -1416
+GYRO_X = -9.496183 
+ GYRO_Y = -0.213740 
+ GYRO_Z = -21.618320
+[0;32mI (5937) BALANCER: Waited 5ms[0m
+[0;32mI (5947) BALANCER: gyro_x: -581 [0m
+ gyro_y: 105 
+ gyro_z: -1384
+GYRO_X = -8.870229 
+ GYRO_Y = 1.603053 
+ GYRO_Z = -21.129770
+[0;32mI (5957) BALANCER: Waited 5ms[0m
+[0;32mI (5957) BALANCER: gyro_x: -533 [0m
+ gyro_y: 207 
+ gyro_z: -1254
+GYRO_X = -8.137404 
+ GYRO_Y = 3.160305 
+ GYRO_Z = -19.145039
+[0;32mI (5967) BALANCER: Waited 5ms[0m
+[0;32mI (5967) BALANCER: gyro_x: -440 [0m
+ gyro_y: 289 
+ gyro_z: -1062
+GYRO_X = -6.717557 
+ GYRO_Y = 4.412214 
+ GYRO_Z = -16.213741
+[0;32mI (5977) BALANCER: Waited 5ms[0m
+[0;32mI (5987) BALANCER: gyro_x: -295 [0m
+ gyro_y: 504 
+ gyro_z: -947
+GYRO_X = -4.503817 
+ GYRO_Y = 7.694656 
+ GYRO_Z = -14.458015
+[0;32mI (5997) BALANCER: Waited 5ms[0m
+[0;32mI (5997) BALANCER: gyro_x: -172 [0m
+ gyro_y: 670 
+ gyro_z: -926
+GYRO_X = -2.625954 
+ GYRO_Y = 10.229008 
+ GYRO_Z = -14.137404
+[0;32mI (6007) BALANCER: Waited 5ms[0m
+[0;32mI (6017) BALANCER: gyro_x: 2 [0m
+ gyro_y: 891 
+ gyro_z: -847
+GYRO_X = 0.030534 
+ GYRO_Y = 13.603053 
+ GYRO_Z = -12.931297
+[0;32mI (6027) BALANCER: Waited 5ms[0m
+[0;32mI (6027) BALANCER: gyro_x: 128 [0m
+ gyro_y: 1043 
+ gyro_z: -631
+GYRO_X = 1.954198 
+ GYRO_Y = 15.923664 
+ GYRO_Z = -9.633588
+[0;32mI (6037) BALANCER: Waited 5ms[0m
+[0;32mI (6037) BALANCER: gyro_x: 210 [0m
+ gyro_y: 1051 
+ gyro_z: -403
+GYRO_X = 3.206107 
+ GYRO_Y = 16.045801 
+ GYRO_Z = -6.152672
+[0;32mI (6047) BALANCER: Waited 5ms[0m
+[0;32mI (6057) BALANCER: gyro_x: 293 [0m
+ gyro_y: 996 
+ gyro_z: -325
+GYRO_X = 4.473282 
+ GYRO_Y = 15.206107 
+ GYRO_Z = -4.961832
+[0;32mI (6067) BALANCER: Waited 5ms[0m
+[0;32mI (6067) BALANCER: gyro_x: 389 [0m
+ gyro_y: 872 
+ gyro_z: -207
+GYRO_X = 5.938931 
+ GYRO_Y = 13.312977 
+ GYRO_Z = -3.160305
+[0;32mI (6077) BALANCER: Waited 5ms[0m
+[0;32mI (6077) BALANCER: gyro_x: 395 [0m
+ gyro_y: 664 
+ gyro_z: -84
+GYRO_X = 6.030534 
+ GYRO_Y = 10.137404 
+ GYRO_Z = -1.282443
+[0;32mI (6087) BALANCER: Waited 5ms[0m
+[0;32mI (6097) BALANCER: gyro_x: 345 [0m
+ gyro_y: 532 
+ gyro_z: -69
+GYRO_X = 5.267176 
+ GYRO_Y = 8.122137 
+ GYRO_Z = -1.053435
+[0;32mI (6107) BALANCER: Waited 5ms[0m
+[0;32mI (6107) BALANCER: gyro_x: 313 [0m
+ gyro_y: 501 
+ gyro_z: -121
+GYRO_X = 4.778626 
+ GYRO_Y = 7.648855 
+ GYRO_Z = -1.847328
+[0;32mI (6117) BALANCER: Waited 5ms[0m
+[0;32mI (6117) BALANCER: gyro_x: 211 [0m
+ gyro_y: 540 
+ gyro_z: -320
+GYRO_X = 3.221374 
+ GYRO_Y = 8.244275 
+ GYRO_Z = -4.885496
+[0;32mI (6127) BALANCER: Waited 5ms[0m
+[0;32mI (6137) BALANCER: gyro_x: 88 [0m
+ gyro_y: 625 
+ gyro_z: -548
+GYRO_X = 1.343511 
+ GYRO_Y = 9.541985 
+ GYRO_Z = -8.366412
+[0;32mI (6147) BALANCER: Waited 5ms[0m
+[0;32mI (6147) BALANCER: gyro_x: 7 [0m
+ gyro_y: 674 
+ gyro_z: -665
+GYRO_X = 0.106870 
+ GYRO_Y = 10.290076 
+ GYRO_Z = -10.152672
+[0;32mI (6157) BALANCER: Waited 5ms[0m
+[0;32mI (6167) BALANCER: gyro_x: -94 [0m
+ gyro_y: 648 
+ gyro_z: -819
+GYRO_X = -1.435115 
+ GYRO_Y = 9.893129 
+ GYRO_Z = -12.503817
+[0;32mI (6177) BALANCER: Waited 5ms[0m
+[0;32mI (6177) BALANCER: gyro_x: -251 [0m
+ gyro_y: 365 
+ gyro_z: -920
+GYRO_X = -3.832061 
+ GYRO_Y = 5.572519 
+ GYRO_Z = -14.045801
+[0;32mI (6187) BALANCER: Waited 5ms[0m
+[0;32mI (6187) BALANCER: gyro_x: -467 [0m
+ gyro_y: -50 
+ gyro_z: -852
+GYRO_X = -7.129771 
+ GYRO_Y = -0.763359 
+ GYRO_Z = -13.007633
+[0;32mI (6197) BALANCER: Waited 5ms[0m
+[0;32mI (6207) BALANCER: gyro_x: -611 [0m
+ gyro_y: -262 
+ gyro_z: -790
+GYRO_X = -9.328244 
+ GYRO_Y = -4.000000 
+ GYRO_Z = -12.061069
+[0;32mI (6217) BALANCER: Waited 5ms[0m
+[0;32mI (6217) BALANCER: gyro_x: -762 [0m
+ gyro_y: -526 
+ gyro_z: -750
+GYRO_X = -11.633588 
+ GYRO_Y = -8.030535 
+ GYRO_Z = -11.450381
+[0;32mI (6227) BALANCER: Waited 5ms[0m
+[0;32mI (6227) BALANCER: gyro_x: -820 [0m
+ gyro_y: -720 
+ gyro_z: -806
+GYRO_X = -12.519084 
+ GYRO_Y = -10.992367 
+ GYRO_Z = -12.305344
+[0;32mI (6247) BALANCER: Waited 5ms[0m
+[0;32mI (6247) BALANCER: gyro_x: -772 [0m
+ gyro_y: -737 
+ gyro_z: -937
+GYRO_X = -11.786260 
+ GYRO_Y = -11.251908 
+ GYRO_Z = -14.305344
+[0;32mI (6257) BALANCER: Waited 5ms[0m
+[0;32mI (6257) BALANCER: gyro_x: -689 [0m
+ gyro_y: -635 
+ gyro_z: -1134
+GYRO_X = -10.519084 
+ GYRO_Y = -9.694656 
+ GYRO_Z = -17.312977
+[0;32mI (6267) BALANCER: Waited 5ms[0m
+[0;32mI (6277) BALANCER: gyro_x: -640 [0m
+ gyro_y: -533 
+ gyro_z: -1219
+GYRO_X = -9.770992 
+ GYRO_Y = -8.137404 
+ GYRO_Z = -18.610687
+[0;32mI (6287) BALANCER: Waited 5ms[0m
+[0;32mI (6287) BALANCER: gyro_x: -646 [0m
+ gyro_y: -541 
+ gyro_z: -1137
+GYRO_X = -9.862596 
+ GYRO_Y = -8.259542 
+ GYRO_Z = -17.358778
+[0;32mI (6297) BALANCER: Waited 5ms[0m
+[0;32mI (6307) BALANCER: gyro_x: -706 [0m
+ gyro_y: -610 
+ gyro_z: -907
+GYRO_X = -10.778625 
+ GYRO_Y = -9.312977 
+ GYRO_Z = -13.847328
+[0;32mI (6317) BALANCER: Waited 5ms[0m
+[0;32mI (6317) BALANCER: gyro_x: -729 [0m
+ gyro_y: -621 
+ gyro_z: -686
+GYRO_X = -11.129771 
+ GYRO_Y = -9.480916 
+ GYRO_Z = -10.473283
+[0;32mI (6327) BALANCER: Waited 5ms[0m
+[0;32mI (6327) BALANCER: gyro_x: -674 [0m
+ gyro_y: -607 
+ gyro_z: -634
+GYRO_X = -10.290076 
+ GYRO_Y = -9.267176 
+ GYRO_Z = -9.679389
+[0;32mI (6337) BALANCER: Waited 5ms[0m
+[0;32mI (6347) BALANCER: gyro_x: -616 [0m
+ gyro_y: -530 
+ gyro_z: -691
+GYRO_X = -9.404580 
+ GYRO_Y = -8.091603 
+ GYRO_Z = -10.549619
+[0;32mI (6357) BALANCER: Waited 5ms[0m
+[0;32mI (6357) BALANCER: gyro_x: -547 [0m
+ gyro_y: -313 
+ gyro_z: -843
+GYRO_X = -8.351145 
+ GYRO_Y = -4.778626 
+ GYRO_Z = -12.870229
+[0;32mI (6367) BALANCER: Waited 5ms[0m
+[0;32mI (6377) BALANCER: gyro_x: -508 [0m
+ gyro_y: -44 
+ gyro_z: -954
+GYRO_X = -7.755725 
+ GYRO_Y = -0.671756 
+ GYRO_Z = -14.564885
+[0;32mI (6387) BALANCER: Waited 5ms[0m
+[0;32mI (6387) BALANCER: gyro_x: -518 [0m
+ gyro_y: 143 
+ gyro_z: -969
+GYRO_X = -7.908397 
+ GYRO_Y = 2.183206 
+ GYRO_Z = -14.793893
+[0;32mI (6397) BALANCER: Waited 5ms[0m
+[0;32mI (6397) BALANCER: gyro_x: -564 [0m
+ gyro_y: 285 
+ gyro_z: -964
+GYRO_X = -8.610687 
+ GYRO_Y = 4.351145 
+ GYRO_Z = -14.717557
+[0;32mI (6407) BALANCER: Waited 5ms[0m
+[0;32mI (6417) BALANCER: gyro_x: -612 [0m
+ gyro_y: 452 
+ gyro_z: -991
+GYRO_X = -9.343512 
+ GYRO_Y = 6.900764 
+ GYRO_Z = -15.129771
+[0;32mI (6427) BALANCER: Waited 5ms[0m
+[0;32mI (6427) BALANCER: gyro_x: -727 [0m
+ gyro_y: 786 
+ gyro_z: -1040
+GYRO_X = -11.099236 
+ GYRO_Y = 12.000000 
+ GYRO_Z = -15.877863
+[0;32mI (6437) BALANCER: Waited 5ms[0m
+[0;32mI (6437) BALANCER: gyro_x: -868 [0m
+ gyro_y: 1005 
+ gyro_z: -1136
+GYRO_X = -13.251908 
+ GYRO_Y = 15.343512 
+ GYRO_Z = -17.343512
+[0;32mI (6457) BALANCER: Waited 5ms[0m
+[0;32mI (6457) BALANCER: gyro_x: -1021 [0m
+ gyro_y: 1110 
+ gyro_z: -1135
+GYRO_X = -15.587787 
+ GYRO_Y = 16.946566 
+ GYRO_Z = -17.328245
+[0;32mI (6467) BALANCER: Waited 5ms[0m
+[0;32mI (6467) BALANCER: gyro_x: -1117 [0m
+ gyro_y: 1051 
+ gyro_z: -1013
+GYRO_X = -17.053434 
+ GYRO_Y = 16.045801 
+ GYRO_Z = -15.465649
+[0;32mI (6477) BALANCER: Waited 5ms[0m
+[0;32mI (6487) BALANCER: gyro_x: -1132 [0m
+ gyro_y: 1052 
+ gyro_z: -948
+GYRO_X = -17.282442 
+ GYRO_Y = 16.061069 
+ GYRO_Z = -14.473283
+[0;32mI (6497) BALANCER: Waited 5ms[0m
+[0;32mI (6497) BALANCER: gyro_x: -1096 [0m
+ gyro_y: 971 
+ gyro_z: -1029
+GYRO_X = -16.732824 
+ GYRO_Y = 14.824428 
+ GYRO_Z = -15.709924
+[0;32mI (6507) BALANCER: Waited 5ms[0m
+[0;32mI (6517) BALANCER: gyro_x: -1020 [0m
+ gyro_y: 870 
+ gyro_z: -1109
+GYRO_X = -15.572519 
+ GYRO_Y = 13.282443 
+ GYRO_Z = -16.931297
+[0;32mI (6527) BALANCER: Waited 5ms[0m
+[0;32mI (6527) BALANCER: gyro_x: -897 [0m
+ gyro_y: 836 
+ gyro_z: -1128
+GYRO_X = -13.694656 
+ GYRO_Y = 12.763359 
+ GYRO_Z = -17.221375
+[0;32mI (6537) BALANCER: Waited 5ms[0m
+[0;32mI (6537) BALANCER: gyro_x: -727 [0m
+ gyro_y: 770 
+ gyro_z: -1180
+GYRO_X = -11.099236 
+ GYRO_Y = 11.755725 
+ GYRO_Z = -18.015266
+[0;32mI (6547) BALANCER: Waited 5ms[0m
+[0;32mI (6557) BALANCER: gyro_x: -567 [0m
+ gyro_y: 765 
+ gyro_z: -1263
+GYRO_X = -8.656488 
+ GYRO_Y = 11.679389 
+ GYRO_Z = -19.282442
+[0;32mI (6567) BALANCER: Waited 5ms[0m
+[0;32mI (6567) BALANCER: gyro_x: -476 [0m
+ gyro_y: 769 
+ gyro_z: -1303
+GYRO_X = -7.267176 
+ GYRO_Y = 11.740458 
+ GYRO_Z = -19.893129
+[0;32mI (6577) BALANCER: Waited 5ms[0m
+[0;32mI (6587) BALANCER: gyro_x: -407 [0m
+ gyro_y: 686 
+ gyro_z: -1306
+GYRO_X = -6.213740 
+ GYRO_Y = 10.473283 
+ GYRO_Z = -19.938931
+[0;32mI (6597) BALANCER: Waited 5ms[0m
+[0;32mI (6597) BALANCER: gyro_x: -399 [0m
+ gyro_y: 470 
+ gyro_z: -1098
+GYRO_X = -6.091603 
+ GYRO_Y = 7.175572 
+ GYRO_Z = -16.763359
+[0;32mI (6607) BALANCER: Waited 5ms[0m
+[0;32mI (6607) BALANCER: gyro_x: -396 [0m
+ gyro_y: 103 
+ gyro_z: -753
+GYRO_X = -6.045802 
+ GYRO_Y = 1.572519 
+ GYRO_Z = -11.496183
+[0;32mI (6617) BALANCER: Waited 5ms[0m
+[0;32mI (6627) BALANCER: gyro_x: -393 [0m
+ gyro_y: -130 
+ gyro_z: -488
+GYRO_X = -6.000000 
+ GYRO_Y = -1.984733 
+ GYRO_Z = -7.450382
+[0;32mI (6637) BALANCER: Waited 5ms[0m
+[0;32mI (6637) BALANCER: gyro_x: -363 [0m
+ gyro_y: -325 
+ gyro_z: -156
+GYRO_X = -5.541985 
+ GYRO_Y = -4.961832 
+ GYRO_Z = -2.381679
+[0;32mI (6647) BALANCER: Waited 5ms[0m
+[0;32mI (6657) BALANCER: gyro_x: -278 [0m
+ gyro_y: -380 
+ gyro_z: 73
+GYRO_X = -4.244275 
+ GYRO_Y = -5.801527 
+ GYRO_Z = 1.114504
+[0;32mI (6667) BALANCER: Waited 5ms[0m
+[0;32mI (6667) BALANCER: gyro_x: -147 [0m
+ gyro_y: -291 
+ gyro_z: 211
+GYRO_X = -2.244275 
+ GYRO_Y = -4.442748 
+ GYRO_Z = 3.221374
+[0;32mI (6677) BALANCER: Waited 5ms[0m
+[0;32mI (6677) BALANCER: gyro_x: -1 [0m
+ gyro_y: -197 
+ gyro_z: 300
+GYRO_X = -0.015267 
+ GYRO_Y = -3.007634 
+ GYRO_Z = 4.580153
+[0;32mI (6687) BALANCER: Waited 5ms[0m
+[0;32mI (6697) BALANCER: gyro_x: 282 [0m
+ gyro_y: 19 
+ gyro_z: 405
+GYRO_X = 4.305344 
+ GYRO_Y = 0.290076 
+ GYRO_Z = 6.183206
+[0;32mI (6707) BALANCER: Waited 5ms[0m
+[0;32mI (6707) BALANCER: gyro_x: 584 [0m
+ gyro_y: 200 
+ gyro_z: 461
+GYRO_X = 8.916031 
+ GYRO_Y = 3.053435 
+ GYRO_Z = 7.038168
+[0;32mI (6717) BALANCER: Waited 5ms[0m
+[0;32mI (6717) BALANCER: gyro_x: 775 [0m
+ gyro_y: 486 
+ gyro_z: 347
+GYRO_X = 11.832061 
+ GYRO_Y = 7.419847 
+ GYRO_Z = 5.297710
+[0;32mI (6727) BALANCER: Waited 5ms[0m
+[0;32mI (6737) BALANCER: gyro_x: 969 [0m
+ gyro_y: 1100 
+ gyro_z: -127
+GYRO_X = 14.793893 
+ GYRO_Y = 16.793894 
+ GYRO_Z = -1.938931
+[0;32mI (6747) BALANCER: Waited 5ms[0m
+[0;32mI (6747) BALANCER: gyro_x: 2467 [0m
+ gyro_y: 1728 
+ gyro_z: -652
+GYRO_X = 37.664124 
+ GYRO_Y = 26.381680 
+ GYRO_Z = -9.954199
+[0;32mI (6757) BALANCER: Waited 5ms[0m
+[0;32mI (6757) BALANCER: gyro_x: 2125 [0m
+ gyro_y: 1764 
+ gyro_z: -1049
+GYRO_X = 32.442749 
+ GYRO_Y = 26.931297 
+ GYRO_Z = -16.015266
+[0;32mI (6767) BALANCER: Waited 5ms[0m
+[0;32mI (6777) BALANCER: gyro_x: 1581 [0m
+ gyro_y: 2184 
+ gyro_z: -863
+GYRO_X = 24.137405 
+ GYRO_Y = 33.343510 
+ GYRO_Z = -13.175572
+[0;32mI (6787) BALANCER: Waited 5ms[0m
+[0;32mI (6787) BALANCER: gyro_x: 1212 [0m
+ gyro_y: 2291 
+ gyro_z: -630
+GYRO_X = 18.503817 
+ GYRO_Y = 34.977100 
+ GYRO_Z = -9.618320
+[0;32mI (6797) BALANCER: Waited 5ms[0m
+[0;32mI (6807) BALANCER: gyro_x: 2032 [0m
+ gyro_y: 2125 
+ gyro_z: -280
+GYRO_X = 31.022902 
+ GYRO_Y = 32.442749 
+ GYRO_Z = -4.274809
+[0;32mI (6817) BALANCER: Waited 5ms[0m
+[0;32mI (6817) BALANCER: gyro_x: 1302 [0m
+ gyro_y: 1496 
+ gyro_z: -116
+GYRO_X = 19.877863 
+ GYRO_Y = 22.839695 
+ GYRO_Z = -1.770992
+[0;32mI (6827) BALANCER: Waited 5ms[0m
+[0;32mI (6827) BALANCER: gyro_x: 438 [0m
+ gyro_y: 1228 
+ gyro_z: 27
+GYRO_X = 6.687023 
+ GYRO_Y = 18.748091 
+ GYRO_Z = 0.412214
+[0;32mI (6837) BALANCER: Waited 5ms[0m
+[0;32mI (6847) BALANCER: gyro_x: 1208 [0m
+ gyro_y: 857 
+ gyro_z: 117
+GYRO_X = 18.442749 
+ GYRO_Y = 13.083969 
+ GYRO_Z = 1.786260
+[0;32mI (6857) BALANCER: Waited 5ms[0m
+[0;32mI (6857) BALANCER: gyro_x: 563 [0m
+ gyro_y: 381 
+ gyro_z: -57
+GYRO_X = 8.595420 
+ GYRO_Y = 5.816794 
+ GYRO_Z = -0.870229
+[0;32mI (6867) BALANCER: Waited 5ms[0m
+[0;32mI (6867) BALANCER: gyro_x: 684 [0m
+ gyro_y: 324 
+ gyro_z: -194
+GYRO_X = 10.442748 
+ GYRO_Y = 4.946565 
+ GYRO_Z = -2.961832
+[0;32mI (6877) BALANCER: Waited 5ms[0m
+[0;32mI (6887) BALANCER: gyro_x: 686 [0m
+ gyro_y: 300 
+ gyro_z: -307
+GYRO_X = 10.473283 
+ GYRO_Y = 4.580153 
+ GYRO_Z = -4.687023
+[0;32mI (6897) BALANCER: Waited 5ms[0m
+[0;32mI (6897) BALANCER: gyro_x: 748 [0m
+ gyro_y: 284 
+ gyro_z: -524
+GYRO_X = 11.419847 
+ GYRO_Y = 4.335878 
+ GYRO_Z = -8.000000
+[0;32mI (6907) BALANCER: Waited 5ms[0m
+[0;32mI (6907) BALANCER: gyro_x: 883 [0m
+ gyro_y: 506 
+ gyro_z: -589
+GYRO_X = 13.480916 
+ GYRO_Y = 7.725191 
+ GYRO_Z = -8.992367
+[0;32mI (6927) BALANCER: Waited 5ms[0m
+[0;32mI (6927) BALANCER: gyro_x: 907 [0m
+ gyro_y: 1261 
+ gyro_z: -235
+GYRO_X = 13.847328 
+ GYRO_Y = 19.251909 
+ GYRO_Z = -3.587786
+[0;32mI (6937) BALANCER: Waited 5ms[0m
+[0;32mI (6937) BALANCER: gyro_x: 986 [0m
+ gyro_y: 1353 
+ gyro_z: -367
+GYRO_X = 15.053435 
+ GYRO_Y = 20.656488 
+ GYRO_Z = -5.603054
+[0;32mI (6947) BALANCER: Waited 5ms[0m
+[0;32mI (6957) BALANCER: gyro_x: 1056 [0m
+ gyro_y: 1565 
+ gyro_z: -435
+GYRO_X = 16.122137 
+ GYRO_Y = 23.893129 
+ GYRO_Z = -6.641222
+[0;32mI (6967) BALANCER: Waited 5ms[0m
+[0;32mI (6967) BALANCER: gyro_x: 1187 [0m
+ gyro_y: 1748 
+ gyro_z: -501
+GYRO_X = 18.122137 
+ GYRO_Y = 26.687023 
+ GYRO_Z = -7.648855
+[0;32mI (6977) BALANCER: Waited 5ms[0m
+[0;32mI (6977) BALANCER: gyro_x: 1325 [0m
+ gyro_y: 1888 
+ gyro_z: -523
+GYRO_X = 20.229008 
+ GYRO_Y = 28.824427 
+ GYRO_Z = -7.984733
+[0;32mI (6987) BALANCER: Waited 5ms[0m
+[0;32mI (6997) BALANCER: gyro_x: 1398 [0m
+ gyro_y: 1906 
+ gyro_z: -497
+GYRO_X = 21.343512 
+ GYRO_Y = 29.099237 
+ GYRO_Z = -7.587786
+[0;32mI (7007) BALANCER: Waited 5ms[0m
+[0;32mI (7007) BALANCER: gyro_x: 1418 [0m
+ gyro_y: 1840 
+ gyro_z: -338
+GYRO_X = 21.648855 
+ GYRO_Y = 28.091602 
+ GYRO_Z = -5.160306
+[0;32mI (7017) BALANCER: Waited 5ms[0m
+[0;32mI (7027) BALANCER: gyro_x: 1380 [0m
+ gyro_y: 1393 
+ gyro_z: -328
+GYRO_X = 21.068703 
+ GYRO_Y = 21.267176 
+ GYRO_Z = -5.007634
+[0;32mI (7037) BALANCER: Waited 5ms[0m
+[0;32mI (7037) BALANCER: gyro_x: 1290 [0m
+ gyro_y: 831 
+ gyro_z: -510
+GYRO_X = 19.694656 
+ GYRO_Y = 12.687023 
+ GYRO_Z = -7.786260
+[0;32mI (7047) BALANCER: Waited 5ms[0m
+[0;32mI (7047) BALANCER: gyro_x: -266 [0m
+ gyro_y: -59 
+ gyro_z: -257
+GYRO_X = -4.061069 
+ GYRO_Y = -0.900763 
+ GYRO_Z = -3.923664
+[0;32mI (7057) BALANCER: Waited 5ms[0m
+[0;32mI (7067) BALANCER: gyro_x: -62 [0m
+ gyro_y: -492 
+ gyro_z: -650
+GYRO_X = -0.946565 
+ GYRO_Y = -7.511450 
+ GYRO_Z = -9.923664
+[0;32mI (7077) BALANCER: Waited 5ms[0m
+[0;32mI (7077) BALANCER: gyro_x: -197 [0m
+ gyro_y: -133 
+ gyro_z: -766
+GYRO_X = -3.007634 
+ GYRO_Y = -2.030534 
+ GYRO_Z = -11.694656
+[0;32mI (7087) BALANCER: Waited 5ms[0m
+[0;32mI (7087) BALANCER: gyro_x: 119 [0m
+ gyro_y: -330 
+ gyro_z: -830
+GYRO_X = 1.816794 
+ GYRO_Y = -5.038168 
+ GYRO_Z = -12.671756
+[0;32mI (7107) BALANCER: Waited 5ms[0m
+[0;32mI (7107) BALANCER: gyro_x: 10 [0m
+ gyro_y: -589 
+ gyro_z: -618
+GYRO_X = 0.152672 
+ GYRO_Y = -8.992367 
+ GYRO_Z = -9.435115
+[0;32mI (7117) BALANCER: Waited 5ms[0m
+[0;32mI (7117) BALANCER: gyro_x: 71 [0m
+ gyro_y: -344 
+ gyro_z: -785
+GYRO_X = 1.083969 
+ GYRO_Y = -5.251908 
+ GYRO_Z = -11.984733
+[0;32mI (7127) BALANCER: Waited 5ms[0m
+[0;32mI (7137) BALANCER: gyro_x: 32 [0m
+ gyro_y: 361 
+ gyro_z: -597
+GYRO_X = 0.488550 
+ GYRO_Y = 5.511450 
+ GYRO_Z = -9.114504
+[0;32mI (7147) BALANCER: Waited 5ms[0m
+[0;32mI (7147) BALANCER: gyro_x: -2 [0m
+ gyro_y: 540 
+ gyro_z: -378
+GYRO_X = -0.030534 
+ GYRO_Y = 8.244275 
+ GYRO_Z = -5.770992
+[0;32mI (7157) BALANCER: Waited 5ms[0m
+[0;32mI (7157) BALANCER: gyro_x: -37 [0m
+ gyro_y: 487 
+ gyro_z: -329
+GYRO_X = -0.564885 
+ GYRO_Y = 7.435114 
+ GYRO_Z = -5.022901
+[0;32mI (7167) BALANCER: Waited 5ms[0m
+[0;32mI (7177) BALANCER: gyro_x: -17 [0m
+ gyro_y: 553 
+ gyro_z: -298
+GYRO_X = -0.259542 
+ GYRO_Y = 8.442748 
+ GYRO_Z = -4.549618
+[0;32mI (7187) BALANCER: Waited 5ms[0m
+[0;32mI (7187) BALANCER: gyro_x: -41 [0m
+ gyro_y: 504 
+ gyro_z: -232
+GYRO_X = -0.625954 
+ GYRO_Y = 7.694656 
+ GYRO_Z = -3.541985
+[0;32mI (7197) BALANCER: Waited 5ms[0m
+[0;32mI (7197) BALANCER: gyro_x: -40 [0m
+ gyro_y: 475 
+ gyro_z: -220
+GYRO_X = -0.610687 
+ GYRO_Y = 7.251908 
+ GYRO_Z = -3.358779
+[0;32mI (7207) BALANCER: Waited 5ms[0m
+[0;32mI (7217) BALANCER: gyro_x: -31 [0m
+ gyro_y: 490 
+ gyro_z: -236
+GYRO_X = -0.473282 
+ GYRO_Y = 7.480916 
+ GYRO_Z = -3.603053
+[0;32mI (7227) BALANCER: Waited 5ms[0m
+[0;32mI (7227) BALANCER: gyro_x: -36 [0m
+ gyro_y: 507 
+ gyro_z: -256
+GYRO_X = -0.549618 
+ GYRO_Y = 7.740458 
+ GYRO_Z = -3.908397
+[0;32mI (7237) BALANCER: Waited 5ms[0m
+[0;32mI (7237) BALANCER: gyro_x: -37 [0m
+ gyro_y: 465 
+ gyro_z: -206
+GYRO_X = -0.564885 
+ GYRO_Y = 7.099236 
+ GYRO_Z = -3.145038
+[0;32mI (7257) BALANCER: Waited 5ms[0m
+[0;32mI (7257) BALANCER: gyro_x: -44 [0m
+ gyro_y: 433 
+ gyro_z: -152
+GYRO_X = -0.671756 
+ GYRO_Y = 6.610687 
+ GYRO_Z = -2.320611
+[0;32mI (7267) BALANCER: Waited 5ms[0m
+[0;32mI (7267) BALANCER: gyro_x: -50 [0m
+ gyro_y: 386 
+ gyro_z: -149
+GYRO_X = -0.763359 
+ GYRO_Y = 5.893130 
+ GYRO_Z = -2.274809
+[0;32mI (7277) BALANCER: Waited 5ms[0m
+[0;32mI (7287) BALANCER: gyro_x: -46 [0m
+ gyro_y: 390 
+ gyro_z: -151
+GYRO_X = -0.702290 
+ GYRO_Y = 5.954198 
+ GYRO_Z = -2.305344
+[0;32mI (7297) BALANCER: Waited 5ms[0m
+[0;32mI (7297) BALANCER: gyro_x: -49 [0m
+ gyro_y: 367 
+ gyro_z: -174
+GYRO_X = -0.748092 
+ GYRO_Y = 5.603054 
+ GYRO_Z = -2.656489
+[0;32mI (7307) BALANCER: Waited 5ms[0m
+[0;32mI (7307) BALANCER: gyro_x: -36 [0m
+ gyro_y: 363 
+ gyro_z: -164
+GYRO_X = -0.549618 
+ GYRO_Y = 5.541985 
+ GYRO_Z = -2.503817
+[0;32mI (7317) BALANCER: Waited 5ms[0m
+[0;32mI (7327) BALANCER: gyro_x: -45 [0m
+ gyro_y: 312 
+ gyro_z: -138
+GYRO_X = -0.687023 
+ GYRO_Y = 4.763359 
+ GYRO_Z = -2.106870
+[0;32mI (7337) BALANCER: Waited 5ms[0m
+[0;32mI (7337) BALANCER: gyro_x: -47 [0m
+ gyro_y: 234 
+ gyro_z: -107
+GYRO_X = -0.717557 
+ GYRO_Y = 3.572519 
+ GYRO_Z = -1.633588
+[0;32mI (7347) BALANCER: Waited 5ms[0m
+[0;32mI (7347) BALANCER: gyro_x: -41 [0m
+ gyro_y: 181 
+ gyro_z: -121
+GYRO_X = -0.625954 
+ GYRO_Y = 2.763359 
+ GYRO_Z = -1.847328
+[0;32mI (7357) BALANCER: Waited 5ms[0m
+[0;32mI (7367) BALANCER: gyro_x: -51 [0m
+ gyro_y: 178 
+ gyro_z: -112
+GYRO_X = -0.778626 
+ GYRO_Y = 2.717557 
+ GYRO_Z = -1.709924
+[0;32mI (7377) BALANCER: Waited 5ms[0m
+[0;32mI (7377) BALANCER: gyro_x: -59 [0m
+ gyro_y: 117 
+ gyro_z: -79
+GYRO_X = -0.900763 
+ GYRO_Y = 1.786260 
+ GYRO_Z = -1.206107
+[0;32mI (7387) BALANCER: Waited 5ms[0m
+[0;32mI (7387) BALANCER: gyro_x: -50 [0m
+ gyro_y: 150 
+ gyro_z: -132
+GYRO_X = -0.763359 
+ GYRO_Y = 2.290076 
+ GYRO_Z = -2.015267
+[0;32mI (7397) BALANCER: Waited 5ms[0m
+[0;32mI (7407) BALANCER: gyro_x: -35 [0m
+ gyro_y: 253 
+ gyro_z: -233
+GYRO_X = -0.534351 
+ GYRO_Y = 3.862595 
+ GYRO_Z = -3.557252
+[0;32mI (7417) BALANCER: Waited 5ms[0m
+[0;32mI (7417) BALANCER: gyro_x: -4 [0m
+ gyro_y: 447 
+ gyro_z: -412
+GYRO_X = -0.061069 
+ GYRO_Y = 6.824428 
+ GYRO_Z = -6.290076
+[0;32mI (7427) BALANCER: Waited 5ms[0m
+[0;32mI (7437) BALANCER: gyro_x: 23 [0m
+ gyro_y: 773 
+ gyro_z: -712
+GYRO_X = 0.351145 
+ GYRO_Y = 11.801527 
+ GYRO_Z = -10.870229
+[0;32mI (7447) BALANCER: Waited 5ms[0m
+[0;32mI (7447) BALANCER: gyro_x: -52 [0m
+ gyro_y: 987 
+ gyro_z: -963
+GYRO_X = -0.793893 
+ GYRO_Y = 15.068703 
+ GYRO_Z = -14.702291
+[0;32mI (7457) BALANCER: Waited 5ms[0m
+[0;32mI (7457) BALANCER: gyro_x: -164 [0m
+ gyro_y: 907 
+ gyro_z: -941
+GYRO_X = -2.503817 
+ GYRO_Y = 13.847328 
+ GYRO_Z = -14.366412
+[0;32mI (7467) BALANCER: Waited 5ms[0m
+[0;32mI (7477) BALANCER: gyro_x: -391 [0m
+ gyro_y: 554 
+ gyro_z: -652
+GYRO_X = -5.969466 
+ GYRO_Y = 8.458015 
+ GYRO_Z = -9.954199
+[0;32mI (7487) BALANCER: Waited 5ms[0m
+[0;32mI (7487) BALANCER: gyro_x: -668 [0m
+ gyro_y: -19 
+ gyro_z: -184
+GYRO_X = -10.198473 
+ GYRO_Y = -0.290076 
+ GYRO_Z = -2.809160
+[0;32mI (7497) BALANCER: Waited 5ms[0m
+[0;32mI (7497) BALANCER: gyro_x: -1021 [0m
+ gyro_y: -526 
+ gyro_z: 251
+GYRO_X = -15.587787 
+ GYRO_Y = -8.030535 
+ GYRO_Z = 3.832061
+[0;32mI (7507) BALANCER: Waited 5ms[0m
+[0;32mI (7517) BALANCER: gyro_x: -1230 [0m
+ gyro_y: -774 
+ gyro_z: 369
+GYRO_X = -18.778625 
+ GYRO_Y = -11.816793 
+ GYRO_Z = 5.633588
+[0;32mI (7527) BALANCER: Waited 5ms[0m
+[0;32mI (7527) BALANCER: gyro_x: -1420 [0m
+ gyro_y: -877 
+ gyro_z: 188
+GYRO_X = -21.679390 
+ GYRO_Y = -13.389313 
+ GYRO_Z = 2.870229
+[0;32mI (7537) BALANCER: Waited 5ms[0m
+[0;32mI (7547) BALANCER: gyro_x: -1482 [0m
+ gyro_y: -757 
+ gyro_z: -208
+GYRO_X = -22.625954 
+ GYRO_Y = -11.557252 
+ GYRO_Z = -3.175573
+[0;32mI (7557) BALANCER: Waited 5ms[0m
+[0;32mI (7557) BALANCER: gyro_x: -1476 [0m
+ gyro_y: -639 
+ gyro_z: -591
+GYRO_X = -22.534351 
+ GYRO_Y = -9.755725 
+ GYRO_Z = -9.022901
+[0;32mI (7567) BALANCER: Waited 5ms[0m
+[0;32mI (7567) BALANCER: gyro_x: -1473 [0m
+ gyro_y: -725 
+ gyro_z: -735
+GYRO_X = -22.488550 
+ GYRO_Y = -11.068703 
+ GYRO_Z = -11.221375
+[0;32mI (7587) BALANCER: Waited 5ms[0m
+[0;32mI (7587) BALANCER: gyro_x: -1508 [0m
+ gyro_y: -890 
+ gyro_z: -621
+GYRO_X = -23.022902 
+ GYRO_Y = -13.587787 
+ GYRO_Z = -9.480916
+[0;32mI (7597) BALANCER: Waited 5ms[0m
+[0;32mI (7597) BALANCER: gyro_x: -1579 [0m
+ gyro_y: -819 
+ gyro_z: -352
+GYRO_X = -24.106871 
+ GYRO_Y = -12.503817 
+ GYRO_Z = -5.374046
+[0;32mI (7607) BALANCER: Waited 5ms[0m
+[0;32mI (7617) BALANCER: gyro_x: -1687 [0m
+ gyro_y: -906 
+ gyro_z: -148
+GYRO_X = -25.755726 
+ GYRO_Y = -13.832061 
+ GYRO_Z = -2.259542
+[0;32mI (7627) BALANCER: Waited 5ms[0m
+[0;32mI (7627) BALANCER: gyro_x: -1711 [0m
+ gyro_y: -948 
+ gyro_z: -124
+GYRO_X = -26.122137 
+ GYRO_Y = -14.473283 
+ GYRO_Z = -1.893130
+[0;32mI (7637) BALANCER: Waited 5ms[0m
+[0;32mI (7647) BALANCER: gyro_x: -1704 [0m
+ gyro_y: -900 
+ gyro_z: -146
+GYRO_X = -26.015266 
+ GYRO_Y = -13.740458 
+ GYRO_Z = -2.229008
+[0;32mI (7657) BALANCER: Waited 5ms[0m
+[0;32mI (7657) BALANCER: gyro_x: -1533 [0m
+ gyro_y: -823 
+ gyro_z: -144
+GYRO_X = -23.404581 
+ GYRO_Y = -12.564885 
+ GYRO_Z = -2.198473
+[0;32mI (7667) BALANCER: Waited 5ms[0m
+[0;32mI (7667) BALANCER: gyro_x: -1359 [0m
+ gyro_y: -742 
+ gyro_z: -121
+GYRO_X = -20.748091 
+ GYRO_Y = -11.328244 
+ GYRO_Z = -1.847328
+[0;32mI (7677) BALANCER: Waited 5ms[0m
+[0;32mI (7687) BALANCER: gyro_x: -1036 [0m
+ gyro_y: -667 
+ gyro_z: -46
+GYRO_X = -15.816793 
+ GYRO_Y = -10.183207 
+ GYRO_Z = -0.702290
+[0;32mI (7697) BALANCER: Waited 5ms[0m
+[0;32mI (7697) BALANCER: gyro_x: -756 [0m
+ gyro_y: -632 
+ gyro_z: 139
+GYRO_X = -11.541985 
+ GYRO_Y = -9.648855 
+ GYRO_Z = 2.122137
+[0;32mI (7707) BALANCER: Waited 5ms[0m
+[0;32mI (7717) BALANCER: gyro_x: -418 [0m
+ gyro_y: -377 
+ gyro_z: 165
+GYRO_X = -6.381680 
+ GYRO_Y = -5.755725 
+ GYRO_Z = 2.519084
+[0;32mI (7727) BALANCER: Waited 5ms[0m
+[0;32mI (7727) BALANCER: gyro_x: -100 [0m
+ gyro_y: -84 
+ gyro_z: 179
+GYRO_X = -1.526718 
+ GYRO_Y = -1.282443 
+ GYRO_Z = 2.732824
+[0;32mI (7737) BALANCER: Waited 5ms[0m
+[0;32mI (7737) BALANCER: gyro_x: 106 [0m
+ gyro_y: 121 
+ gyro_z: 228
+GYRO_X = 1.618321 
+ GYRO_Y = 1.847328 
+ GYRO_Z = 3.480916
+[0;32mI (7747) BALANCER: Waited 5ms[0m
+[0;32mI (7757) BALANCER: gyro_x: 340 [0m
+ gyro_y: 471 
+ gyro_z: 276
+GYRO_X = 5.190840 
+ GYRO_Y = 7.190840 
+ GYRO_Z = 4.213740
+[0;32mI (7767) BALANCER: Waited 5ms[0m
+[0;32mI (7767) BALANCER: gyro_x: 477 [0m
+ gyro_y: 794 
+ gyro_z: 201
+GYRO_X = 7.282443 
+ GYRO_Y = 12.122137 
+ GYRO_Z = 3.068702
+[0;32mI (7777) BALANCER: Waited 5ms[0m
+[0;32mI (7777) BALANCER: gyro_x: 515 [0m
+ gyro_y: 935 
+ gyro_z: 98
+GYRO_X = 7.862596 
+ GYRO_Y = 14.274809 
+ GYRO_Z = 1.496183
+[0;32mI (7787) BALANCER: Waited 5ms[0m
+[0;32mI (7797) BALANCER: gyro_x: 433 [0m
+ gyro_y: 1079 
+ gyro_z: -34
+GYRO_X = 6.610687 
+ GYRO_Y = 16.473282 
+ GYRO_Z = -0.519084
+[0;32mI (7807) BALANCER: Waited 5ms[0m
+[0;32mI (7807) BALANCER: gyro_x: 204 [0m
+ gyro_y: 923 
+ gyro_z: -55
+GYRO_X = 3.114504 
+ GYRO_Y = 14.091603 
+ GYRO_Z = -0.839695
+[0;32mI (7817) BALANCER: Waited 5ms[0m
+[0;32mI (7817) BALANCER: gyro_x: 3 [0m
+ gyro_y: 750 
+ gyro_z: -5
+GYRO_X = 0.045802 
+ GYRO_Y = 11.450381 
+ GYRO_Z = -0.076336
+[0;32mI (7827) BALANCER: Waited 5ms[0m
+[0;32mI (7837) BALANCER: gyro_x: -315 [0m
+ gyro_y: 368 
+ gyro_z: 142
+GYRO_X = -4.809160 
+ GYRO_Y = 5.618320 
+ GYRO_Z = 2.167939
+[0;32mI (7847) BALANCER: Waited 5ms[0m
+[0;32mI (7847) BALANCER: gyro_x: -593 [0m
+ gyro_y: -112 
+ gyro_z: 356
+GYRO_X = -9.053435 
+ GYRO_Y = -1.709924 
+ GYRO_Z = 5.435114
+[0;32mI (7857) BALANCER: Waited 5ms[0m
+[0;32mI (7857) BALANCER: gyro_x: -720 [0m
+ gyro_y: -392 
+ gyro_z: 496
+GYRO_X = -10.992367 
+ GYRO_Y = -5.984733 
+ GYRO_Z = 7.572519
+[0;32mI (7867) BALANCER: Waited 5ms[0m
+[0;32mI (7877) BALANCER: gyro_x: -717 [0m
+ gyro_y: -487 
+ gyro_z: 487
+GYRO_X = -10.946565 
+ GYRO_Y = -7.435114 
+ GYRO_Z = 7.435114
+[0;32mI (7887) BALANCER: Waited 5ms[0m
+[0;32mI (7887) BALANCER: gyro_x: -642 [0m
+ gyro_y: -572 
+ gyro_z: 355
+GYRO_X = -9.801527 
+ GYRO_Y = -8.732824 
+ GYRO_Z = 5.419847
+[0;32mI (7897) BALANCER: Waited 5ms[0m
+[0;32mI (7907) BALANCER: gyro_x: -571 [0m
+ gyro_y: -544 
+ gyro_z: 325
+GYRO_X = -8.717557 
+ GYRO_Y = -8.305344 
+ GYRO_Z = 4.961832
+[0;32mI (7917) BALANCER: Waited 5ms[0m
+[0;32mI (7917) BALANCER: gyro_x: -566 [0m
+ gyro_y: -572 
+ gyro_z: 467
+GYRO_X = -8.641221 
+ GYRO_Y = -8.732824 
+ GYRO_Z = 7.129771
+[0;32mI (7927) BALANCER: Waited 5ms[0m
+[0;32mI (7927) BALANCER: gyro_x: -556 [0m
+ gyro_y: -612 
+ gyro_z: 633
+GYRO_X = -8.488549 
+ GYRO_Y = -9.343512 
+ GYRO_Z = 9.664123
+[0;32mI (7937) BALANCER: Waited 5ms[0m
+[0;32mI (7947) BALANCER: gyro_x: -488 [0m
+ gyro_y: -536 
+ gyro_z: 828
+GYRO_X = -7.450382 
+ GYRO_Y = -8.183207 
+ GYRO_Z = 12.641221
+[0;32mI (7957) BALANCER: Waited 5ms[0m
+[0;32mI (7957) BALANCER: gyro_x: -312 [0m
+ gyro_y: -361 
+ gyro_z: 878
+GYRO_X = -4.763359 
+ GYRO_Y = -5.511450 
+ GYRO_Z = 13.404580
+[0;32mI (7967) BALANCER: Waited 5ms[0m
+[0;32mI (7967) BALANCER: gyro_x: -76 [0m
+ gyro_y: -29 
+ gyro_z: 786
+GYRO_X = -1.160305 
+ GYRO_Y = -0.442748 
+ GYRO_Z = 12.000000
+[0;32mI (7977) BALANCER: Waited 5ms[0m
+[0;32mI (7987) BALANCER: gyro_x: 93 [0m
+ gyro_y: 285 
+ gyro_z: 610
+GYRO_X = 1.419847 
+ GYRO_Y = 4.351145 
+ GYRO_Z = 9.312977
+[0;32mI (7997) BALANCER: Waited 5ms[0m
+[0;32mI (7997) BALANCER: gyro_x: 339 [0m
+ gyro_y: 756 
+ gyro_z: 264
+GYRO_X = 5.175572 
+ GYRO_Y = 11.541985 
+ GYRO_Z = 4.030534
+[0;32mI (8007) BALANCER: Waited 5ms[0m
+[0;32mI (8007) BALANCER: gyro_x: 454 [0m
+ gyro_y: 930 
+ gyro_z: 141
+GYRO_X = 6.931298 
+ GYRO_Y = 14.198473 
+ GYRO_Z = 2.152672
+[0;32mI (8017) BALANCER: Waited 5ms[0m
+[0;32mI (8027) BALANCER: gyro_x: 422 [0m
+ gyro_y: 944 
+ gyro_z: 255
+GYRO_X = 6.442748 
+ GYRO_Y = 14.412213 
+ GYRO_Z = 3.893130
+[0;32mI (8037) BALANCER: Waited 5ms[0m
+[0;32mI (8037) BALANCER: gyro_x: 230 [0m
+ gyro_y: 745 
+ gyro_z: 563
+GYRO_X = 3.511450 
+ GYRO_Y = 11.374045 
+ GYRO_Z = 8.595420
+[0;32mI (8047) BALANCER: Waited 5ms[0m
+[0;32mI (8047) BALANCER: gyro_x: -9 [0m
+ gyro_y: 315 
+ gyro_z: 874
+GYRO_X = -0.137405 
+ GYRO_Y = 4.809160 
+ GYRO_Z = 13.343512
+[0;32mI (8067) BALANCER: Waited 5ms[0m
+[0;32mI (8067) BALANCER: gyro_x: -124 [0m
+ gyro_y: -17 
+ gyro_z: 1067
+GYRO_X = -1.893130 
+ GYRO_Y = -0.259542 
+ GYRO_Z = 16.290077
+[0;32mI (8077) BALANCER: Waited 5ms[0m
+[0;32mI (8077) BALANCER: gyro_x: -172 [0m
+ gyro_y: -430 
+ gyro_z: 1131
+GYRO_X = -2.625954 
+ GYRO_Y = -6.564886 
+ GYRO_Z = 17.267176
+[0;32mI (8087) BALANCER: Waited 5ms[0m
+[0;32mI (8097) BALANCER: gyro_x: -36 [0m
+ gyro_y: -489 
+ gyro_z: 769
+GYRO_X = -0.549618 
+ GYRO_Y = -7.465649 
+ GYRO_Z = 11.740458
+[0;32mI (8107) BALANCER: Waited 5ms[0m
+[0;32mI (8107) BALANCER: gyro_x: 232 [0m
+ gyro_y: -374 
+ gyro_z: 136
+GYRO_X = 3.541985 
+ GYRO_Y = -5.709924 
+ GYRO_Z = 2.076336
+[0;32mI (8117) BALANCER: Waited 5ms[0m
+[0;32mI (8117) BALANCER: gyro_x: 382 [0m
+ gyro_y: -281 
+ gyro_z: -235
+GYRO_X = 5.832061 
+ GYRO_Y = -4.290076 
+ GYRO_Z = -3.587786
+[0;32mI (8127) BALANCER: Waited 5ms[0m
+[0;32mI (8137) BALANCER: gyro_x: 406 [0m
+ gyro_y: -205 
+ gyro_z: -376
+GYRO_X = 6.198473 
+ GYRO_Y = -3.129771 
+ GYRO_Z = -5.740458
+[0;32mI (8147) BALANCER: Waited 5ms[0m
+[0;32mI (8147) BALANCER: gyro_x: 215 [0m
+ gyro_y: -163 
+ gyro_z: -70
+GYRO_X = 3.282443 
+ GYRO_Y = -2.488550 
+ GYRO_Z = -1.068702
+[0;32mI (8157) BALANCER: Waited 5ms[0m
+[0;32mI (8157) BALANCER: gyro_x: -36 [0m
+ gyro_y: -214 
+ gyro_z: 311
+GYRO_X = -0.549618 
+ GYRO_Y = -3.267176 
+ GYRO_Z = 4.748092
+[0;32mI (8167) BALANCER: Waited 5ms[0m
+[0;32mI (8177) BALANCER: gyro_x: -143 [0m
+ gyro_y: -214 
+ gyro_z: 422
+GYRO_X = -2.183206 
+ GYRO_Y = -3.267176 
+ GYRO_Z = 6.442748
+[0;32mI (8187) BALANCER: Waited 5ms[0m
+[0;32mI (8187) BALANCER: gyro_x: -152 [0m
+ gyro_y: -275 
+ gyro_z: 386
+GYRO_X = -2.320611 
+ GYRO_Y = -4.198473 
+ GYRO_Z = 5.893130
+[0;32mI (8197) BALANCER: Waited 5ms[0m
+[0;32mI (8207) BALANCER: gyro_x: -72 [0m
+ gyro_y: -350 
+ gyro_z: 160
+GYRO_X = -1.099237 
+ GYRO_Y = -5.343512 
+ GYRO_Z = 2.442748
+[0;32mI (8217) BALANCER: Waited 5ms[0m
+[0;32mI (8217) BALANCER: gyro_x: 96 [0m
+ gyro_y: -327 
+ gyro_z: -206
+GYRO_X = 1.465649 
+ GYRO_Y = -4.992366 
+ GYRO_Z = -3.145038
+[0;32mI (8227) BALANCER: Waited 5ms[0m
+[0;32mI (8227) BALANCER: gyro_x: 180 [0m
+ gyro_y: -368 
+ gyro_z: -343
+GYRO_X = 2.748092 
+ GYRO_Y = -5.618320 
+ GYRO_Z = -5.236641
+[0;32mI (8237) BALANCER: Waited 5ms[0m
+[0;32mI (8247) BALANCER: gyro_x: 190 [0m
+ gyro_y: -490 
+ gyro_z: -215
+GYRO_X = 2.900763 
+ GYRO_Y = -7.480916 
+ GYRO_Z = -3.282443
+[0;32mI (8257) BALANCER: Waited 5ms[0m
+[0;32mI (8257) BALANCER: gyro_x: 131 [0m
+ gyro_y: -534 
+ gyro_z: 67
+GYRO_X = 2.000000 
+ GYRO_Y = -8.152672 
+ GYRO_Z = 1.022901
+[0;32mI (8267) BALANCER: Waited 5ms[0m
+[0;32mI (8267) BALANCER: gyro_x: 80 [0m
+ gyro_y: -550 
+ gyro_z: 226
+GYRO_X = 1.221374 
+ GYRO_Y = -8.396947 
+ GYRO_Z = 3.450382
+[0;32mI (8277) BALANCER: Waited 5ms[0m
+[0;32mI (8287) BALANCER: gyro_x: 19 [0m
+ gyro_y: -466 
+ gyro_z: 280
+GYRO_X = 0.290076 
+ GYRO_Y = -7.114504 
+ GYRO_Z = 4.274809
+[0;32mI (8297) BALANCER: Waited 5ms[0m
+[0;32mI (8297) BALANCER: gyro_x: 48 [0m
+ gyro_y: -240 
+ gyro_z: 5
+GYRO_X = 0.732824 
+ GYRO_Y = -3.664122 
+ GYRO_Z = 0.076336
+[0;32mI (8307) BALANCER: Waited 5ms[0m
+[0;32mI (8307) BALANCER: gyro_x: 100 [0m
+ gyro_y: -62 
+ gyro_z: -253
+GYRO_X = 1.526718 
+ GYRO_Y = -0.946565 
+ GYRO_Z = -3.862595
+[0;32mI (8317) BALANCER: Waited 5ms[0m
+[0;32mI (8327) BALANCER: gyro_x: 123 [0m
+ gyro_y: 96 
+ gyro_z: -468
+GYRO_X = 1.877863 
+ GYRO_Y = 1.465649 
+ GYRO_Z = -7.145038
+[0;32mI (8337) BALANCER: Waited 5ms[0m
+[0;32mI (8337) BALANCER: gyro_x: 35 [0m
+ gyro_y: 135 
+ gyro_z: -382
+GYRO_X = 0.534351 
+ GYRO_Y = 2.061069 
+ GYRO_Z = -5.832061
+[0;32mI (8347) BALANCER: Waited 5ms[0m
+[0;32mI (8347) BALANCER: gyro_x: -70 [0m
+ gyro_y: 91 
+ gyro_z: -183
+GYRO_X = -1.068702 
+ GYRO_Y = 1.389313 
+ GYRO_Z = -2.793893
+[0;32mI (8357) BALANCER: Waited 5ms[0m
+[0;32mI (8367) BALANCER: gyro_x: -131 [0m
+ gyro_y: 4 
+ gyro_z: -48
+GYRO_X = -2.000000 
+ GYRO_Y = 0.061069 
+ GYRO_Z = -0.732824
+[0;32mI (8377) BALANCER: Waited 5ms[0m
+[0;32mI (8377) BALANCER: gyro_x: -216 [0m
+ gyro_y: -194 
+ gyro_z: 133
+GYRO_X = -3.297710 
+ GYRO_Y = -2.961832 
+ GYRO_Z = 2.030534
+[0;32mI (8387) BALANCER: Waited 5ms[0m
+[0;32mI (8387) BALANCER: gyro_x: -245 [0m
+ gyro_y: -354 
+ gyro_z: 197
+GYRO_X = -3.740458 
+ GYRO_Y = -5.404580 
+ GYRO_Z = 3.007634
+[0;32mI (8407) BALANCER: Waited 5ms[0m
+[0;32mI (8407) BALANCER: gyro_x: -216 [0m
+ gyro_y: -373 
+ gyro_z: 91
+GYRO_X = -3.297710 
+ GYRO_Y = -5.694656 
+ GYRO_Z = 1.389313
+[0;32mI (8417) BALANCER: Waited 5ms[0m
+[0;32mI (8417) BALANCER: gyro_x: -49 [0m
+ gyro_y: -223 
+ gyro_z: -300
+GYRO_X = -0.748092 
+ GYRO_Y = -3.404580 
+ GYRO_Z = -4.580153
+[0;32mI (8427) BALANCER: Waited 5ms[0m
+[0;32mI (8437) BALANCER: gyro_x: 112 [0m
+ gyro_y: 48 
+ gyro_z: -700
+GYRO_X = 1.709924 
+ GYRO_Y = 0.732824 
+ GYRO_Z = -10.687023
+[0;32mI (8447) BALANCER: Waited 5ms[0m
+[0;32mI (8447) BALANCER: gyro_x: 124 [0m
+ gyro_y: 282 
+ gyro_z: -775
+GYRO_X = 1.893130 
+ GYRO_Y = 4.305344 
+ GYRO_Z = -11.832061
+[0;32mI (8457) BALANCER: Waited 5ms[0m
+[0;32mI (8457) BALANCER: gyro_x: 23 [0m
+ gyro_y: 374 
+ gyro_z: -615
+GYRO_X = 0.351145 
+ GYRO_Y = 5.709924 
+ GYRO_Z = -9.389313
+[0;32mI (8467) BALANCER: Waited 5ms[0m
+[0;32mI (8477) BALANCER: gyro_x: -223 [0m
+ gyro_y: 276 
+ gyro_z: -144
+GYRO_X = -3.404580 
+ GYRO_Y = 4.213740 
+ GYRO_Z = -2.198473
+[0;32mI (8487) BALANCER: Waited 5ms[0m
+[0;32mI (8487) BALANCER: gyro_x: -446 [0m
+ gyro_y: 115 
+ gyro_z: 301
+GYRO_X = -6.809160 
+ GYRO_Y = 1.755725 
+ GYRO_Z = 4.595420
+[0;32mI (8497) BALANCER: Waited 5ms[0m
+[0;32mI (8497) BALANCER: gyro_x: -492 [0m
+ gyro_y: 72 
+ gyro_z: 394
+GYRO_X = -7.511450 
+ GYRO_Y = 1.099237 
+ GYRO_Z = 6.015267
+[0;32mI (8507) BALANCER: Waited 5ms[0m
+[0;32mI (8517) BALANCER: gyro_x: -342 [0m
+ gyro_y: 115 
+ gyro_z: 152
+GYRO_X = -5.221374 
+ GYRO_Y = 1.755725 
+ GYRO_Z = 2.320611
+[0;32mI (8527) BALANCER: Waited 5ms[0m
+[0;32mI (8527) BALANCER: gyro_x: -25 [0m
+ gyro_y: 242 
+ gyro_z: -300
+GYRO_X = -0.381679 
+ GYRO_Y = 3.694656 
+ GYRO_Z = -4.580153
+[0;32mI (8537) BALANCER: Waited 5ms[0m
+[0;32mI (8537) BALANCER: gyro_x: 220 [0m
+ gyro_y: 304 
+ gyro_z: -545
+GYRO_X = 3.358779 
+ GYRO_Y = 4.641222 
+ GYRO_Z = -8.320611
+[0;32mI (8547) BALANCER: Waited 5ms[0m
+[0;32mI (8557) BALANCER: gyro_x: 208 [0m
+ gyro_y: 241 
+ gyro_z: -465
+GYRO_X = 3.175573 
+ GYRO_Y = 3.679389 
+ GYRO_Z = -7.099236
+[0;32mI (8567) BALANCER: Waited 5ms[0m
+[0;32mI (8567) BALANCER: gyro_x: 16 [0m
+ gyro_y: 119 
+ gyro_z: -135
+GYRO_X = 0.244275 
+ GYRO_Y = 1.816794 
+ GYRO_Z = -2.061069
+[0;32mI (8577) BALANCER: Waited 5ms[0m
+[0;32mI (8577) BALANCER: gyro_x: -244 [0m
+ gyro_y: -27 
+ gyro_z: 151
+GYRO_X = -3.725191 
+ GYRO_Y = -0.412214 
+ GYRO_Z = 2.305344
+[0;32mI (8597) BALANCER: Waited 5ms[0m
+[0;32mI (8597) BALANCER: gyro_x: -342 [0m
+ gyro_y: -93 
+ gyro_z: 191
+GYRO_X = -5.221374 
+ GYRO_Y = -1.419847 
+ GYRO_Z = 2.916031
+[0;32mI (8607) BALANCER: Waited 5ms[0m
+[0;32mI (8607) BALANCER: gyro_x: -307 [0m
+ gyro_y: -73 
+ gyro_z: -19
+GYRO_X = -4.687023 
+ GYRO_Y = -1.114504 
+ GYRO_Z = -0.290076
+[0;32mI (8617) BALANCER: Waited 5ms[0m
+[0;32mI (8627) BALANCER: gyro_x: -129 [0m
+ gyro_y: 3 
+ gyro_z: -358
+GYRO_X = -1.969466 
+ GYRO_Y = 0.045802 
+ GYRO_Z = -5.465649
+[0;32mI (8637) BALANCER: Waited 5ms[0m
+[0;32mI (8637) BALANCER: gyro_x: -34 [0m
+ gyro_y: 19 
+ gyro_z: -471
+GYRO_X = -0.519084 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -7.190840
+[0;32mI (8647) BALANCER: Waited 5ms[0m
+[0;32mI (8647) BALANCER: gyro_x: -61 [0m
+ gyro_y: -14 
+ gyro_z: -362
+GYRO_X = -0.931298 
+ GYRO_Y = -0.213740 
+ GYRO_Z = -5.526718
+[0;32mI (8657) BALANCER: Waited 5ms[0m
+[0;32mI (8667) BALANCER: gyro_x: -176 [0m
+ gyro_y: -126 
+ gyro_z: -49
+GYRO_X = -2.687023 
+ GYRO_Y = -1.923664 
+ GYRO_Z = -0.748092
+[0;32mI (8677) BALANCER: Waited 5ms[0m
+[0;32mI (8677) BALANCER: gyro_x: -302 [0m
+ gyro_y: -287 
+ gyro_z: 289
+GYRO_X = -4.610687 
+ GYRO_Y = -4.381680 
+ GYRO_Z = 4.412214
+[0;32mI (8687) BALANCER: Waited 5ms[0m
+[0;32mI (8687) BALANCER: gyro_x: -332 [0m
+ gyro_y: -311 
+ gyro_z: 408
+GYRO_X = -5.068702 
+ GYRO_Y = -4.748092 
+ GYRO_Z = 6.229008
+[0;32mI (8697) BALANCER: Waited 5ms[0m
+[0;32mI (8707) BALANCER: gyro_x: -296 [0m
+ gyro_y: -304 
+ gyro_z: 367
+GYRO_X = -4.519084 
+ GYRO_Y = -4.641222 
+ GYRO_Z = 5.603054
+[0;32mI (8717) BALANCER: Waited 5ms[0m
+[0;32mI (8717) BALANCER: gyro_x: -171 [0m
+ gyro_y: -181 
+ gyro_z: 171
+GYRO_X = -2.610687 
+ GYRO_Y = -2.763359 
+ GYRO_Z = 2.610687
+[0;32mI (8727) BALANCER: Waited 5ms[0m
+[0;32mI (8737) BALANCER: gyro_x: -21 [0m
+ gyro_y: 72 
+ gyro_z: -167
+GYRO_X = -0.320611 
+ GYRO_Y = 1.099237 
+ GYRO_Z = -2.549618
+[0;32mI (8747) BALANCER: Waited 5ms[0m
+[0;32mI (8747) BALANCER: gyro_x: 82 [0m
+ gyro_y: 278 
+ gyro_z: -404
+GYRO_X = 1.251908 
+ GYRO_Y = 4.244275 
+ GYRO_Z = -6.167939
+[0;32mI (8757) BALANCER: Waited 5ms[0m
+[0;32mI (8757) BALANCER: gyro_x: 177 [0m
+ gyro_y: 521 
+ gyro_z: -669
+GYRO_X = 2.702290 
+ GYRO_Y = 7.954198 
+ GYRO_Z = -10.213740
+[0;32mI (8767) BALANCER: Waited 5ms[0m
+[0;32mI (8777) BALANCER: gyro_x: 95 [0m
+ gyro_y: 499 
+ gyro_z: -563
+GYRO_X = 1.450382 
+ GYRO_Y = 7.618320 
+ GYRO_Z = -8.595420
+[0;32mI (8787) BALANCER: Waited 5ms[0m
+[0;32mI (8787) BALANCER: gyro_x: -122 [0m
+ gyro_y: 390 
+ gyro_z: -306
+GYRO_X = -1.862595 
+ GYRO_Y = 5.954198 
+ GYRO_Z = -4.671756
+[0;32mI (8797) BALANCER: Waited 5ms[0m
+[0;32mI (8797) BALANCER: gyro_x: -215 [0m
+ gyro_y: 304 
+ gyro_z: -166
+GYRO_X = -3.282443 
+ GYRO_Y = 4.641222 
+ GYRO_Z = -2.534351
+[0;32mI (8807) BALANCER: Waited 5ms[0m
+[0;32mI (8817) BALANCER: gyro_x: -352 [0m
+ gyro_y: 83 
+ gyro_z: -37
+GYRO_X = -5.374046 
+ GYRO_Y = 1.267176 
+ GYRO_Z = -0.564885
+[0;32mI (8827) BALANCER: Waited 5ms[0m
+[0;32mI (8827) BALANCER: gyro_x: -409 [0m
+ gyro_y: -100 
+ gyro_z: -6
+GYRO_X = -6.244275 
+ GYRO_Y = -1.526718 
+ GYRO_Z = -0.091603
+[0;32mI (8837) BALANCER: Waited 5ms[0m
+[0;32mI (8837) BALANCER: gyro_x: -428 [0m
+ gyro_y: -209 
+ gyro_z: 40
+GYRO_X = -6.534351 
+ GYRO_Y = -3.190840 
+ GYRO_Z = 0.610687
+[0;32mI (8847) BALANCER: Waited 5ms[0m
+[0;32mI (8857) BALANCER: gyro_x: -395 [0m
+ gyro_y: -420 
+ gyro_z: 111
+GYRO_X = -6.030534 
+ GYRO_Y = -6.412214 
+ GYRO_Z = 1.694656
+[0;32mI (8867) BALANCER: Waited 5ms[0m
+[0;32mI (8867) BALANCER: gyro_x: -287 [0m
+ gyro_y: -535 
+ gyro_z: 170
+GYRO_X = -4.381680 
+ GYRO_Y = -8.167939 
+ GYRO_Z = 2.595420
+[0;32mI (8877) BALANCER: Waited 5ms[0m
+[0;32mI (8887) BALANCER: gyro_x: -199 [0m
+ gyro_y: -553 
+ gyro_z: 214
+GYRO_X = -3.038168 
+ GYRO_Y = -8.442748 
+ GYRO_Z = 3.267176
+[0;32mI (8897) BALANCER: Waited 5ms[0m
+[0;32mI (8897) BALANCER: gyro_x: -127 [0m
+ gyro_y: -545 
+ gyro_z: 252
+GYRO_X = -1.938931 
+ GYRO_Y = -8.320611 
+ GYRO_Z = 3.847328
+[0;32mI (8907) BALANCER: Waited 5ms[0m
+[0;32mI (8907) BALANCER: gyro_x: -72 [0m
+ gyro_y: -431 
+ gyro_z: 272
+GYRO_X = -1.099237 
+ GYRO_Y = -6.580153 
+ GYRO_Z = 4.152672
+[0;32mI (8917) BALANCER: Waited 5ms[0m
+[0;32mI (8927) BALANCER: gyro_x: -34 [0m
+ gyro_y: -231 
+ gyro_z: 200
+GYRO_X = -0.519084 
+ GYRO_Y = -3.526718 
+ GYRO_Z = 3.053435
+[0;32mI (8937) BALANCER: Waited 5ms[0m
+[0;32mI (8937) BALANCER: gyro_x: -64 [0m
+ gyro_y: -40 
+ gyro_z: 106
+GYRO_X = -0.977099 
+ GYRO_Y = -0.610687 
+ GYRO_Z = 1.618321
+[0;32mI (8947) BALANCER: Waited 5ms[0m
+[0;32mI (8947) BALANCER: gyro_x: -102 [0m
+ gyro_y: 41 
+ gyro_z: 106
+GYRO_X = -1.557252 
+ GYRO_Y = 0.625954 
+ GYRO_Z = 1.618321
+[0;32mI (8957) BALANCER: Waited 5ms[0m
+[0;32mI (8967) BALANCER: gyro_x: -196 [0m
+ gyro_y: 96 
+ gyro_z: 239
+GYRO_X = -2.992366 
+ GYRO_Y = 1.465649 
+ GYRO_Z = 3.648855
+[0;32mI (8977) BALANCER: Waited 5ms[0m
+[0;32mI (8977) BALANCER: gyro_x: -276 [0m
+ gyro_y: 98 
+ gyro_z: 334
+GYRO_X = -4.213740 
+ GYRO_Y = 1.496183 
+ GYRO_Z = 5.099236
+[0;32mI (8987) BALANCER: Waited 5ms[0m
+[0;32mI (8987) BALANCER: gyro_x: -307 [0m
+ gyro_y: 42 
+ gyro_z: 325
+GYRO_X = -4.687023 
+ GYRO_Y = 0.641221 
+ GYRO_Z = 4.961832
+[0;32mI (8997) BALANCER: Waited 5ms[0m
+[0;32mI (9007) BALANCER: gyro_x: -310 [0m
+ gyro_y: -98 
+ gyro_z: 263
+GYRO_X = -4.732824 
+ GYRO_Y = -1.496183 
+ GYRO_Z = 4.015267
+[0;32mI (9017) BALANCER: Waited 5ms[0m
+[0;32mI (9017) BALANCER: gyro_x: -277 [0m
+ gyro_y: -257 
+ gyro_z: 254
+GYRO_X = -4.229008 
+ GYRO_Y = -3.923664 
+ GYRO_Z = 3.877863
+[0;32mI (9027) BALANCER: Waited 5ms[0m
+[0;32mI (9027) BALANCER: gyro_x: -274 [0m
+ gyro_y: -364 
+ gyro_z: 376
+GYRO_X = -4.183206 
+ GYRO_Y = -5.557252 
+ GYRO_Z = 5.740458
+[0;32mI (9047) BALANCER: Waited 5ms[0m
+[0;32mI (9047) BALANCER: gyro_x: -298 [0m
+ gyro_y: -381 
+ gyro_z: 469
+GYRO_X = -4.549618 
+ GYRO_Y = -5.816794 
+ GYRO_Z = 7.160306
+[0;32mI (9057) BALANCER: Waited 5ms[0m
+[0;32mI (9057) BALANCER: gyro_x: -320 [0m
+ gyro_y: -379 
+ gyro_z: 549
+GYRO_X = -4.885496 
+ GYRO_Y = -5.786260 
+ GYRO_Z = 8.381680
+[0;32mI (9067) BALANCER: Waited 5ms[0m
+[0;32mI (9077) BALANCER: gyro_x: -305 [0m
+ gyro_y: -320 
+ gyro_z: 560
+GYRO_X = -4.656488 
+ GYRO_Y = -4.885496 
+ GYRO_Z = 8.549619
+[0;32mI (9087) BALANCER: Waited 5ms[0m
+[0;32mI (9087) BALANCER: gyro_x: -287 [0m
+ gyro_y: -218 
+ gyro_z: 527
+GYRO_X = -4.381680 
+ GYRO_Y = -3.328244 
+ GYRO_Z = 8.045801
+[0;32mI (9097) BALANCER: Waited 5ms[0m
+[0;32mI (9097) BALANCER: gyro_x: -264 [0m
+ gyro_y: -126 
+ gyro_z: 514
+GYRO_X = -4.030534 
+ GYRO_Y = -1.923664 
+ GYRO_Z = 7.847328
+[0;32mI (9107) BALANCER: Waited 5ms[0m
+[0;32mI (9117) BALANCER: gyro_x: -247 [0m
+ gyro_y: 13 
+ gyro_z: 536
+GYRO_X = -3.770992 
+ GYRO_Y = 0.198473 
+ GYRO_Z = 8.183207
+[0;32mI (9127) BALANCER: Waited 5ms[0m
+[0;32mI (9127) BALANCER: gyro_x: -192 [0m
+ gyro_y: 122 
+ gyro_z: 578
+GYRO_X = -2.931298 
+ GYRO_Y = 1.862595 
+ GYRO_Z = 8.824428
+[0;32mI (9137) BALANCER: Waited 5ms[0m
+[0;32mI (9137) BALANCER: gyro_x: -164 [0m
+ gyro_y: 228 
+ gyro_z: 607
+GYRO_X = -2.503817 
+ GYRO_Y = 3.480916 
+ GYRO_Z = 9.267176
+[0;32mI (9147) BALANCER: Waited 5ms[0m
+[0;32mI (9157) BALANCER: gyro_x: -109 [0m
+ gyro_y: 362 
+ gyro_z: 618
+GYRO_X = -1.664122 
+ GYRO_Y = 5.526718 
+ GYRO_Z = 9.435115
+[0;32mI (9167) BALANCER: Waited 5ms[0m
+[0;32mI (9167) BALANCER: gyro_x: -103 [0m
+ gyro_y: 425 
+ gyro_z: 611
+GYRO_X = -1.572519 
+ GYRO_Y = 6.488550 
+ GYRO_Z = 9.328244
+[0;32mI (9177) BALANCER: Waited 5ms[0m
+[0;32mI (9177) BALANCER: gyro_x: -107 [0m
+ gyro_y: 450 
+ gyro_z: 578
+GYRO_X = -1.633588 
+ GYRO_Y = 6.870229 
+ GYRO_Z = 8.824428
+[0;32mI (9187) BALANCER: Waited 5ms[0m
+[0;32mI (9197) BALANCER: gyro_x: -137 [0m
+ gyro_y: 434 
+ gyro_z: 518
+GYRO_X = -2.091603 
+ GYRO_Y = 6.625954 
+ GYRO_Z = 7.908397
+[0;32mI (9207) BALANCER: Waited 5ms[0m
+[0;32mI (9207) BALANCER: gyro_x: -217 [0m
+ gyro_y: 352 
+ gyro_z: 486
+GYRO_X = -3.312977 
+ GYRO_Y = 5.374046 
+ GYRO_Z = 7.419847
+[0;32mI (9217) BALANCER: Waited 5ms[0m
+[0;32mI (9227) BALANCER: gyro_x: -270 [0m
+ gyro_y: 288 
+ gyro_z: 424
+GYRO_X = -4.122138 
+ GYRO_Y = 4.396946 
+ GYRO_Z = 6.473282
+[0;32mI (9237) BALANCER: Waited 5ms[0m
+[0;32mI (9237) BALANCER: gyro_x: -271 [0m
+ gyro_y: 187 
+ gyro_z: 369
+GYRO_X = -4.137404 
+ GYRO_Y = 2.854962 
+ GYRO_Z = 5.633588
+[0;32mI (9247) BALANCER: Waited 5ms[0m
+[0;32mI (9247) BALANCER: gyro_x: -271 [0m
+ gyro_y: 33 
+ gyro_z: 260
+GYRO_X = -4.137404 
+ GYRO_Y = 0.503817 
+ GYRO_Z = 3.969466
+[0;32mI (9257) BALANCER: Waited 5ms[0m
+[0;32mI (9267) BALANCER: gyro_x: -280 [0m
+ gyro_y: -149 
+ gyro_z: 178
+GYRO_X = -4.274809 
+ GYRO_Y = -2.274809 
+ GYRO_Z = 2.717557
+[0;32mI (9277) BALANCER: Waited 5ms[0m
+[0;32mI (9277) BALANCER: gyro_x: -291 [0m
+ gyro_y: -255 
+ gyro_z: 128
+GYRO_X = -4.442748 
+ GYRO_Y = -3.893130 
+ GYRO_Z = 1.954198
+[0;32mI (9287) BALANCER: Waited 5ms[0m
+[0;32mI (9287) BALANCER: gyro_x: -330 [0m
+ gyro_y: -384 
+ gyro_z: 54
+GYRO_X = -5.038168 
+ GYRO_Y = -5.862596 
+ GYRO_Z = 0.824427
+[0;32mI (9297) BALANCER: Waited 5ms[0m
+[0;32mI (9307) BALANCER: gyro_x: -404 [0m
+ gyro_y: -495 
+ gyro_z: 18
+GYRO_X = -6.167939 
+ GYRO_Y = -7.557252 
+ GYRO_Z = 0.274809
+[0;32mI (9317) BALANCER: Waited 5ms[0m
+[0;32mI (9317) BALANCER: gyro_x: -501 [0m
+ gyro_y: -589 
+ gyro_z: 52
+GYRO_X = -7.648855 
+ GYRO_Y = -8.992367 
+ GYRO_Z = 0.793893
+[0;32mI (9327) BALANCER: Waited 5ms[0m
+[0;32mI (9327) BALANCER: gyro_x: -551 [0m
+ gyro_y: -619 
+ gyro_z: 82
+GYRO_X = -8.412213 
+ GYRO_Y = -9.450381 
+ GYRO_Z = 1.251908
+[0;32mI (9337) BALANCER: Waited 5ms[0m
+[0;32mI (9347) BALANCER: gyro_x: -575 [0m
+ gyro_y: -593 
+ gyro_z: 160
+GYRO_X = -8.778625 
+ GYRO_Y = -9.053435 
+ GYRO_Z = 2.442748
+[0;32mI (9357) BALANCER: Waited 5ms[0m
+[0;32mI (9357) BALANCER: gyro_x: -521 [0m
+ gyro_y: -463 
+ gyro_z: 192
+GYRO_X = -7.954198 
+ GYRO_Y = -7.068702 
+ GYRO_Z = 2.931298
+[0;32mI (9367) BALANCER: Waited 5ms[0m
+[0;32mI (9367) BALANCER: gyro_x: -402 [0m
+ gyro_y: -335 
+ gyro_z: 149
+GYRO_X = -6.137404 
+ GYRO_Y = -5.114504 
+ GYRO_Z = 2.274809
+[0;32mI (9387) BALANCER: Waited 5ms[0m
+[0;32mI (9387) BALANCER: gyro_x: -305 [0m
+ gyro_y: -286 
+ gyro_z: 110
+GYRO_X = -4.656488 
+ GYRO_Y = -4.366412 
+ GYRO_Z = 1.679389
+[0;32mI (9397) BALANCER: Waited 5ms[0m
+[0;32mI (9397) BALANCER: gyro_x: -195 [0m
+ gyro_y: -219 
+ gyro_z: 70
+GYRO_X = -2.977099 
+ GYRO_Y = -3.343511 
+ GYRO_Z = 1.068702
+[0;32mI (9407) BALANCER: Waited 5ms[0m
+[0;32mI (9417) BALANCER: gyro_x: -106 [0m
+ gyro_y: -127 
+ gyro_z: 22
+GYRO_X = -1.618321 
+ GYRO_Y = -1.938931 
+ GYRO_Z = 0.335878
+[0;32mI (9427) BALANCER: Waited 5ms[0m
+[0;32mI (9427) BALANCER: gyro_x: -20 [0m
+ gyro_y: -25 
+ gyro_z: -25
+GYRO_X = -0.305344 
+ GYRO_Y = -0.381679 
+ GYRO_Z = -0.381679
+[0;32mI (9437) BALANCER: Waited 5ms[0m
+[0;32mI (9437) BALANCER: gyro_x: 17 [0m
+ gyro_y: 19 
+ gyro_z: -30
+GYRO_X = 0.259542 
+ GYRO_Y = 0.290076 
+ GYRO_Z = -0.458015
+[0;32mI (9447) BALANCER: Waited 5ms[0m
+[0;32mI (9457) BALANCER: gyro_x: 31 [0m
+ gyro_y: 32 
+ gyro_z: 81
+GYRO_X = 0.473282 
+ GYRO_Y = 0.488550 
+ GYRO_Z = 1.236641
+[0;32mI (9467) BALANCER: Waited 5ms[0m
+[0;32mI (9467) BALANCER: gyro_x: 15 [0m
+ gyro_y: 67 
+ gyro_z: 232
+GYRO_X = 0.229008 
+ GYRO_Y = 1.022901 
+ GYRO_Z = 3.541985
+[0;32mI (9477) BALANCER: Waited 5ms[0m
+[0;32mI (9477) BALANCER: gyro_x: 11 [0m
+ gyro_y: 78 
+ gyro_z: 309
+GYRO_X = 0.167939 
+ GYRO_Y = 1.190840 
+ GYRO_Z = 4.717557
+[0;32mI (9487) BALANCER: Waited 5ms[0m
+[0;32mI (9497) BALANCER: gyro_x: 40 [0m
+ gyro_y: 91 
+ gyro_z: 370
+GYRO_X = 0.610687 
+ GYRO_Y = 1.389313 
+ GYRO_Z = 5.648855
+[0;32mI (9507) BALANCER: Waited 5ms[0m
+[0;32mI (9507) BALANCER: gyro_x: 49 [0m
+ gyro_y: 74 
+ gyro_z: 377
+GYRO_X = 0.748092 
+ GYRO_Y = 1.129771 
+ GYRO_Z = 5.755725
+[0;32mI (9517) BALANCER: Waited 5ms[0m
+[0;32mI (9517) BALANCER: gyro_x: 53 [0m
+ gyro_y: 78 
+ gyro_z: 403
+GYRO_X = 0.809160 
+ GYRO_Y = 1.190840 
+ GYRO_Z = 6.152672
+[0;32mI (9527) BALANCER: Waited 5ms[0m
+[0;32mI (9537) BALANCER: gyro_x: 6 [0m
+ gyro_y: 114 
+ gyro_z: 418
+GYRO_X = 0.091603 
+ GYRO_Y = 1.740458 
+ GYRO_Z = 6.381680
+[0;32mI (9547) BALANCER: Waited 5ms[0m
+[0;32mI (9547) BALANCER: gyro_x: -38 [0m
+ gyro_y: 121 
+ gyro_z: 440
+GYRO_X = -0.580153 
+ GYRO_Y = 1.847328 
+ GYRO_Z = 6.717557
+[0;32mI (9557) BALANCER: Waited 5ms[0m
+[0;32mI (9557) BALANCER: gyro_x: -105 [0m
+ gyro_y: 84 
+ gyro_z: 496
+GYRO_X = -1.603053 
+ GYRO_Y = 1.282443 
+ GYRO_Z = 7.572519
+[0;32mI (9567) BALANCER: Waited 5ms[0m
+[0;32mI (9577) BALANCER: gyro_x: -132 [0m
+ gyro_y: 40 
+ gyro_z: 574
+GYRO_X = -2.015267 
+ GYRO_Y = 0.610687 
+ GYRO_Z = 8.763359
+[0;32mI (9587) BALANCER: Waited 5ms[0m
+[0;32mI (9587) BALANCER: gyro_x: -138 [0m
+ gyro_y: 21 
+ gyro_z: 614
+GYRO_X = -2.106870 
+ GYRO_Y = 0.320611 
+ GYRO_Z = 9.374045
+[0;32mI (9597) BALANCER: Waited 5ms[0m
+[0;32mI (9597) BALANCER: gyro_x: -114 [0m
+ gyro_y: 9 
+ gyro_z: 675
+GYRO_X = -1.740458 
+ GYRO_Y = 0.137405 
+ GYRO_Z = 10.305344
+[0;32mI (9607) BALANCER: Waited 5ms[0m
+[0;32mI (9617) BALANCER: gyro_x: -117 [0m
+ gyro_y: -26 
+ gyro_z: 771
+GYRO_X = -1.786260 
+ GYRO_Y = -0.396947 
+ GYRO_Z = 11.770992
+[0;32mI (9627) BALANCER: Waited 5ms[0m
+[0;32mI (9627) BALANCER: gyro_x: -99 [0m
+ gyro_y: 1 
+ gyro_z: 829
+GYRO_X = -1.511450 
+ GYRO_Y = 0.015267 
+ GYRO_Z = 12.656488
+[0;32mI (9637) BALANCER: Waited 5ms[0m
+[0;32mI (9637) BALANCER: gyro_x: -63 [0m
+ gyro_y: 46 
+ gyro_z: 857
+GYRO_X = -0.961832 
+ GYRO_Y = 0.702290 
+ GYRO_Z = 13.083969
+[0;32mI (9647) BALANCER: Waited 5ms[0m
+[0;32mI (9657) BALANCER: gyro_x: 5 [0m
+ gyro_y: 116 
+ gyro_z: 871
+GYRO_X = 0.076336 
+ GYRO_Y = 1.770992 
+ GYRO_Z = 13.297709
+[0;32mI (9667) BALANCER: Waited 5ms[0m
+[0;32mI (9667) BALANCER: gyro_x: 97 [0m
+ gyro_y: 201 
+ gyro_z: 881
+GYRO_X = 1.480916 
+ GYRO_Y = 3.068702 
+ GYRO_Z = 13.450381
+[0;32mI (9677) BALANCER: Waited 5ms[0m
+[0;32mI (9677) BALANCER: gyro_x: 180 [0m
+ gyro_y: 261 
+ gyro_z: 876
+GYRO_X = 2.748092 
+ GYRO_Y = 3.984733 
+ GYRO_Z = 13.374045
+[0;32mI (9687) BALANCER: Waited 5ms[0m
+[0;32mI (9697) BALANCER: gyro_x: 339 [0m
+ gyro_y: 322 
+ gyro_z: 902
+GYRO_X = 5.175572 
+ GYRO_Y = 4.916030 
+ GYRO_Z = 13.770992
+[0;32mI (9707) BALANCER: Waited 5ms[0m
+[0;32mI (9707) BALANCER: gyro_x: 443 [0m
+ gyro_y: 352 
+ gyro_z: 982
+GYRO_X = 6.763359 
+ GYRO_Y = 5.374046 
+ GYRO_Z = 14.992367
+[0;32mI (9717) BALANCER: Waited 5ms[0m
+[0;32mI (9717) BALANCER: gyro_x: 484 [0m
+ gyro_y: 347 
+ gyro_z: 1044
+GYRO_X = 7.389313 
+ GYRO_Y = 5.297710 
+ GYRO_Z = 15.938931
+[0;32mI (9727) BALANCER: Waited 5ms[0m
+[0;32mI (9737) BALANCER: gyro_x: 511 [0m
+ gyro_y: 327 
+ gyro_z: 1078
+GYRO_X = 7.801527 
+ GYRO_Y = 4.992366 
+ GYRO_Z = 16.458015
+[0;32mI (9747) BALANCER: Waited 5ms[0m
+[0;32mI (9747) BALANCER: gyro_x: 488 [0m
+ gyro_y: 279 
+ gyro_z: 1074
+GYRO_X = 7.450382 
+ GYRO_Y = 4.259542 
+ GYRO_Z = 16.396946
+[0;32mI (9757) BALANCER: Waited 5ms[0m
+[0;32mI (9757) BALANCER: gyro_x: 446 [0m
+ gyro_y: 257 
+ gyro_z: 1041
+GYRO_X = 6.809160 
+ GYRO_Y = 3.923664 
+ GYRO_Z = 15.893129
+[0;32mI (9767) BALANCER: Waited 5ms[0m
+[0;32mI (9777) BALANCER: gyro_x: 334 [0m
+ gyro_y: 197 
+ gyro_z: 990
+GYRO_X = 5.099236 
+ GYRO_Y = 3.007634 
+ GYRO_Z = 15.114504
+[0;32mI (9787) BALANCER: Waited 5ms[0m
+[0;32mI (9787) BALANCER: gyro_x: 226 [0m
+ gyro_y: 88 
+ gyro_z: 958
+GYRO_X = 3.450382 
+ GYRO_Y = 1.343511 
+ GYRO_Z = 14.625955
+[0;32mI (9797) BALANCER: Waited 5ms[0m
+[0;32mI (9797) BALANCER: gyro_x: 155 [0m
+ gyro_y: 13 
+ gyro_z: 934
+GYRO_X = 2.366412 
+ GYRO_Y = 0.198473 
+ GYRO_Z = 14.259542
+[0;32mI (9807) BALANCER: Waited 5ms[0m
+[0;32mI (9817) BALANCER: gyro_x: 105 [0m
+ gyro_y: -87 
+ gyro_z: 891
+GYRO_X = 1.603053 
+ GYRO_Y = -1.328244 
+ GYRO_Z = 13.603053
+[0;32mI (9827) BALANCER: Waited 5ms[0m
+[0;32mI (9827) BALANCER: gyro_x: 55 [0m
+ gyro_y: -119 
+ gyro_z: 742
+GYRO_X = 0.839695 
+ GYRO_Y = -1.816794 
+ GYRO_Z = 11.328244
+[0;32mI (9837) BALANCER: Waited 5ms[0m
+[0;32mI (9847) BALANCER: gyro_x: 1 [0m
+ gyro_y: -151 
+ gyro_z: 513
+GYRO_X = 0.015267 
+ GYRO_Y = -2.305344 
+ GYRO_Z = 7.832061
+[0;32mI (9857) BALANCER: Waited 5ms[0m
+[0;32mI (9857) BALANCER: gyro_x: -57 [0m
+ gyro_y: -146 
+ gyro_z: 355
+GYRO_X = -0.870229 
+ GYRO_Y = -2.229008 
+ GYRO_Z = 5.419847
+[0;32mI (9867) BALANCER: Waited 5ms[0m
+[0;32mI (9867) BALANCER: gyro_x: -137 [0m
+ gyro_y: -153 
+ gyro_z: 157
+GYRO_X = -2.091603 
+ GYRO_Y = -2.335878 
+ GYRO_Z = 2.396947
+[0;32mI (9877) BALANCER: Waited 5ms[0m
+[0;32mI (9887) BALANCER: gyro_x: -215 [0m
+ gyro_y: -211 
+ gyro_z: 64
+GYRO_X = -3.282443 
+ GYRO_Y = -3.221374 
+ GYRO_Z = 0.977099
+[0;32mI (9897) BALANCER: Waited 5ms[0m
+[0;32mI (9897) BALANCER: gyro_x: -251 [0m
+ gyro_y: -288 
+ gyro_z: 52
+GYRO_X = -3.832061 
+ GYRO_Y = -4.396946 
+ GYRO_Z = 0.793893
+[0;32mI (9907) BALANCER: Waited 5ms[0m
+[0;32mI (9907) BALANCER: gyro_x: -229 [0m
+ gyro_y: -410 
+ gyro_z: 91
+GYRO_X = -3.496183 
+ GYRO_Y = -6.259542 
+ GYRO_Z = 1.389313
+[0;32mI (9917) BALANCER: Waited 5ms[0m
+[0;32mI (9927) BALANCER: gyro_x: -197 [0m
+ gyro_y: -501 
+ gyro_z: 174
+GYRO_X = -3.007634 
+ GYRO_Y = -7.648855 
+ GYRO_Z = 2.656489
+[0;32mI (9937) BALANCER: Waited 5ms[0m
+[0;32mI (9937) BALANCER: gyro_x: -166 [0m
+ gyro_y: -555 
+ gyro_z: 262
+GYRO_X = -2.534351 
+ GYRO_Y = -8.473283 
+ GYRO_Z = 4.000000
+[0;32mI (9947) BALANCER: Waited 5ms[0m
+[0;32mI (9947) BALANCER: gyro_x: -146 [0m
+ gyro_y: -583 
+ gyro_z: 297
+GYRO_X = -2.229008 
+ GYRO_Y = -8.900764 
+ GYRO_Z = 4.534351
+[0;32mI (9957) BALANCER: Waited 5ms[0m
+[0;32mI (9967) BALANCER: gyro_x: -130 [0m
+ gyro_y: -610 
+ gyro_z: 342
+GYRO_X = -1.984733 
+ GYRO_Y = -9.312977 
+ GYRO_Z = 5.221374
+[0;32mI (9977) BALANCER: Waited 5ms[0m
+[0;32mI (9977) BALANCER: gyro_x: -108 [0m
+ gyro_y: -582 
+ gyro_z: 388
+GYRO_X = -1.648855 
+ GYRO_Y = -8.885496 
+ GYRO_Z = 5.923664
+[0;32mI (9987) BALANCER: Waited 5ms[0m
+[0;32mI (9997) BALANCER: gyro_x: -77 [0m
+ gyro_y: -598 
+ gyro_z: 438
+GYRO_X = -1.175573 
+ GYRO_Y = -9.129771 
+ GYRO_Z = 6.687023
+[0;32mI (10007) BALANCER: Waited 5ms[0m
+[0;32mI (10007) BALANCER: gyro_x: -34 [0m
+ gyro_y: -615 
+ gyro_z: 502
+GYRO_X = -0.519084 
+ GYRO_Y = -9.389313 
+ GYRO_Z = 7.664122
+[0;32mI (10017) BALANCER: Waited 5ms[0m
+[0;32mI (10017) BALANCER: gyro_x: 33 [0m
+ gyro_y: -583 
+ gyro_z: 630
+GYRO_X = 0.503817 
+ GYRO_Y = -8.900764 
+ GYRO_Z = 9.618320
+[0;32mI (10027) BALANCER: Waited 5ms[0m
+[0;32mI (10037) BALANCER: gyro_x: 99 [0m
+ gyro_y: -499 
+ gyro_z: 756
+GYRO_X = 1.511450 
+ GYRO_Y = -7.618320 
+ GYRO_Z = 11.541985
+[0;32mI (10047) BALANCER: Waited 5ms[0m
+[0;32mI (10047) BALANCER: gyro_x: 132 [0m
+ gyro_y: -438 
+ gyro_z: 828
+GYRO_X = 2.015267 
+ GYRO_Y = -6.687023 
+ GYRO_Z = 12.641221
+[0;32mI (10057) BALANCER: Waited 5ms[0m
+[0;32mI (10057) BALANCER: gyro_x: 147 [0m
+ gyro_y: -315 
+ gyro_z: 902
+GYRO_X = 2.244275 
+ GYRO_Y = -4.809160 
+ GYRO_Z = 13.770992
+[0;32mI (10067) BALANCER: Waited 5ms[0m
+[0;32mI (10077) BALANCER: gyro_x: 178 [0m
+ gyro_y: -150 
+ gyro_z: 864
+GYRO_X = 2.717557 
+ GYRO_Y = -2.290076 
+ GYRO_Z = 13.190840
+[0;32mI (10087) BALANCER: Waited 5ms[0m
+[0;32mI (10087) BALANCER: gyro_x: 207 [0m
+ gyro_y: 1 
+ gyro_z: 742
+GYRO_X = 3.160305 
+ GYRO_Y = 0.015267 
+ GYRO_Z = 11.328244
+[0;32mI (10097) BALANCER: Waited 5ms[0m
+[0;32mI (10097) BALANCER: gyro_x: 201 [0m
+ gyro_y: 105 
+ gyro_z: 645
+GYRO_X = 3.068702 
+ GYRO_Y = 1.603053 
+ GYRO_Z = 9.847328
+[0;32mI (10117) BALANCER: Waited 5ms[0m
+[0;32mI (10117) BALANCER: gyro_x: 167 [0m
+ gyro_y: 277 
+ gyro_z: 516
+GYRO_X = 2.549618 
+ GYRO_Y = 4.229008 
+ GYRO_Z = 7.877862
+[0;32mI (10127) BALANCER: Waited 5ms[0m
+[0;32mI (10127) BALANCER: gyro_x: 97 [0m
+ gyro_y: 395 
+ gyro_z: 423
+GYRO_X = 1.480916 
+ GYRO_Y = 6.030534 
+ GYRO_Z = 6.458015
+[0;32mI (10137) BALANCER: Waited 5ms[0m
+[0;32mI (10147) BALANCER: gyro_x: 47 [0m
+ gyro_y: 436 
+ gyro_z: 346
+GYRO_X = 0.717557 
+ GYRO_Y = 6.656488 
+ GYRO_Z = 5.282443
+[0;32mI (10157) BALANCER: Waited 5ms[0m
+[0;32mI (10157) BALANCER: gyro_x: 16 [0m
+ gyro_y: 392 
+ gyro_z: 290
+GYRO_X = 0.244275 
+ GYRO_Y = 5.984733 
+ GYRO_Z = 4.427481
+[0;32mI (10167) BALANCER: Waited 5ms[0m
+[0;32mI (10167) BALANCER: gyro_x: 15 [0m
+ gyro_y: 285 
+ gyro_z: 256
+GYRO_X = 0.229008 
+ GYRO_Y = 4.351145 
+ GYRO_Z = 3.908397
+[0;32mI (10177) BALANCER: Waited 5ms[0m
+[0;32mI (10187) BALANCER: gyro_x: 33 [0m
+ gyro_y: 162 
+ gyro_z: 335
+GYRO_X = 0.503817 
+ GYRO_Y = 2.473282 
+ GYRO_Z = 5.114504
+[0;32mI (10197) BALANCER: Waited 5ms[0m
+[0;32mI (10197) BALANCER: gyro_x: 62 [0m
+ gyro_y: 87 
+ gyro_z: 445
+GYRO_X = 0.946565 
+ GYRO_Y = 1.328244 
+ GYRO_Z = 6.793893
+[0;32mI (10207) BALANCER: Waited 5ms[0m
+[0;32mI (10207) BALANCER: gyro_x: 143 [0m
+ gyro_y: 1 
+ gyro_z: 661
+GYRO_X = 2.183206 
+ GYRO_Y = 0.015267 
+ GYRO_Z = 10.091603
+[0;32mI (10217) BALANCER: Waited 5ms[0m
+[0;32mI (10227) BALANCER: gyro_x: 201 [0m
+ gyro_y: -97 
+ gyro_z: 815
+GYRO_X = 3.068702 
+ GYRO_Y = -1.480916 
+ GYRO_Z = 12.442748
+[0;32mI (10237) BALANCER: Waited 5ms[0m
+[0;32mI (10237) BALANCER: gyro_x: 236 [0m
+ gyro_y: -171 
+ gyro_z: 884
+GYRO_X = 3.603053 
+ GYRO_Y = -2.610687 
+ GYRO_Z = 13.496183
+[0;32mI (10247) BALANCER: Waited 5ms[0m
+[0;32mI (10247) BALANCER: gyro_x: 263 [0m
+ gyro_y: -272 
+ gyro_z: 951
+GYRO_X = 4.015267 
+ GYRO_Y = -4.152672 
+ GYRO_Z = 14.519084
+[0;32mI (10257) BALANCER: Waited 5ms[0m
+[0;32mI (10267) BALANCER: gyro_x: 259 [0m
+ gyro_y: -339 
+ gyro_z: 979
+GYRO_X = 3.954198 
+ GYRO_Y = -5.175572 
+ GYRO_Z = 14.946565
+[0;32mI (10277) BALANCER: Waited 5ms[0m
+[0;32mI (10277) BALANCER: gyro_x: 237 [0m
+ gyro_y: -362 
+ gyro_z: 980
+GYRO_X = 3.618321 
+ GYRO_Y = -5.526718 
+ GYRO_Z = 14.961832
+[0;32mI (10287) BALANCER: Waited 5ms[0m
+[0;32mI (10297) BALANCER: gyro_x: 222 [0m
+ gyro_y: -375 
+ gyro_z: 954
+GYRO_X = 3.389313 
+ GYRO_Y = -5.725191 
+ GYRO_Z = 14.564885
+[0;32mI (10307) BALANCER: Waited 5ms[0m
+[0;32mI (10307) BALANCER: gyro_x: 180 [0m
+ gyro_y: -310 
+ gyro_z: 930
+GYRO_X = 2.748092 
+ GYRO_Y = -4.732824 
+ GYRO_Z = 14.198473
+[0;32mI (10317) BALANCER: Waited 5ms[0m
+[0;32mI (10317) BALANCER: gyro_x: 105 [0m
+ gyro_y: -145 
+ gyro_z: 883
+GYRO_X = 1.603053 
+ GYRO_Y = -2.213740 
+ GYRO_Z = 13.480916
+[0;32mI (10327) BALANCER: Waited 5ms[0m
+[0;32mI (10337) BALANCER: gyro_x: 40 [0m
+ gyro_y: 7 
+ gyro_z: 733
+GYRO_X = 0.610687 
+ GYRO_Y = 0.106870 
+ GYRO_Z = 11.190840
+[0;32mI (10347) BALANCER: Waited 5ms[0m
+[0;32mI (10347) BALANCER: gyro_x: 3 [0m
+ gyro_y: 154 
+ gyro_z: 556
+GYRO_X = 0.045802 
+ GYRO_Y = 2.351145 
+ GYRO_Z = 8.488549
+[0;32mI (10357) BALANCER: Waited 5ms[0m
+[0;32mI (10357) BALANCER: gyro_x: -9 [0m
+ gyro_y: 321 
+ gyro_z: 220
+GYRO_X = -0.137405 
+ GYRO_Y = 4.900764 
+ GYRO_Z = 3.358779
+[0;32mI (10367) BALANCER: Waited 5ms[0m
+[0;32mI (10377) BALANCER: gyro_x: 20 [0m
+ gyro_y: 388 
+ gyro_z: -59
+GYRO_X = 0.305344 
+ GYRO_Y = 5.923664 
+ GYRO_Z = -0.900763
+[0;32mI (10387) BALANCER: Waited 5ms[0m
+[0;32mI (10387) BALANCER: gyro_x: -5 [0m
+ gyro_y: 369 
+ gyro_z: -143
+GYRO_X = -0.076336 
+ GYRO_Y = 5.633588 
+ GYRO_Z = -2.183206
+[0;32mI (10397) BALANCER: Waited 5ms[0m
+[0;32mI (10397) BALANCER: gyro_x: -146 [0m
+ gyro_y: 284 
+ gyro_z: -106
+GYRO_X = -2.229008 
+ GYRO_Y = 4.335878 
+ GYRO_Z = -1.618321
+[0;32mI (10407) BALANCER: Waited 5ms[0m
+[0;32mI (10417) BALANCER: gyro_x: -343 [0m
+ gyro_y: 213 
+ gyro_z: -22
+GYRO_X = -5.236641 
+ GYRO_Y = 3.251908 
+ GYRO_Z = -0.335878
+[0;32mI (10427) BALANCER: Waited 5ms[0m
+[0;32mI (10427) BALANCER: gyro_x: -465 [0m
+ gyro_y: 76 
+ gyro_z: -90
+GYRO_X = -7.099236 
+ GYRO_Y = 1.160305 
+ GYRO_Z = -1.374046
+[0;32mI (10437) BALANCER: Waited 5ms[0m
+[0;32mI (10447) BALANCER: gyro_x: -462 [0m
+ gyro_y: -80 
+ gyro_z: -209
+GYRO_X = -7.053435 
+ GYRO_Y = -1.221374 
+ GYRO_Z = -3.190840
+[0;32mI (10457) BALANCER: Waited 5ms[0m
+[0;32mI (10457) BALANCER: gyro_x: -453 [0m
+ gyro_y: -320 
+ gyro_z: -366
+GYRO_X = -6.916030 
+ GYRO_Y = -4.885496 
+ GYRO_Z = -5.587786
+[0;32mI (10467) BALANCER: Waited 5ms[0m
+[0;32mI (10467) BALANCER: gyro_x: -477 [0m
+ gyro_y: -471 
+ gyro_z: -388
+GYRO_X = -7.282443 
+ GYRO_Y = -7.190840 
+ GYRO_Z = -5.923664
+[0;32mI (10477) BALANCER: Waited 5ms[0m
+[0;32mI (10487) BALANCER: gyro_x: -523 [0m
+ gyro_y: -506 
+ gyro_z: -301
+GYRO_X = -7.984733 
+ GYRO_Y = -7.725191 
+ GYRO_Z = -4.595420
+[0;32mI (10497) BALANCER: Waited 5ms[0m
+[0;32mI (10497) BALANCER: gyro_x: -584 [0m
+ gyro_y: -491 
+ gyro_z: -170
+GYRO_X = -8.916031 
+ GYRO_Y = -7.496183 
+ GYRO_Z = -2.595420
+[0;32mI (10507) BALANCER: Waited 5ms[0m
+[0;32mI (10517) BALANCER: gyro_x: -635 [0m
+ gyro_y: -414 
+ gyro_z: -43
+GYRO_X = -9.694656 
+ GYRO_Y = -6.320611 
+ GYRO_Z = -0.656489
+[0;32mI (10527) BALANCER: Waited 5ms[0m
+[0;32mI (10527) BALANCER: gyro_x: -667 [0m
+ gyro_y: -330 
+ gyro_z: 56
+GYRO_X = -10.183207 
+ GYRO_Y = -5.038168 
+ GYRO_Z = 0.854962
+[0;32mI (10537) BALANCER: Waited 5ms[0m
+[0;32mI (10537) BALANCER: gyro_x: -741 [0m
+ gyro_y: -134 
+ gyro_z: 253
+GYRO_X = -11.312977 
+ GYRO_Y = -2.045802 
+ GYRO_Z = 3.862595
+[0;32mI (10547) BALANCER: Waited 5ms[0m
+[0;32mI (10557) BALANCER: gyro_x: -792 [0m
+ gyro_y: 125 
+ gyro_z: 400
+GYRO_X = -12.091603 
+ GYRO_Y = 1.908397 
+ GYRO_Z = 6.106870
+[0;32mI (10567) BALANCER: Waited 5ms[0m
+[0;32mI (10567) BALANCER: gyro_x: -716 [0m
+ gyro_y: 381 
+ gyro_z: 410
+GYRO_X = -10.931297 
+ GYRO_Y = 5.816794 
+ GYRO_Z = 6.259542
+[0;32mI (10577) BALANCER: Waited 5ms[0m
+[0;32mI (10587) BALANCER: gyro_x: -584 [0m
+ gyro_y: 511 
+ gyro_z: 348
+GYRO_X = -8.916031 
+ GYRO_Y = 7.801527 
+ GYRO_Z = 5.312977
+[0;32mI (10597) BALANCER: Waited 5ms[0m
+[0;32mI (10597) BALANCER: gyro_x: -266 [0m
+ gyro_y: 640 
+ gyro_z: 223
+GYRO_X = -4.061069 
+ GYRO_Y = 9.770992 
+ GYRO_Z = 3.404580
+[0;32mI (10607) BALANCER: Waited 5ms[0m
+[0;32mI (10607) BALANCER: gyro_x: 57 [0m
+ gyro_y: 779 
+ gyro_z: 95
+GYRO_X = 0.870229 
+ GYRO_Y = 11.893129 
+ GYRO_Z = 1.450382
+[0;32mI (10617) BALANCER: Waited 5ms[0m
+[0;32mI (10627) BALANCER: gyro_x: 316 [0m
+ gyro_y: 1004 
+ gyro_z: -86
+GYRO_X = 4.824428 
+ GYRO_Y = 15.328244 
+ GYRO_Z = -1.312977
+[0;32mI (10637) BALANCER: Waited 5ms[0m
+[0;32mI (10637) BALANCER: gyro_x: 396 [0m
+ gyro_y: 1187 
+ gyro_z: -204
+GYRO_X = 6.045802 
+ GYRO_Y = 18.122137 
+ GYRO_Z = -3.114504
+[0;32mI (10647) BALANCER: Waited 5ms[0m
+[0;32mI (10647) BALANCER: gyro_x: 335 [0m
+ gyro_y: 1413 
+ gyro_z: -308
+GYRO_X = 5.114504 
+ GYRO_Y = 21.572519 
+ GYRO_Z = -4.702290
+[0;32mI (10657) BALANCER: Waited 5ms[0m
+[0;32mI (10667) BALANCER: gyro_x: 136 [0m
+ gyro_y: 1414 
+ gyro_z: -253
+GYRO_X = 2.076336 
+ GYRO_Y = 21.587786 
+ GYRO_Z = -3.862595
+[0;32mI (10677) BALANCER: Waited 5ms[0m
+[0;32mI (10677) BALANCER: gyro_x: -76 [0m
+ gyro_y: 1145 
+ gyro_z: -48
+GYRO_X = -1.160305 
+ GYRO_Y = 17.480917 
+ GYRO_Z = -0.732824
+[0;32mI (10687) BALANCER: Waited 5ms[0m
+[0;32mI (10697) BALANCER: gyro_x: -167 [0m
+ gyro_y: 905 
+ gyro_z: 43
+GYRO_X = -2.549618 
+ GYRO_Y = 13.816793 
+ GYRO_Z = 0.656489
+[0;32mI (10707) BALANCER: Waited 5ms[0m
+[0;32mI (10707) BALANCER: gyro_x: -181 [0m
+ gyro_y: 715 
+ gyro_z: -42
+GYRO_X = -2.763359 
+ GYRO_Y = 10.916031 
+ GYRO_Z = -0.641221
+[0;32mI (10717) BALANCER: Waited 5ms[0m
+[0;32mI (10717) BALANCER: gyro_x: -229 [0m
+ gyro_y: 497 
+ gyro_z: -145
+GYRO_X = -3.496183 
+ GYRO_Y = 7.587786 
+ GYRO_Z = -2.213740
+[0;32mI (10727) BALANCER: Waited 5ms[0m
+[0;32mI (10737) BALANCER: gyro_x: -360 [0m
+ gyro_y: 31 
+ gyro_z: 51
+GYRO_X = -5.496183 
+ GYRO_Y = 0.473282 
+ GYRO_Z = 0.778626
+[0;32mI (10747) BALANCER: Waited 5ms[0m
+[0;32mI (10747) BALANCER: gyro_x: -427 [0m
+ gyro_y: -146 
+ gyro_z: 269
+GYRO_X = -6.519084 
+ GYRO_Y = -2.229008 
+ GYRO_Z = 4.106870
+[0;32mI (10757) BALANCER: Waited 5ms[0m
+[0;32mI (10757) BALANCER: gyro_x: -220 [0m
+ gyro_y: -277 
+ gyro_z: 526
+GYRO_X = -3.358779 
+ GYRO_Y = -4.229008 
+ GYRO_Z = 8.030535
+[0;32mI (10767) BALANCER: Waited 5ms[0m
+[0;32mI (10777) BALANCER: gyro_x: 256 [0m
+ gyro_y: -519 
+ gyro_z: 635
+GYRO_X = 3.908397 
+ GYRO_Y = -7.923664 
+ GYRO_Z = 9.694656
+[0;32mI (10787) BALANCER: Waited 5ms[0m
+[0;32mI (10787) BALANCER: gyro_x: 725 [0m
+ gyro_y: -633 
+ gyro_z: 539
+GYRO_X = 11.068703 
+ GYRO_Y = -9.664123 
+ GYRO_Z = 8.229008
+[0;32mI (10797) BALANCER: Waited 5ms[0m
+[0;32mI (10807) BALANCER: gyro_x: 998 [0m
+ gyro_y: -814 
+ gyro_z: 377
+GYRO_X = 15.236641 
+ GYRO_Y = -12.427481 
+ GYRO_Z = 5.755725
+[0;32mI (10817) BALANCER: Waited 5ms[0m
+[0;32mI (10817) BALANCER: gyro_x: 1327 [0m
+ gyro_y: -1127 
+ gyro_z: 349
+GYRO_X = 20.259542 
+ GYRO_Y = -17.206106 
+ GYRO_Z = 5.328244
+[0;32mI (10827) BALANCER: Waited 5ms[0m
+[0;32mI (10827) BALANCER: gyro_x: 1382 [0m
+ gyro_y: -1480 
+ gyro_z: 570
+GYRO_X = 21.099237 
+ GYRO_Y = -22.595419 
+ GYRO_Z = 8.702291
+[0;32mI (10837) BALANCER: Waited 5ms[0m
+[0;32mI (10847) BALANCER: gyro_x: 1279 [0m
+ gyro_y: -1549 
+ gyro_z: 853
+GYRO_X = 19.526718 
+ GYRO_Y = -23.648855 
+ GYRO_Z = 13.022901
+[0;32mI (10857) BALANCER: Waited 5ms[0m
+[0;32mI (10857) BALANCER: gyro_x: 1248 [0m
+ gyro_y: -1028 
+ gyro_z: 939
+GYRO_X = 19.053434 
+ GYRO_Y = -15.694656 
+ GYRO_Z = 14.335877
+[0;32mI (10867) BALANCER: Waited 5ms[0m
+[0;32mI (10877) BALANCER: gyro_x: 1144 [0m
+ gyro_y: -834 
+ gyro_z: 604
+GYRO_X = 17.465649 
+ GYRO_Y = -12.732824 
+ GYRO_Z = 9.221375
+[0;32mI (10887) BALANCER: Waited 5ms[0m
+[0;32mI (10887) BALANCER: gyro_x: 1021 [0m
+ gyro_y: -875 
+ gyro_z: 758
+GYRO_X = 15.587787 
+ GYRO_Y = -13.358779 
+ GYRO_Z = 11.572519
+[0;32mI (10897) BALANCER: Waited 5ms[0m
+[0;32mI (10897) BALANCER: gyro_x: 893 [0m
+ gyro_y: -1319 
+ gyro_z: 950
+GYRO_X = 13.633588 
+ GYRO_Y = -20.137405 
+ GYRO_Z = 14.503817
+[0;32mI (10907) BALANCER: Waited 5ms[0m
+[0;32mI (10917) BALANCER: gyro_x: 1252 [0m
+ gyro_y: -1818 
+ gyro_z: 1496
+GYRO_X = 19.114504 
+ GYRO_Y = -27.755726 
+ GYRO_Z = 22.839695
+[0;32mI (10927) BALANCER: Waited 5ms[0m
+[0;32mI (10927) BALANCER: gyro_x: 1742 [0m
+ gyro_y: -1675 
+ gyro_z: 1730
+GYRO_X = 26.595419 
+ GYRO_Y = -25.572519 
+ GYRO_Z = 26.412214
+[0;32mI (10937) BALANCER: Waited 5ms[0m
+[0;32mI (10947) BALANCER: gyro_x: 1732 [0m
+ gyro_y: -1725 
+ gyro_z: 1518
+GYRO_X = 26.442749 
+ GYRO_Y = -26.335878 
+ GYRO_Z = 23.175573
+[0;32mI (10957) BALANCER: Waited 5ms[0m
+[0;32mI (10957) BALANCER: gyro_x: 1552 [0m
+ gyro_y: -1690 
+ gyro_z: 1214
+GYRO_X = 23.694656 
+ GYRO_Y = -25.801527 
+ GYRO_Z = 18.534351
+[0;32mI (10967) BALANCER: Waited 5ms[0m
+[0;32mI (10967) BALANCER: gyro_x: 1176 [0m
+ gyro_y: -1464 
+ gyro_z: 569
+GYRO_X = 17.954199 
+ GYRO_Y = -22.351145 
+ GYRO_Z = 8.687023
+[0;32mI (10987) BALANCER: Waited 5ms[0m
+[0;32mI (10987) BALANCER: gyro_x: 745 [0m
+ gyro_y: -1387 
+ gyro_z: 12
+GYRO_X = 11.374045 
+ GYRO_Y = -21.175573 
+ GYRO_Z = 0.183206
+[0;32mI (10997) BALANCER: Waited 5ms[0m
+[0;32mI (10997) BALANCER: gyro_x: 162 [0m
+ gyro_y: -1454 
+ gyro_z: -350
+GYRO_X = 2.473282 
+ GYRO_Y = -22.198473 
+ GYRO_Z = -5.343512
+[0;32mI (11007) BALANCER: Waited 5ms[0m
+[0;32mI (11017) BALANCER: gyro_x: -533 [0m
+ gyro_y: -1422 
+ gyro_z: -406
+GYRO_X = -8.137404 
+ GYRO_Y = -21.709923 
+ GYRO_Z = -6.198473
+[0;32mI (11027) BALANCER: Waited 5ms[0m
+[0;32mI (11027) BALANCER: gyro_x: -1112 [0m
+ gyro_y: -935 
+ gyro_z: -306
+GYRO_X = -16.977098 
+ GYRO_Y = -14.274809 
+ GYRO_Z = -4.671756
+[0;32mI (11037) BALANCER: Waited 5ms[0m
+[0;32mI (11047) BALANCER: gyro_x: -1285 [0m
+ gyro_y: -465 
+ gyro_z: -258
+GYRO_X = -19.618320 
+ GYRO_Y = -7.099236 
+ GYRO_Z = -3.938931
+[0;32mI (11057) BALANCER: Waited 5ms[0m
+[0;32mI (11057) BALANCER: gyro_x: -1155 [0m
+ gyro_y: 21 
+ gyro_z: -349
+GYRO_X = -17.633587 
+ GYRO_Y = 0.320611 
+ GYRO_Z = -5.328244
+[0;32mI (11067) BALANCER: Waited 5ms[0m
+[0;32mI (11067) BALANCER: gyro_x: -909 [0m
+ gyro_y: 124 
+ gyro_z: -443
+GYRO_X = -13.877863 
+ GYRO_Y = 1.893130 
+ GYRO_Z = -6.763359
+[0;32mI (11077) BALANCER: Waited 5ms[0m
+[0;32mI (11087) BALANCER: gyro_x: -689 [0m
+ gyro_y: 59 
+ gyro_z: -529
+GYRO_X = -10.519084 
+ GYRO_Y = 0.900763 
+ GYRO_Z = -8.076336
+[0;32mI (11097) BALANCER: Waited 5ms[0m
+[0;32mI (11097) BALANCER: gyro_x: -622 [0m
+ gyro_y: 26 
+ gyro_z: -587
+GYRO_X = -9.496183 
+ GYRO_Y = 0.396947 
+ GYRO_Z = -8.961832
+[0;32mI (11107) BALANCER: Waited 5ms[0m
+[0;32mI (11117) BALANCER: gyro_x: -648 [0m
+ gyro_y: -2 
+ gyro_z: -680
+GYRO_X = -9.893129 
+ GYRO_Y = -0.030534 
+ GYRO_Z = -10.381680
+[0;32mI (11127) BALANCER: Waited 5ms[0m
+[0;32mI (11127) BALANCER: gyro_x: -777 [0m
+ gyro_y: 291 
+ gyro_z: -875
+GYRO_X = -11.862596 
+ GYRO_Y = 4.442748 
+ GYRO_Z = -13.358779
+[0;32mI (11137) BALANCER: Waited 5ms[0m
+[0;32mI (11137) BALANCER: gyro_x: -821 [0m
+ gyro_y: 534 
+ gyro_z: -922
+GYRO_X = -12.534351 
+ GYRO_Y = 8.152672 
+ GYRO_Z = -14.076336
+[0;32mI (11147) BALANCER: Waited 5ms[0m
+[0;32mI (11157) BALANCER: gyro_x: -682 [0m
+ gyro_y: 856 
+ gyro_z: -929
+GYRO_X = -10.412213 
+ GYRO_Y = 13.068703 
+ GYRO_Z = -14.183207
+[0;32mI (11167) BALANCER: Waited 5ms[0m
+[0;32mI (11167) BALANCER: gyro_x: -516 [0m
+ gyro_y: 1274 
+ gyro_z: -758
+GYRO_X = -7.877862 
+ GYRO_Y = 19.450382 
+ GYRO_Z = -11.572519
+[0;32mI (11177) BALANCER: Waited 5ms[0m
+[0;32mI (11187) BALANCER: gyro_x: -354 [0m
+ gyro_y: 1428 
+ gyro_z: -546
+GYRO_X = -5.404580 
+ GYRO_Y = 21.801527 
+ GYRO_Z = -8.335877
+[0;32mI (11197) BALANCER: Waited 5ms[0m
+[0;32mI (11197) BALANCER: gyro_x: -158 [0m
+ gyro_y: 1425 
+ gyro_z: -302
+GYRO_X = -2.412214 
+ GYRO_Y = 21.755726 
+ GYRO_Z = -4.610687
+[0;32mI (11207) BALANCER: Waited 5ms[0m
+[0;32mI (11207) BALANCER: gyro_x: -12 [0m
+ gyro_y: 1162 
+ gyro_z: -242
+GYRO_X = -0.183206 
+ GYRO_Y = 17.740458 
+ GYRO_Z = -3.694656
+[0;32mI (11217) BALANCER: Waited 5ms[0m
+[0;32mI (11227) BALANCER: gyro_x: 72 [0m
+ gyro_y: 813 
+ gyro_z: -322
+GYRO_X = 1.099237 
+ GYRO_Y = 12.412213 
+ GYRO_Z = -4.916030
+[0;32mI (11237) BALANCER: Waited 5ms[0m
+[0;32mI (11237) BALANCER: gyro_x: 103 [0m
+ gyro_y: 448 
+ gyro_z: -493
+GYRO_X = 1.572519 
+ GYRO_Y = 6.839694 
+ GYRO_Z = -7.526718
+[0;32mI (11247) BALANCER: Waited 5ms[0m
+[0;32mI (11257) BALANCER: gyro_x: 76 [0m
+ gyro_y: 429 
+ gyro_z: -555
+GYRO_X = 1.160305 
+ GYRO_Y = 6.549618 
+ GYRO_Z = -8.473283
+[0;32mI (11267) BALANCER: Waited 5ms[0m
+[0;32mI (11267) BALANCER: gyro_x: 49 [0m
+ gyro_y: 584 
+ gyro_z: -410
+GYRO_X = 0.748092 
+ GYRO_Y = 8.916031 
+ GYRO_Z = -6.259542
+[0;32mI (11277) BALANCER: Waited 5ms[0m
+[0;32mI (11277) BALANCER: gyro_x: 9 [0m
+ gyro_y: 917 
+ gyro_z: -145
+GYRO_X = 0.137405 
+ GYRO_Y = 14.000000 
+ GYRO_Z = -2.213740
+[0;32mI (11287) BALANCER: Waited 5ms[0m
+[0;32mI (11297) BALANCER: gyro_x: 31 [0m
+ gyro_y: 1099 
+ gyro_z: -41
+GYRO_X = 0.473282 
+ GYRO_Y = 16.778625 
+ GYRO_Z = -0.625954
+[0;32mI (11307) BALANCER: Waited 5ms[0m
+[0;32mI (11307) BALANCER: gyro_x: 33 [0m
+ gyro_y: 1090 
+ gyro_z: -78
+GYRO_X = 0.503817 
+ GYRO_Y = 16.641222 
+ GYRO_Z = -1.190840
+[0;32mI (11317) BALANCER: Waited 5ms[0m
+[0;32mI (11317) BALANCER: gyro_x: 71 [0m
+ gyro_y: 943 
+ gyro_z: -195
+GYRO_X = 1.083969 
+ GYRO_Y = 14.396947 
+ GYRO_Z = -2.977099
+[0;32mI (11327) BALANCER: Waited 5ms[0m
+[0;32mI (11337) BALANCER: gyro_x: 153 [0m
+ gyro_y: 669 
+ gyro_z: -335
+GYRO_X = 2.335878 
+ GYRO_Y = 10.213740 
+ GYRO_Z = -5.114504
+[0;32mI (11347) BALANCER: Waited 5ms[0m
+[0;32mI (11347) BALANCER: gyro_x: 252 [0m
+ gyro_y: 543 
+ gyro_z: -464
+GYRO_X = 3.847328 
+ GYRO_Y = 8.290076 
+ GYRO_Z = -7.083970
+[0;32mI (11357) BALANCER: Waited 5ms[0m
+[0;32mI (11357) BALANCER: gyro_x: 324 [0m
+ gyro_y: 482 
+ gyro_z: -475
+GYRO_X = 4.946565 
+ GYRO_Y = 7.358778 
+ GYRO_Z = -7.251908
+[0;32mI (11377) BALANCER: Waited 5ms[0m
+[0;32mI (11377) BALANCER: gyro_x: 442 [0m
+ gyro_y: 457 
+ gyro_z: -393
+GYRO_X = 6.748092 
+ GYRO_Y = 6.977099 
+ GYRO_Z = -6.000000
+[0;32mI (11387) BALANCER: Waited 5ms[0m
+[0;32mI (11387) BALANCER: gyro_x: 482 [0m
+ gyro_y: 602 
+ gyro_z: -214
+GYRO_X = 7.358778 
+ GYRO_Y = 9.190840 
+ GYRO_Z = -3.267176
+[0;32mI (11397) BALANCER: Waited 5ms[0m
+[0;32mI (11407) BALANCER: gyro_x: 454 [0m
+ gyro_y: 672 
+ gyro_z: -73
+GYRO_X = 6.931298 
+ GYRO_Y = 10.259542 
+ GYRO_Z = -1.114504
+[0;32mI (11417) BALANCER: Waited 5ms[0m
+[0;32mI (11417) BALANCER: gyro_x: 396 [0m
+ gyro_y: 673 
+ gyro_z: 50
+GYRO_X = 6.045802 
+ GYRO_Y = 10.274809 
+ GYRO_Z = 0.763359
+[0;32mI (11427) BALANCER: Waited 5ms[0m
+[0;32mI (11427) BALANCER: gyro_x: 268 [0m
+ gyro_y: 673 
+ gyro_z: 79
+GYRO_X = 4.091603 
+ GYRO_Y = 10.274809 
+ GYRO_Z = 1.206107
+[0;32mI (11437) BALANCER: Waited 5ms[0m
+[0;32mI (11447) BALANCER: gyro_x: 149 [0m
+ gyro_y: 747 
+ gyro_z: 19
+GYRO_X = 2.274809 
+ GYRO_Y = 11.404580 
+ GYRO_Z = 0.290076
+[0;32mI (11457) BALANCER: Waited 5ms[0m
+[0;32mI (11457) BALANCER: gyro_x: 79 [0m
+ gyro_y: 923 
+ gyro_z: -60
+GYRO_X = 1.206107 
+ GYRO_Y = 14.091603 
+ GYRO_Z = -0.916031
+[0;32mI (11467) BALANCER: Waited 5ms[0m
+[0;32mI (11467) BALANCER: gyro_x: 23 [0m
+ gyro_y: 1234 
+ gyro_z: -98
+GYRO_X = 0.351145 
+ GYRO_Y = 18.839695 
+ GYRO_Z = -1.496183
+[0;32mI (11477) BALANCER: Waited 5ms[0m
+[0;32mI (11487) BALANCER: gyro_x: -46 [0m
+ gyro_y: 1672 
+ gyro_z: -37
+GYRO_X = -0.702290 
+ GYRO_Y = 25.526718 
+ GYRO_Z = -0.564885
+[0;32mI (11497) BALANCER: Waited 5ms[0m
+[0;32mI (11497) BALANCER: gyro_x: -159 [0m
+ gyro_y: 2097 
+ gyro_z: 114
+GYRO_X = -2.427481 
+ GYRO_Y = 32.015266 
+ GYRO_Z = 1.740458
+[0;32mI (11507) BALANCER: Waited 5ms[0m
+[0;32mI (11517) BALANCER: gyro_x: -271 [0m
+ gyro_y: 2242 
+ gyro_z: 182
+GYRO_X = -4.137404 
+ GYRO_Y = 34.229008 
+ GYRO_Z = 2.778626
+[0;32mI (11527) BALANCER: Waited 5ms[0m
+[0;32mI (11527) BALANCER: gyro_x: -501 [0m
+ gyro_y: 2219 
+ gyro_z: 109
+GYRO_X = -7.648855 
+ GYRO_Y = 33.877861 
+ GYRO_Z = 1.664122
+[0;32mI (11537) BALANCER: Waited 5ms[0m
+[0;32mI (11537) BALANCER: gyro_x: -683 [0m
+ gyro_y: 2013 
+ gyro_z: -96
+GYRO_X = -10.427481 
+ GYRO_Y = 30.732824 
+ GYRO_Z = -1.465649
+[0;32mI (11547) BALANCER: Waited 5ms[0m
+[0;32mI (11557) BALANCER: gyro_x: -763 [0m
+ gyro_y: 1825 
+ gyro_z: -303
+GYRO_X = -11.648855 
+ GYRO_Y = 27.862595 
+ GYRO_Z = -4.625954
+[0;32mI (11567) BALANCER: Waited 5ms[0m
+[0;32mI (11567) BALANCER: gyro_x: -784 [0m
+ gyro_y: 1664 
+ gyro_z: -438
+GYRO_X = -11.969465 
+ GYRO_Y = 25.404581 
+ GYRO_Z = -6.687023
+[0;32mI (11577) BALANCER: Waited 5ms[0m
+[0;32mI (11587) BALANCER: gyro_x: -749 [0m
+ gyro_y: 1618 
+ gyro_z: -442
+GYRO_X = -11.435115 
+ GYRO_Y = 24.702290 
+ GYRO_Z = -6.748092
+[0;32mI (11597) BALANCER: Waited 5ms[0m
+[0;32mI (11597) BALANCER: gyro_x: -660 [0m
+ gyro_y: 1569 
+ gyro_z: -350
+GYRO_X = -10.076336 
+ GYRO_Y = 23.954199 
+ GYRO_Z = -5.343512
+[0;32mI (11607) BALANCER: Waited 5ms[0m
+[0;32mI (11607) BALANCER: gyro_x: -621 [0m
+ gyro_y: 1479 
+ gyro_z: -310
+GYRO_X = -9.480916 
+ GYRO_Y = 22.580153 
+ GYRO_Z = -4.732824
+[0;32mI (11617) BALANCER: Waited 5ms[0m
+[0;32mI (11627) BALANCER: gyro_x: -603 [0m
+ gyro_y: 1428 
+ gyro_z: -383
+GYRO_X = -9.206107 
+ GYRO_Y = 21.801527 
+ GYRO_Z = -5.847328
+[0;32mI (11637) BALANCER: Waited 5ms[0m
+[0;32mI (11637) BALANCER: gyro_x: -568 [0m
+ gyro_y: 1371 
+ gyro_z: -461
+GYRO_X = -8.671756 
+ GYRO_Y = 20.931297 
+ GYRO_Z = -7.038168
+[0;32mI (11647) BALANCER: Waited 5ms[0m
+[0;32mI (11657) BALANCER: gyro_x: -591 [0m
+ gyro_y: 1396 
+ gyro_z: -463
+GYRO_X = -9.022901 
+ GYRO_Y = 21.312977 
+ GYRO_Z = -7.068702
+[0;32mI (11667) BALANCER: Waited 5ms[0m
+[0;32mI (11667) BALANCER: gyro_x: -649 [0m
+ gyro_y: 1453 
+ gyro_z: -397
+GYRO_X = -9.908397 
+ GYRO_Y = 22.183207 
+ GYRO_Z = -6.061069
+[0;32mI (11677) BALANCER: Waited 5ms[0m
+[0;32mI (11677) BALANCER: gyro_x: -642 [0m
+ gyro_y: 1503 
+ gyro_z: -431
+GYRO_X = -9.801527 
+ GYRO_Y = 22.946566 
+ GYRO_Z = -6.580153
+[0;32mI (11687) BALANCER: Waited 5ms[0m
+[0;32mI (11697) BALANCER: gyro_x: -602 [0m
+ gyro_y: 1459 
+ gyro_z: -538
+GYRO_X = -9.190840 
+ GYRO_Y = 22.274809 
+ GYRO_Z = -8.213740
+[0;32mI (11707) BALANCER: Waited 5ms[0m
+[0;32mI (11707) BALANCER: gyro_x: -576 [0m
+ gyro_y: 1430 
+ gyro_z: -653
+GYRO_X = -8.793893 
+ GYRO_Y = 21.832062 
+ GYRO_Z = -9.969465
+[0;32mI (11717) BALANCER: Waited 5ms[0m
+[0;32mI (11727) BALANCER: gyro_x: -511 [0m
+ gyro_y: 1400 
+ gyro_z: -675
+GYRO_X = -7.801527 
+ GYRO_Y = 21.374046 
+ GYRO_Z = -10.305344
+[0;32mI (11737) BALANCER: Waited 5ms[0m
+[0;32mI (11737) BALANCER: gyro_x: -394 [0m
+ gyro_y: 1233 
+ gyro_z: -706
+GYRO_X = -6.015267 
+ GYRO_Y = 18.824427 
+ GYRO_Z = -10.778625
+[0;32mI (11747) BALANCER: Waited 5ms[0m
+[0;32mI (11747) BALANCER: gyro_x: -343 [0m
+ gyro_y: 1049 
+ gyro_z: -727
+GYRO_X = -5.236641 
+ GYRO_Y = 16.015266 
+ GYRO_Z = -11.099236
+[0;32mI (11767) BALANCER: Waited 5ms[0m
+[0;32mI (11767) BALANCER: gyro_x: -361 [0m
+ gyro_y: 1041 
+ gyro_z: -616
+GYRO_X = -5.511450 
+ GYRO_Y = 15.893129 
+ GYRO_Z = -9.404580
+[0;32mI (11777) BALANCER: Waited 5ms[0m
+[0;32mI (11777) BALANCER: gyro_x: -364 [0m
+ gyro_y: 1083 
+ gyro_z: -404
+GYRO_X = -5.557252 
+ GYRO_Y = 16.534351 
+ GYRO_Z = -6.167939
+[0;32mI (11787) BALANCER: Waited 5ms[0m
+[0;32mI (11797) BALANCER: gyro_x: -344 [0m
+ gyro_y: 1032 
+ gyro_z: -321
+GYRO_X = -5.251908 
+ GYRO_Y = 15.755725 
+ GYRO_Z = -4.900764
+[0;32mI (11807) BALANCER: Waited 5ms[0m
+[0;32mI (11807) BALANCER: gyro_x: -368 [0m
+ gyro_y: 998 
+ gyro_z: -333
+GYRO_X = -5.618320 
+ GYRO_Y = 15.236641 
+ GYRO_Z = -5.083970
+[0;32mI (11817) BALANCER: Waited 5ms[0m
+[0;32mI (11817) BALANCER: gyro_x: -403 [0m
+ gyro_y: 1020 
+ gyro_z: -265
+GYRO_X = -6.152672 
+ GYRO_Y = 15.572519 
+ GYRO_Z = -4.045802
+[0;32mI (11837) BALANCER: Waited 5ms[0m
+[0;32mI (11837) BALANCER: gyro_x: -397 [0m
+ gyro_y: 969 
+ gyro_z: -107
+GYRO_X = -6.061069 
+ GYRO_Y = 14.793893 
+ GYRO_Z = -1.633588
+[0;32mI (11847) BALANCER: Waited 5ms[0m
+[0;32mI (11847) BALANCER: gyro_x: -324 [0m
+ gyro_y: 826 
+ gyro_z: -58
+GYRO_X = -4.946565 
+ GYRO_Y = 12.610687 
+ GYRO_Z = -0.885496
+[0;32mI (11857) BALANCER: Waited 5ms[0m
+[0;32mI (11867) BALANCER: gyro_x: -236 [0m
+ gyro_y: 568 
+ gyro_z: -101
+GYRO_X = -3.603053 
+ GYRO_Y = 8.671756 
+ GYRO_Z = -1.541985
+[0;32mI (11877) BALANCER: Waited 5ms[0m
+[0;32mI (11877) BALANCER: gyro_x: -152 [0m
+ gyro_y: 521 
+ gyro_z: -100
+GYRO_X = -2.320611 
+ GYRO_Y = 7.954198 
+ GYRO_Z = -1.526718
+[0;32mI (11887) BALANCER: Waited 5ms[0m
+[0;32mI (11887) BALANCER: gyro_x: 4 [0m
+ gyro_y: 597 
+ gyro_z: -43
+GYRO_X = 0.061069 
+ GYRO_Y = 9.114504 
+ GYRO_Z = -0.656489
+[0;32mI (11897) BALANCER: Waited 5ms[0m
+[0;32mI (11907) BALANCER: gyro_x: 106 [0m
+ gyro_y: 734 
+ gyro_z: 48
+GYRO_X = 1.618321 
+ GYRO_Y = 11.206107 
+ GYRO_Z = 0.732824
+[0;32mI (11917) BALANCER: Waited 5ms[0m
+[0;32mI (11917) BALANCER: gyro_x: 170 [0m
+ gyro_y: 806 
+ gyro_z: 177
+GYRO_X = 2.595420 
+ GYRO_Y = 12.305344 
+ GYRO_Z = 2.702290
+[0;32mI (11927) BALANCER: Waited 5ms[0m
+[0;32mI (11937) BALANCER: gyro_x: 198 [0m
+ gyro_y: 817 
+ gyro_z: 205
+GYRO_X = 3.022901 
+ GYRO_Y = 12.473283 
+ GYRO_Z = 3.129771
+[0;32mI (11947) BALANCER: Waited 5ms[0m
+[0;32mI (11947) BALANCER: gyro_x: 223 [0m
+ gyro_y: 847 
+ gyro_z: 237
+GYRO_X = 3.404580 
+ GYRO_Y = 12.931297 
+ GYRO_Z = 3.618321
+[0;32mI (11957) BALANCER: Waited 5ms[0m
+[0;32mI (11957) BALANCER: gyro_x: 172 [0m
+ gyro_y: 945 
+ gyro_z: 282
+GYRO_X = 2.625954 
+ GYRO_Y = 14.427481 
+ GYRO_Z = 4.305344
+[0;32mI (11967) BALANCER: Waited 5ms[0m
+[0;32mI (11977) BALANCER: gyro_x: 111 [0m
+ gyro_y: 943 
+ gyro_z: 304
+GYRO_X = 1.694656 
+ GYRO_Y = 14.396947 
+ GYRO_Z = 4.641222
+[0;32mI (11987) BALANCER: Waited 5ms[0m
+[0;32mI (11987) BALANCER: gyro_x: 64 [0m
+ gyro_y: 828 
+ gyro_z: 149
+GYRO_X = 0.977099 
+ GYRO_Y = 12.641221 
+ GYRO_Z = 2.274809
+[0;32mI (11997) BALANCER: Waited 5ms[0m
+[0;32mI (11997) BALANCER: gyro_x: 86 [0m
+ gyro_y: 633 
+ gyro_z: 49
+GYRO_X = 1.312977 
+ GYRO_Y = 9.664123 
+ GYRO_Z = 0.748092
+[0;32mI (12007) BALANCER: Waited 5ms[0m
+[0;32mI (12017) BALANCER: gyro_x: 193 [0m
+ gyro_y: 348 
+ gyro_z: -51
+GYRO_X = 2.946565 
+ GYRO_Y = 5.312977 
+ GYRO_Z = -0.778626
+[0;32mI (12027) BALANCER: Waited 5ms[0m
+[0;32mI (12027) BALANCER: gyro_x: 258 [0m
+ gyro_y: 107 
+ gyro_z: -121
+GYRO_X = 3.938931 
+ GYRO_Y = 1.633588 
+ GYRO_Z = -1.847328
+[0;32mI (12037) BALANCER: Waited 5ms[0m
+[0;32mI (12037) BALANCER: gyro_x: 301 [0m
+ gyro_y: -83 
+ gyro_z: -141
+GYRO_X = 4.595420 
+ GYRO_Y = -1.267176 
+ GYRO_Z = -2.152672
+[0;32mI (12047) BALANCER: Waited 5ms[0m
+[0;32mI (12057) BALANCER: gyro_x: 331 [0m
+ gyro_y: -206 
+ gyro_z: -96
+GYRO_X = 5.053435 
+ GYRO_Y = -3.145038 
+ GYRO_Z = -1.465649
+[0;32mI (12067) BALANCER: Waited 5ms[0m
+[0;32mI (12067) BALANCER: gyro_x: 335 [0m
+ gyro_y: -283 
+ gyro_z: -34
+GYRO_X = 5.114504 
+ GYRO_Y = -4.320611 
+ GYRO_Z = -0.519084
+[0;32mI (12077) BALANCER: Waited 5ms[0m
+[0;32mI (12087) BALANCER: gyro_x: 311 [0m
+ gyro_y: -320 
+ gyro_z: 23
+GYRO_X = 4.748092 
+ GYRO_Y = -4.885496 
+ GYRO_Z = 0.351145
+[0;32mI (12097) BALANCER: Waited 5ms[0m
+[0;32mI (12097) BALANCER: gyro_x: 259 [0m
+ gyro_y: -330 
+ gyro_z: 106
+GYRO_X = 3.954198 
+ GYRO_Y = -5.038168 
+ GYRO_Z = 1.618321
+[0;32mI (12107) BALANCER: Waited 5ms[0m
+[0;32mI (12107) BALANCER: gyro_x: 176 [0m
+ gyro_y: -330 
+ gyro_z: 235
+GYRO_X = 2.687023 
+ GYRO_Y = -5.038168 
+ GYRO_Z = 3.587786
+[0;32mI (12117) BALANCER: Waited 5ms[0m
+[0;32mI (12127) BALANCER: gyro_x: 128 [0m
+ gyro_y: -335 
+ gyro_z: 303
+GYRO_X = 1.954198 
+ GYRO_Y = -5.114504 
+ GYRO_Z = 4.625954
+[0;32mI (12137) BALANCER: Waited 5ms[0m
+[0;32mI (12137) BALANCER: gyro_x: 70 [0m
+ gyro_y: -447 
+ gyro_z: 399
+GYRO_X = 1.068702 
+ GYRO_Y = -6.824428 
+ GYRO_Z = 6.091603
+[0;32mI (12147) BALANCER: Waited 5ms[0m
+[0;32mI (12147) BALANCER: gyro_x: 89 [0m
+ gyro_y: -757 
+ gyro_z: 463
+GYRO_X = 1.358779 
+ GYRO_Y = -11.557252 
+ GYRO_Z = 7.068702
+[0;32mI (12157) BALANCER: Waited 5ms[0m
+[0;32mI (12167) BALANCER: gyro_x: 145 [0m
+ gyro_y: -1081 
+ gyro_z: 432
+GYRO_X = 2.213740 
+ GYRO_Y = -16.503817 
+ GYRO_Z = 6.595420
+[0;32mI (12177) BALANCER: Waited 5ms[0m
+[0;32mI (12177) BALANCER: gyro_x: 192 [0m
+ gyro_y: -1199 
+ gyro_z: 381
+GYRO_X = 2.931298 
+ GYRO_Y = -18.305344 
+ GYRO_Z = 5.816794
+[0;32mI (12187) BALANCER: Waited 5ms[0m
+[0;32mI (12197) BALANCER: gyro_x: 263 [0m
+ gyro_y: -1231 
+ gyro_z: 352
+GYRO_X = 4.015267 
+ GYRO_Y = -18.793894 
+ GYRO_Z = 5.374046
+[0;32mI (12207) BALANCER: Waited 5ms[0m
+[0;32mI (12207) BALANCER: gyro_x: 297 [0m
+ gyro_y: -1205 
+ gyro_z: 335
+GYRO_X = 4.534351 
+ GYRO_Y = -18.396946 
+ GYRO_Z = 5.114504
+[0;32mI (12217) BALANCER: Waited 5ms[0m
+[0;32mI (12217) BALANCER: gyro_x: 334 [0m
+ gyro_y: -1264 
+ gyro_z: 279
+GYRO_X = 5.099236 
+ GYRO_Y = -19.297710 
+ GYRO_Z = 4.259542
+[0;32mI (12227) BALANCER: Waited 5ms[0m
+[0;32mI (12237) BALANCER: gyro_x: 394 [0m
+ gyro_y: -1235 
+ gyro_z: 283
+GYRO_X = 6.015267 
+ GYRO_Y = -18.854961 
+ GYRO_Z = 4.320611
+[0;32mI (12247) BALANCER: Waited 5ms[0m
+[0;32mI (12247) BALANCER: gyro_x: 422 [0m
+ gyro_y: -1170 
+ gyro_z: 323
+GYRO_X = 6.442748 
+ GYRO_Y = -17.862595 
+ GYRO_Z = 4.931298
+[0;32mI (12257) BALANCER: Waited 5ms[0m
+[0;32mI (12257) BALANCER: gyro_x: 408 [0m
+ gyro_y: -983 
+ gyro_z: 328
+GYRO_X = 6.229008 
+ GYRO_Y = -15.007633 
+ GYRO_Z = 5.007634
+[0;32mI (12277) BALANCER: Waited 5ms[0m
+[0;32mI (12277) BALANCER: gyro_x: 403 [0m
+ gyro_y: -891 
+ gyro_z: 210
+GYRO_X = 6.152672 
+ GYRO_Y = -13.603053 
+ GYRO_Z = 3.206107
+[0;32mI (12287) BALANCER: Waited 5ms[0m
+[0;32mI (12287) BALANCER: gyro_x: 418 [0m
+ gyro_y: -878 
+ gyro_z: 94
+GYRO_X = 6.381680 
+ GYRO_Y = -13.404580 
+ GYRO_Z = 1.435115
+[0;32mI (12297) BALANCER: Waited 5ms[0m
+[0;32mI (12307) BALANCER: gyro_x: 362 [0m
+ gyro_y: -831 
+ gyro_z: 11
+GYRO_X = 5.526718 
+ GYRO_Y = -12.687023 
+ GYRO_Z = 0.167939
+[0;32mI (12317) BALANCER: Waited 5ms[0m
+[0;32mI (12317) BALANCER: gyro_x: 242 [0m
+ gyro_y: -651 
+ gyro_z: -84
+GYRO_X = 3.694656 
+ GYRO_Y = -9.938931 
+ GYRO_Z = -1.282443
+[0;32mI (12327) BALANCER: Waited 5ms[0m
+[0;32mI (12327) BALANCER: gyro_x: 203 [0m
+ gyro_y: -518 
+ gyro_z: -163
+GYRO_X = 3.099237 
+ GYRO_Y = -7.908397 
+ GYRO_Z = -2.488550
+[0;32mI (12337) BALANCER: Waited 5ms[0m
+[0;32mI (12347) BALANCER: gyro_x: 258 [0m
+ gyro_y: -595 
+ gyro_z: -258
+GYRO_X = 3.938931 
+ GYRO_Y = -9.083969 
+ GYRO_Z = -3.938931
+[0;32mI (12357) BALANCER: Waited 5ms[0m
+[0;32mI (12357) BALANCER: gyro_x: 288 [0m
+ gyro_y: -649 
+ gyro_z: -267
+GYRO_X = 4.396946 
+ GYRO_Y = -9.908397 
+ GYRO_Z = -4.076336
+[0;32mI (12367) BALANCER: Waited 5ms[0m
+[0;32mI (12377) BALANCER: gyro_x: 301 [0m
+ gyro_y: -639 
+ gyro_z: -247
+GYRO_X = 4.595420 
+ GYRO_Y = -9.755725 
+ GYRO_Z = -3.770992
+[0;32mI (12387) BALANCER: Waited 5ms[0m
+[0;32mI (12387) BALANCER: gyro_x: 242 [0m
+ gyro_y: -626 
+ gyro_z: -197
+GYRO_X = 3.694656 
+ GYRO_Y = -9.557252 
+ GYRO_Z = -3.007634
+[0;32mI (12397) BALANCER: Waited 5ms[0m
+[0;32mI (12397) BALANCER: gyro_x: 164 [0m
+ gyro_y: -688 
+ gyro_z: -208
+GYRO_X = 2.503817 
+ GYRO_Y = -10.503817 
+ GYRO_Z = -3.175573
+[0;32mI (12407) BALANCER: Waited 5ms[0m
+[0;32mI (12417) BALANCER: gyro_x: 139 [0m
+ gyro_y: -769 
+ gyro_z: -196
+GYRO_X = 2.122137 
+ GYRO_Y = -11.740458 
+ GYRO_Z = -2.992366
+[0;32mI (12427) BALANCER: Waited 5ms[0m
+[0;32mI (12427) BALANCER: gyro_x: 116 [0m
+ gyro_y: -841 
+ gyro_z: -181
+GYRO_X = 1.770992 
+ GYRO_Y = -12.839695 
+ GYRO_Z = -2.763359
+[0;32mI (12437) BALANCER: Waited 5ms[0m
+[0;32mI (12437) BALANCER: gyro_x: 49 [0m
+ gyro_y: -854 
+ gyro_z: -167
+GYRO_X = 0.748092 
+ GYRO_Y = -13.038168 
+ GYRO_Z = -2.549618
+[0;32mI (12457) BALANCER: Waited 5ms[0m
+[0;32mI (12457) BALANCER: gyro_x: -3 [0m
+ gyro_y: -829 
+ gyro_z: -173
+GYRO_X = -0.045802 
+ GYRO_Y = -12.656488 
+ GYRO_Z = -2.641221
+[0;32mI (12467) BALANCER: Waited 5ms[0m
+[0;32mI (12467) BALANCER: gyro_x: -5 [0m
+ gyro_y: -840 
+ gyro_z: -172
+GYRO_X = -0.076336 
+ GYRO_Y = -12.824428 
+ GYRO_Z = -2.625954
+[0;32mI (12477) BALANCER: Waited 5ms[0m
+[0;32mI (12487) BALANCER: gyro_x: -2 [0m
+ gyro_y: -837 
+ gyro_z: -169
+GYRO_X = -0.030534 
+ GYRO_Y = -12.778625 
+ GYRO_Z = -2.580153
+[0;32mI (12497) BALANCER: Waited 5ms[0m
+[0;32mI (12497) BALANCER: gyro_x: 8 [0m
+ gyro_y: -800 
+ gyro_z: -142
+GYRO_X = 0.122137 
+ GYRO_Y = -12.213740 
+ GYRO_Z = -2.167939
+[0;32mI (12507) BALANCER: Waited 5ms[0m
+[0;32mI (12507) BALANCER: gyro_x: 79 [0m
+ gyro_y: -777 
+ gyro_z: -161
+GYRO_X = 1.206107 
+ GYRO_Y = -11.862596 
+ GYRO_Z = -2.458015
+[0;32mI (12527) BALANCER: Waited 5ms[0m
+[0;32mI (12527) BALANCER: gyro_x: 220 [0m
+ gyro_y: -923 
+ gyro_z: -245
+GYRO_X = 3.358779 
+ GYRO_Y = -14.091603 
+ GYRO_Z = -3.740458
+[0;32mI (12537) BALANCER: Waited 5ms[0m
+[0;32mI (12537) BALANCER: gyro_x: 218 [0m
+ gyro_y: -1171 
+ gyro_z: -383
+GYRO_X = 3.328244 
+ GYRO_Y = -17.877863 
+ GYRO_Z = -5.847328
+[0;32mI (12547) BALANCER: Waited 5ms[0m
+[0;32mI (12557) BALANCER: gyro_x: 107 [0m
+ gyro_y: -1165 
+ gyro_z: -439
+GYRO_X = 1.633588 
+ GYRO_Y = -17.786259 
+ GYRO_Z = -6.702290
+[0;32mI (12567) BALANCER: Waited 5ms[0m
+[0;32mI (12567) BALANCER: gyro_x: -18 [0m
+ gyro_y: -897 
+ gyro_z: -433
+GYRO_X = -0.274809 
+ GYRO_Y = -13.694656 
+ GYRO_Z = -6.610687
+[0;32mI (12577) BALANCER: Waited 5ms[0m
+[0;32mI (12577) BALANCER: gyro_x: -2 [0m
+ gyro_y: -615 
+ gyro_z: -366
+GYRO_X = -0.030534 
+ GYRO_Y = -9.389313 
+ GYRO_Z = -5.587786
+[0;32mI (12597) BALANCER: Waited 5ms[0m
+[0;32mI (12597) BALANCER: gyro_x: 17 [0m
+ gyro_y: -378 
+ gyro_z: -394
+GYRO_X = 0.259542 
+ GYRO_Y = -5.770992 
+ GYRO_Z = -6.015267
+[0;32mI (12607) BALANCER: Waited 5ms[0m
+[0;32mI (12607) BALANCER: gyro_x: 41 [0m
+ gyro_y: -231 
+ gyro_z: -429
+GYRO_X = 0.625954 
+ GYRO_Y = -3.526718 
+ GYRO_Z = -6.549618
+[0;32mI (12617) BALANCER: Waited 5ms[0m
+[0;32mI (12627) BALANCER: gyro_x: 93 [0m
+ gyro_y: -188 
+ gyro_z: -460
+GYRO_X = 1.419847 
+ GYRO_Y = -2.870229 
+ GYRO_Z = -7.022901
+[0;32mI (12637) BALANCER: Waited 5ms[0m
+[0;32mI (12637) BALANCER: gyro_x: 59 [0m
+ gyro_y: -95 
+ gyro_z: -540
+GYRO_X = 0.900763 
+ GYRO_Y = -1.450382 
+ GYRO_Z = -8.244275
+[0;32mI (12647) BALANCER: Waited 5ms[0m
+[0;32mI (12647) BALANCER: gyro_x: -13 [0m
+ gyro_y: 105 
+ gyro_z: -562
+GYRO_X = -0.198473 
+ GYRO_Y = 1.603053 
+ GYRO_Z = -8.580153
+[0;32mI (12657) BALANCER: Waited 5ms[0m
+[0;32mI (12667) BALANCER: gyro_x: -28 [0m
+ gyro_y: 315 
+ gyro_z: -587
+GYRO_X = -0.427481 
+ GYRO_Y = 4.809160 
+ GYRO_Z = -8.961832
+[0;32mI (12677) BALANCER: Waited 5ms[0m
+[0;32mI (12677) BALANCER: gyro_x: -10 [0m
+ gyro_y: 390 
+ gyro_z: -651
+GYRO_X = -0.152672 
+ GYRO_Y = 5.954198 
+ GYRO_Z = -9.938931
+[0;32mI (12687) BALANCER: Waited 5ms[0m
+[0;32mI (12687) BALANCER: gyro_x: 36 [0m
+ gyro_y: 515 
+ gyro_z: -701
+GYRO_X = 0.549618 
+ GYRO_Y = 7.862596 
+ GYRO_Z = -10.702291
+[0;32mI (12707) BALANCER: Waited 5ms[0m
+[0;32mI (12707) BALANCER: gyro_x: 10 [0m
+ gyro_y: 694 
+ gyro_z: -668
+GYRO_X = 0.152672 
+ GYRO_Y = 10.595420 
+ GYRO_Z = -10.198473
+[0;32mI (12717) BALANCER: Waited 5ms[0m
+[0;32mI (12717) BALANCER: gyro_x: -50 [0m
+ gyro_y: 850 
+ gyro_z: -551
+GYRO_X = -0.763359 
+ GYRO_Y = 12.977099 
+ GYRO_Z = -8.412213
+[0;32mI (12727) BALANCER: Waited 5ms[0m
+[0;32mI (12737) BALANCER: gyro_x: -87 [0m
+ gyro_y: 912 
+ gyro_z: -477
+GYRO_X = -1.328244 
+ GYRO_Y = 13.923664 
+ GYRO_Z = -7.282443
+[0;32mI (12747) BALANCER: Waited 5ms[0m
+[0;32mI (12747) BALANCER: gyro_x: -166 [0m
+ gyro_y: 1086 
+ gyro_z: -267
+GYRO_X = -2.534351 
+ GYRO_Y = 16.580153 
+ GYRO_Z = -4.076336
+[0;32mI (12757) BALANCER: Waited 5ms[0m
+[0;32mI (12757) BALANCER: gyro_x: -240 [0m
+ gyro_y: 1051 
+ gyro_z: -137
+GYRO_X = -3.664122 
+ GYRO_Y = 16.045801 
+ GYRO_Z = -2.091603
+[0;32mI (12777) BALANCER: Waited 5ms[0m
+[0;32mI (12777) BALANCER: gyro_x: -281 [0m
+ gyro_y: 745 
+ gyro_z: -241
+GYRO_X = -4.290076 
+ GYRO_Y = 11.374045 
+ GYRO_Z = -3.679389
+[0;32mI (12787) BALANCER: Waited 5ms[0m
+[0;32mI (12787) BALANCER: gyro_x: -279 [0m
+ gyro_y: 411 
+ gyro_z: -326
+GYRO_X = -4.259542 
+ GYRO_Y = 6.274809 
+ GYRO_Z = -4.977099
+[0;32mI (12797) BALANCER: Waited 5ms[0m
+[0;32mI (12807) BALANCER: gyro_x: -265 [0m
+ gyro_y: 271 
+ gyro_z: -311
+GYRO_X = -4.045802 
+ GYRO_Y = 4.137404 
+ GYRO_Z = -4.748092
+[0;32mI (12817) BALANCER: Waited 5ms[0m
+[0;32mI (12817) BALANCER: gyro_x: -185 [0m
+ gyro_y: 188 
+ gyro_z: -188
+GYRO_X = -2.824427 
+ GYRO_Y = 2.870229 
+ GYRO_Z = -2.870229
+[0;32mI (12827) BALANCER: Waited 5ms[0m
+[0;32mI (12827) BALANCER: gyro_x: -6 [0m
+ gyro_y: 75 
+ gyro_z: -81
+GYRO_X = -0.091603 
+ GYRO_Y = 1.145038 
+ GYRO_Z = -1.236641
+[0;32mI (12837) BALANCER: Waited 5ms[0m
+[0;32mI (12847) BALANCER: gyro_x: 174 [0m
+ gyro_y: -71 
+ gyro_z: -60
+GYRO_X = 2.656489 
+ GYRO_Y = -1.083969 
+ GYRO_Z = -0.916031
+[0;32mI (12857) BALANCER: Waited 5ms[0m
+[0;32mI (12857) BALANCER: gyro_x: 267 [0m
+ gyro_y: -125 
+ gyro_z: -81
+GYRO_X = 4.076336 
+ GYRO_Y = -1.908397 
+ GYRO_Z = -1.236641
+[0;32mI (12867) BALANCER: Waited 5ms[0m
+[0;32mI (12877) BALANCER: gyro_x: 322 [0m
+ gyro_y: -100 
+ gyro_z: -139
+GYRO_X = 4.916030 
+ GYRO_Y = -1.526718 
+ GYRO_Z = -2.122137
+[0;32mI (12887) BALANCER: Waited 5ms[0m
+[0;32mI (12887) BALANCER: gyro_x: 337 [0m
+ gyro_y: -38 
+ gyro_z: -182
+GYRO_X = 5.145038 
+ GYRO_Y = -0.580153 
+ GYRO_Z = -2.778626
+[0;32mI (12897) BALANCER: Waited 5ms[0m
+[0;32mI (12897) BALANCER: gyro_x: 320 [0m
+ gyro_y: -38 
+ gyro_z: -198
+GYRO_X = 4.885496 
+ GYRO_Y = -0.580153 
+ GYRO_Z = -3.022901
+[0;32mI (12907) BALANCER: Waited 5ms[0m
+[0;32mI (12917) BALANCER: gyro_x: 266 [0m
+ gyro_y: -24 
+ gyro_z: -182
+GYRO_X = 4.061069 
+ GYRO_Y = -0.366412 
+ GYRO_Z = -2.778626
+[0;32mI (12927) BALANCER: Waited 5ms[0m
+[0;32mI (12927) BALANCER: gyro_x: 178 [0m
+ gyro_y: 9 
+ gyro_z: -87
+GYRO_X = 2.717557 
+ GYRO_Y = 0.137405 
+ GYRO_Z = -1.328244
+[0;32mI (12937) BALANCER: Waited 5ms[0m
+[0;32mI (12937) BALANCER: gyro_x: 100 [0m
+ gyro_y: 47 
+ gyro_z: 99
+GYRO_X = 1.526718 
+ GYRO_Y = 0.717557 
+ GYRO_Z = 1.511450
+[0;32mI (12947) BALANCER: Waited 5ms[0m
+[0;32mI (12957) BALANCER: gyro_x: 29 [0m
+ gyro_y: 81 
+ gyro_z: 195
+GYRO_X = 0.442748 
+ GYRO_Y = 1.236641 
+ GYRO_Z = 2.977099
+[0;32mI (12967) BALANCER: Waited 5ms[0m
+[0;32mI (12967) BALANCER: gyro_x: -120 [0m
+ gyro_y: 60 
+ gyro_z: 264
+GYRO_X = -1.832061 
+ GYRO_Y = 0.916031 
+ GYRO_Z = 4.030534
+[0;32mI (12977) BALANCER: Waited 5ms[0m
+[0;32mI (12977) BALANCER: gyro_x: -228 [0m
+ gyro_y: 100 
+ gyro_z: 300
+GYRO_X = -3.480916 
+ GYRO_Y = 1.526718 
+ GYRO_Z = 4.580153
+[0;32mI (12987) BALANCER: Waited 5ms[0m
+[0;32mI (12997) BALANCER: gyro_x: -259 [0m
+ gyro_y: 111 
+ gyro_z: 308
+GYRO_X = -3.954198 
+ GYRO_Y = 1.694656 
+ GYRO_Z = 4.702290
+[0;32mI (13007) BALANCER: Waited 5ms[0m
+[0;32mI (13007) BALANCER: gyro_x: -244 [0m
+ gyro_y: 82 
+ gyro_z: 296
+GYRO_X = -3.725191 
+ GYRO_Y = 1.251908 
+ GYRO_Z = 4.519084
+[0;32mI (13017) BALANCER: Waited 5ms[0m
+[0;32mI (13027) BALANCER: gyro_x: -276 [0m
+ gyro_y: 90 
+ gyro_z: 317
+GYRO_X = -4.213740 
+ GYRO_Y = 1.374046 
+ GYRO_Z = 4.839694
+[0;32mI (13037) BALANCER: Waited 5ms[0m
+[0;32mI (13037) BALANCER: gyro_x: -330 [0m
+ gyro_y: 311 
+ gyro_z: 483
+GYRO_X = -5.038168 
+ GYRO_Y = 4.748092 
+ GYRO_Z = 7.374046
+[0;32mI (13047) BALANCER: Waited 5ms[0m
+[0;32mI (13047) BALANCER: gyro_x: -444 [0m
+ gyro_y: 558 
+ gyro_z: 673
+GYRO_X = -6.778626 
+ GYRO_Y = 8.519084 
+ GYRO_Z = 10.274809
+[0;32mI (13057) BALANCER: Waited 5ms[0m
+[0;32mI (13067) BALANCER: gyro_x: -522 [0m
+ gyro_y: 676 
+ gyro_z: 718
+GYRO_X = -7.969466 
+ GYRO_Y = 10.320611 
+ GYRO_Z = 10.961832
+[0;32mI (13077) BALANCER: Waited 5ms[0m
+[0;32mI (13077) BALANCER: gyro_x: -593 [0m
+ gyro_y: 741 
+ gyro_z: 772
+GYRO_X = -9.053435 
+ GYRO_Y = 11.312977 
+ GYRO_Z = 11.786260
+[0;32mI (13087) BALANCER: Waited 5ms[0m
+[0;32mI (13087) BALANCER: gyro_x: -553 [0m
+ gyro_y: 419 
+ gyro_z: 637
+GYRO_X = -8.442748 
+ GYRO_Y = 6.396946 
+ GYRO_Z = 9.725191
+[0;32mI (13097) BALANCER: Waited 5ms[0m
+[0;32mI (13107) BALANCER: gyro_x: -369 [0m
+ gyro_y: -152 
+ gyro_z: 375
+GYRO_X = -5.633588 
+ GYRO_Y = -2.320611 
+ GYRO_Z = 5.725191
+[0;32mI (13117) BALANCER: Waited 5ms[0m
+[0;32mI (13117) BALANCER: gyro_x: -259 [0m
+ gyro_y: -427 
+ gyro_z: 248
+GYRO_X = -3.954198 
+ GYRO_Y = -6.519084 
+ GYRO_Z = 3.786260
+[0;32mI (13127) BALANCER: Waited 5ms[0m
+[0;32mI (13137) BALANCER: gyro_x: -137 [0m
+ gyro_y: -433 
+ gyro_z: 239
+GYRO_X = -2.091603 
+ GYRO_Y = -6.610687 
+ GYRO_Z = 3.648855
+[0;32mI (13147) BALANCER: Waited 5ms[0m
+[0;32mI (13147) BALANCER: gyro_x: 2 [0m
+ gyro_y: -201 
+ gyro_z: 399
+GYRO_X = 0.030534 
+ GYRO_Y = -3.068702 
+ GYRO_Z = 6.091603
+[0;32mI (13157) BALANCER: Waited 5ms[0m
+[0;32mI (13157) BALANCER: gyro_x: 175 [0m
+ gyro_y: -108 
+ gyro_z: 482
+GYRO_X = 2.671756 
+ GYRO_Y = -1.648855 
+ GYRO_Z = 7.358778
+[0;32mI (13167) BALANCER: Waited 5ms[0m
+[0;32mI (13177) BALANCER: gyro_x: 258 [0m
+ gyro_y: -238 
+ gyro_z: 457
+GYRO_X = 3.938931 
+ GYRO_Y = -3.633588 
+ GYRO_Z = 6.977099
+[0;32mI (13187) BALANCER: Waited 5ms[0m
+[0;32mI (13187) BALANCER: gyro_x: 365 [0m
+ gyro_y: -754 
+ gyro_z: 305
+GYRO_X = 5.572519 
+ GYRO_Y = -11.511451 
+ GYRO_Z = 4.656488
+[0;32mI (13197) BALANCER: Waited 5ms[0m
+[0;32mI (13197) BALANCER: gyro_x: 409 [0m
+ gyro_y: -1233 
+ gyro_z: 210
+GYRO_X = 6.244275 
+ GYRO_Y = -18.824427 
+ GYRO_Z = 3.206107
+[0;32mI (13207) BALANCER: Waited 5ms[0m
+[0;32mI (13217) BALANCER: gyro_x: 389 [0m
+ gyro_y: -1297 
+ gyro_z: 324
+GYRO_X = 5.938931 
+ GYRO_Y = -19.801527 
+ GYRO_Z = 4.946565
+[0;32mI (13227) BALANCER: Waited 5ms[0m
+[0;32mI (13227) BALANCER: gyro_x: 363 [0m
+ gyro_y: -1201 
+ gyro_z: 482
+GYRO_X = 5.541985 
+ GYRO_Y = -18.335878 
+ GYRO_Z = 7.358778
+[0;32mI (13237) BALANCER: Waited 5ms[0m
+[0;32mI (13247) BALANCER: gyro_x: 343 [0m
+ gyro_y: -1024 
+ gyro_z: 625
+GYRO_X = 5.236641 
+ GYRO_Y = -15.633588 
+ GYRO_Z = 9.541985
+[0;32mI (13257) BALANCER: Waited 5ms[0m
+[0;32mI (13257) BALANCER: gyro_x: 358 [0m
+ gyro_y: -961 
+ gyro_z: 633
+GYRO_X = 5.465649 
+ GYRO_Y = -14.671756 
+ GYRO_Z = 9.664123
+[0;32mI (13267) BALANCER: Waited 5ms[0m
+[0;32mI (13267) BALANCER: gyro_x: 347 [0m
+ gyro_y: -806 
+ gyro_z: 626
+GYRO_X = 5.297710 
+ GYRO_Y = -12.305344 
+ GYRO_Z = 9.557252
+[0;32mI (13277) BALANCER: Waited 5ms[0m
+[0;32mI (13287) BALANCER: gyro_x: 306 [0m
+ gyro_y: -722 
+ gyro_z: 694
+GYRO_X = 4.671756 
+ GYRO_Y = -11.022901 
+ GYRO_Z = 10.595420
+[0;32mI (13297) BALANCER: Waited 5ms[0m
+[0;32mI (13297) BALANCER: gyro_x: 204 [0m
+ gyro_y: -641 
+ gyro_z: 782
+GYRO_X = 3.114504 
+ GYRO_Y = -9.786260 
+ GYRO_Z = 11.938931
+[0;32mI (13307) BALANCER: Waited 5ms[0m
+[0;32mI (13317) BALANCER: gyro_x: 49 [0m
+ gyro_y: -812 
+ gyro_z: 661
+GYRO_X = 0.748092 
+ GYRO_Y = -12.396947 
+ GYRO_Z = 10.091603
+[0;32mI (13327) BALANCER: Waited 5ms[0m
+[0;32mI (13327) BALANCER: gyro_x: -82 [0m
+ gyro_y: -1178 
+ gyro_z: 377
+GYRO_X = -1.251908 
+ GYRO_Y = -17.984734 
+ GYRO_Z = 5.755725
+[0;32mI (13337) BALANCER: Waited 5ms[0m
+[0;32mI (13337) BALANCER: gyro_x: -89 [0m
+ gyro_y: -1445 
+ gyro_z: 82
+GYRO_X = -1.358779 
+ GYRO_Y = -22.061069 
+ GYRO_Z = 1.251908
+[0;32mI (13347) BALANCER: Waited 5ms[0m
+[0;32mI (13357) BALANCER: gyro_x: -31 [0m
+ gyro_y: -1494 
+ gyro_z: -80
+GYRO_X = -0.473282 
+ GYRO_Y = -22.809160 
+ GYRO_Z = -1.221374
+[0;32mI (13367) BALANCER: Waited 5ms[0m
+[0;32mI (13367) BALANCER: gyro_x: 132 [0m
+ gyro_y: -1602 
+ gyro_z: -418
+GYRO_X = 2.015267 
+ GYRO_Y = -24.458015 
+ GYRO_Z = -6.381680
+[0;32mI (13377) BALANCER: Waited 5ms[0m
+[0;32mI (13377) BALANCER: gyro_x: 207 [0m
+ gyro_y: -1795 
+ gyro_z: -809
+GYRO_X = 3.160305 
+ GYRO_Y = -27.404581 
+ GYRO_Z = -12.351145
+[0;32mI (13397) BALANCER: Waited 5ms[0m
+[0;32mI (13397) BALANCER: gyro_x: 145 [0m
+ gyro_y: -1474 
+ gyro_z: -931
+GYRO_X = 2.213740 
+ GYRO_Y = -22.503817 
+ GYRO_Z = -14.213740
+[0;32mI (13407) BALANCER: Waited 5ms[0m
+[0;32mI (13407) BALANCER: gyro_x: -109 [0m
+ gyro_y: -580 
+ gyro_z: -493
+GYRO_X = -1.664122 
+ GYRO_Y = -8.854961 
+ GYRO_Z = -7.526718
+[0;32mI (13417) BALANCER: Waited 5ms[0m
+[0;32mI (13427) BALANCER: gyro_x: -258 [0m
+ gyro_y: -120 
+ gyro_z: -222
+GYRO_X = -3.938931 
+ GYRO_Y = -1.832061 
+ GYRO_Z = -3.389313
+[0;32mI (13437) BALANCER: Waited 5ms[0m
+[0;32mI (13437) BALANCER: gyro_x: -471 [0m
+ gyro_y: -57 
+ gyro_z: -123
+GYRO_X = -7.190840 
+ GYRO_Y = -0.870229 
+ GYRO_Z = -1.877863
+[0;32mI (13447) BALANCER: Waited 5ms[0m
+[0;32mI (13457) BALANCER: gyro_x: -599 [0m
+ gyro_y: -707 
+ gyro_z: -302
+GYRO_X = -9.145039 
+ GYRO_Y = -10.793893 
+ GYRO_Z = -4.610687
+[0;32mI (13467) BALANCER: Waited 5ms[0m
+[0;32mI (13467) BALANCER: gyro_x: -730 [0m
+ gyro_y: -1543 
+ gyro_z: -493
+GYRO_X = -11.145039 
+ GYRO_Y = -23.557251 
+ GYRO_Z = -7.526718
+[0;32mI (13477) BALANCER: Waited 5ms[0m
+[0;32mI (13477) BALANCER: gyro_x: -785 [0m
+ gyro_y: -2181 
+ gyro_z: -498
+GYRO_X = -11.984733 
+ GYRO_Y = -33.297710 
+ GYRO_Z = -7.603054
+[0;32mI (13487) BALANCER: Waited 5ms[0m
+[0;32mI (13497) BALANCER: gyro_x: -735 [0m
+ gyro_y: -2672 
+ gyro_z: -379
+GYRO_X = -11.221375 
+ GYRO_Y = -40.793892 
+ GYRO_Z = -5.786260
+[0;32mI (13507) BALANCER: Waited 5ms[0m
+[0;32mI (13507) BALANCER: gyro_x: -686 [0m
+ gyro_y: -2824 
+ gyro_z: -344
+GYRO_X = -10.473283 
+ GYRO_Y = -43.114502 
+ GYRO_Z = -5.251908
+[0;32mI (13517) BALANCER: Waited 5ms[0m
+[0;32mI (13527) BALANCER: gyro_x: -486 [0m
+ gyro_y: -2811 
+ gyro_z: -320
+GYRO_X = -7.419847 
+ GYRO_Y = -42.916031 
+ GYRO_Z = -4.885496
+[0;32mI (13537) BALANCER: Waited 5ms[0m
+[0;32mI (13537) BALANCER: gyro_x: -236 [0m
+ gyro_y: -2755 
+ gyro_z: -336
+GYRO_X = -3.603053 
+ GYRO_Y = -42.061069 
+ GYRO_Z = -5.129771
+[0;32mI (13547) BALANCER: Waited 5ms[0m
+[0;32mI (13557) BALANCER: gyro_x: -84 [0m
+ gyro_y: -2609 
+ gyro_z: -404
+GYRO_X = -1.282443 
+ GYRO_Y = -39.832062 
+ GYRO_Z = -6.167939
+[0;32mI (13567) BALANCER: Waited 5ms[0m
+[0;32mI (13567) BALANCER: gyro_x: -50 [0m
+ gyro_y: -2281 
+ gyro_z: -477
+GYRO_X = -0.763359 
+ GYRO_Y = -34.824429 
+ GYRO_Z = -7.282443
+[0;32mI (13577) BALANCER: Waited 5ms[0m
+[0;32mI (13577) BALANCER: gyro_x: -107 [0m
+ gyro_y: -1743 
+ gyro_z: -454
+GYRO_X = -1.633588 
+ GYRO_Y = -26.610687 
+ GYRO_Z = -6.931298
+[0;32mI (13587) BALANCER: Waited 5ms[0m
+[0;32mI (13597) BALANCER: gyro_x: -255 [0m
+ gyro_y: -1182 
+ gyro_z: -393
+GYRO_X = -3.893130 
+ GYRO_Y = -18.045801 
+ GYRO_Z = -6.000000
+[0;32mI (13607) BALANCER: Waited 5ms[0m
+[0;32mI (13607) BALANCER: gyro_x: -299 [0m
+ gyro_y: -886 
+ gyro_z: -368
+GYRO_X = -4.564886 
+ GYRO_Y = -13.526717 
+ GYRO_Z = -5.618320
+[0;32mI (13617) BALANCER: Waited 5ms[0m
+[0;32mI (13627) BALANCER: gyro_x: -308 [0m
+ gyro_y: -706 
+ gyro_z: -300
+GYRO_X = -4.702290 
+ GYRO_Y = -10.778625 
+ GYRO_Z = -4.580153
+[0;32mI (13637) BALANCER: Waited 5ms[0m
+[0;32mI (13637) BALANCER: gyro_x: -260 [0m
+ gyro_y: -763 
+ gyro_z: -312
+GYRO_X = -3.969466 
+ GYRO_Y = -11.648855 
+ GYRO_Z = -4.763359
+[0;32mI (13647) BALANCER: Waited 5ms[0m
+[0;32mI (13647) BALANCER: gyro_x: -235 [0m
+ gyro_y: -991 
+ gyro_z: -401
+GYRO_X = -3.587786 
+ GYRO_Y = -15.129771 
+ GYRO_Z = -6.122138
+[0;32mI (13667) BALANCER: Waited 5ms[0m
+[0;32mI (13667) BALANCER: gyro_x: -172 [0m
+ gyro_y: -1290 
+ gyro_z: -443
+GYRO_X = -2.625954 
+ GYRO_Y = -19.694656 
+ GYRO_Z = -6.763359
+[0;32mI (13677) BALANCER: Waited 5ms[0m
+[0;32mI (13677) BALANCER: gyro_x: -107 [0m
+ gyro_y: -1513 
+ gyro_z: -403
+GYRO_X = -1.633588 
+ GYRO_Y = -23.099237 
+ GYRO_Z = -6.152672
+[0;32mI (13687) BALANCER: Waited 5ms[0m
+[0;32mI (13697) BALANCER: gyro_x: -78 [0m
+ gyro_y: -1643 
+ gyro_z: -366
+GYRO_X = -1.190840 
+ GYRO_Y = -25.083969 
+ GYRO_Z = -5.587786
+[0;32mI (13707) BALANCER: Waited 5ms[0m
+[0;32mI (13707) BALANCER: gyro_x: -36 [0m
+ gyro_y: -1773 
+ gyro_z: -278
+GYRO_X = -0.549618 
+ GYRO_Y = -27.068703 
+ GYRO_Z = -4.244275
+[0;32mI (13717) BALANCER: Waited 5ms[0m
+[0;32mI (13727) BALANCER: gyro_x: -5 [0m
+ gyro_y: -1757 
+ gyro_z: -191
+GYRO_X = -0.076336 
+ GYRO_Y = -26.824427 
+ GYRO_Z = -2.916031
+[0;32mI (13737) BALANCER: Waited 5ms[0m
+[0;32mI (13737) BALANCER: gyro_x: -16 [0m
+ gyro_y: -1546 
+ gyro_z: -133
+GYRO_X = -0.244275 
+ GYRO_Y = -23.603054 
+ GYRO_Z = -2.030534
+[0;32mI (13747) BALANCER: Waited 5ms[0m
+[0;32mI (13747) BALANCER: gyro_x: -40 [0m
+ gyro_y: -1277 
+ gyro_z: -64
+GYRO_X = -0.610687 
+ GYRO_Y = -19.496183 
+ GYRO_Z = -0.977099
+[0;32mI (13757) BALANCER: Waited 5ms[0m
+[0;32mI (13767) BALANCER: gyro_x: -34 [0m
+ gyro_y: -1077 
+ gyro_z: -14
+GYRO_X = -0.519084 
+ GYRO_Y = -16.442749 
+ GYRO_Z = -0.213740
+[0;32mI (13777) BALANCER: Waited 5ms[0m
+[0;32mI (13777) BALANCER: gyro_x: -12 [0m
+ gyro_y: -754 
+ gyro_z: 3
+GYRO_X = -0.183206 
+ GYRO_Y = -11.511451 
+ GYRO_Z = 0.045802
+[0;32mI (13787) BALANCER: Waited 5ms[0m
+[0;32mI (13797) BALANCER: gyro_x: -39 [0m
+ gyro_y: -334 
+ gyro_z: -32
+GYRO_X = -0.595420 
+ GYRO_Y = -5.099236 
+ GYRO_Z = -0.488550
+[0;32mI (13807) BALANCER: Waited 5ms[0m
+[0;32mI (13807) BALANCER: gyro_x: -75 [0m
+ gyro_y: -115 
+ gyro_z: 22
+GYRO_X = -1.145038 
+ GYRO_Y = -1.755725 
+ GYRO_Z = 0.335878
+[0;32mI (13817) BALANCER: Waited 5ms[0m
+[0;32mI (13817) BALANCER: gyro_x: -145 [0m
+ gyro_y: -3 
+ gyro_z: 113
+GYRO_X = -2.213740 
+ GYRO_Y = -0.045802 
+ GYRO_Z = 1.725191
+[0;32mI (13827) BALANCER: Waited 5ms[0m
+[0;32mI (13837) BALANCER: gyro_x: -232 [0m
+ gyro_y: 114 
+ gyro_z: 149
+GYRO_X = -3.541985 
+ GYRO_Y = 1.740458 
+ GYRO_Z = 2.274809
+[0;32mI (13847) BALANCER: Waited 5ms[0m
+[0;32mI (13847) BALANCER: gyro_x: -307 [0m
+ gyro_y: 149 
+ gyro_z: 199
+GYRO_X = -4.687023 
+ GYRO_Y = 2.274809 
+ GYRO_Z = 3.038168
+[0;32mI (13857) BALANCER: Waited 5ms[0m
+[0;32mI (13857) BALANCER: gyro_x: -302 [0m
+ gyro_y: 148 
+ gyro_z: 238
+GYRO_X = -4.610687 
+ GYRO_Y = 2.259542 
+ GYRO_Z = 3.633588
+[0;32mI (13867) BALANCER: Waited 5ms[0m
+[0;32mI (13877) BALANCER: gyro_x: -264 [0m
+ gyro_y: 68 
+ gyro_z: 244
+GYRO_X = -4.030534 
+ GYRO_Y = 1.038168 
+ GYRO_Z = 3.725191
+[0;32mI (13887) BALANCER: Waited 5ms[0m
+[0;32mI (13887) BALANCER: gyro_x: -197 [0m
+ gyro_y: -53 
+ gyro_z: 171
+GYRO_X = -3.007634 
+ GYRO_Y = -0.809160 
+ GYRO_Z = 2.610687
+[0;32mI (13897) BALANCER: Waited 5ms[0m
+[0;32mI (13907) BALANCER: gyro_x: -170 [0m
+ gyro_y: -95 
+ gyro_z: 55
+GYRO_X = -2.595420 
+ GYRO_Y = -1.450382 
+ GYRO_Z = 0.839695
+[0;32mI (13917) BALANCER: Waited 5ms[0m
+[0;32mI (13917) BALANCER: gyro_x: -102 [0m
+ gyro_y: -253 
+ gyro_z: -36
+GYRO_X = -1.557252 
+ GYRO_Y = -3.862595 
+ GYRO_Z = -0.549618
+[0;32mI (13927) BALANCER: Waited 5ms[0m
+[0;32mI (13927) BALANCER: gyro_x: -66 [0m
+ gyro_y: -349 
+ gyro_z: -43
+GYRO_X = -1.007634 
+ GYRO_Y = -5.328244 
+ GYRO_Z = -0.656489
+[0;32mI (13937) BALANCER: Waited 5ms[0m
+[0;32mI (13947) BALANCER: gyro_x: 46 [0m
+ gyro_y: -337 
+ gyro_z: -52
+GYRO_X = 0.702290 
+ GYRO_Y = -5.145038 
+ GYRO_Z = -0.793893
+[0;32mI (13957) BALANCER: Waited 5ms[0m
+[0;32mI (13957) BALANCER: gyro_x: 97 [0m
+ gyro_y: -337 
+ gyro_z: -100
+GYRO_X = 1.480916 
+ GYRO_Y = -5.145038 
+ GYRO_Z = -1.526718
+[0;32mI (13967) BALANCER: Waited 5ms[0m
+[0;32mI (13967) BALANCER: gyro_x: 144 [0m
+ gyro_y: -272 
+ gyro_z: -118
+GYRO_X = 2.198473 
+ GYRO_Y = -4.152672 
+ GYRO_Z = -1.801527
+[0;32mI (13977) BALANCER: Waited 5ms[0m
+this is the bias: 0.350335
+[0;32mI (23987) BALANCER: Pitch: -1.323429[0m
+ Gyro: -1.846518
+ P: -0.890798
+ D: -5.539555
+ Motor: -6.430353
+ pitch_error: -0.029693
+
+[0;32mI (33987) BALANCER: Pitch: 18.514004[0m
+ Gyro: -1.312167
+ P: -375.339722
+ D: -3.936501
+ Motor: -379.276215
+ pitch_error: -12.511324
+
+[0;32mI (43987) BALANCER: Pitch: 18.701008[0m
+ Gyro: 0.779436
+ P: -127.456825
+ D: 2.338308
+ Motor: -125.118515
+ pitch_error: -4.248561
+
+[0;32mI (53987) BALANCER: Pitch: 11.432081[0m
+ Gyro: 0.000810
+ P: -117.810287
+ D: 0.002430
+ Motor: -117.807854
+ pitch_error: -3.927010
+
