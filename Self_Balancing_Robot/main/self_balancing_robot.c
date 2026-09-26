@@ -723,7 +723,7 @@ if(elapsed_time_microseconds_rpm_motor2 >= 50000)
     float motor_command = 0;
     float kp = 160;
       float kd = .8;
-      float ki = .3;
+      float ki = .2;
      float pitch_error = filtered_angle + .43;
 
       integral_error = integral_error + (pitch_error * dt);
